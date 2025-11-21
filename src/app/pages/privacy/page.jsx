@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
                 {/* Header */}
                 <div className="mb-12">
                     <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
-                    <p className="text-gray-600">Last updated: November 13, 2025</p>
+                    <p className="text-gray-600">Last updated: November 21, 2025</p>
                 </div>
 
                 {/* Content */}
