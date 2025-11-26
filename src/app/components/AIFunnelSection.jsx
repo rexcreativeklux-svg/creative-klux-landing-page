@@ -33,9 +33,9 @@ export default function CreativekluxHero() {
           {features.map((feature, i) => (
             <div
               key={i}
-              className="group relative bg-gradient-to-b from-white via-blue-50/30 to-purple-50/20 backdrop-blur-sm rounded-lg p-6 border border-gray-100 hover:border-blue-600 cursor-pointer hover:shadow transition-all duration-300 hover:-translate-y-2"
+              className="group relative bg-linear-to-b from-white via-blue-50/30 to-purple-50/20 backdrop-blur-sm rounded-lg p-6 border border-gray-100 hover:border-blue-600 cursor-pointer hover:shadow transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-300/5 to-purple-300/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-linear-to-br from-blue-300/5 to-purple-300/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10">
                 <div className="w-14 h-14 bg-blue-700 rounded-2xl flex items-center justify-center text-white mb-5 shadow-lg">
                   {feature.icon}

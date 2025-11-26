@@ -32,13 +32,18 @@ export default function Header() {
     }
   };
 
+  // Redirect to app
+  const handleLogin = () => {
+    window.location.href = "https://app.creativeklux.com/";
+  };
+
   return (
     <header
       className={`
         z-50 mx-10 rounded-xl bg-white border-b border-gray-200
         transition-all duration-300 ease-out
-        ${isScrolled 
-          ? 'fixed top-0 left-0 right-0 mx-0 rounded-none shadow-lg' 
+        ${isScrolled
+          ? 'fixed top-0 left-0 right-0 mx-0 rounded-none shadow-lg'
           : 'relative top-5'
         }
       `}
@@ -74,12 +79,14 @@ export default function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4 shrink-0">
-            <button className="text-gray-900 cursor-pointer hover:text-black bg-gray-100 hover:bg-gray-200 px-4 rounded-lg py-2 font-medium text-[15px] transition whitespace-nowrap">
+            <button onClick={handleLogin} className="text-gray-900 cursor-pointer hover:text-black bg-gray-100 hover:bg-gray-200 px-4 rounded-lg py-2 font-medium text-[15px] transition whitespace-nowrap">
               Login
             </button>
-            <button className="bg-[#1447e6] cursor-pointer hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium text-[15px] transition whitespace-nowrap">
-              Start for free
-            </button>
+            <Link href="../pages/pricing">
+              <button className="bg-[#1447e6] cursor-pointer hover:scale-105 text-white px-5 py-2 rounded-lg font-medium text-[15px]">
+                Start for free
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,12 +116,14 @@ export default function Header() {
                 Pricing
               </button>
               <div className="pt-4 border-t border-gray-100 space-y-3">
-                <button className="w-full text-left text-gray-900 hover:text-gray-600 font-medium text-[15px] py-2">
+                <button onClick={handleLogin} className="w-full text-left text-gray-900 hover:text-gray-600 font-medium text-[15px] py-2">
                   Login
                 </button>
-                <button className="w-full bg-[#1447e6] hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium text-[15px] transition">
-                  Start for free
-                </button>
+                 <Link href="../pages/pricing">
+              <button className="bg-[#1447e6] cursor-pointer hover:scale-105 text-white px-5 py-2 rounded-lg font-medium text-[15px]">
+                Start for free
+              </button>
+            </Link>
               </div>
             </nav>
           </div>

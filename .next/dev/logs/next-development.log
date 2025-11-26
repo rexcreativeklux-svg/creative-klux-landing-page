@@ -851,3 +851,1696 @@ Import trace for requested module:
 [03:45:49.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [03:46:39.756] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [03:46:40.909] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:42:02.043] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:42:03.326] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:52:59.431] Server  WARN     ⚠ ./src/app/components/Hero.jsx
+Attempted import error: './CreativeSelectionModal' does not contain a default export (imported as 'CreativeSelectionModal').
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+
+./src/app/components/Hero.jsx
+Attempted import error: './CreativeSelectionModal' does not contain a default export (imported as 'CreativeSelectionModal').
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+[06:52:59.648] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[06:52:59.649] Browser WARN    ./src/app/components/Hero.jsx
+Attempted import error: './CreativeSelectionModal' does not contain a default export (imported as 'CreativeSelectionModal').
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+[06:53:00.159] Server  ERROR    ⨯ ReferenceError: TABS is not defined
+[06:53:00.179] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[06:53:00.179] Browser WARN    ./src/app/components/Hero.jsx
+Attempted import error: './CreativeSelectionModal' does not contain a default export (imported as 'CreativeSelectionModal').
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+[06:53:00.513] Server  ERROR    ⨯ ReferenceError: TABS is not defined
+[06:53:01.202] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:53:01.482] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:53:01.568] Browser WARN    ./src/app/components/Hero.jsx
+Attempted import error: './CreativeSelectionModal' does not contain a default export (imported as 'CreativeSelectionModal').
+[06:53:01.568] Browser ERROR   unhandledRejection: ReferenceError: TABS is not defined
+[06:53:01.568] Browser ERROR   uncaughtError: ReferenceError: TABS is not defined
+[06:53:01.568] Browser WARN    ./src/app/components/Hero.jsx
+Attempted import error: './CreativeSelectionModal' does not contain a default export (imported as 'CreativeSelectionModal').
+[06:53:02.592] Browser WARN    ./src/app/components/Hero.jsx
+Attempted import error: './CreativeSelectionModal' does not contain a default export (imported as 'CreativeSelectionModal').
+[06:53:02.592] Browser ERROR   uncaughtError: ReferenceError: TABS is not defined
+[06:53:02.592] Browser ERROR   unhandledRejection: ReferenceError: TABS is not defined
+[06:53:14.972] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:53:15.206] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:14:47.126] Server  ERROR    ⨯ ./src/app/components/Header.jsx
+Error:   × Unexpected token. Did you mean `{'>'}` or `&gt;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:85:1]
+ 82 │             <button onClick={handleLogin} className="text-gray-900 cursor-pointer hover:text-black bg-gray-100 hover:bg-gray-200 px-4 rounded-lg py-2 font-medium text-[15px] transition whitespace-nowrap">
+ 83 │               Login
+ 84 │             </button>
+ 85 │             <button href="/pricing"> className="bg-[#1447e6] cursor-pointer hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium text-[15px] transition whitespace-nowrap">
+    ·                                                                                                                                                                                    ▲
+ 86 │               Start for free
+ 87 │             </button>
+ 88 │           </div>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:14:47.902] Browser ERROR   ./src/app/components/Header.jsx
+Error:   × Unexpected token. Did you mean `{'>'}` or `&gt;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:85:1]
+ 82 │             <button onClick={handleLogin} className="text-gray-900 cursor-pointer hover:text-black bg-gray-100 hover:bg-gray-200 px-4 rounded-lg py-2 font-medium text-[15px] transition whitespace-nowrap">
+ 83 │               Login
+ 84 │             </button>
+ 85 │             <button href="/pricing"> className="bg-[#1447e6] cursor-pointer hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium text-[15px] transition whitespace-nowrap">
+    ·                                                                                                                                                                                    ▲
+ 86 │               Start for free
+ 87 │             </button>
+ 88 │           </div>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:14:47.912] Browser ERROR   ./src/app/components/Header.jsx
+Error:   × Unexpected token. Did you mean `{'>'}` or `&gt;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:85:1]
+ 82 │             <button onClick={handleLogin} className="text-gray-900 cursor-pointer hover:text-black bg-gray-100 hover:bg-gray-200 px-4 rounded-lg py-2 font-medium text-[15px] transition whitespace-nowrap">
+ 83 │               Login
+ 84 │             </button>
+ 85 │             <button href="/pricing"> className="bg-[#1447e6] cursor-pointer hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium text-[15px] transition whitespace-nowrap">
+    ·                                                                                                                                                                                    ▲
+ 86 │               Start for free
+ 87 │             </button>
+ 88 │           </div>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:15:46.398] Server  ERROR    ⨯ ./src/app/components/Header.jsx
+Error:   × Expression expected
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:6:1]
+ 3 │ import React, { useState, useEffect } from 'react';
+ 4 │ import { Menu, X } from 'lucide-react';
+ 5 │ import Link from 'next/link';
+ 6 │ ../
+   · ─
+ 7 │ 
+ 8 │ export default function Header() {
+ 9 │   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:15:47.327] Browser ERROR   ./src/app/components/Header.jsx
+Error:   × Expression expected
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:6:1]
+ 3 │ import React, { useState, useEffect } from 'react';
+ 4 │ import { Menu, X } from 'lucide-react';
+ 5 │ import Link from 'next/link';
+ 6 │ ../
+   · ─
+ 7 │ 
+ 8 │ export default function Header() {
+ 9 │   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:15:47.340] Browser ERROR   ./src/app/components/Header.jsx
+Error:   × Expression expected
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:6:1]
+ 3 │ import React, { useState, useEffect } from 'react';
+ 4 │ import { Menu, X } from 'lucide-react';
+ 5 │ import Link from 'next/link';
+ 6 │ ../
+   · ─
+ 7 │ 
+ 8 │ export default function Header() {
+ 9 │   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:15:54.681] Server  ERROR    ⨯ ./src/app/components/Header.jsx
+Error:   × Expected ';', '}' or <eof>
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:6:1]
+ 3 │ import React, { useState, useEffect } from 'react';
+ 4 │ import { Menu, X } from 'lucide-react';
+ 5 │ import Link from 'next/link';
+ 6 │ importpricing from 
+   · ──────┬────── ────
+   ·       ╰── This is the expression part of an expression statement
+ 7 │ 
+ 8 │ export default function Header() {
+ 9 │   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:15:55.583] Browser ERROR   ./src/app/components/Header.jsx
+Error:   × Expected ';', '}' or <eof>
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:6:1]
+ 3 │ import React, { useState, useEffect } from 'react';
+ 4 │ import { Menu, X } from 'lucide-react';
+ 5 │ import Link from 'next/link';
+ 6 │ importpricing from 
+   · ──────┬────── ────
+   ·       ╰── This is the expression part of an expression statement
+ 7 │ 
+ 8 │ export default function Header() {
+ 9 │   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:15:55.601] Browser ERROR   ./src/app/components/Header.jsx
+Error:   × Expected ';', '}' or <eof>
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:6:1]
+ 3 │ import React, { useState, useEffect } from 'react';
+ 4 │ import { Menu, X } from 'lucide-react';
+ 5 │ import Link from 'next/link';
+ 6 │ importpricing from 
+   · ──────┬────── ────
+   ·       ╰── This is the expression part of an expression statement
+ 7 │ 
+ 8 │ export default function Header() {
+ 9 │   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:15:56.723] Server  ERROR    ⨯ ./src/app/components/Header.jsx
+Error:   × Unexpected token `export`. Expected a string literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:8:1]
+  5 │ import Link from 'next/link';
+  6 │ import pricing from 
+  7 │ 
+  8 │ export default function Header() {
+    · ──────
+  9 │   const [isMenuOpen, setIsMenuOpen] = useState(false);
+ 10 │   const [isScrolled, setIsScrolled] = useState(false);
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:15:57.695] Browser ERROR   ./src/app/components/Header.jsx
+Error:   × Unexpected token `export`. Expected a string literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:8:1]
+  5 │ import Link from 'next/link';
+  6 │ import pricing from 
+  7 │ 
+  8 │ export default function Header() {
+    · ──────
+  9 │   const [isMenuOpen, setIsMenuOpen] = useState(false);
+ 10 │   const [isScrolled, setIsScrolled] = useState(false);
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:15:57.711] Browser ERROR   ./src/app/components/Header.jsx
+Error:   × Unexpected token `export`. Expected a string literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Header.jsx:8:1]
+  5 │ import Link from 'next/link';
+  6 │ import pricing from 
+  7 │ 
+  8 │ export default function Header() {
+    · ──────
+  9 │   const [isMenuOpen, setIsMenuOpen] = useState(false);
+ 10 │   const [isScrolled, setIsScrolled] = useState(false);
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Header.jsx
+./src/app/page.js
+[07:16:00.113] Server  ERROR    ⨯ ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:01.004] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:01.012] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:05.744] Server  ERROR    ⨯ ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:06.594] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:06.594] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:06.595] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:06.595] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:13.948] Server  ERROR    ⨯ ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve './'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from './'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:14.845] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:14.845] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve './'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from './'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:14.845] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:14.845] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve './'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from './'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:29.370] Server  ERROR    ⨯ ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve './'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from './'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:30.211] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve './'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from './'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:30.211] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve './'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from './'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:30.211] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve './'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from './'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:30.211] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve './'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from './'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:36.769] Server  ERROR    ⨯ ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:37.657] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve './'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from './'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:37.658] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:37.658] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve './'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from './'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:16:37.658] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:48.687] Server  ERROR    ⨯ ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:49.400] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:49.400] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:49.447] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:49.447] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:51.769] Server  ERROR    ⨯ ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:52.675] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:52.675] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:52.675] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:52.675] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:52.675] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:52.675] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:53.292] Server  ERROR    ⨯ ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/pricing'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/pricing'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:53.678] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:53.678] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/pricing'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/pricing'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:53.679] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:21:53.679] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/pricing'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/pricing'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:22:10.119] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/pricing'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/pricing'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:22:10.120] Browser ERROR   ./src/app/components/Header.jsx:6:1
+Module not found: Can't resolve '../pages/pricing'
+  4 | import { Menu, X } from 'lucide-react';
+  5 | import Link from 'next/link';
+> 6 | import pricing from '../pages/pricing'
+    | ^
+  7 |
+  8 | export default function Header() {
+  9 |   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+https://nextjs.org/docs/messages/module-not-found
+[07:22:28.533] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:22:29.887] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:22:32.812] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:22:34.986] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:33:22.137] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. stop
+[07:33:35.064] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. cautio
+[07:33:41.604] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. caution
+[07:33:49.441] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. red
+[07:33:50.486] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. r
+[07:35:29.203] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:35:30.121] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:35:30.121] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:35:30.460] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:35:30.524] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:35:30.552] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:35:32.215] Server  LOG      ○ Compiling /_error ...
+[07:35:32.237] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:35:32.237] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:35:32.237] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:35:33.706] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:35:33.706] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:35:46.363] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:35:46.467] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:35:46.770] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:35:46.815] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:35:48.525] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:35:48.526] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+[07:35:48.526] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+[07:35:48.526] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:35:48.652] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:35:48.652] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+[07:35:48.652] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:35:50.653] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[07:35:50.848] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:35:52.573] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:35:52.997] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:36:09.819] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:36:11.743] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:40:15.685] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:15.716] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:15.772] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:16.201] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:18.500] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:18.500] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:18.500] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:40:18.854] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:18.854] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:40:19.232] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:19.248] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:21.080] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:21.709] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:21.880] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:40:23.402] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:40:23.865] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:40:24.910] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:24.938] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:24.955] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:26.245] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:26.245] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:26.245] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:40:27.618] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:27.618] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:40:31.373] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:31.381] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:32.670] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[07:40:33.354] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:33.533] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:40:34.862] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:40:37.832] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:37.849] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:37.861] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:40.321] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:40.321] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:40.321] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:40:40.763] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:40.763] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:40:43.682] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:43.706] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:44.219] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:44.259] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:40:45.839] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:45.839] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:45.839] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:45.839] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:1:1]
+ 1 │ import { useState } from "react";
+   ·          ────────
+ 2 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 3 │ 
+ 4 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:40:45.858] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:45.858] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+[07:40:47.148] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:40:47.567] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:48.203] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:40:48.384] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:40:50.012] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:43:57.947] Server  ERROR    ⨯ ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:43:57.986] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:43:57.990] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+Import trace for requested module:
+./src/app/pages/pricing/page.jsx
+[07:43:59.265] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:43:59.265] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+[07:43:59.265] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+[07:43:59.279] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:43:59.279] Browser ERROR   ./src/app/pages/pricing/page.jsx
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+[07:43:59.816] Server  LOG      ○ Compiling /_not-found ...
+[07:44:00.514] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:44:00.780] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/pages/pricing/page.jsx:3:1]
+ 1 │ 
+ 2 │ 
+ 3 │ import { useState } from "react";
+   ·          ────────
+ 4 │ import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+ 5 │ 
+ 6 │ export default function CheckoutFlow() {
+   ╰────
+
+[07:44:00.865] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:44:01.905] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:44:02.188] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:46:34.164] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[07:46:35.990] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:46:37.193] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:46:37.731] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:46:43.011] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[07:46:45.473] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:46:45.517] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:55:33.926] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:55:35.327] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:55:45.013] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:55:53.998] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:55:56.113] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:56:22.492] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:56:24.069] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:03:04.251] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:03:05.587] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:03:26.486] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:03:27.307] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:03:29.270] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:03:31.026] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:03:31.037] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:03:35.122] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:03:36.274] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:04:48.927] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:08:58.069] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:08:59.543] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:15:01.240] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:15:04.629] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:15:46.433] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[08:16:26.115] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

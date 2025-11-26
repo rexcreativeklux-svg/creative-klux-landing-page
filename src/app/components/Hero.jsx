@@ -47,7 +47,7 @@ export default function Hero() {
 
                                     <input
                                         type="text"
-                                        placeholder="https://yourdomain.com"
+                                        placeholder="https://yourdomain/yourproduct.com"
                                         value={url}
                                         onChange={(e) => setUrl(e.target.value)}
                                         className="flex-1 px-4 py-2 text-gray-900 placeholder:text-gray-300 outline-none text-base md:text-sm"
