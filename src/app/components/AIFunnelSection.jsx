@@ -1,15 +1,14 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { Play, Pause } from "lucide-react";
+import { useState, useRef } from "react";
+import { Play, Pause, Sparkles, Zap, Rocket, Wand2 } from "lucide-react";
 
-export default function AIFunnelSection() {
+export default function CreativekluxHero() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
-
     if (isPlaying) {
       videoRef.current.pause();
     } else {
@@ -18,139 +17,120 @@ export default function AIFunnelSection() {
     setIsPlaying(!isPlaying);
   };
 
-  const featureCards = [
-    {
-      title: "Bundle Builder",
-      description: "Increase AOV by adding a product bundle builder to your ecommerce funnel",
-      icon: <div className="w-6 h-6 border-2 border-gray-700 rounded"></div>
-    },
-    {
-      title: "Upsell Builder",
-      description: "Boost sales with 1-click cart upsells and post-purchase offers for returning shoppers",
-      icon: (
-        <div className="flex flex-col gap-1">
-          <div className="w-6 h-0.5 bg-gray-700 rounded"></div>
-          <div className="w-6 h-0.5 bg-gray-700 rounded"></div>
-          <div className="w-6 h-0.5 bg-gray-700 rounded"></div>
-        </div>
-      )
-    },
-    {
-      title: "Survey Builder",
-      description: "Survey visitors to gather valuable customer insights and segment your audience",
-      icon: (
-        <div className="w-6 h-6 border-2 border-gray-700 rounded flex items-center justify-center">
-          <div className="w-3 h-0.5 bg-gray-700 rounded"></div>
-        </div>
-      )
-    },
-    {
-      title: "Sticky Bar Builder",
-      description: "Promote announcement bars, remind visitors, and visualize progress to earn bonuses",
-      icon: <div className="w-6 h-4 border-2 border-gray-700 rounded-sm"></div>
-    }
+  const features = [
+    { icon: <Zap className="w-7 h-7" />, title: "10x Faster Creation", desc: "Generate full campaigns in seconds, not hours" },
+    { icon: <Rocket className="w-7 h-7" />, title: "Higher Conversions", desc: "AI-optimized visuals proven to outperform templates" },
+    { icon: <Wand2 className="w-7 h-7" />, title: "One Tool, Everything", desc: "Replace Canva, Midjourney, CapCut, D-ID & more" },
+    { icon: <Sparkles className="w-7 h-7" />, title: "Brand Perfect", desc: "Every asset matches your brand voice & style automatically" },
   ];
 
   return (
-    <div className="w-full bg-white py-20 px-4">
+    <div className="w-full bg-white py-24 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Four Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {featureCards.map((card, index) => (
-            <div key={index} className="bg-gray-50 hover:scale-95 rounded-xl p-6 border border-gray-200 hover:border-blue-300 transition-colors cursor-pointer">
-              <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
-                {card.icon}
+
+        {/* Feature Highlights */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {features.map((feature, i) => (
+            <div
+              key={i}
+              className="group relative bg-gradient-to-b from-white via-blue-50/30 to-purple-50/20 backdrop-blur-sm rounded-lg p-6 border border-gray-100 hover:border-blue-600 cursor-pointer hover:shadow transition-all duration-300 hover:-translate-y-2"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-300/5 to-purple-300/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-blue-700 rounded-2xl flex items-center justify-center text-white mb-5 shadow-lg">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
               </div>
-              <h3 className="text-gray-900 font-bold text-lg mb-2">{card.title}</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                {card.description}
-              </p>
-              <a href="#" className="text-gray-900 text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">
-                Learn more <span>→</span>
-              </a>
             </div>
           ))}
         </div>
 
-        {/* Main Content Section */}
-        <div className="text-center">
+        {/* Main Hero Content */}
+        <div className="text-center max-w-5xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center justify-center mb-8">
-            <span className="px-4 py-2 rounded-full bg-blue-700/20 text-xs font-semibold uppercase tracking-wide border border-blue-500/30 text-blue-600">
-              AI Funnel Builder
-            </span>
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wider border border-gray-300 mb-8">
+            <Sparkles className="w-5 h-5" />
+            The Complete AI Creative Engine
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-gray-900">
-            Launch & A/B funnels fast with AI
-          </h2>
+          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold leading-tight mb-8">
+            Create High-Converting Ads, Social Content <br />
+            & Brand Designs <span className="">in Seconds</span>
+          </h1>
 
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-12">
-            ConvertFlow's AI funnel builder empowers your team to experiment quickly, without waiting on developers
+          <p className="text-lg md:text-xl text-gray-700 max-w-5xl mx-auto mb-6">
+            Creativeklux is the <span className="font-bold text-blue-600">All-in-one AI studio</span> for Agencies, Brands, Marketers, Creators, E-commerce & SMMA owners.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center mb-16">
-            <button className="px-8 py-3 cursor-pointer bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-              Start For Free
+          <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
+            Replace <strong>Canva + CapCut + Midjourney + D-ID + Meta Ads Creative Center + Playable Studio</strong> with one intelligent platform that understands your brand and generates winning creatives — instantly.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <button className="group px-4 py-2 bg-blue-700 text-white font-medium rounded-lg cursor-pointer shadow-xl hover:shadow-purple-300/50 transition-all duration-200 hover:scale-105 flex items-center gap-2">
+              Start Creating Free
+              <Rocket className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-3 cursor-pointer border border-gray-300 text-gray-900 hover:bg-gray-50 font-semibold rounded-lg transition-colors">
-              Get Demo
+            <button className="px-4 py-2 border border-gray-300 text-gray-800 font-medium rounded-lg hover:border-blue-600 hover:bg-purple-50/50 transition-all cursor-pointer duration-200 hover:scale-105 backdrop-blur-sm">
+              Watch How It Works
             </button>
           </div>
 
-          {/* Video Container */}
-          <div className="relative max-w-5xl mx-auto">
-            <div
-              className="rounded-3xl overflow-hidden border-4 border-blue-500 shadow-2xl"
-              style={{ boxShadow: "0 0 60px rgba(59, 130, 246, 0.4)" }}
-            >
-              <div className="aspect-video relative overflow-hidden group">
-                {/* Video */}
+          {/* Video Demo */}
+          <div className="relative max-w-6xl mx-auto">
+            <div className="rounded-3xl overflow-hidden shadow-2xl ring-6 ring-blue-600 ring-offset-transparent">
+              <div className="aspect-video relative bg-black">
                 <video
                   ref={videoRef}
                   className="w-full h-full object-cover"
-                  poster="/poster.jpg"
+                  poster="/creativeklux-demo-poster.jpg"
                   playsInline
                   preload="metadata"
                   muted
-                  onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
-                  onEnded={() => setIsPlaying(false)}
+                  loop
                 >
                   <source src="/videos/testvideo.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
                 </video>
 
-                {/* Play Button Overlay */}
+                {/* Play Overlay */}
                 {!isPlaying && (
                   <div
-                    className="absolute inset-0 bg-black/50 flex items-center justify-center cursor-pointer backdrop-blur-sm"
                     onClick={togglePlay}
+                    className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center cursor-pointer group"
                   >
-                    <div className="flex flex-col items-center gap-4">
-                      <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-transform hover:scale-110">
-                        <Play className="w-10 h-10 text-white ml-1" fill="white" />
+                    <div className="text-center flex flex-col items-center justify-center">
+                      <div className="w-28 h-28 bg-blue-700 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-105 transition-transform">
+                        <Play className="w-14 h-14 text-white ml-2" fill="white" />
                       </div>
-                      <p className="text-white text-2xl font-bold drop-shadow-lg">Watch Demo</p>
+                      <p className="text-white text-xl font-bold mt-6 drop-shadow-2xl">
+                        See Creativeklux in Action
+                      </p>
                     </div>
                   </div>
                 )}
 
-                {/* Pause Button (hover when playing) */}
+                {/* Pause on Hover */}
                 {isPlaying && (
                   <div
-                    className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
                     onClick={togglePlay}
+                    className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
                   >
-                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-blue-600/90 rounded-full flex items-center justify-center">
-                        <Pause className="w-8 h-8 text-white" fill="white" />
+                    <div className="flex items-center justify-center h-full">
+                      <div className="w-20 h-20 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-2xl">
+                        <Pause className="w-10 h-10 text-gray-900" fill="currentColor" />
                       </div>
                     </div>
                   </div>
                 )}
               </div>
             </div>
+
+            {/* Floating decorative elements */}
+            <div className="absolute -top-10 -left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
           </div>
         </div>
       </div>

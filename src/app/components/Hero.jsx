@@ -40,15 +40,14 @@ export default function Hero() {
                         {/* URL Input Section */}
                         <form onSubmit={handleSubmit} className="mt-8">
                             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 max-w-xl mx-auto px-4">
-                                <div className="flex relative items-center bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex-1">
-                                    <div className="flex items-center px-4 py-4 text-gray-600">
+                                <div className="flex relative items-center bg-white py-2 rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex-1">
+                                    {/* <div className="flex items-center px-4 py-4 text-gray-600">
                                       <Globe size={24} className="text-blue-500 animate-spin-slow" strokeWidth={2} />
-                                        {/* <span className="ml-3 text-sm font-medium whitespace-nowrap">creativeklux.com/</span> */}
-                                    </div>
+                                    </div> */}
 
                                     <input
                                         type="text"
-                                        placeholder="paste or input your url"
+                                        placeholder="https://yourdomain.com"
                                         value={url}
                                         onChange={(e) => setUrl(e.target.value)}
                                         className="flex-1 px-4 py-2 text-gray-900 placeholder:text-gray-300 outline-none text-base md:text-sm"
@@ -60,7 +59,7 @@ export default function Hero() {
                                         type="submit"
                                         disabled={isEmpty || isLoading}
                                         className={`px-6 py-2 absolute cursor-pointer right-2 rounded-lg font-bold text-base md:text-sm transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap ${isEmpty || isLoading
-                                                ? 'bg-gray-100 text-gray-500 border border-gray-200 cursor-not-allowed'
+                                                ? 'bg-[#3864e895] text-white cursor-not-allowed'
                                                 : 'bg-[#1447e6] hover:bg-blue-700 text-white shadow-md shadow-blue-600/30 hover:scale-105'
                                             }`}
                                     >

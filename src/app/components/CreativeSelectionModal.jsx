@@ -111,7 +111,7 @@ export default function CreativeSelectionModal({ isOpen, onClose, selectedCreati
                         {/* LEFT: Tabs and Creative Selection */}
                         <div className="flex flex-col gap-6">
                             {/* Horizontal Tabs */}
-                            <div className="flex gap-2 border-b border-gray-200 flex-wrap">
+                            <div className="flex gap-1 border-b border-gray-200 flex-wrap">
                                 {TABS.map((tab) => (
                                     <button
                                         key={tab.id}
@@ -219,7 +219,7 @@ export default function CreativeSelectionModal({ isOpen, onClose, selectedCreati
                     </div>
 
                     {/* Continue Button */}
-                    <div className="mt-12 text-center">
+                    <div className="mt-22 text-center">
                         <button
                             disabled={!selectedCreative}
                             onClick={onClose}

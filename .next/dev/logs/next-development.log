@@ -745,3 +745,109 @@ Import trace for requested module:
 [01:25:28.640] Browser ERROR   uncaughtError: ReferenceError: ArrowDown is not defined
 [01:25:29.693] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [01:25:30.297] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:49:19.882] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:49:19.919] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:57:50.028] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:47:1]
+ 44 │                                     {/* <div className="flex items-center px-4 py-4 text-gray-600">
+ 45 │                                       <Globe size={24} className="text-blue-500 animate-spin-slow" strokeWidth={2} />
+ 46 │                                         {/* <span className="ml-3 text-sm font-medium whitespace-nowrap">creativeklux.com/</span> */}
+ 47 │                                     </div> */}
+    ·                                              ▲
+ 48 │ 
+ 49 │                                     <input
+ 50 │                                         type="text"
+    ╰────
+  × Expected '</', got 'jsx text (
+  │                         )'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:82:1]
+ 79 │                                             )}
+ 80 │                                         </button>
+ 81 │                                     </div>
+ 82 │ ╭─▶                             </div>
+ 83 │ ╰─▶                         </form>
+ 84 │                         </div>
+ 85 │     
+ 86 │                         {/* Feature Cards with Phone Mockup */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[02:57:50.143] Server  ERROR    ⨯ ./src/app/components/Hero.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:47:1]
+ 44 │                                     {/* <div className="flex items-center px-4 py-4 text-gray-600">
+ 45 │                                       <Globe size={24} className="text-blue-500 animate-spin-slow" strokeWidth={2} />
+ 46 │                                         {/* <span className="ml-3 text-sm font-medium whitespace-nowrap">creativeklux.com/</span> */}
+ 47 │                                     </div> */}
+    ·                                              ▲
+ 48 │ 
+ 49 │                                     <input
+ 50 │                                         type="text"
+    ╰────
+  × Expected '</', got 'jsx text (
+  │                         )'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:82:1]
+ 79 │                                             )}
+ 80 │                                         </button>
+ 81 │                                     </div>
+ 82 │ ╭─▶                             </div>
+ 83 │ ╰─▶                         </form>
+ 84 │                         </div>
+ 85 │     
+ 86 │                         {/* Feature Cards with Phone Mockup */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[02:57:50.905] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:47:1]
+ 44 │                                     {/* <div className="flex items-center px-4 py-4 text-gray-600">
+ 45 │                                       <Globe size={24} className="text-blue-500 animate-spin-slow" strokeWidth={2} />
+ 46 │                                         {/* <span className="ml-3 text-sm font-medium whitespace-nowrap">creativeklux.com/</span> */}
+ 47 │                                     </div> */}
+    ·                                              ▲
+ 48 │ 
+ 49 │                                     <input
+ 50 │                                         type="text"
+    ╰────
+  × Expected '</', got 'jsx text (
+  │                         )'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:82:1]
+ 79 │                                             )}
+ 80 │                                         </button>
+ 81 │                                     </div>
+ 82 │ ╭─▶                             </div>
+ 83 │ ╰─▶                         </form>
+ 84 │                         </div>
+ 85 │     
+ 86 │                         {/* Feature Cards with Phone Mockup */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[02:57:58.574] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:57:58.581] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:24:53.475] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:24:53.492] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:24:55.711] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:24:55.715] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:45:43.162] Browser ERROR   unhandledRejection: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
+[03:45:49.162] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:45:49.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:46:39.756] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:46:40.909] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
