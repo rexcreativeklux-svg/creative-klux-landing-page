@@ -1,3 +1,747 @@
-[00:00:05.343] Server  LOG      ✓ Ready in 4.8s
-[00:00:14.217] Server  LOG      ○ Compiling / ...
-[00:00:18.160] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.974] Server  LOG      ✓ Ready in 2.3s
+[00:00:55.564] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:03.340] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Expected ';', '}' or <eof>
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:1:1]
+ 1 │ npm install framer-motion
+   · ─┬─ ───────
+   ·  ╰── This is the expression part of an expression statement
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:11:04.222] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Expected ';', '}' or <eof>
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:1:1]
+ 1 │ npm install framer-motion
+   · ─┬─ ───────
+   ·  ╰── This is the expression part of an expression statement
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:11:09.118] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Expected ';', '}' or <eof>
+   ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:1:1]
+ 1 │ npm install framer-motion
+   · ─┬─ ───────
+   ·  ╰── This is the expression part of an expression statement
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:26:55.376] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:26:56.378] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:21.109] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Expected '</', got '{'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:210:1]
+ 207 │                                 </div>
+ 208 │                     
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+     ·                         ─
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+ 212 │                             <div className="relative w-96 h-96 flex items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:22.043] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:22.043] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Expected '</', got '{'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:210:1]
+ 207 │                                 </div>
+ 208 │                     
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+     ·                         ─
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+ 212 │                             <div className="relative w-96 h-96 flex items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:24.435] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:25.396] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Expected '</', got '{'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:210:1]
+ 207 │                                 </div>
+ 208 │                     
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+     ·                         ─
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+ 212 │                             <div className="relative w-96 h-96 flex items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:25.396] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:31.173] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>)
+     ·                          ──────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:32.088] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:32.089] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>)
+     ·                          ──────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:32.831] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:33.764] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>)
+     ·                          ──────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:33.764] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:51.902] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>)
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:52.804] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:52.804] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>)
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:27:54.842] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>)
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:31:07.722] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:31:08.712] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:31:19.805] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                                 
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:31:20.702] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:31:20.702] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                                 
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:31:23.468] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                             )
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:31:24.333] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                                 
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:31:24.333] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                             )
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:31:26.492] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                             )
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:41:19.347] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:41:20.294] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:41:25.035] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                                 
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:41:25.375] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:208:1]
+ 205 │                                         </button>
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                         </div>
+     ·                          ─────
+ 209 │ 
+ 210 │                         {/* RIGHT: Rotating Platform Slider */}
+ 211 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:41:25.375] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                                 
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:41:27.177] Server  ERROR    ⨯ ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                             )
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:41:28.111] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                                 
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:41:28.111] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                             )
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:41:28.777] Browser ERROR   ./src/app/components/CreativeSelectionModal.jsx
+Error:   × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/CreativeSelectionModal.jsx:209:1]
+ 206 │                                     ))}
+ 207 │                                 </div>
+ 208 │                             )
+ 209 │                         </div>
+     ·                          ─────
+ 210 │ 
+ 211 │                         {/* RIGHT: Rotating Platform Slider */}
+ 212 │                         <div className="relative flex flex-col items-center justify-center">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/CreativeSelectionModal.jsx
+./src/app/components/Hero.jsx
+[00:56:13.468] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:17.487] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:20.081] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:20:50.899] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:20:50.900] Browser ERROR   uncaughtError: ReferenceError: motion is not defined
+[01:20:52.281] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:20:53.108] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:21:03.665] Browser ERROR   uncaughtError: ReferenceError: motion is not defined
+[01:21:14.635] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:21:15.772] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:21:16.401] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
+[01:21:22.620] Browser ERROR   uncaughtError: ReferenceError: motion is not defined
+[01:22:07.978] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:22:10.941] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:22:21.498] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:22:21.498] Browser ERROR   uncaughtError: ReferenceError: motion is not defined
+[01:22:23.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:22:24.091] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:25:28.640] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:25:28.640] Browser ERROR   uncaughtError: ReferenceError: ArrowDown is not defined
+[01:25:29.693] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:25:30.297] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

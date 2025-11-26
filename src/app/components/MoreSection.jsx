@@ -1,56 +1,73 @@
 'use client';
 
+const MOCKUP_COMPONENTS = {
+  'image-ads': ImageAdsMockup,
+  'video-ads': VideoAdsMockup,
+  'interactive-ads': InteractiveAdsMockup,
+  'playable-ads': PlayableAdsMockup,
+  'social-posts': SocialPostsMockup,
+  'stories-reels': StoriesReelsMockup,
+  'banners-covers': BannersCoversMockup,
+  'thumbnails': ThumbnailsMockup,
+  'memes-trends': MemesTrendsMockup,
+  'business-cards': BusinessCardsMockup,
+  'logos-brand': LogosBrandMockup,
+  'flyers': FlyersMockup,
+  'brochures': BrochuresMockup,
+  'posters': PostersMockup,
+  'infographics': InfographicsMockup,
+  'presentations': PresentationsMockup,
+  'packaging': PackagingMockup,
+  'text-to-image': TextToImageMockup,
+  'text-to-video': TextToVideoMockup,
+  'image-variations': ImageVariationsMockup,
+  'script-to-video': ScriptToVideoMockup,
+  'audio-to-text': AudioToTextMockup,
+  'persona-generator': PersonaGeneratorMockup,
+  'text-to-audio': TextToAudioMockup,
+};
+
 export default function MoreSection() {
   const features = [
-    {
-      title: 'Sell your own digital products and link to your favorite affiliate brands',
-      gradient: 'from-yellow-300 via-orange-300 to-orange-400',
-      mockup: 'phone-store',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop'
-    },
-    {
-      title: 'Monitor your growth every day with best-in-class analytics',
-      gradient: 'from-green-200 via-green-300 to-green-200',
-      mockup: 'analytics-earnings'
-    },
-    {
-      title: 'Own your data and use your stats to get paid what you deserve',
-      gradient: 'from-blue-300 via-purple-300 to-purple-400',
-      mockup: 'analytics-stats'
-    },
-    {
-      title: 'Track your audience growth and engagement metrics',
-      gradient: 'from-blue-200 via-blue-300 to-cyan-300',
-      mockup: 'followers-engagement'
-    },
-    {
-      title: 'Build and grow your email list with powerful tools',
-      gradient: 'from-purple-200 via-purple-300 to-indigo-300',
-      mockup: 'email-list'
-    },
-    {
-      title: 'Create stunning mobile-first pages that convert',
-      gradient: 'from-yellow-200 via-amber-300 to-orange-300',
-      mockup: 'mobile-preview',
-      image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=600&fit=crop'
-    }
+    { title: 'Image Ads Creatives',           description: 'Create stunning image ads that convert and captivate your audience', mockup: 'image-ads',           bg: 'bg-linear-to-br from-blue-50 to-purple-100' },
+    { title: 'Video Ads Creatives',           description: 'Produce engaging video ads with professional motion graphics', mockup: 'video-ads',           bg: 'bg-linear-to-br from-purple-50 to-pink-100' },
+    { title: 'Interactive Ads Creatives',     description: 'Build interactive ads that boost engagement and click-through rates', mockup: 'interactive-ads',     bg: 'bg-linear-to-br from-cyan-50 to-blue-100' },
+    { title: 'Playable Ads Creatives',        description: 'Design playable ads that let users experience your product instantly', mockup: 'playable-ads',        bg: 'bg-linear-to-br from-green-50 to-emerald-100' },
+    { title: 'Social Posts',                  description: 'Craft eye-catching social media posts that drive engagement', mockup: 'social-posts',        bg: 'bg-linear-to-br from-orange-50 to-pink-100' },
+    { title: 'Stories, Reels & Shorts',       description: 'Create viral Stories, Reels, and Shorts in minutes', mockup: 'stories-reels',       bg: 'bg-linear-to-br from-purple-50 via-pink-100 to-red-100' },
+    { title: 'Banners + Covers',              description: 'Design professional banners and covers for all platforms', mockup: 'banners-covers',      bg: 'bg-linear-to-br from-indigo-50 to-purple-100' },
+    { title: 'Thumbnails',                    description: 'Generate click-worthy thumbnails that boost views', mockup: 'thumbnails',          bg: 'bg-linear-to-br from-red-50 to-orange-100' },
+    { title: 'Memes & Trends',                description: 'Jump on trends with memes and viral content templates', mockup: 'memes-trends',        bg: 'bg-linear-to-br from-lime-50 to-green-100' },
+    { title: 'Business Cards',                description: 'Design sleek business cards that make lasting impressions', mockup: 'business-cards',      bg: 'bg-linear-to-br from-gray-100 to-slate-200' },
+    { title: 'Logos & Brand Identity',        description: 'Build logos and complete brand identities from scratch', mockup: 'logos-brand',         bg: 'bg-linear-to-br from-violet-50 to-purple-100' },
+    { title: 'Flyers',                        description: 'Create attention-grabbing flyers for any event or promotion', mockup: 'flyers',              bg: 'bg-linear-to-br from-yellow-50 to-red-100' },
+    { title: 'Brochures',                     description: 'Produce professional brochures that showcase your business', mockup: 'brochures',           bg: 'bg-linear-to-br from-sky-50 to-indigo-100' },
+    { title: 'Posters',                       description: 'Design striking posters that command attention', mockup: 'posters',             bg: 'bg-linear-to-br from-rose-50 to-purple-100' },
+    { title: 'Infographics',                  description: 'Build data-driven infographics that tell compelling stories', mockup: 'infographics',        bg: 'bg-linear-to-br from-teal-50 to-cyan-100' },
+    { title: 'Presentation Decks',            description: 'Create stunning presentation decks that wow your audience', mockup: 'presentations',       bg: 'bg-linear-to-br from-amber-50 to-orange-100' },
+    { title: 'Packaging Mockups',             description: 'Visualize product packaging with realistic mockups', mockup: 'packaging',           bg: 'bg-linear-to-br from-emerald-50 to-teal-100' },
+    { title: 'Text to Image',                 description: 'Transform text into stunning images with AI in seconds', mockup: 'text-to-image',       bg: 'bg-linear-to-br from-orange-50 via-pink-100 to-purple-100' },
+    { title: 'Text to Video',                 description: 'Generate professional videos from simple text prompts', mockup: 'text-to-video',       bg: 'bg-linear-to-br from-blue-50 to-purple-100' },
+    { title: 'Image to Variations',           description: 'Create endless variations from a single image concept', mockup: 'image-variations',    bg: 'bg-linear-to-br from-green-50 to-cyan-100' },
+    { title: 'Script to Voiceover to Video',  description: 'Turn scripts into complete videos with AI voiceovers', mockup: 'script-to-video',     bg: 'bg-linear-to-br from-orange-50 to-pink-100' },
+    { title: 'Audio to Text',                 description: 'Convert audio to accurate text transcriptions instantly', mockup: 'audio-to-text',       bg: 'bg-white' },
+    { title: 'Persona-based Generator',       description: 'Generate content tailored to specific audience personas', mockup: 'persona-generator',   bg: 'bg-linear-to-br from-cyan-50 to-indigo-100' },
+    { title: 'Text to Audio',                 description: 'Create natural-sounding voiceovers from any text', mockup: 'text-to-audio',       bg: 'bg-linear-to-br from-yellow-50 to-orange-100' },
   ];
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Become the next big thing<br />with Creative Klux
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+            Everything you need to create,<br />all in one platform
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-5xl mx-auto">
-            Wherever you are in your creator journey, Creative Klux has the tools you need to level up and grow your income.
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            From ads to social content, design work to AI magic—Creative Klux has every tool to bring your creative vision to life.
           </p>
         </div>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <FeatureCard key={index} feature={feature} />
           ))}
@@ -61,150 +78,300 @@ export default function MoreSection() {
 }
 
 function FeatureCard({ feature }) {
-  return (
-    <div className="group">
-      {/* Card Container */}
-      <div className={`relative rounded-xl bg-linear-to-br cursor-pointer ${feature.gradient} p-6 sm:p-8 overflow-hidden transition-transform duration-300 hover:scale-[1.02]`}>
-        {/* Mockup Content */}
-        <div className="relative h-64 sm:h-80 ">
-          {feature.mockup === 'phone-store' && <PhoneStoreMockup image={feature.image} />}
-          {feature.mockup === 'analytics-earnings' && <AnalyticsEarningsMockup />}
-          {feature.mockup === 'analytics-stats' && <AnalyticsStatsMockup />}
-          {feature.mockup === 'followers-engagement' && <FollowersEngagementMockup />}
-          {feature.mockup === 'email-list' && <EmailListMockup />}
-          {feature.mockup === 'mobile-preview' && <MobilePreviewMockup image={feature.image} />}
-        </div>
-      </div>
+  const MockupComponent = MOCKUP_COMPONENTS[feature.mockup];
 
-      {/* Description */}
-      <p className="mt-6 text-lg sm:text-xl font-medium text-gray-900 leading-snug">
-        {feature.title}
-      </p>
+  return (
+    <div className={`${feature.bg} rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer border border-gray-200/80 flex flex-col h-full`}>
+      <div className="mb-4">
+        <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+        <p className="text-sm text-gray-700 leading-relaxed">{feature.description}</p>
+      </div>
+      <div className="flex-1 flex items-center justify-center mt-auto">
+        {MockupComponent && <MockupComponent />}
+      </div>
     </div>
   );
 }
 
-function PhoneStoreMockup({ image }) {
+/* === HYDRATION-SAFE ANIMATED WAVEFORM === */
+function AnimatedWaveform({ barCount = 12, color = "violet-600", maxHeight = 24 }) {
   return (
-    <div className="relative h-full flex items-center justify-center">
-      {/* Phone Device */}
-      <div className="relative w-48 sm:w-56">
-        <div className="bg-gradient-to-br from-pink-600 to-pink-700 rounded-[2rem] p-2 shadow-2xl">
-          <div className="bg-white rounded-[1.7rem] overflow-hidden">
-            {/* Phone Content */}
-            <div className="relative h-72 sm:h-80 bg-white">
-              {/* Profile Header */}
-              <div className="text-center pt-4 pb-3 bg-gradient-to-b from-pink-50 to-white">
-                <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg mb-2">
-                  <img src={image} alt="Profile" className="w-full h-full object-cover" />
-                </div>
-                <p className="text-sm font-bold text-gray-900">ELIZABETH KANE</p>
-                <div className="flex justify-center space-x-2 mt-1">
-                  <span className="text-xs">📷</span>
-                  <span className="text-xs">🎵</span>
-                  <span className="text-xs">🐦</span>
-                </div>
-                <p className="text-xs text-gray-600 mt-1">Shop my faves</p>
-              </div>
+    <div className="flex items-end justify-center gap-0.5 h-8">
+      {[...Array(barCount)].map((_, i) => (
+        <div
+          key={i}
+          className={`w-1 rounded ${color === 'white/60' ? 'bg-white/60' : `bg-${color}`} animate-wave`}
+          style={{
+            animationDelay: `${i * 0.08}s`,
+            height: `${maxHeight}px`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
-              {/* Product Cards */}
-              <div className="px-3 space-y-2">
-                <div className="relative h-16 bg-gradient-to-r from-pink-100 to-pink-50 rounded-xl flex items-center px-3">
-                  <div className="w-12 h-12 bg-pink-200 rounded-lg"></div>
-                  <div className="ml-3 flex-1">
-                    <div className="h-2 bg-pink-300 rounded w-20 mb-1"></div>
-                    <div className="h-2 bg-pink-200 rounded w-16"></div>
-                  </div>
-                </div>
-                <div className="h-14 bg-gradient-to-r from-purple-100 to-purple-50 rounded-xl"></div>
-                <div className="h-14 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl"></div>
-              </div>
-            </div>
-          </div>
+/* === ALL MOCKUPS (canonical Tailwind classes only) === */
+
+function ImageAdsMockup() {
+  return (
+    <div className="w-full max-w-40 bg-linear-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg overflow-hidden">
+      <div className="h-28 flex items-center justify-center text-white">
+        <div className="text-center">
+          <div className="text-4xl mb-2">Photo</div>
+          <div className="text-xs font-bold">IMAGE AD</div>
         </div>
-
-        {/* Floating Product Card */}
-        <div className="absolute -left-6 top-1/3 bg-white rounded-xl shadow-2xl p-2 w-24 z-10">
-          <div className="aspect-square bg-pink-200 rounded-lg mb-1"></div>
-          <div className="h-1.5 bg-gray-200 rounded w-full mb-1"></div>
-          <div className="h-1.5 bg-gray-200 rounded w-3/4"></div>
+      </div>
+      <div className="bg-white p-3 space-y-1.5">
+        <div className="h-2 bg-gray-200 rounded w-3/4"></div>
+        <div className="h-2 bg-gray-200 rounded w-1/2"></div>
+        <div className="h-6 bg-blue-600 rounded text-white text-xs flex items-center justify-center font-bold mt-2">
+          SHOP NOW
         </div>
       </div>
     </div>
   );
 }
 
-function AnalyticsEarningsMockup() {
+function VideoAdsMockup() {
   return (
-    <div className="h-full flex items-center justify-center px-4">
-      <div className="w-full max-w-xs">
-        {/* Earnings Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-5 mb-4">
-          <div className="flex items-center justify-between mb-1">
-            <p className="text-xs text-gray-600 font-medium">Total earnings</p>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+    <div className="w-full max-w-40 bg-black rounded-xl shadow-lg overflow-hidden relative">
+      <div className="h-36 bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+        <div className="text-white text-center">
+          <div className="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-2">
+            <div className="w-0 h-0 border-l-8 border-t-4 border-b-4 border-l-white border-t-transparent border-b-transparent ml-1"></div>
           </div>
-          <p className="text-3xl font-bold text-gray-900 mb-1">$6,202.90</p>
-          <p className="text-xs text-green-600 font-medium">+$722.98 past week</p>
-          
-          {/* Chart */}
-          <div className="mt-4 h-24 relative">
-            <svg className="w-full h-full" viewBox="0 0 200 80" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="rgb(147, 197, 253)" stopOpacity="0.5"/>
-                  <stop offset="100%" stopColor="rgb(147, 197, 253)" stopOpacity="0.1"/>
-                </linearGradient>
-              </defs>
-              <path d="M 0 60 Q 25 55, 50 50 T 100 35 T 150 25 T 200 15" fill="url(#chartGradient)" />
-              <path d="M 0 60 Q 25 55, 50 50 T 100 35 T 150 25 T 200 15" fill="none" stroke="rgb(59, 130, 246)" strokeWidth="2" />
-            </svg>
-          </div>
-
-          {/* Time Range Buttons */}
-          <div className="flex gap-2 mt-4">
-            {['1W', '1M', '3M', '1Y', 'All'].map((period) => (
-              <button
-                key={period}
-                className={`flex-1 py-1 text-xs font-medium rounded-lg ${
-                  period === '1W' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-600'
-                }`}
-              >
-                {period}
-              </button>
-            ))}
-          </div>
+          <div className="text-xs font-bold">VIDEO AD</div>
         </div>
+      </div>
+      <div className="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur rounded px-2 py-1 text-white text-xs text-center">
+        0:15
+      </div>
+    </div>
+  );
+}
 
-        {/* Clicks Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-5">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center space-x-2">
-              <span className="text-sm">🔗</span>
-              <p className="text-xs text-gray-600 font-medium">My clicks</p>
-            </div>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-          <p className="text-2xl font-bold text-gray-900 mb-2">302</p>
-          <p className="text-xs text-gray-500 mb-3">Dec 1-7</p>
-          
-          {/* Bar Chart */}
-          <div className="flex items-end justify-between h-12">
-            {[30, 40, 35, 45, 70, 50, 40].map((height, i) => (
-              <div key={i} className="flex flex-col items-center flex-1">
-                <div 
-                  className={`w-2 rounded-t ${i === 4 ? 'bg-blue-600' : 'bg-gray-200'}`}
-                  style={{ height: `${height}%` }}
-                ></div>
-                <span className="text-[8px] text-gray-400 mt-1">
-                  {['S', 'M', 'T', 'W', 'T', 'F', 'S'][i]}
-                </span>
-              </div>
-            ))}
+function InteractiveAdsMockup() {
+  return (
+    <div className="w-full max-w-40 bg-linear-to-br from-cyan-500 to-blue-600 rounded-xl shadow-lg p-4">
+      <div className="text-white text-center">
+        <div className="text-3xl mb-2">Tap</div>
+        <div className="text-xs font-bold mb-3">TAP TO EXPLORE</div>
+        <div className="flex gap-2 justify-center">
+          <div className="w-10 h-10 bg-white/30 rounded-lg"></div>
+          <div className="w-10 h-10 bg-white/30 rounded-lg"></div>
+          <div className="w-10 h-10 bg-white/30 rounded-lg"></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PlayableAdsMockup() {
+  return (
+    <div className="w-full max-w-40 bg-linear-to-br from-green-500 to-emerald-600 rounded-xl shadow-lg p-4">
+      <div className="text-white text-center mb-3">
+        <div className="text-3xl mb-1">Gamepad</div>
+        <div className="text-xs font-bold">TRY NOW</div>
+      </div>
+      <div className="grid grid-cols-3 gap-1.5">
+        {[...Array(9)].map((_, i) => (
+          <div key={i} className="aspect-square bg-white/30 rounded-lg"></div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SocialPostsMockup() {
+  return (
+    <div className="w-full max-w-40 bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+      <div className="p-3 flex items-center gap-2 border-b border-gray-100">
+        <div className="w-7 h-7 bg-linear-to-br from-pink-500 to-purple-600 rounded-full"></div>
+        <div className="flex-1">
+          <div className="h-2 bg-gray-200 rounded w-16 mb-1"></div>
+          <div className="h-1.5 bg-gray-100 rounded w-10"></div>
+        </div>
+      </div>
+      <div className="h-32 bg-linear-to-br from-orange-400 to-pink-500"></div>
+      <div className="p-3 flex gap-3">
+        <span className="text-lg">Like</span>
+        <span className="text-lg">Comment</span>
+        <span className="text-lg">Share</span>
+      </div>
+    </div>
+  );
+}
+
+function StoriesReelsMockup() {
+  return (
+    <div className="w-24 bg-black rounded-2xl shadow-lg overflow-hidden">
+      <div className="h-44 bg-linear-to-br from-purple-600 via-pink-600 to-red-600 flex items-center justify-center text-white">
+        <div className="text-center">
+          <div className="text-4xl mb-2">Play</div>
+          <div className="text-xs font-bold">REEL</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BannersCoversMockup() {
+  return (
+    <div className="w-full max-w-48 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+      <div className="h-20 bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 flex items-center justify-center text-white">
+        <div className="text-center">
+          <div className="text-base font-bold">YOUR BRAND</div>
+          <div className="text-xs mt-1 opacity-90">PROFESSIONAL COVER</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ThumbnailsMockup() {
+  return (
+    <div className="w-full max-w-40 bg-red-600 rounded-lg shadow-lg overflow-hidden relative">
+      <div className="h-24 bg-linear-to-br from-red-500 to-orange-600 flex items-center justify-center">
+        <div className="text-white text-center">
+          <div className="text-3xl font-black mb-1">CLICK</div>
+          <div className="text-lg font-bold">ME!</div>
+        </div>
+      </div>
+      <div className="absolute bottom-2 right-2 bg-black text-white text-xs px-2 py-0.5 rounded font-medium">
+        10:24
+      </div>
+    </div>
+  );
+}
+
+function MemesTrendsMockup() {
+  return (
+    <div className="w-full max-w-40 bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+      <div className="h-32 bg-linear-to-br from-lime-400 to-green-500 flex items-center justify-center p-4">
+        <div className="text-center">
+          <div className="text-4xl mb-2">Laughing Face</div>
+          <div className="text-sm font-black text-white drop-shadow-lg">TRENDING</div>
+          <div className="text-sm font-black text-white drop-shadow-lg">MEME</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BusinessCardsMockup() {
+  return (
+    <div className="w-full max-w-40 h-24 bg-linear-to-br from-slate-800 to-gray-900 rounded-lg shadow-lg p-3 text-white">
+      <div className="text-xs font-bold mb-1">JOHN DOE</div>
+      <div className="text-xs opacity-70 mb-2">Creative Director</div>
+      <div className="text-xs opacity-50 space-y-0.5">
+        <div>Email: john@email.com</div>
+        <div>Phone: +1 234 567 890</div>
+      </div>
+    </div>
+  );
+}
+
+function LogosBrandMockup() {
+  return (
+    <div className="w-full max-w-40 space-y-3">
+      <div className="bg-white rounded-xl shadow-lg p-4 flex items-center justify-center border border-gray-200">
+        <div className="w-14 h-14 bg-linear-to-br from-violet-600 to-fuchsia-600 rounded-full flex items-center justify-center text-white font-black text-xl">
+          CK
+        </div>
+      </div>
+      <div className="grid grid-cols-3 gap-2">
+        <div className="h-6 bg-violet-600 rounded"></div>
+        <div className="h-6 bg-fuchsia-600 rounded"></div>
+        <div className="h-6 bg-purple-600 rounded"></div>
+      </div>
+    </div>
+  );
+}
+
+function FlyersMockup() {
+  return (
+    <div className="w-full max-w-36 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+      <div className="h-40 bg-linear-to-br from-yellow-500 via-orange-500 to-red-600 p-3 text-white">
+        <div className="text-lg font-black mb-2">BIG SALE</div>
+        <div className="text-4xl font-black mb-1">50%</div>
+        <div className="text-xs font-bold">OFF EVERYTHING</div>
+      </div>
+    </div>
+  );
+}
+
+function BrochuresMockup() {
+  return (
+    <div className="w-full max-w-40 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+      <div className="h-16 bg-linear-to-r from-sky-600 to-indigo-600"></div>
+      <div className="p-3 space-y-1.5">
+        <div className="h-2 bg-gray-300 rounded"></div>
+        <div className="h-2 bg-gray-300 rounded w-4/5"></div>
+        <div className="h-2 bg-gray-200 rounded w-3/4"></div>
+        <div className="h-2 bg-gray-200 rounded w-2/3"></div>
+      </div>
+    </div>
+  );
+}
+
+function PostersMockup() {
+  return (
+    <div className="w-full max-w-36 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+      <div className="h-40 bg-linear-to-br from-rose-600 via-pink-600 to-purple-700 flex items-center justify-center text-white p-3">
+        <div className="text-center">
+          <div className="text-xl font-black mb-2">EVENT</div>
+          <div className="text-xs mb-1">MARCH 25, 2025</div>
+          <div className="text-xs font-bold">BE THERE!</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function InfographicsMockup() {
+  return (
+    <div className="w-full max-w-40 bg-white rounded-lg shadow-lg p-3 border border-gray-200">
+      <div className="text-center mb-3">
+        <div className="text-3xl font-black text-teal-600">73%</div>
+        <div className="text-xs text-gray-600 font-medium">GROWTH</div>
+      </div>
+      <div className="space-y-2">
+        <div className="h-2.5 bg-teal-500 rounded-full"></div>
+        <div className="h-2.5 bg-cyan-500 rounded-full w-4/5"></div>
+        <div className="h-2.5 bg-blue-500 rounded-full w-3/5"></div>
+      </div>
+    </div>
+  );
+}
+
+function PresentationsMockup() {
+  return (
+    <div className="w-full max-w-40 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+      <div className="h-28 bg-linear-to-br from-amber-500 to-orange-600 p-3 text-white">
+        <div className="text-base font-bold mb-2">Q4 Results</div>
+        <div className="grid grid-cols-2 gap-2 text-xs">
+          <div className="bg-white/20 backdrop-blur rounded p-1.5 text-center">Revenue Up</div>
+          <div className="bg-white/20 backdrop-blur rounded p-1.5 text-center">Growth Right</div>
+        </div>
+      </div>
+      <div className="flex gap-1 p-2 justify-center">
+        <div className="w-6 h-4 bg-gray-300 rounded"></div>
+        <div className="w-6 h-4 bg-gray-400 rounded"></div>
+        <div className="w-6 h-4 bg-gray-300 rounded"></div>
+      </div>
+    </div>
+  );
+}
+
+function PackagingMockup() {
+  return (
+    <div className="w-full max-w-32">
+      <div className="bg-linear-to-br from-emerald-500 to-teal-600 rounded-lg shadow-lg p-4 transform hover:rotate-6 transition-transform">
+        <div className="bg-white/20 backdrop-blur rounded h-20 flex items-center justify-center text-white">
+          <div className="text-center">
+            <div className="text-xl font-black">BRAND</div>
+            <div className="text-xs font-medium">PRODUCT</div>
           </div>
         </div>
       </div>
@@ -212,173 +379,114 @@ function AnalyticsEarningsMockup() {
   );
 }
 
-function AnalyticsStatsMockup() {
+function TextToImageMockup() {
   return (
-    <div className="h-full flex items-center justify-center px-4">
-      <div className="w-full max-w-xs bg-white rounded-2xl shadow-xl p-5">
-        {/* Header */}
-        <div className="flex items-center space-x-3 mb-5">
-          <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-            <span className="text-white text-lg font-bold">PA</span>
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-bold text-gray-900">Perplexity AI</p>
-            <p className="text-xs text-gray-600">You mentioned 10 times • 🎵 📷 @</p>
-          </div>
+    <div className="w-full max-w-40 space-y-2">
+      <div className="bg-white rounded-lg shadow border border-gray-200 p-2 text-xs text-gray-600">
+        "sunset over mountains..."
+      </div>
+      <div className="h-28 bg-linear-to-br from-orange-500 via-pink-500 to-purple-600 rounded-lg shadow-lg flex items-center justify-center text-white relative overflow-hidden">
+        <div className="text-center relative z-10">
+          <div className="text-3xl mb-1">Sparkles</div>
+          <div className="text-xs font-bold">AI GENERATED</div>
         </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-3 gap-3 mb-4">
-          <div>
-            <p className="text-xs text-gray-600 mb-1">VIEWS</p>
-            <p className="text-lg font-bold text-gray-900">350.1k</p>
-          </div>
-          <div>
-            <p className="text-xs text-gray-600 mb-1">LIKES</p>
-            <p className="text-lg font-bold text-gray-900">3.4k</p>
-          </div>
-          <div>
-            <p className="text-xs text-gray-600 mb-1">COMMENTS</p>
-            <p className="text-lg font-bold text-gray-900">1.4k</p>
-          </div>
-        </div>
-
-        {/* Affiliate Sales */}
-        <div className="mb-4">
-          <p className="text-xs text-gray-600 mb-1">AFFILIATE SALES</p>
-          <p className="text-2xl font-bold text-gray-900">$1,454</p>
-        </div>
-
-        {/* Chart */}
-        <div className="h-24 relative mb-4">
-          <svg className="w-full h-full" viewBox="0 0 200 80" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="statsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="rgb(96, 165, 250)" stopOpacity="0.5"/>
-                <stop offset="100%" stopColor="rgb(96, 165, 250)" stopOpacity="0.1"/>
-              </linearGradient>
-            </defs>
-            <path d="M 0 65 L 20 60 L 40 62 L 60 55 L 80 50 L 100 45 L 120 40 L 140 38 L 160 30 L 180 25 L 200 20" fill="url(#statsGradient)" />
-            <path d="M 0 65 L 20 60 L 40 62 L 60 55 L 80 50 L 100 45 L 120 40 L 140 38 L 160 30 L 180 25 L 200 20" fill="none" stroke="rgb(59, 130, 246)" strokeWidth="2" />
-          </svg>
-        </div>
-
-        {/* Action Buttons */}
-        <button className="w-full bg-gray-100 text-gray-700 py-2.5 rounded-xl text-sm font-medium mb-2 hover:bg-gray-200 transition-colors">
-          + Add affiliate product
-        </button>
-        <button className="w-full bg-gray-900 text-white py-2.5 rounded-xl text-sm font-medium hover:bg-gray-800 transition-colors flex items-center justify-center">
-          Pitch Brand
-          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </button>
+        <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"></div>
       </div>
     </div>
   );
 }
 
-function FollowersEngagementMockup() {
+function TextToVideoMockup() {
   return (
-    <div className="h-full flex items-center justify-center px-4">
-      <div className="w-full max-w-xs space-y-4">
-        {/* Followers Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-6">
-          <div className="flex items-center space-x-2 mb-2">
-            <div className="w-6 h-6 bg-gray-200 rounded flex items-center justify-center">
-              <span className="text-xs">👥</span>
-            </div>
-            <p className="text-xs text-gray-600 font-medium">FOLLOWERS</p>
-          </div>
-          <p className="text-4xl font-bold text-gray-900">1.4M</p>
+    <div className="w-full max-w-40 bg-gray-900 rounded-lg shadow-lg overflow-hidden relative">
+      <div className="h-32 bg-linear-to-br from-blue-600 via-indigo-600 to-purple-700 flex items-center justify-center">
+        <div className="text-white text-center">
+          <div className="text-3xl mb-2">Film</div>
+          <div className="text-xs font-bold">AI VIDEO</div>
         </div>
-
-        {/* Engagement Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-6">
-          <div className="flex items-center space-x-2 mb-2">
-            <div className="w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center">
-              <span className="text-xs">⚡</span>
-            </div>
-            <p className="text-xs text-gray-600 font-medium">ENGAGEMENT</p>
-          </div>
-          <p className="text-4xl font-bold text-gray-900">12.8%</p>
-        </div>
+      </div>
+      <div className="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-bold">
+        AI
       </div>
     </div>
   );
 }
 
-function EmailListMockup() {
+function ImageVariationsMockup() {
   return (
-    <div className="h-full flex items-center justify-center px-4">
-      <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl p-6">
-        {/* Email List Item */}
-        <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
-          <div className="flex-shrink-0">
-            <input 
-              type="checkbox" 
-              checked 
-              readOnly
-              className="w-5 h-5 rounded border-gray-300"
-            />
-          </div>
-          <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200">
-            <img 
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" 
-              alt="Contact"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold text-gray-900">tracy_smith@gmail.com</p>
-          </div>
-        </div>
+    <div className="grid grid-cols-2 gap-2 max-w-40">
+      <div className="h-16 bg-linear-to-br from-green-500 to-teal-500 rounded-lg shadow"></div>
+      <div className="h-16 bg-linear-to-br from-teal-500 to-cyan-500 rounded-lg shadow"></div>
+      <div className="h-16 bg-linear-to-br from-cyan-500 to-blue-500 rounded-lg shadow"></div>
+      <div className="h-16 bg-linear-to-br from-blue-500 to-green-500 rounded-lg shadow"></div>
+    </div>
+  );
+}
 
-        {/* Additional List Items Placeholder */}
-        <div className="mt-4 space-y-2">
-          <div className="h-16 bg-gray-100 rounded-xl"></div>
-          <div className="h-16 bg-gray-100 rounded-xl"></div>
+function ScriptToVideoMockup() {
+  return (
+    <div className="w-full max-w-40 bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+      <div className="h-28 bg-linear-to-br from-orange-600 to-pink-600 flex items-center justify-center text-white">
+        <div className="text-center">
+          <div className="text-3xl mb-1">Microphone</div>
+          <div className="text-xs font-bold">VOICEOVER</div>
+          <div className="text-xs">+ VIDEO</div>
         </div>
+      </div>
+      <div className="bg-gray-800 p-2 flex items-center justify-center gap-1">
+        <div className="w-1 h-3 bg-red-500 rounded"></div>
+        <div className="w-1 h-5 bg-red-500 rounded"></div>
+        <div className="w-1 h-2 bg-red-500 rounded"></div>
+        <div className="w-1 h-4 bg-red-500 rounded"></div>
+        <div className="w-1 h-3 bg-red-500 rounded"></div>
       </div>
     </div>
   );
 }
 
-function MobilePreviewMockup({ image }) {
+function AudioToTextMockup() {
   return (
-    <div className="relative h-full flex items-center justify-center">
-      {/* Phone Device */}
-      <div className="relative w-48 sm:w-52">
-        <div className="bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
-          <div className="bg-black rounded-[2.2rem] overflow-hidden">
-            {/* Status Bar */}
-            <div className="flex justify-center pt-2 pb-1">
-              <div className="w-20 h-4 bg-gray-900 rounded-full"></div>
-            </div>
+    <div className="w-full max-w-40 bg-white rounded-lg shadow-lg p-3 border border-gray-200">
+      <div className="flex items-center gap-2 mb-3">
+        <div className="text-2xl">Music</div>
+        <AnimatedWaveform barCount={10} color="violet-600" maxHeight={22} />
+      </div>
+      <div className="space-y-1.5">
+        <div className="h-2 bg-gray-200 rounded"></div>
+        <div className="h-2 bg-gray-200 rounded w-5/6"></div>
+        <div className="h-2 bg-gray-200 rounded w-4/5"></div>
+      </div>
+    </div>
+  );
+}
 
-            {/* Phone Content */}
-            <div className="relative h-72 sm:h-80">
-              <img 
-                src={image} 
-                alt="Mobile preview"
-                className="w-full h-full object-cover"
-              />
-              
-              {/* Overlay UI */}
-              <div className="absolute top-4 left-4 right-4">
-                <div className="bg-white/90 backdrop-blur rounded-2xl p-3 shadow-lg">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
-                    <div className="flex-1">
-                      <div className="h-2 bg-gray-300 rounded w-20 mb-1"></div>
-                      <div className="h-1.5 bg-gray-200 rounded w-16"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+function TextToAudioMockup() {
+  return (
+    <div className="w-full max-w-40 bg-linear-to-br from-yellow-500 to-orange-600 rounded-lg shadow-lg p-3 text-white">
+      <div className="text-xs mb-3 opacity-90 text-center">
+        "Hello, this is your AI voice..."
+      </div>
+      <div className="bg-white/20 backdrop-blur rounded-full p-3 flex items-center justify-center mb-2">
+        <div className="text-3xl">Speaker</div>
+      </div>
+      <AnimatedWaveform barCount={12} color="white/60" maxHeight={20} />
+    </div>
+  );
+}
+
+function PersonaGeneratorMockup() {
+  return (
+    <div className="w-full max-w-40 bg-white rounded-lg shadow-lg p-3 border border-gray-200">
+      <div className="flex items-center gap-2 mb-3">
+        <div className="w-9 h-9 bg-linear-to-br from-cyan-500 to-indigo-600 rounded-full"></div>
+        <div>
+          <div className="h-2 bg-gray-300 rounded w-14 mb-1"></div>
+          <div className="h-1.5 bg-gray-200 rounded w-10"></div>
         </div>
+      </div>
+      <div className="space-y-2 text to-text-xs">
+        <div className="bg-blue-50 rounded p-2 text-center font-medium text-gray-700">Age: 25-34</div>
+        <div className="bg-purple-50 rounded p-2 text-center font-medium text-gray-700">Tech-savvy</div>
       </div>
     </div>
   );

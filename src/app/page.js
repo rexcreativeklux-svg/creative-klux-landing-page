@@ -14,6 +14,8 @@ import TestimonialSection from "./components/TestimonialSection";
 import BlueSection from "./components/BlueSection";
 import Footer from "./components/Footer";
 import ImageSection from "./components/ImageSection";
+import CustomStack from "./components/CustomStackSection";
+import AIFunnelSection from "./components/AIFunnelSection";
 
 /* -----------------------------------------------------------------
    FULL METADATA – now lives in the page file (clean <head>)
@@ -111,6 +113,8 @@ export default function Home() {
         <CreativeSection />
       </section>
 
+       <AIFunnelSection />
+
       <section id="managers">
         <MoreSection />
         <ImageSection />
@@ -124,6 +128,9 @@ export default function Home() {
       <section id="pricing">
         <PricingSection />
       </section>
+
+      <CustomStack />
+     
 
       <ShowcaseCarouselSection />
       <TestimonialSection />

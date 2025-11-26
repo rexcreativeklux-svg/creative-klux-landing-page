@@ -32,3 +32,13 @@
         .animation-delay-4000 {
           animation-delay: 4s;
         }
+
+        @keyframes wave {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
+}
+
+.animate-wave {
+  animation: wave 1.8s ease-in-out infinite;
+  transform-origin: bottom;
+}
