@@ -6,6 +6,7 @@ import { Play, Pause, Sparkles, Zap, Rocket, Wand2 } from "lucide-react";
 export default function CreativekluxHero() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
+  const [loadingButton, setLoadingButton] = useState(null);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -16,6 +17,21 @@ export default function CreativekluxHero() {
     }
     setIsPlaying(!isPlaying);
   };
+
+  const handleStartFree = () => {
+    setLoadingButton("start-free");
+    setTimeout(() => {
+      window.location.href = "../pages/pricing"; 
+    }, 500);
+  };
+
+  // Spinner Component
+  const Loader = () => (
+    <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
+      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+    </svg>
+  );
 
   const features = [
     { icon: <Zap className="w-7 h-7" />, title: "10x Faster Creation", desc: "Generate full campaigns in seconds, not hours" },
@@ -70,9 +86,22 @@ export default function CreativekluxHero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <button className="group px-4 py-2 bg-blue-700 text-white font-medium rounded-lg cursor-pointer shadow-xl hover:shadow-purple-300/50 transition-all duration-200 hover:scale-105 flex items-center gap-2">
-              Start Creating Free
-              <Rocket className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+           <button
+              onClick={handleStartFree}
+              disabled={loadingButton === "start-free"}
+              className="group relative px-4 py-2 bg-blue-700 text-white font-medium rounded-md cursor-pointer shadow-xl hover:shadow-purple-300/50 transition-all duration-200 hover:scale-105 flex items-center gap-3 disabled:opacity-70"
+            >
+              {loadingButton === "start-free" ? (
+                <>
+                  <Loader />
+                  <span>Redirecting...</span>
+                </>
+              ) : (
+                <>
+                  Start Creating 
+                  <Rocket className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </button>
             <button className="px-4 py-2 border border-gray-300 text-gray-800 font-medium rounded-lg hover:border-blue-600 hover:bg-purple-50/50 transition-all cursor-pointer duration-200 hover:scale-105 backdrop-blur-sm">
               Watch How It Works
@@ -86,7 +115,7 @@ export default function CreativekluxHero() {
                 <video
                   ref={videoRef}
                   className="w-full h-full object-cover"
-                  poster="/creativeklux-demo-poster.jpg"
+                  poster="/og-image.jpg"
                   playsInline
                   preload="metadata"
                   muted
