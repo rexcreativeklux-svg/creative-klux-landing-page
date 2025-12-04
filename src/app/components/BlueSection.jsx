@@ -33,7 +33,7 @@ export default function BlueSection() {
           <button
             onClick={handleGetStarted}
             disabled={isLoading}
-            className="relative bg-gray-900 hover:bg-black text-white text-lg sm:text-xl cursor-pointer font-bold px-8 sm:px-8 py-3 sm:py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl flex items-center gap-4 mx-auto disabled:opacity-80"
+            className="relative bg-gray-900 hover:bg-black text-white text-lg sm:text-xl cursor-pointer font-bold px-8 sm:px-8 py-3 sm:py-3 rounded-lg transition-all duration-200 hover:scale-105 shadow-xl hover:shadow-2xl flex items-center gap-4 mx-auto disabled:opacity-80"
           >
             {isLoading ? (
               <>

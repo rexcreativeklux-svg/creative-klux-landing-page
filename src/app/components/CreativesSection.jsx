@@ -1,11 +1,9 @@
 'use client';
 
-import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function CreativeSection() {
-
-
     const creatives = [
         {
             badge: '🚀 High-Converting Ads',
@@ -133,19 +131,45 @@ export default function CreativeSection() {
         }
     ];
 
+    // Animation variants
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
+    };
 
+    const staggerContainer = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
 
     return (
         <section className="py-4 sm:py-6 md:py-10 lg:py-5 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-12 sm:mb-16 md:mb-20">
-                    <h2 className="text-4xl sm:text-4xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-4">
+                    <motion.h2 
+                        className="text-4xl sm:text-4xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.5 }}
+                    >
                         Creatives
-                    </h2>
-                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
+                    </motion.h2>
+                    <motion.p 
+                        className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                    >
                         Unleash your creativity without limits. Design professional ads, viral social content, and stunning brand assets—all with AI-powered tools that make you look like a pro.
-                    </p>
+                    </motion.p>
                 </div>
 
                 {/* Feature Items */}
@@ -154,6 +178,8 @@ export default function CreativeSection() {
                         <FeatureItem
                             key={index}
                             feature={feature}
+                            fadeInUp={fadeInUp}
+                            staggerContainer={staggerContainer}
                         />
                     ))}
                 </div>
@@ -162,7 +188,7 @@ export default function CreativeSection() {
     );
 }
 
-function FeatureItem({ feature }) {
+function FeatureItem({ feature, fadeInUp, staggerContainer }) {
     const [loadingButton, setLoadingButton] = useState(null);
 
     // Spinner Component
@@ -180,44 +206,72 @@ function FeatureItem({ feature }) {
         }, 400);
     };
 
-    const handleLearnMore = () => {
-        setLoadingButton(`learn-more-${feature.title}`);
-        // Optional: scroll to top or do something
-        setTimeout(() => setLoadingButton(null), 600);
-    };
-
-
-
     return (
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
             {/* Content Side - Always on Left */}
-            <div className="space-y-6 sm:space-y-6 items max-w-lg lg:order-1">
+            <motion.div 
+                className="space-y-6 sm:space-y-6 items max-w-lg lg:order-1"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+            >
                 {/* Badge */}
-                <div className="inline-block">
+                <motion.div 
+                    className="inline-block"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.5 }}
+                >
                     <span className={`${feature.badgeColor} px-4 sm:px-5 py-2 sm:py-2 rounded-full text-sm sm:text-base font-semibold`}>
                         {feature.badge}
                     </span>
-                </div>
+                </motion.div>
 
                 {/* Title */}
-                <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                <motion.h3 
+                    className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                >
                     {feature.title}
-                </h3>
+                </motion.h3>
 
                 {/* Description */}
-                <p className="text-base sm:text-md text-gray-600 leading-relaxed">
+                <motion.p 
+                    className="text-base sm:text-md text-gray-600 leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
                     {feature.description}
-                </p>
+                </motion.p>
 
                 {/* Feature Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <motion.div 
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false }}
+                >
                     {feature.features.map((item, idx) => (
-                        <FeatureCard key={idx} feature={item} />
+                        <FeatureCard key={idx} feature={item} fadeInUp={fadeInUp} />
                     ))}
-                </div>
+                </motion.div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap gap-4 pt-4">
+                <motion.div 
+                    className="flex flex-wrap gap-4 pt-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                >
                     <button
                         onClick={handleGetStarted}
                         disabled={loadingButton === `get-started-${feature.title}`}
@@ -225,7 +279,6 @@ function FeatureItem({ feature }) {
                     >
                         Get Started
                         {loadingButton === `get-started-${feature.title}` && <Loader />}
-
                     </button>
                     <button className="text-gray-700 cursor-pointer hover:text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors duration-200 hover:underline flex items-center gap-2">
                         Learn More
@@ -233,25 +286,35 @@ function FeatureItem({ feature }) {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
             {/* Visual Side - Always on Right */}
-            <div className="lg:order-2 ">
+            <motion.div 
+                className="lg:order-2"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+            >
                 {feature.mockupType === 'phone' ? (
                     <PhoneMockup feature={feature} />
                 ) : (
                     <InterfaceMockup feature={feature} />
                 )}
-            </div>
+            </motion.div>
         </div>
     );
 }
 
-function FeatureCard({ feature }) {
+function FeatureCard({ feature, fadeInUp }) {
     return (
-        <div className="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-4 cursor-pointer hover:scale-95 transition duration-200">
-            <div className="flex flex-col items-start ">
+        <motion.div 
+            className="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-4 cursor-pointer hover:scale-95 transition duration-200"
+            variants={fadeInUp}
+            transition={{ duration: 0.4 }}
+        >
+            <div className="flex flex-col items-start">
                 <div className="text-2xl shrink-0">
                     {feature.icon}
                 </div>
@@ -264,7 +327,7 @@ function FeatureCard({ feature }) {
                     </p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
@@ -306,9 +369,9 @@ function PhoneMockup({ feature }) {
 
                             {/* Content Placeholder */}
                             <div className="px-4 space-y-3">
-                                <div className="h-20 bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl"></div>
-                                <div className="h-16 bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl"></div>
-                                <div className="h-16 bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl"></div>
+                                <div className="h-20 bg-linear-to-r from-gray-100 to-gray-200 rounded-2xl"></div>
+                                <div className="h-16 bg-linear-to-r from-gray-100 to-gray-200 rounded-2xl"></div>
+                                <div className="h-16 bg-linear-to-r from-gray-100 to-gray-200 rounded-2xl"></div>
                             </div>
                         </div>
                     </div>
@@ -322,7 +385,7 @@ function PhoneMockup({ feature }) {
                             <span className="text-xs text-gray-600 font-medium">Layout</span>
                         </div>
                         <div className="flex items-center space-x-2">
-                            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-red-400 to-pink-400"></div>
+                            <div className="w-5 h-5 rounded-full bg-linear-to-br from-red-400 to-pink-400"></div>
                             <span className="text-xs text-gray-600 font-medium">Color</span>
                         </div>
                         <div className="flex items-center space-x-2">
