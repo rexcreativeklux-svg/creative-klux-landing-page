@@ -1,1 +1,209 @@
-[00:00:03.584] Server  LOG      ✓ Ready in 3s
+[00:00:03.077] Server  LOG      ✓ Ready in 2.6s
+[00:00:51.658] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:02.118] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expression expected
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arr
+ 136 │                 </div>
+     ·                 ─
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arr
+ 136 │                 </div>
+     ·                  ─────
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:18:02.225] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
+Error:   × Expression expected
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arr
+ 136 │                 </div>
+     ·                 ─
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arr
+ 136 │                 </div>
+     ·                  ─────
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:18:05.602] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
+Error:   × Expression expected
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arrow
+ 136 │                 </div>
+     ·                 ─
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arrow
+ 136 │                 </div>
+     ·                  ─────
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:18:05.724] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expression expected
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arrow
+ 136 │                 </div>
+     ·                 ─
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arrow
+ 136 │                 </div>
+     ·                  ─────
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:18:05.724] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expression expected
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arrow
+ 136 │                 </div>
+     ·                 ─
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arrow
+ 136 │                 </div>
+     ·                  ─────
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:18:07.739] Server  LOG      ○ Compiling /_error ...
+[00:18:08.623] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expression expected
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arrow
+ 136 │                 </div>
+     ·                 ─
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arrow
+ 136 │                 </div>
+     ·                  ─────
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:18:08.623] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arrow
+ 136 │                 </div>
+     ·                 ─
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
+ 133 │                 <div className="absolute bottom-6 right-6">
+ 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
+ 135 │                   <Arrow
+ 136 │                 </div>
+     ·                  ─────
+ 137 │ 
+ 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
+ 139 │                   {/* Title */}
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:18:10.806] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:18:11.863] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:18:13.417] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
