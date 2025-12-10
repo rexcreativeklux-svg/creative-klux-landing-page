@@ -1174,8 +1174,23 @@
   .rotate-5 {
     rotate: 5deg;
   }
+  .rotate-11 {
+    rotate: 11deg;
+  }
   .rotate-12 {
     rotate: 12deg;
+  }
+  .rotate-13 {
+    rotate: 13deg;
+  }
+  .rotate-15 {
+    rotate: 15deg;
+  }
+  .rotate-20 {
+    rotate: 20deg;
+  }
+  .rotate-25 {
+    rotate: 25deg;
   }
   .rotate-45 {
     rotate: 45deg;
@@ -1279,6 +1294,9 @@
   }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
   }
   .space-y-0\.5 {
     :where(& > :not(:last-child)) {

@@ -178,7 +178,7 @@ export default function CreativekluxHero() {
                       {String(i + 1).padStart(2, '0')}
                     </div>
                     <div className="absolute bottom-4 right-4">
-                      <div className="w-3 h-3 border-b-4 border-r-4 border-black transform rotate-45"></div>
+                      <div className="w-3 h-3 border-b-4 border-r-4 border-black transform rotate-11"></div>
                     </div>
                     <h4 className="text-sm font-black text-gray-700 uppercase tracking-tight px-4 text-center">
                       {item.title}
@@ -194,12 +194,12 @@ export default function CreativekluxHero() {
                       <div className="w-6 h-6 bg-[#1264ff] transform rotate-45"></div>
                     </div>
 
-                    <p className="text-white text-sm leading-relaxed max-w-xs">
+                    <p className="text-white px-3 text-sm leading-relaxed max-w-xs">
                       {item.desc}
                     </p>
 
                     {/* Bottom Section */}
-                    <div className="flex absolute bottom-4 pt-4 border-t border-gray-700">
+                    <div className="flex absolute justify-between gap-10 bottom-4 pt-4 border-t border-gray-700">
                       <div className="flex items-center space-x-2">
                         <div className="w-6 h-6 bg-[#1264ff] rounded-sm flex items-center justify-center">
                           <span className="text-black text-xs font-bold">✓</span>
