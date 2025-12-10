@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Globe, Loader2 } from 'lucide-react';
 import CreativeSelectionModal from './CreativeSelectionModal';
+import Image from 'next/image';
 
 export default function Hero() {
     const [url, setUrl] = useState('');
@@ -59,8 +60,8 @@ export default function Hero() {
                                         type="submit"
                                         disabled={isEmpty || isLoading}
                                         className={`px-6 py-2 absolute cursor-pointer right-2 rounded-lg font-bold text-base md:text-sm transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap ${isEmpty || isLoading
-                                                ? 'bg-[#3864e895] text-white cursor-not-allowed'
-                                                : 'bg-[#1447e6] hover:bg-blue-700 text-white shadow-md shadow-blue-600/30 hover:scale-105'
+                                            ? 'bg-[#3864e895] text-white cursor-not-allowed'
+                                            : 'bg-[#1447e6] hover:bg-blue-700 text-white shadow-md shadow-blue-600/30 hover:scale-105'
                                             }`}
                                     >
                                         {isLoading ? (
@@ -85,53 +86,15 @@ export default function Hero() {
                     {/* Feature Cards with Phone Mockup */}
                     <div className="relative max-w-6xl mx-auto px-4">
                         {/* Center Phone Mockup */}
-                        <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-80 z-10">
-                            <div className="bg-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl">
-                                <div className="bg-white rounded-4xl sm:rounded-[2.5rem] overflow-hidden">
-                                    {/* Phone Content */}
-                                    <div className="relative h-[500px] sm:h-[550px] md:h-[550px] bg-linear-to-b from-gray-50 to-white">
-                                        {/* Status Bar */}
-                                        <div className="flex justify-center pt-3 sm:pt-4">
-                                            <div className="w-20 sm:w-24 h-5 sm:h-6 bg-gray-900 rounded-full"></div>
-                                        </div>
-
-                                        {/* Profile Section */}
-                                        <div className="p-4 sm:p-6 text-center">
-                                            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-linear-to-br from-blue-400 to-purple-600 rounded-full mx-auto mb-2 sm:mb-3"></div>
-                                            <h2 className="text-lg sm:text-xl font-bold text-gray-900">ALEXA KING</h2>
-                                            <p className="text-xs sm:text-sm text-gray-600">Fitness & Lifestyle Creator</p>
-                                        </div>
-
-                                        {/* Featured Content */}
-                                        <div className="px-3 sm:px-4 space-y-2 sm:space-y-3">
-                                            <div className="bg-linear-to-r from-blue-500 to-purple-500 rounded-xl sm:rounded-2xl p-3 sm:p-4 text-white">
-                                                <div className="rounded-lg mb-2 bg-white/20 h-20 sm:h-24 w-full"></div>
-                                                <p className="text-xs sm:text-sm font-semibold">My Most-Used Activewear</p>
-                                                <p className="text-xs opacity-90">42 items</p>
-                                            </div>
-
-                                            {/* Product Grid */}
-                                            <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
-                                                {[1, 2, 3].map((i) => (
-                                                    <div key={i} className="aspect-square bg-gray-200 rounded-lg"></div>
-                                                ))}
-                                            </div>
-
-                                            {/* Service Card */}
-                                            <div className="bg-white border-2 border-gray-200 rounded-xl sm:rounded-2xl p-2.5 sm:p-3">
-                                                <div className="flex space-x-2 sm:space-x-3">
-                                                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-200 rounded-lg shrink-0"></div>
-                                                    <div className="flex-1 min-w-0">
-                                                        <p className="text-xs font-bold text-gray-900 line-clamp-2">Personal Training Consultation</p>
-                                                        <p className="text-xs text-gray-600 mt-0.5 sm:mt-1">1 hour session</p>
-                                                        <p className="text-xs sm:text-sm font-bold text-gray-900 mt-0.5 sm:mt-1">$50</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-85 z-10">
+                            <Image
+                                src="/images/hero-phone.png"
+                                alt="Hero phone mockup"
+                                width={800}
+                                height={600}
+                                priority
+                                className="w-full h-auto object-contain"
+                            />
                         </div>
 
                         {/* LEFT SIDE - 4 Cards */}

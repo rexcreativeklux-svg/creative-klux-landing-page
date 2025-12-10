@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Play, Pause, Sparkles, Zap, Rocket, Wand2, Target, TrendingUp, Users, Award, ArrowBigDown } from "lucide-react";
+import { Play, Pause, Sparkles, Zap, Rocket, Wand2, Target, TrendingUp, Users, Award } from "lucide-react";
 
 export default function CreativekluxHero() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -41,12 +41,40 @@ export default function CreativekluxHero() {
     { icon: <Sparkles className="w-7 h-7" />, title: "Brand Perfect", desc: "Every asset matches your brand voice & style automatically" },
   ];
 
-  // New "Who It's For" cards (replacing the old trust bar + useCases section)
+  // New "Who It's For" cards with flip functionality
   const whoItsFor = [
-    { icon: <Users className="w-7 h-7" />, title: "Agencies & SMMA", desc: "Scale creative output across multiple clients with consistent quality" },
-    { icon: <Target className="w-7 h-7" />, title: "Creators & Influencers", desc: "Professional content & ads without hiring designers" },
-    { icon: <TrendingUp className="w-7 h-7" />, title: "Brands & E-commerce", desc: "Run high-converting ad & social campaigns at scale" },
-    { icon: <Award className="w-7 h-7" />, title: "Startups & SMEs", desc: "Professional creatives on a budget — no tool overload" },
+    {
+      icon: <Users className="w-7 h-7" />,
+      title: "Agencies & SMMA",
+      desc: "Scale creative output for multiple clients with fast, high-quality ads and campaigns — no bottlenecks, no designer hiring needed.",
+      details: [
+        "Scale creative output for multiple clients with fast, high-quality ads and campaigns — no bottlenecks, no designer hiring needed."
+      ]
+    },
+    {
+      icon: <Target className="w-7 h-7" />,
+      title: "Creators & Influencers",
+      desc: "Produce professional thumbnails, social posts, ads, and brand assets in minutes — without ever hiring a designer.",
+      details: [
+        "Produce professional thumbnails, social posts, ads, and brand assets in minutes — without ever hiring a designer."
+      ]
+    },
+    {
+      icon: <TrendingUp className="w-7 h-7" />,
+      title: "Brands & E-commerce",
+      desc: "Launch high-converting ad campaigns, social content, product visuals, and video ads — perfect for teams without big in-house creative budgets.",
+      details: [
+        "Launch high-converting ad campaigns, social content, product visuals, and video ads — perfect for teams without big in-house creative budgets."
+      ]
+    },
+    {
+      icon: <Award className="w-7 h-7" />,
+      title: "Startups & SMEs",
+      desc: "Replace multiple design, video, and marketing tools with one lean solution — professional creatives on a startup-friendly budget.",
+      details: [
+        "Replace multiple design, video, and marketing tools with one lean solution — professional creatives on a startup-friendly budget."
+      ]
+    },
   ];
 
   const whatYouCanCreate = [
@@ -73,6 +101,21 @@ export default function CreativekluxHero() {
 
   return (
     <div className="w-full bg-white py-24 px-4 overflow-hidden">
+      <style>{`
+        .transform-style-3d {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+        .group:hover .group-hover\\:rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+      `}</style>
       <div className="max-w-7xl mx-auto">
 
         {/* Core Features */}
@@ -101,7 +144,7 @@ export default function CreativekluxHero() {
           ))}
         </motion.div>
 
-        {/* Who It's For – Image style cards */}
+        {/* Who It's For – Flip Cards */}
         <div className="mb-20">
           <motion.h2
             className="text-3xl md:text-4xl font-black text-center mb-16 text-gray-900 uppercase tracking-tight"
@@ -111,6 +154,7 @@ export default function CreativekluxHero() {
           >
             Who the app is for
           </motion.h2>
+
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             variants={staggerContainer}
@@ -122,30 +166,51 @@ export default function CreativekluxHero() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                className="group relative bg-white rounded-lg cursor-pointer py-8 hover:border-blue-600 border border-gray-200 hover:shadow-md transition-all duration-300 hover:-translate-y-2  overflow-hidden"
+                className="group relative h-72 cursor-pointer"
+                style={{ perspective: "1000px" }}
               >
-                {/* Number Badge */}
-                <div className="absolute top-3 left-3 text-4xl font-black text-gray-100 leading-none">
-                  {String(i + 1).padStart(2, '0')}
-                </div>
+                {/* THIS IS THE KEY FIX */}
+                <div className="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
 
-                {/* Arrow */}
-                <div className="absolute bottom-4 right-4">
-                  <div className="w-3 h-3 border-b-4 border-r-4 border-black transform rotate-5"></div>
-                </div>
+                  {/* FRONT – shows title */}
+                  <div className="absolute inset-0 backface-hidden bg-white rounded-lg py-8 border border-gray-200 hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col items-center justify-center">
+                    <div className="absolute top-3 left-3 text-4xl font-black text-gray-100 leading-none">
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+                    <div className="absolute bottom-4 right-4">
+                      <div className="w-3 h-3 border-b-4 border-r-4 border-black transform rotate-45"></div>
+                    </div>
+                    <h4 className="text-sm font-black text-gray-700 uppercase tracking-tight px-4 text-center">
+                      {item.title}
+                    </h4>
+                  </div>
 
-                <div className="relative z-10 flex flex-col items-center text-center pt-12">
-                  {/* Title */}
-                  <h4 className="text-md font-black text-gray-900 mb-6 uppercase tracking-tight">{item.title}</h4>
+                  {/* BACK – NO title, only description */}
+                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-black/90 rounded-lg border border-gray-800 flex flex-col justify-center items-center text-center">
+                    <div className="absolute top-3 left-3 text-4xl font-black text-[#1264ff] leading-none">
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+                    <div className="absolute top-6 right-6">
+                      <div className="w-6 h-6 bg-[#1264ff] transform rotate-45"></div>
+                    </div>
 
-                  {/* Profile Images */}
-                  <div className="flex items-center justify-center mb-6">
-                    <div className="flex -space-x-3">
-                      <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white"></div>
-                      <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-white"></div>
-                      <div className="w-10 h-10 rounded-full bg-gray-500 border-2 border-white"></div>
-                      <div className="w-10 h-10 rounded-full bg-black border-2 border-white flex items-center justify-center text-white text-xs font-bold">
-                        2K
+                    <p className="text-white text-sm leading-relaxed max-w-xs">
+                      {item.desc}
+                    </p>
+
+                    {/* Bottom Section */}
+                    <div className="flex absolute bottom-4 pt-4 border-t border-gray-700">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-6 h-6 bg-[#1264ff] rounded-sm flex items-center justify-center">
+                          <span className="text-black text-xs font-bold">✓</span>
+                        </div>
+                        <span className="text-white text-xs font-bold">Service Details</span>
+                      </div>
+
+                      <div className="flex items-center space-x-1">
+                        {[...Array(5)].map((_, idx) => (
+                          <span key={idx} className="text-[#1264ff] text-sm">★</span>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -189,7 +254,7 @@ export default function CreativekluxHero() {
           </motion.div>
         </div>
 
-        {/* Main Hero Content (unchanged) */}
+        {/* Main Hero Content */}
         <div className="text-center max-w-5xl mx-auto">
           <motion.div
             className="inline-flex items-center gap-3 px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wider border border-gray-300 mb-8"

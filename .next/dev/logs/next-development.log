@@ -1,28 +1,1099 @@
-[00:00:03.077] Server  LOG      ✓ Ready in 2.6s
-[00:00:51.658] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:02.118] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+[00:00:03.428] Server  LOG      ✓ Ready in 2.9s
+[00:00:29.301] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:41.716] Server  ERROR    ⨯ ./src/app/components/Hero.jsx
+Error:   × Expected '</', got '{'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <
+ 89 │ 
+ 90 │                         {/* LEFT SIDE - 4 Cards */}
+    ·                         ─
+ 91 │ 
+ 92 │                         {/* Left Card 1 - Brand Collaboration */}
+ 93 │                         <div className="absolute -top-10 -left-30 hidden xl:block animate-float">
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:18:41.736] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Expected '</', got '{'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <
+ 89 │ 
+ 90 │                         {/* LEFT SIDE - 4 Cards */}
+    ·                         ─
+ 91 │ 
+ 92 │                         {/* Left Card 1 - Brand Collaboration */}
+ 93 │                         <div className="absolute -top-10 -left-30 hidden xl:block animate-float">
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:18:43.660] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Expected '</', got '{'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <
+ 89 │ 
+ 90 │                         {/* LEFT SIDE - 4 Cards */}
+    ·                         ─
+ 91 │ 
+ 92 │                         {/* Left Card 1 - Brand Collaboration */}
+ 93 │                         <div className="absolute -top-10 -left-30 hidden xl:block animate-float">
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:18:49.033] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:55.501] Server  ERROR    ⨯ ./src/app/components/Hero.jsx
 Error:   × Expression expected
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arr
- 136 │                 </div>
-     ·                 ─
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
   × Unterminated regexp literal
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arr
- 136 │                 </div>
-     ·                  ─────
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:18:55.522] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:18:57.938] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:18:57.938] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:18:58.921] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:18:59.354] Server  ERROR    ⨯ ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:19:01.869] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:19:01.869] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:19:01.891] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:19:02.289] Server  ERROR    ⨯ ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:19:04.333] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:19:04.333] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:19:04.333] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <I
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:19:04.795] Server  ERROR    ⨯ ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <Ima
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <Ima
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:19:07.215] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <Ima
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <Ima
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:19:07.215] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <Ima
+ 90 │                       </div>
+    ·                       ─
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         <Ima
+ 90 │                       </div>
+    ·                        ─────
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:19:11.454] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:19:11.944] Server  ERROR    ⨯ ./src/app/components/Hero.jsx
+Error:   × Expected '</', got '{'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <
+ 89 │ 
+ 90 │                         {/* LEFT SIDE - 4 Cards */}
+    ·                         ─
+ 91 │ 
+ 92 │                         {/* Left Card 1 - Brand Collaboration */}
+ 93 │                         <div className="absolute -top-10 -left-30 hidden xl:block animate-float">
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:19:13.387] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:19:13.387] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Expected '</', got '{'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <
+ 89 │ 
+ 90 │                         {/* LEFT SIDE - 4 Cards */}
+    ·                         ─
+ 91 │ 
+ 92 │                         {/* Left Card 1 - Brand Collaboration */}
+ 93 │                         <div className="absolute -top-10 -left-30 hidden xl:block animate-float">
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:19:13.387] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected '</', got '{'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <
+ 89 │ 
+ 90 │                         {/* LEFT SIDE - 4 Cards */}
+    ·                         ─
+ 91 │ 
+ 92 │                         {/* Left Card 1 - Brand Collaboration */}
+ 93 │                         <div className="absolute -top-10 -left-30 hidden xl:block animate-float">
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:19:15.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:23.578] Server  ERROR    ⨯ ./src/app/components/Hero.jsx
+Error:   × Unexpected token. Did you mean `{'>'}` or `&gt;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:89:1]
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         </div>>
+    ·                               ▲
+ 90 │ 
+ 91 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:19:23.599] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Unexpected token. Did you mean `{'>'}` or `&gt;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:89:1]
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         </div>>
+    ·                               ▲
+ 90 │ 
+ 91 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:19:24.362] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:19:24.363] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Unexpected token. Did you mean `{'>'}` or `&gt;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:89:1]
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         </div>>
+    ·                               ▲
+ 90 │ 
+ 91 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:19:24.863] Server  ERROR    ⨯ ./src/app/components/Hero.jsx
+Error:   × Unexpected token. Did you mean `{'>'}` or `&gt;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         
+ 90 │                         </div>>
+    ·                               ▲
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:19:26.519] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:19:26.519] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Unexpected token. Did you mean `{'>'}` or `&gt;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         
+ 90 │                         </div>>
+    ·                               ▲
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:19:26.519] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Unexpected token. Did you mean `{'>'}` or `&gt;`?
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:90:1]
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <div>
+ 89 │                         
+ 90 │                         </div>>
+    ·                               ▲
+ 91 │ 
+ 92 │                         {/* LEFT SIDE - 4 Cards */}
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:19:27.976] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:49.509] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:22:49.509] Browser ERROR   uncaughtError: TypeError: Image constructor: 'new' is required
+[00:22:49.625] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[00:22:50.624] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:51.457] Browser ERROR   uncaughtError: TypeError: Image constructor: 'new' is required
+[00:22:51.580] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[00:22:52.327] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:52.626] Browser ERROR   uncaughtError: TypeError: Image constructor: 'new' is required
+[00:22:54.729] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[00:22:55.323] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:55.779] Browser ERROR   uncaughtError: TypeError: Image constructor: 'new' is required
+[00:22:57.047] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[00:22:57.665] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:58.095] Browser ERROR   uncaughtError: TypeError: Image constructor: 'new' is required
+[00:22:59.467] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[00:23:00.051] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:00.567] Browser ERROR   uncaughtError: TypeError: Image constructor: 'new' is required
+[00:23:01.881] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[00:23:02.469] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:02.928] Browser ERROR   uncaughtError: TypeError: Image constructor: 'new' is required
+[00:23:04.109] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[00:23:04.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:05.153] Browser ERROR   uncaughtError: TypeError: Image constructor: 'new' is required
+[00:23:06.949] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[00:23:07.530] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:07.998] Browser ERROR   uncaughtError: TypeError: Image constructor: 'new' is required
+[00:23:10.956] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/hero-phone.png" "received" null
+[00:23:11.555] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:50.173] Server  ERROR    ⨯ ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:88:1]
+ 85 │                     {/* Feature Cards with Phone Mockup */}
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <  <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-80 z-10">
+    ·                          ─
+ 89 │                             <div className="bg-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl">
+ 90 │                                 <div className="bg-white rounded-4xl sm:rounded-[2.5rem] overflow-hidden">
+ 91 │                                     {/* Phone Content */}
+    ╰────
+  × Expected ',', got 'className'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:88:1]
+ 85 │                     {/* Feature Cards with Phone Mockup */}
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <  <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-80 z-10">
+    ·                               ─────────
+ 89 │                             <div className="bg-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl">
+ 90 │                                 <div className="bg-white rounded-4xl sm:rounded-[2.5rem] overflow-hidden">
+ 91 │                                     {/* Phone Content */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:23:50.198] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:88:1]
+ 85 │                     {/* Feature Cards with Phone Mockup */}
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <  <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-80 z-10">
+    ·                          ─
+ 89 │                             <div className="bg-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl">
+ 90 │                                 <div className="bg-white rounded-4xl sm:rounded-[2.5rem] overflow-hidden">
+ 91 │                                     {/* Phone Content */}
+    ╰────
+  × Expected ',', got 'className'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:88:1]
+ 85 │                     {/* Feature Cards with Phone Mockup */}
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <  <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-80 z-10">
+    ·                               ─────────
+ 89 │                             <div className="bg-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl">
+ 90 │                                 <div className="bg-white rounded-4xl sm:rounded-[2.5rem] overflow-hidden">
+ 91 │                                     {/* Phone Content */}
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/Hero.jsx
+./src/app/page.js
+[00:23:52.629] Browser ERROR   ./src/app/components/Hero.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:88:1]
+ 85 │                     {/* Feature Cards with Phone Mockup */}
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <  <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-80 z-10">
+    ·                          ─
+ 89 │                             <div className="bg-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl">
+ 90 │                                 <div className="bg-white rounded-4xl sm:rounded-[2.5rem] overflow-hidden">
+ 91 │                                     {/* Phone Content */}
+    ╰────
+  × Expected ',', got 'className'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:88:1]
+ 85 │                     {/* Feature Cards with Phone Mockup */}
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <  <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-80 z-10">
+    ·                               ─────────
+ 89 │                             <div className="bg-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl">
+ 90 │                                 <div className="bg-white rounded-4xl sm:rounded-[2.5rem] overflow-hidden">
+ 91 │                                     {/* Phone Content */}
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:23:52.629] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:88:1]
+ 85 │                     {/* Feature Cards with Phone Mockup */}
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <  <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-80 z-10">
+    ·                          ─
+ 89 │                             <div className="bg-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl">
+ 90 │                                 <div className="bg-white rounded-4xl sm:rounded-[2.5rem] overflow-hidden">
+ 91 │                                     {/* Phone Content */}
+    ╰────
+  × Expected ',', got 'className'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/Hero.jsx:88:1]
+ 85 │                     {/* Feature Cards with Phone Mockup */}
+ 86 │                     <div className="relative max-w-6xl mx-auto px-4">
+ 87 │                         {/* Center Phone Mockup */}
+ 88 │                       <  <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-80 z-10">
+    ·                               ─────────
+ 89 │                             <div className="bg-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl">
+ 90 │                                 <div className="bg-white rounded-4xl sm:rounded-[2.5rem] overflow-hidden">
+ 91 │                                     {/* Phone Content */}
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:24:09.723] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:24:11.262] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:20.384] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
+
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true z z true z
+[00:32:46.707] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/ads-creative.png" "received" null
+[00:32:46.709] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/social-creative.png" "received" null
+[00:32:46.710] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/designer-creative.png" "received" null
+[00:33:15.696] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/magic-studio.png" "received" null
+[00:35:07.388] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/designer-creative.png" "received" null
+[00:35:07.389] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/magic-studio.png" "received" null
+[00:35:49.679] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/designer-creative-image.png" "received" null
+[00:36:18.350] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/magic-creative-image.png" "received" null
+[00:46:53.216] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/interactive-ads.png" "received" null
+[00:46:53.217] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/playable-ads.png" "received" null
+[00:46:53.218] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/social-posts.png" "received" null
+[00:46:53.221] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/stories-reels.png" "received" null
+[00:46:53.382] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/banners-covers.png" "received" null
+[00:46:53.383] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[00:46:53.384] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/memes-trends.png" "received" null
+[00:46:53.400] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/business-cards.png" "received" null
+[00:46:53.429] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/logos-brand.png" "received" null
+[00:46:53.572] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/flyers.png" "received" null
+[00:46:53.573] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[00:46:53.573] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/posters.png" "received" null
+[00:46:53.591] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/infographics.png" "received" null
+[00:46:53.617] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[00:46:53.626] Server  WARN     ⚠ The requested resource "/images/video-ads.png" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+[00:47:17.036] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:17.288] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:17.636] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:17.878] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:18.158] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:18.435] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:18.720] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:18.989] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:21.195] Browser ERROR   uncaughtError: ReferenceError: Z is not defined
+[00:47:21.518] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:21.773] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:23.472] Server  ERROR    ⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:47:24.393] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:24.753] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `Home`.
+[00:47:25.937] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:28.353] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `Home`.
+[00:47:29.090] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:29.361] Server  ERROR    ⨯ ReferenceError: Z is not defined
+[00:47:31.804] Browser ERROR   uncaughtError: ReferenceError: Z is not defined
+[00:47:34.020] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:53.139] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/interactive-ads.png" "received" null
+[00:47:53.141] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/playable-ads.png" "received" null
+[00:47:53.439] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/social-posts.png" "received" null
+[00:47:53.441] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/stories-reels.png" "received" null
+[00:47:53.444] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/banners-covers.png" "received" null
+[00:47:53.445] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[00:47:53.668] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/memes-trends.png" "received" null
+[00:47:53.669] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/business-cards.png" "received" null
+[00:47:53.671] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/logos-brand.png" "received" null
+[00:47:53.679] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/flyers.png" "received" null
+[00:47:53.813] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[00:47:53.814] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/posters.png" "received" null
+[00:47:53.815] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/infographics.png" "received" null
+[00:47:53.816] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[00:47:53.953] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/packaging.png" "received" null
+[00:47:53.954] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-image.png" "received" null
+[00:47:53.955] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-video.png" "received" null
+[00:47:53.956] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/image-variations.png" "received" null
+[00:48:22.095] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/audio-to-text.png" "received" null
+[00:48:22.096] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/persona-generator.png" "received" null
+[00:48:22.098] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-audio.png" "received" null
+[00:48:22.135] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/script-to-video.png" "received" null
+[00:48:55.309] Server  WARN     ⚠ The requested resource "/images/interactive-ads.gif" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+[00:50:13.381] Server  WARN     ⚠ The requested resource "/images/stories-reels.gif" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+[00:51:57.642] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/banners-covers.png" "received" null
+[00:51:57.656] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[00:51:57.657] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/memes-trends.png" "received" null
+[00:51:57.771] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/business-cards.png" "received" null
+[00:51:57.772] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/logos-brand.png" "received" null
+[00:51:57.786] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/flyers.png" "received" null
+[00:51:57.810] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[00:51:57.912] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/posters.png" "received" null
+[00:51:57.914] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/infographics.png" "received" null
+[00:51:57.939] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[00:51:57.983] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/packaging.png" "received" null
+[00:51:57.983] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-image.png" "received" null
+[00:51:58.071] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-video.png" "received" null
+[00:51:58.072] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/image-variations.png" "received" null
+[00:51:58.093] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/script-to-video.png" "received" null
+[00:51:58.119] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/audio-to-text.png" "received" null
+[00:51:58.120] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/persona-generator.png" "received" null
+[00:51:58.152] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-audio.png" "received" null
+[00:51:58.614] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:10.702] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[00:56:10.783] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/logos-brand.png" "received" null
+[00:56:10.784] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/flyers.png" "received" null
+[00:56:10.901] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[00:56:10.902] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/posters.png" "received" null
+[00:56:10.928] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/infographics.png" "received" null
+[00:56:10.967] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[00:56:10.968] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/packaging.png" "received" null
+[00:56:11.060] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-image.png" "received" null
+[00:56:11.061] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-video.png" "received" null
+[00:56:11.096] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/image-variations.png" "received" null
+[00:56:11.131] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/script-to-video.png" "received" null
+[00:56:11.132] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/audio-to-text.png" "received" null
+[00:56:11.196] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/persona-generator.png" "received" null
+[00:56:11.198] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-audio.png" "received" null
+[00:56:11.756] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:13.218] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[00:58:13.285] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[00:58:13.369] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[00:58:13.435] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/packaging.png" "received" null
+[00:58:13.473] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-image.png" "received" null
+[00:58:13.510] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-video.png" "received" null
+[00:58:13.556] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/image-variations.png" "received" null
+[00:58:13.568] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/script-to-video.png" "received" null
+[00:58:13.625] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/audio-to-text.png" "received" null
+[00:58:13.638] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/persona-generator.png" "received" null
+[00:58:13.654] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-audio.png" "received" null
+[00:58:14.144] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:59.833] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[01:00:59.912] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[01:00:59.953] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[01:00:59.954] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/packaging.png" "received" null
+[01:00:59.964] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-image.png" "received" null
+[01:01:00.023] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/image-variations.png" "received" null
+[01:01:00.744] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:25.373] Server  ERROR    ⨯ ./src/app/components/MoreSection.jsx
+Error:   × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/MoreSection.jsx:73:1]
+ 70 │           />
+ 71 │         </div>
+ 72 │       </div>
+ 73 │     </div>
+    ·      ─────
+ 74 │   );
+ 75 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/MoreSection.jsx
+./src/app/page.js
+[01:04:25.404] Browser ERROR   ./src/app/components/MoreSection.jsx
+Error:   × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/MoreSection.jsx:73:1]
+ 70 │           />
+ 71 │         </div>
+ 72 │       </div>
+ 73 │     </div>
+    ·      ─────
+ 74 │   );
+ 75 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/MoreSection.jsx
+./src/app/page.js
+[01:04:26.876] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:26.876] Browser ERROR   ./src/app/components/MoreSection.jsx
+Error:   × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/MoreSection.jsx:73:1]
+ 70 │           />
+ 71 │         </div>
+ 72 │       </div>
+ 73 │     </div>
+    ·      ─────
+ 74 │   );
+ 75 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+[01:04:26.876] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Unterminated regexp literal
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/MoreSection.jsx:73:1]
+ 70 │           />
+ 71 │         </div>
+ 72 │       </div>
+ 73 │     </div>
+    ·      ─────
+ 74 │   );
+ 75 │ }
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[01:04:28.634] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[01:04:28.635] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[01:04:28.637] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[01:04:28.640] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/packaging.png" "received" null
+[01:04:28.641] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-image.png" "received" null
+[01:04:28.751] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/image-variations.png" "received" null
+[01:04:29.720] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:14:57.251] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/image-variations.png" "received" null
+[01:14:57.253] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[01:14:57.254] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/packaging.png" "received" null
+[01:14:57.270] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-image.png" "received" null
+[01:14:57.295] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[01:14:57.333] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[01:14:59.226] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/image-variations.png" "received" null
+[01:14:59.228] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[01:14:59.307] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[01:14:59.308] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[01:14:59.380] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/packaging.png" "received" null
+[01:14:59.381] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-image.png" "received" null
+[01:21:58.454] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:21:58.900] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[01:21:59.958] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:22:56.841] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[01:33:19.531] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:33:19.531] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:33:21.572] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/designer-creative.png" "received" null
+[01:33:21.582] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/magic-studio.png" "received" null
+[01:33:21.652] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/ads-creative.png" "received" null
+[01:33:21.671] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/social-creative.png" "received" null
+[01:33:22.395] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:33:22.438] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:33:40.587] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[01:33:41.022] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[01:33:41.024] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[01:33:41.735] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/packaging.png" "received" null
+[01:33:41.736] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-image.png" "received" null
+[01:33:41.737] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/image-variations.png" "received" null
+[01:33:46.107] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/social-creative.png" "received" null
+[01:33:46.778] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/ads-creative.png" "received" null
+[01:34:24.594] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:34:24.599] Server  WARN     ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:34:25.884] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:34:25.972] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:34:26.011] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/thumbnails.png" "received" null
+[01:34:26.078] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/brochures.png" "received" null
+[01:34:26.079] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/presentations.png" "received" null
+[01:40:45.590] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/packaging.png" "received" null
+[01:40:45.592] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/text-to-image.png" "received" null
+[01:40:45.593] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/image-variations.png" "received" null
+[02:02:22.108] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:02:22.108] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:02:22.354] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:02:22.370] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:02:22.370] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:02:22.451] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:02:23.246] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:02:23.745] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:02:24.528] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:02:25.103] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:03:34.043] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:03:34.119] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:03:35.081] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:03:35.192] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:03:36.287] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:03:36.386] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:03:48.726] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:03:48.786] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:03:49.614] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:03:50.451] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:03:50.814] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:03:51.952] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:04:38.810] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:04:38.902] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:04:40.064] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:04:40.187] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:04:41.219] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:04:42.376] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:04:58.546] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:04:58.646] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:04:59.250] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:04:59.655] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:04:59.692] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:05:00.890] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:05:39.538] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:05:39.646] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:05:40.451] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:05:40.624] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:05:41.750] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:05:41.775] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:05:58.140] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:05:58.270] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:05:58.990] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:05:59.096] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:05:59.366] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:06:00.439] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:06:07.603] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:06:07.677] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:06:08.322] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:06:08.424] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:06:08.717] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:06:09.804] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:14:11.047] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:14:11.066] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:14:13.109] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/hero-phone.png" "received" null
+[02:14:13.168] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/hero-phone.png" "received" null
+[02:14:14.466] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:14:14.628] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:41.871] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:15:41.871] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:15:41.872] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:15:41.872] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:15:42.015] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:15:42.105] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:15:43.680] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:43.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:43.904] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/hero-phone.png" "received" null
+[02:15:43.956] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/hero-phone.png" "received" null
+[02:15:43.985] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/hero-phone.png" "received" null
+[02:15:49.913] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/hero-phone.png" "received" null
+[02:15:51.147] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:15:51.147] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:15:51.149] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:15:51.149] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:15:51.275] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:15:51.349] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:15:52.010] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:52.019] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:52.402] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:15:52.409] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:18:04.130] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:04.132] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:31.449] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:18:31.449] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:18:31.647] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:18:31.680] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:18:31.680] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:18:31.819] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:18:32.541] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:32.550] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:32.813] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:18:32.985] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:18:42.108] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:18:42.177] Server  ERROR    ⨯ TypeError: item.desc.map is not a function
+[02:18:42.797] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:43.073] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:43.219] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:18:44.302] Browser ERROR   uncaughtError: TypeError: item.desc.map is not a function
+[02:18:44.468] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:18:44.515] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:18:45.087] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:45.335] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:45.559] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:18:46.578] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:18:51.720] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:18:51.788] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:18:52.420] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:52.758] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:52.826] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:18:54.094] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:18:54.546] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:18:54.593] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:18:55.180] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:55.424] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:55.647] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:18:56.649] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:19:01.807] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:01.883] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:02.559] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:02.880] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:02.942] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:19:03.192] Browser ERROR   uncaughtError: SyntaxError: "" literal not terminated before end of script
+[02:19:04.039] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:04.101] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:23.755] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:19:23.755] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:19:23.765] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:19:23.765] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:19:23.885] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:23.988] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:24.646] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:24.986] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:25.030] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:19:26.163] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:19:27.077] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:27.177] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:27.792] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:27.821] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:28.242] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:19:28.245] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:19:43.766] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:43.817] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:44.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:45.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:49.633] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:50.136] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:50.849] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected ',', got 'details'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:50:1]
+ 47 │     icon: <Users className="w-7 h-7" />,
+ 48 │     title: "Agencies & SMMA",
+ 49 │     desc: "Scale creative output for multiple clients with fast, high-quality ads and campaigns — no bottlenecks, no designer hiring needed."
+ 50 │       details: [
+    ·       ───────
+ 51 │         "Unlimited client-ready mobile app designs",
+ 52 │         "Fast wireframes & interactive prototypes",
+ 53 │         "Cross-platform UI kits (iOS + Android + Web)",
+    ╰────
 
 Caused by:
     Syntax Error
@@ -30,29 +1101,36 @@ Caused by:
 Import trace for requested module:
 ./src/app/components/AIFunnelSection.jsx
 ./src/app/page.js
-[00:18:02.225] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
-Error:   × Expression expected
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arr
- 136 │                 </div>
-     ·                 ─
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
-  × Unterminated regexp literal
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arr
- 136 │                 </div>
-     ·                  ─────
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
+[02:19:51.285] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected ',', got 'details'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:50:1]
+ 47 │     icon: <Users className="w-7 h-7" />,
+ 48 │     title: "Agencies & SMMA",
+ 49 │     desc: "Scale creative output for multiple clients with fast, high-quality ads and campaigns — no bottlenecks, no designer hiring needed."
+ 50 │       details: [
+    ·       ───────
+ 51 │         "Unlimited client-ready mobile app designs",
+ 52 │         "Fast wireframes & interactive prototypes",
+ 53 │         "Cross-platform UI kits (iOS + Android + Web)",
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+[02:19:51.285] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected ',', got 'details'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:50:1]
+ 47 │     icon: <Users className="w-7 h-7" />,
+ 48 │     title: "Agencies & SMMA",
+ 49 │     desc: "Scale creative output for multiple clients with fast, high-quality ads and campaigns — no bottlenecks, no designer hiring needed."
+ 50 │       details: [
+    ·       ───────
+ 51 │         "Unlimited client-ready mobile app designs",
+ 52 │         "Fast wireframes & interactive prototypes",
+ 53 │         "Cross-platform UI kits (iOS + Android + Web)",
+    ╰────
 
 Caused by:
     Syntax Error
@@ -60,150 +1138,104 @@ Caused by:
 Import trace for requested module:
 ./src/app/components/AIFunnelSection.jsx
 ./src/app/page.js
-[00:18:05.602] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
-Error:   × Expression expected
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arrow
- 136 │                 </div>
-     ·                 ─
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
-  × Unterminated regexp literal
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arrow
- 136 │                 </div>
-     ·                  ─────
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
+[02:19:51.340] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:52.527] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected ',', got 'details'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:50:1]
+ 47 │     icon: <Users className="w-7 h-7" />,
+ 48 │     title: "Agencies & SMMA",
+ 49 │     desc: "Scale creative output for multiple clients with fast, high-quality ads and campaigns — no bottlenecks, no designer hiring needed."
+ 50 │       details: [
+    ·       ───────
+ 51 │         "Unlimited client-ready mobile app designs",
+ 52 │         "Fast wireframes & interactive prototypes",
+ 53 │         "Cross-platform UI kits (iOS + Android + Web)",
+    ╰────
 
 Caused by:
     Syntax Error
-
-Import trace for requested module:
-./src/app/components/AIFunnelSection.jsx
-./src/app/page.js
-[00:18:05.724] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
-Error:   × Expression expected
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arrow
- 136 │                 </div>
-     ·                 ─
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
-  × Unterminated regexp literal
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arrow
- 136 │                 </div>
-     ·                  ─────
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
+[02:19:52.527] Browser ERROR   uncaughtError: TypeError: can't access property "call", originalFactory is undefined
+[02:19:52.527] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected ',', got 'details'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:50:1]
+ 47 │     icon: <Users className="w-7 h-7" />,
+ 48 │     title: "Agencies & SMMA",
+ 49 │     desc: "Scale creative output for multiple clients with fast, high-quality ads and campaigns — no bottlenecks, no designer hiring needed."
+ 50 │       details: [
+    ·       ───────
+ 51 │         "Unlimited client-ready mobile app designs",
+ 52 │         "Fast wireframes & interactive prototypes",
+ 53 │         "Cross-platform UI kits (iOS + Android + Web)",
+    ╰────
 
 Caused by:
     Syntax Error
-
-Import trace for requested module:
-./src/app/components/AIFunnelSection.jsx
-./src/app/page.js
-[00:18:05.724] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
-Error:   × Expression expected
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arrow
- 136 │                 </div>
-     ·                 ─
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
-  × Unterminated regexp literal
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arrow
- 136 │                 </div>
-     ·                  ─────
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
+[02:19:53.873] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected ',', got 'details'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:50:1]
+ 47 │     icon: <Users className="w-7 h-7" />,
+ 48 │     title: "Agencies & SMMA",
+ 49 │     desc: "Scale creative output for multiple clients with fast, high-quality ads and campaigns — no bottlenecks, no designer hiring needed."
+ 50 │       details: [
+    ·       ───────
+ 51 │         "Unlimited client-ready mobile app designs",
+ 52 │         "Fast wireframes & interactive prototypes",
+ 53 │         "Cross-platform UI kits (iOS + Android + Web)",
+    ╰────
 
 Caused by:
     Syntax Error
-
-Import trace for requested module:
-./src/app/components/AIFunnelSection.jsx
-./src/app/page.js
-[00:18:07.739] Server  LOG      ○ Compiling /_error ...
-[00:18:08.623] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
-Error:   × Expression expected
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arrow
- 136 │                 </div>
-     ·                 ─
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
-  × Unterminated regexp literal
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arrow
- 136 │                 </div>
-     ·                  ─────
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
-
-Caused by:
-    Syntax Error
-[00:18:08.623] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
-Error:   × Expression expected
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arrow
- 136 │                 </div>
-     ·                 ─
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
-  × Unterminated regexp literal
-     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:136:1]
- 133 │                 <div className="absolute bottom-6 right-6">
- 134 │                   <div className="w-8 h-8 border-b-4 border-r-4 border-black transform rotate-5"></div>
- 135 │                   <Arrow
- 136 │                 </div>
-     ·                  ─────
- 137 │ 
- 138 │                 <div className="relative z-10 flex flex-col items-center text-center pt-12">
- 139 │                   {/* Title */}
-     ╰────
+[02:19:53.873] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected ',', got 'details'
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:50:1]
+ 47 │     icon: <Users className="w-7 h-7" />,
+ 48 │     title: "Agencies & SMMA",
+ 49 │     desc: "Scale creative output for multiple clients with fast, high-quality ads and campaigns — no bottlenecks, no designer hiring needed."
+ 50 │       details: [
+    ·       ───────
+ 51 │         "Unlimited client-ready mobile app designs",
+ 52 │         "Fast wireframes & interactive prototypes",
+ 53 │         "Cross-platform UI kits (iOS + Android + Web)",
+    ╰────
 
 
 Caused by:
     Syntax Error
-[00:18:10.806] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:18:11.863] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:18:13.417] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:53.954] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:19:53.965] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:19:54.939] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:54.991] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:19:55.569] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:55.938] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:56.036] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:19:57.106] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:20:05.733] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:20:05.810] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:20:06.476] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:06.562] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:06.854] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:20:07.902] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:20:09.977] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:20:10.055] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:20:10.854] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:11.302] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:12.119] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:20:12.498] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:20:18.165] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:20:18.239] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:20:18.912] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:19.253] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:19.300] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:20:20.507] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:20:22.405] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:20:22.461] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:20:23.182] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:23.307] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:24.592] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:20:24.597] Browser ERROR   uncaughtError: TypeError: can't access property "map", item.details is undefined
+[02:20:25.078] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:20:25.158] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[02:20:25.830] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:26.703] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:27.677] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:20:27.855] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
