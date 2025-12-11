@@ -21,7 +21,7 @@ import AIFunnelSection from "./components/AIFunnelSection";
    FULL METADATA – now lives in the page file (clean <head>)
 ----------------------------------------------------------------- */
 export const metadata = {
-  metadataBase: new URL("https://creative-klux-landing-page.vercel.app"),
+  metadataBase: new URL("https://www.creativeklux.com/"),
 
   // Primary SEO
   title: {
@@ -83,8 +83,8 @@ export const metadata = {
     statusBarStyle: "default",
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   manifest: "/site.webmanifest",
 
