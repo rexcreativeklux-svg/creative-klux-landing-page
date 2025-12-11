@@ -282,7 +282,7 @@ export default function CreativekluxHero() {
           </motion.p>
 
           <motion.p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
-            Replace <strong>Canva + CapCut + Midjourney + D-ID + Meta Ads Creative Center + Playable Studio</strong> with one intelligent platform that understands your brand and generates winning creatives — instantly.
+            Replace <strong>Canva + CapCut + Midjourney + D-ID + Meta Ads Creative Center + Playable Studio</strong> with one intelligent platform that understands your brand and generates good creatives — instantly.
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
