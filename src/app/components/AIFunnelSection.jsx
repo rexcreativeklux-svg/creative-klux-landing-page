@@ -294,7 +294,7 @@ export default function CreativekluxHero() {
               {loadingButton === "start-free" ? (
                 <>
                   <Loader />
-                  <span>Redirecting...</span>
+                  <span>Redirecting....</span>
                 </>
               ) : (
                 <>
