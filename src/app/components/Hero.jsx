@@ -88,7 +88,7 @@ export default function Hero() {
                         {/* Center Phone Mockup */}
                         <div className="relative mx-auto w-56 sm:w-64 md:w-72 lg:w-85 z-10">
                             <Image
-                                src="/images/hero-phone.png"
+                                src="/images/hero-image.png"
                                 alt="Hero phone mockup"
                                 width={800}
                                 height={600}

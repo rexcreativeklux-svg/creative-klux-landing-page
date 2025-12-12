@@ -11,8 +11,8 @@ export default function CreativeSection() {
             badgeColor: 'bg-blue-200 text-blue-900',
             title: 'Ads Creatives',
             description: 'Launch scroll-stopping ad campaigns that drive clicks and sales. Create stunning ad creatives optimized for every platform—from Facebook to TikTok—in minutes, not hours.',
-            gradient: 'from-blue-300 via-purple-200 to-pink-200',
-            image: '/images/ads-creative-image.png', // Your image path
+         
+            image: '/images/ads-creative-image.png', 
             features: [
                 {
                     icon: '📸',
@@ -41,7 +41,7 @@ export default function CreativeSection() {
             badgeColor: 'bg-orange-200 text-orange-900',
             title: 'Social Creatives',
             description: 'Dominate the feed with content designed to stop the scroll. Create platform-perfect posts, stories, and reels that your audience can\'t help but share.',
-            gradient: 'from-yellow-300 via-orange-200 to-yellow-200',
+     
             image: '/images/social-creatives-image.png', // Your image path
             features: [
                 {
@@ -71,8 +71,8 @@ export default function CreativeSection() {
             badgeColor: 'bg-green-200 text-green-900',
             title: 'Designer Creatives',
             description: 'Create brand assets that look like you hired an expensive agency. From logos to infographics, get professional designs without the professional price tag.',
-            gradient: 'from-green-300 via-emerald-200 to-teal-200',
-            image: '/images/designer-creatives-image.png', // Your image path
+          
+            image: '/images/designer-image.png', 
             features: [
                 {
                     icon: '🎨',
@@ -101,7 +101,7 @@ export default function CreativeSection() {
             badgeColor: 'bg-purple-200 text-purple-900',
             title: 'Magic Studio',
             description: 'Unleash the power of AI to create impossibly good content. Transform text into stunning visuals, generate variations instantly, and produce pro-quality videos—all with simple prompts.',
-            gradient: 'from-purple-300 via-pink-200 to-purple-200',
+          
             image: '/images/magic-studio-image.png', // Your image path
             features: [
                 {

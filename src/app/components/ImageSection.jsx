@@ -43,51 +43,51 @@ export default function ImageSection() {
         {
             name: 'JESSE GOLD',
             theme: 'dark',
-            image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop',
+            image: '/images/imageone.png',
             layout: 'large'
         },
         {
             name: 'Suki',
             followers: '603.3k',
             theme: 'light',
-            image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop',
+            image: '/images/imagetwo.png',
             layout: 'medium'
         },
         {
             name: 'thatpetra',
             followers: '532.4k',
             theme: 'gaming',
-            image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop',
+            image: '/images/imagethree.png',
             layout: 'medium'
         },
         {
             name: 'Kelly Youjin Kim',
             theme: 'minimal',
-            image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop',
+            image: '/images/imagefour.png',
             layout: 'medium'
         },
         {
             name: 'Income Tracker',
             theme: 'product',
-            image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&h=300&fit=crop',
+            image: '/images/imagefive.png',
             layout: 'wide'
         },
         {
             name: 'HYPE HOUSE',
             theme: 'dark-brand',
-            image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=600&fit=crop',
+            image: '/images/imagesix.png',
             layout: 'large'
         },
         {
             name: 'ethan.got',
             theme: 'pastel',
-            image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop',
+            image: '/images/imageseven.png',
             layout: 'square'
         },
         {
             name: 'Dog Photography',
             theme: 'product-card',
-            image: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=400&h=500&fit=crop',
+            image: '/images/imageeight.png',
             layout: 'tall'
         }
     ];
@@ -110,7 +110,7 @@ export default function ImageSection() {
                     <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4">
                         Made with
                     </h2>
-                    <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                         Creative Klux
                     </h2>
                 </div>
@@ -195,7 +195,7 @@ function CreatorCard({ creator, className }) {
             </div>
 
             {/* Content Overlay */}
-            <div className="relative h-full p-4 sm:p-6 flex flex-col justify-between">
+            {/* <div className="relative h-full p-4 sm:p-6 flex flex-col justify-between">
                 <div>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
                         {creator.name}
@@ -205,7 +205,7 @@ function CreatorCard({ creator, className }) {
                     )}
                 </div>
 
-                {/* Social Icons */}
+               
                 <div className="flex items-center space-x-2">
                     <div className="w-6 h-6 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                         <span className="text-xs">📱</span>
@@ -217,7 +217,7 @@ function CreatorCard({ creator, className }) {
                         <span className="text-xs">📷</span>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Hover Overlay */}
             <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>

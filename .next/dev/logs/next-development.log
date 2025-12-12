@@ -1,3 +1,6 @@
-[00:00:05.447] Server  LOG      ✓ Ready in 4.9s
-[00:00:10.572] Server  LOG      ○ Compiling / ...
-[00:00:16.579] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.251] Server  LOG      ✓ Ready in 2.7s
+[00:00:09.205] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:17.036] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:56.042] Server  WARN     ⚠ The requested resource "/images/stories-reels.gif" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+[00:08:56.261] Server  WARN     ⚠ The requested resource "/images/video-ads.png" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+[00:08:56.319] Server  WARN     ⚠ The requested resource "/images/interactive-ads.gif" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
