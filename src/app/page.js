@@ -134,7 +134,7 @@ export default function Home() {
 
       <ShowcaseCarouselSection />
       <TestimonialSection />
-      <BlueSection />
+      {/* <BlueSection /> */}
       <Footer />
     </div>
   );

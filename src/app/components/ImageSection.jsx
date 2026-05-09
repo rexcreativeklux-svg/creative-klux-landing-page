@@ -69,7 +69,7 @@ export default function ImageSection() {
         {
             name: 'Income Tracker',
             theme: 'product',
-            image: '/images/imagefive.png',
+            image: '/images/imageeight.png',
             layout: 'wide'
         },
         {
@@ -87,7 +87,7 @@ export default function ImageSection() {
         {
             name: 'Dog Photography',
             theme: 'product-card',
-            image: '/images/imageeight.png',
+            image: '/images/imagefive.png',
             layout: 'tall'
         }
     ];
@@ -186,7 +186,7 @@ function CreatorCard({ creator, className }) {
     return (
         <div className={`${className} ${themeStyles[creator.theme]} rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer relative group`}>
             {/* Background Image */}
-            <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity">
+            <div className="absolute inset-0 opacity-80 group-hover:opacity-60 transition-opacity">
                 <img
                     src={creator.image}
                     alt={creator.name}

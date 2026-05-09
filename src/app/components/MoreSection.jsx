@@ -23,7 +23,7 @@ export default function MoreSection() {
     { title: 'Packaging Mockups',             description: 'Visualize product packaging with realistic mockups', image: '/images/packaging-mockups.png',           bg: 'bg-linear-to-br from-emerald-50 to-teal-100' },
     { title: 'Text to Image',                 description: 'Transform text into stunning images with AI in seconds', image: '/images/text-to-image.png',       bg: 'bg-linear-to-br from-orange-50 via-pink-100 to-purple-100' },
     { title: 'Text to Video',                 description: 'Generate professional videos from simple text prompts', image: '/images/text-to-video.png',       bg: 'bg-linear-to-br from-blue-50 to-purple-100' },
-    { title: 'Image to Variations',           description: 'Create endless variations from a single image concept', image: '/images/image-to-variations.png',    bg: 'bg-linear-to-br from-green-50 to-cyan-100' },
+    { title: 'Image to Variations',           description: 'Create endless variations from a single image concept', image: '/images/image-to-variation.png',    bg: 'bg-linear-to-br from-green-50 to-cyan-100' },
     { title: 'Script to Voiceover to Video',  description: 'Turn scripts into complete videos with AI voiceovers', image: '/images/script-to-video.png',     bg: 'bg-linear-to-br from-orange-50 to-pink-100' },
     { title: 'Audio to Text',                 description: 'Convert audio to accurate text transcriptions instantly', image: '/images/audio-to-text.png',       bg: 'bg-white' },
     { title: 'Persona-based Generator',       description: 'Generate content tailored to specific audience personas', image: '/images/persona-generator.png',   bg: 'bg-linear-to-br from-cyan-50 to-indigo-100' },
@@ -66,7 +66,7 @@ function FeatureCard({ feature }) {
             alt={feature.title}
             fill
             className="object-cover rounded-lg"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+         
           />
    
       </div>

@@ -11,8 +11,7 @@ export default function CreativeSection() {
             badgeColor: 'bg-blue-200 text-blue-900',
             title: 'Ads Creatives',
             description: 'Launch scroll-stopping ad campaigns that drive clicks and sales. Create stunning ad creatives optimized for every platform—from Facebook to TikTok—in minutes, not hours.',
-         
-            image: '/images/ads-creative-image.png', 
+            image: '/images/ads-creative-image.png',
             features: [
                 {
                     icon: '📸',
@@ -41,8 +40,7 @@ export default function CreativeSection() {
             badgeColor: 'bg-orange-200 text-orange-900',
             title: 'Social Creatives',
             description: 'Dominate the feed with content designed to stop the scroll. Create platform-perfect posts, stories, and reels that your audience can\'t help but share.',
-     
-            image: '/images/social-creatives-image.png', // Your image path
+            image: '/images/social-creatives-image.png',
             features: [
                 {
                     icon: '📷',
@@ -71,8 +69,7 @@ export default function CreativeSection() {
             badgeColor: 'bg-green-200 text-green-900',
             title: 'Designer Creatives',
             description: 'Create brand assets that look like you hired an expensive agency. From logos to infographics, get professional designs without the professional price tag.',
-          
-            image: '/images/designer-image.png', 
+            image: '/images/designer-image.png',
             features: [
                 {
                     icon: '🎨',
@@ -101,8 +98,7 @@ export default function CreativeSection() {
             badgeColor: 'bg-purple-200 text-purple-900',
             title: 'Magic Studio',
             description: 'Unleash the power of AI to create impossibly good content. Transform text into stunning visuals, generate variations instantly, and produce pro-quality videos—all with simple prompts.',
-          
-            image: '/images/magic-studio-image.png', // Your image path
+            image: '/images/magic-studio-image.png',
             features: [
                 {
                     icon: '✨',
@@ -149,7 +145,7 @@ export default function CreativeSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-12 sm:mb-16 md:mb-20">
-                    <motion.h2 
+                    <motion.h2
                         className="text-4xl sm:text-4xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-4"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +154,7 @@ export default function CreativeSection() {
                     >
                         Creatives
                     </motion.h2>
-                    <motion.p 
+                    <motion.p
                         className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -174,6 +170,7 @@ export default function CreativeSection() {
                     {creatives.map((feature, index) => (
                         <FeatureItem
                             key={index}
+                            index={index}
                             feature={feature}
                             fadeInUp={fadeInUp}
                             staggerContainer={staggerContainer}
@@ -185,8 +182,11 @@ export default function CreativeSection() {
     );
 }
 
-function FeatureItem({ feature, fadeInUp, staggerContainer }) {
+function FeatureItem({ feature, index, fadeInUp, staggerContainer }) {
     const [loadingButton, setLoadingButton] = useState(null);
+
+    // Even index (0, 2) → image on right; odd index (1, 3) → image on left
+    const imageOnRight = index % 2 === 0;
 
     // Spinner Component
     const Loader = () => (
@@ -205,16 +205,16 @@ function FeatureItem({ feature, fadeInUp, staggerContainer }) {
 
     return (
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
-            {/* Content Side - Always on Left */}
-            <motion.div 
-                className="space-y-6 sm:space-y-6 items max-w-lg lg:order-1"
-                initial={{ opacity: 0, x: -30 }}
+            {/* Content Side */}
+            <motion.div
+                className={`space-y-6 sm:space-y-6 items max-w-lg ${imageOnRight ? 'lg:order-1' : 'lg:order-2'}`}
+                initial={{ opacity: 0, x: imageOnRight ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
             >
                 {/* Badge */}
-                <motion.div 
+                <motion.div
                     className="inline-block"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -227,7 +227,7 @@ function FeatureItem({ feature, fadeInUp, staggerContainer }) {
                 </motion.div>
 
                 {/* Title */}
-                <motion.h3 
+                <motion.h3
                     className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -238,7 +238,7 @@ function FeatureItem({ feature, fadeInUp, staggerContainer }) {
                 </motion.h3>
 
                 {/* Description */}
-                <motion.p 
+                <motion.p
                     className="text-base sm:text-md text-gray-600 leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -249,7 +249,7 @@ function FeatureItem({ feature, fadeInUp, staggerContainer }) {
                 </motion.p>
 
                 {/* Feature Grid */}
-                <motion.div 
+                <motion.div
                     className="grid grid-cols-1 sm:grid-cols-2 gap-4"
                     variants={staggerContainer}
                     initial="hidden"
@@ -262,7 +262,7 @@ function FeatureItem({ feature, fadeInUp, staggerContainer }) {
                 </motion.div>
 
                 {/* CTA Buttons */}
-                <motion.div 
+                <motion.div
                     className="flex flex-wrap gap-4 pt-4"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -286,15 +286,15 @@ function FeatureItem({ feature, fadeInUp, staggerContainer }) {
                 </motion.div>
             </motion.div>
 
-            {/* Image Side - Always on Right */}
-            <motion.div 
-                className="lg:order-2"
-                initial={{ opacity: 0, x: 30 }}
+            {/* Image Side */}
+            <motion.div
+                className={imageOnRight ? 'lg:order-2' : 'lg:order-1'}
+                initial={{ opacity: 0, x: imageOnRight ? 30 : -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
             >
-                <div className={`relative sm:rounded-xl  bg-linear-to-br ${feature.gradient} p-4 sm:p-6 md:p-8 lg:p-10 h-[600px] overflow-hidden`}>
+                <div className={`relative sm:rounded-xl bg-linear-to-br ${feature.gradient} p-4 sm:p-6 md:p-8 lg:p-10 h-[600px] overflow-hidden`}>
                     <div className="relative w-full h-full">
                         <Image
                             src={feature.image}
@@ -312,7 +312,7 @@ function FeatureItem({ feature, fadeInUp, staggerContainer }) {
 
 function FeatureCard({ feature, fadeInUp }) {
     return (
-        <motion.div 
+        <motion.div
             className="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-4 cursor-pointer hover:scale-95 transition duration-200"
             variants={fadeInUp}
             transition={{ duration: 0.4 }}

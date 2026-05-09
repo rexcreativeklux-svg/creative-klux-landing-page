@@ -1,6 +1,679 @@
-[00:00:03.251] Server  LOG      ✓ Ready in 2.7s
-[00:00:09.205] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:17.036] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:56.042] Server  WARN     ⚠ The requested resource "/images/stories-reels.gif" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
-[00:08:56.261] Server  WARN     ⚠ The requested resource "/images/video-ads.png" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
-[00:08:56.319] Server  WARN     ⚠ The requested resource "/images/interactive-ads.gif" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+[00:00:03.196] Server  LOG      ✓ Ready in 2.6s
+[00:00:40.115] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:04.750] Server  WARN     ⚠ The requested resource "/images/interactive-ads.gif" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+[00:13:04.760] Server  WARN     ⚠ The requested resource "/images/video-ads.png" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+[00:13:04.797] Browser WARN    Image with src "/images/image-ads.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:04.797] Browser WARN    Image with src "/images/playable-ads.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:04.797] Browser WARN    Image with src "/images/interactive-ads.gif" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:04.797] Browser WARN    Image with src "/images/video-ads.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:05.480] Server  WARN     ⚠ The requested resource "/images/stories-reels.gif" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+[00:13:05.578] Browser WARN    Image with src "/images/banners-covers.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:05.579] Browser WARN    Image with src "/images/social-posts.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:05.579] Browser WARN    Image with src "/images/thumbnails.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:05.579] Browser WARN    Image with src "/images/stories-reels.gif" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:06.957] Browser WARN    Image with src "/images/business-cards.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:06.957] Browser WARN    Image with src "/images/memes-trends.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:06.957] Browser WARN    Image with src "/images/flyers.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:06.957] Browser WARN    Image with src "/images/logos-brand.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:07.932] Browser WARN    Image with src "/images/brochures.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:07.932] Browser WARN    Image with src "/images/infographics.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:07.932] Browser WARN    Image with src "/images/posters.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:07.932] Browser WARN    Image with src "/images/presentation-deck.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:08.767] Browser WARN    Image with src "/images/packaging-mockups.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:08.767] Browser WARN    Image with src "/images/text-to-image.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:08.767] Browser WARN    Image with src "/images/image-to-variation.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:08.767] Browser WARN    Image with src "/images/text-to-video.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:08.977] Browser WARN    Image with src "/images/text-to-audio.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:08.977] Browser WARN    Image with src "/images/audio-to-text.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:08.977] Browser WARN    Image with src "/images/persona-generator.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:13:08.977] Browser WARN    Image with src "/images/script-to-video.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:35:43.422] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:35:44.338] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+[00:35:44.338] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:35:48.251] Server  LOG      ○ Compiling /_error ...
+[00:35:49.484] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:35:49.592] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:35:49.592] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:35:52.659] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:35:52.659] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:35:53.449] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:35:56.576] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:36:12.476] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:36:12.503] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:36:15.045] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:36:15.045] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:219:1]
+ 216 │                   </div>
+ 217 │                 </div>
+ 218 │               </motion.div>
+ 219 │             ))}
+     ·               ▲
+ 220 │           </motion.div>
+ 221 │         </div> */}
+     ╰────
+  × Expected '</', got 'jsx text (
+  │             ))}
+  │           )'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:218:1]
+ 215 │                         </div>
+ 216 │                       </div>
+ 217 │                     </div>
+ 218 │ ╭─▶               </motion.div>
+ 219 │ │               ))}
+ 220 │ ╰─▶           </motion.div>
+ 221 │             </div> */}
+ 222 │     
+ 223 │             {/* What You Can Create Section */}
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:36:16.305] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:36:18.444] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:07.983] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected '</', got '}'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:150:1]
+ 147 │        <Flip
+ 148 │        
+ 149 │ 
+ 150 │         {/* What You Can Create Section */}
+     ·                                           ─
+ 151 │         <div className="mb-24 bg-linear-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
+ 152 │           <motion.h2
+ 153 │             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:37:08.014] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected '</', got '}'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:150:1]
+ 147 │        <Flip
+ 148 │        
+ 149 │ 
+ 150 │         {/* What You Can Create Section */}
+     ·                                           ─
+ 151 │         <div className="mb-24 bg-linear-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
+ 152 │           <motion.h2
+ 153 │             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:37:10.636] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected '</', got '}'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:150:1]
+ 147 │        <Flip
+ 148 │        
+ 149 │ 
+ 150 │         {/* What You Can Create Section */}
+     ·                                           ─
+ 151 │         <div className="mb-24 bg-linear-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
+ 152 │           <motion.h2
+ 153 │             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:37:10.636] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected '</', got '}'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:150:1]
+ 147 │        <Flip
+ 148 │        
+ 149 │ 
+ 150 │         {/* What You Can Create Section */}
+     ·                                           ─
+ 151 │         <div className="mb-24 bg-linear-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
+ 152 │           <motion.h2
+ 153 │             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:37:30.907] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:37:31.524] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected '</', got '}'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:151:1]
+ 148 │        <FlipCards
+ 149 │        
+ 150 │ 
+ 151 │         {/* What You Can Create Section */}
+     ·                                           ─
+ 152 │         <div className="mb-24 bg-linear-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
+ 153 │           <motion.h2
+ 154 │             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:37:32.681] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:37:32.682] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected '</', got '}'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:151:1]
+ 148 │        <FlipCards
+ 149 │        
+ 150 │ 
+ 151 │         {/* What You Can Create Section */}
+     ·                                           ─
+ 152 │         <div className="mb-24 bg-linear-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
+ 153 │           <motion.h2
+ 154 │             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:37:33.254] Server  ERROR    ⨯ ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected '</', got '{'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:151:1]
+ 148 │        <FlipCards /
+ 149 │        
+ 150 │ 
+ 151 │         {/* What You Can Create Section */}
+     ·         ─
+ 152 │         <div className="mb-24 bg-linear-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
+ 153 │           <motion.h2
+ 154 │             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/AIFunnelSection.jsx
+./src/app/page.js
+[00:37:35.584] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:37:35.585] Browser ERROR   ./src/app/components/AIFunnelSection.jsx
+Error:   × Expected '</', got '{'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:151:1]
+ 148 │        <FlipCards /
+ 149 │        
+ 150 │ 
+ 151 │         {/* What You Can Create Section */}
+     ·         ─
+ 152 │         <div className="mb-24 bg-linear-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
+ 153 │           <motion.h2
+ 154 │             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:37:35.585] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected '</', got '{'
+     ╭─[/Users/mac/creative-klux-landing-page/src/app/components/AIFunnelSection.jsx:151:1]
+ 148 │        <FlipCards /
+ 149 │        
+ 150 │ 
+ 151 │         {/* What You Can Create Section */}
+     ·         ─
+ 152 │         <div className="mb-24 bg-linear-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
+ 153 │           <motion.h2
+ 154 │             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:37:36.799] Server  ERROR    ⨯ ./src/app/components/FlipCards.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/FlipCards.jsx:32:1]
+ 29 │ 
+ 30 │ export default function FlipCards() {
+ 31 │   // Which cards are currently showing their back face
+ 32 │   const [flipped, setFlipped] = useState<boolean[]>(whoItsFor.map(() => false));
+    ·                                                  ─
+ 33 │   // Index of card currently being hovered (-1 = none)
+ 34 │   const [hoveredIndex, setHoveredIndex] = useState<number>(-1);
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/FlipCards.jsx
+./src/app/components/AIFunnelSection.jsx
+[00:37:39.547] Browser ERROR   ./src/app/components/FlipCards.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/FlipCards.jsx:32:1]
+ 29 │ 
+ 30 │ export default function FlipCards() {
+ 31 │   // Which cards are currently showing their back face
+ 32 │   const [flipped, setFlipped] = useState<boolean[]>(whoItsFor.map(() => false));
+    ·                                                  ─
+ 33 │   // Index of card currently being hovered (-1 = none)
+ 34 │   const [hoveredIndex, setHoveredIndex] = useState<number>(-1);
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:37:39.547] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/FlipCards.jsx:32:1]
+ 29 │ 
+ 30 │ export default function FlipCards() {
+ 31 │   // Which cards are currently showing their back face
+ 32 │   const [flipped, setFlipped] = useState<boolean[]>(whoItsFor.map(() => false));
+    ·                                                  ─
+ 33 │   // Index of card currently being hovered (-1 = none)
+ 34 │   const [hoveredIndex, setHoveredIndex] = useState<number>(-1);
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:37:44.600] Server  ERROR    ⨯ ./src/app/components/FlipCards.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/FlipCards.jsx:32:1]
+ 29 │ 
+ 30 │ export default function FlipCards() {
+ 31 │   // Which cards are currently showing their back face
+ 32 │   const [flipped, setFlipped] = useState<boolean[]>(whoItsFor.map(() => false));
+    ·                                                  ─
+ 33 │   // Index of card currently being hovered (-1 = none)
+ 34 │   const [hoveredIndex, setHoveredIndex] = useState<number>(-1);
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/FlipCards.jsx
+./src/app/components/AIFunnelSection.jsx
+[00:37:45.456] Browser ERROR   ./src/app/components/FlipCards.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/FlipCards.jsx:32:1]
+ 29 │ 
+ 30 │ export default function FlipCards() {
+ 31 │   // Which cards are currently showing their back face
+ 32 │   const [flipped, setFlipped] = useState<boolean[]>(whoItsFor.map(() => false));
+    ·                                                  ─
+ 33 │   // Index of card currently being hovered (-1 = none)
+ 34 │   const [hoveredIndex, setHoveredIndex] = useState<number>(-1);
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/FlipCards.jsx
+./src/app/components/AIFunnelSection.jsx
+[00:37:45.456] Browser ERROR   ./src/app/components/FlipCards.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/FlipCards.jsx:32:1]
+ 29 │ 
+ 30 │ export default function FlipCards() {
+ 31 │   // Which cards are currently showing their back face
+ 32 │   const [flipped, setFlipped] = useState<boolean[]>(whoItsFor.map(() => false));
+    ·                                                  ─
+ 33 │   // Index of card currently being hovered (-1 = none)
+ 34 │   const [hoveredIndex, setHoveredIndex] = useState<number>(-1);
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/FlipCards.jsx
+./src/app/components/AIFunnelSection.jsx
+[00:39:17.815] Browser ERROR   ./src/app/components/FlipCards.jsx
+Error:   × Expression expected
+    ╭─[/Users/mac/creative-klux-landing-page/src/app/components/FlipCards.jsx:32:1]
+ 29 │ 
+ 30 │ export default function FlipCards() {
+ 31 │   // Which cards are currently showing their back face
+ 32 │   const [flipped, setFlipped] = useState<boolean[]>(whoItsFor.map(() => false));
+    ·                                                  ─
+ 33 │   // Index of card currently being hovered (-1 = none)
+ 34 │   const [hoveredIndex, setHoveredIndex] = useState<number>(-1);
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/components/FlipCards.jsx
+./src/app/components/AIFunnelSection.jsx
+[00:39:19.446] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

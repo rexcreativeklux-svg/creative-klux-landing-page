@@ -21,63 +21,63 @@ export default function CarouselSlider({
     {
       name: 'Lauren Riihimaki',
       category: 'Lifestyle',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+      image: '/images/lauren.png',
       borderColor: 'border-pink-400',
       width: 'w-48 sm:w-56 md:w-64 lg:w-72'
     },
     {
       name: 'Maya Polar Bear',
       category: 'Pet',
-      image: 'https://images.unsplash.com/photo-1534361960057-19889db9621e?w=400&h=400&fit=crop',
+      image: '/images/blackfriday.png',
       borderColor: 'border-amber-200',
       width: 'w-44 sm:w-52 md:w-60 lg:w-68'
     },
     {
       name: 'Excision',
       category: 'DJ',
-      image: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=400&h=400&fit=crop',
+      image: '/images/bluefriday.png',
       borderColor: 'border-gray-900',
       width: 'w-36 sm:w-44 md:w-52 lg:w-60'
     },
     {
       name: 'Soulection',
       category: 'Music',
-      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
+      image: '/images/deals.png',
       borderColor: 'border-gray-900',
       width: 'w-40 sm:w-48 md:w-56 lg:w-64'
     },
     {
       name: 'DaiAlissa',
       category: 'Gaming',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
+      image: '/images/perfume.png',
       borderColor: 'border-amber-700',
       width: 'w-52 sm:w-60 md:w-68 lg:w-76'
     },
     {
       name: 'Jae Park',
       category: 'Music',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+      image: '/images/next.png',
       borderColor: 'border-blue-600',
       width: 'w-44 sm:w-52 md:w-60 lg:w-68'
     },
     {
       name: 'Molly Grace',
       category: 'Music',
-      image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop',
+      image: '/images/neck.png',
       borderColor: 'border-red-400',
       width: 'w-48 sm:w-56 md:w-64 lg:w-72'
     },
     {
       name: 'Def Leppard',
       category: 'Band',
-      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop',
+      image: '/images/second.png',
       borderColor: 'border-gray-800',
       width: 'w-40 sm:w-48 md:w-56 lg:w-64'
     },
     {
       name: 'Sarah Chen',
       category: 'Fashion',
-      image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop',
+      image: '/images/last.png',
       borderColor: 'border-purple-500',
       width: 'w-36 sm:w-44 md:w-52 lg:w-60'
     }
@@ -151,7 +151,7 @@ function CreatorCard({ creator }) {
             bg-white rounded-xl overflow-hidden 
             shadow-lg hover:shadow-2xl
             transform hover:scale-95 hover:-translate-y-2
-            transition-all duration-300 ease-out
+            transition-all duration-300 ease-out items-center
           `}
         >
           {/* Image Container with Overlay Text */}
@@ -165,7 +165,7 @@ function CreatorCard({ creator }) {
             />
             
             {/* Gradient Overlay - Always visible at bottom */}
-            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/20 to-transparent" />
             
             {/* Text Overlay at Bottom */}
             <div className="absolute flex bg-white rounded-md flex-row justify-between bottom-2 left-2 right-2 p-3 sm:p-2 z-10">

@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, Sparkles, Zap, Rocket, Wand2, Target, TrendingUp, Users, Award } from "lucide-react";
+import FlipCards from "./FlipCards";
 
 export default function CreativekluxHero() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -144,81 +145,8 @@ export default function CreativekluxHero() {
           ))}
         </motion.div>
 
-        {/* Who It's For – Flip Cards */}
-        <div className="mb-20">
-          <motion.h2
-            className="text-3xl md:text-4xl font-black text-center mb-16 text-gray-900 uppercase tracking-tight"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-          >
-            Who the app is for
-          </motion.h2>
+        <FlipCards />
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
-          >
-            {whoItsFor.map((item, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className="group relative h-72 cursor-pointer"
-                style={{ perspective: "1000px" }}
-              >
-                {/* THIS IS THE KEY FIX */}
-                <div className="relative w-full h-full transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
-
-                  {/* FRONT – shows title */}
-                  <div className="absolute inset-0 backface-hidden bg-white rounded-lg py-8 border border-gray-200 hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col items-center justify-center">
-                    <div className="absolute top-3 left-3 text-4xl font-black text-gray-100 leading-none">
-                      {String(i + 1).padStart(2, '0')}
-                    </div>
-                    <div className="absolute bottom-4 right-4">
-                      <div className="w-3 h-3 border-b-4 border-r-4 border-black transform rotate-11"></div>
-                    </div>
-                    <h4 className="text-sm font-black text-gray-700 uppercase tracking-tight px-4 text-center">
-                      {item.title}
-                    </h4>
-                  </div>
-
-                  {/* BACK – NO title, only description */}
-                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-black/90 rounded-lg border border-gray-800 flex flex-col justify-center items-center text-center">
-                    <div className="absolute top-3 left-3 text-4xl font-black text-[#1264ff] leading-none">
-                      {String(i + 1).padStart(2, '0')}
-                    </div>
-                    <div className="absolute top-6 right-6">
-                      <div className="w-6 h-6 bg-[#1264ff] transform rotate-45"></div>
-                    </div>
-
-                    <p className="text-white px-3 text-sm leading-relaxed max-w-xs">
-                      {item.desc}
-                    </p>
-
-                    {/* Bottom Section */}
-                    <div className="flex absolute justify-between gap-10 bottom-4 pt-4 border-t border-gray-700">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-6 h-6 bg-[#1264ff] rounded-sm flex items-center justify-center">
-                          <span className="text-black text-xs font-bold">✓</span>
-                        </div>
-                        <span className="text-white text-xs font-bold">Service Details</span>
-                      </div>
-
-                      <div className="flex items-center space-x-1">
-                        {[...Array(5)].map((_, idx) => (
-                          <span key={idx} className="text-[#1264ff] text-sm">★</span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
 
         {/* What You Can Create Section */}
         <div className="mb-24 bg-linear-to-br from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
