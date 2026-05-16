@@ -711,7 +711,7 @@ export default function Hero() {
               {i < arr.length - 1 && <div className="ck-band-divider" />}
             </React.Fragment>
           ))}
-        </div>
+        </div> 
       </div>
 
       <CreativeSelectionModal
