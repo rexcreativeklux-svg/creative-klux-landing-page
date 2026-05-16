@@ -105,7 +105,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-linear-to-br from-blue-100 via-purple-100 to-pink-100">
-      <Header />
+      {/* <Header /> */}
       <Hero />
 
       <section id="creators">
