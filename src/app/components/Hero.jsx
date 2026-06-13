@@ -495,73 +495,75 @@ export default function Hero() {
             }}
           />
 
+          {/* Floating analytics cards — pinned to the screen edges on laptops+.
+              Top & bottom sit flush; only the middle card is pushed past the edge
+              and clipped by the hero's overflow-hidden. */}
+          <div className="hidden xl:flex flex-col gap-4 items-start absolute left-6 top-1/2 -translate-y-1/2 text-left pointer-events-none z-10">
+            {FLOATING_CARDS.filter((c) => c.side === "left").map(
+              (card, i, arr) => {
+                const isMiddle = i === Math.floor(arr.length / 2);
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      transform: isMiddle ? "translateX(-96px)" : "none",
+                    }}
+                  >
+                    <div
+                      className="animate-[fadeSlideIn_0.6s_ease_both]"
+                      style={{ animationDelay: `${0.4 + i * 0.15}s` }}
+                    >
+                      <FloatingCard
+                        card={card}
+                        large={isMiddle}
+                        widthClass={isMiddle ? "w-64" : "w-52"}
+                        extraClass={
+                          isMiddle
+                            ? "min-h-[210px] flex flex-col justify-center"
+                            : ""
+                        }
+                      />
+                    </div>
+                  </div>
+                );
+              },
+            )}
+          </div>
+
+          <div className="hidden xl:flex flex-col gap-4 items-end absolute right-6 top-1/2 -translate-y-1/2 text-left pointer-events-none z-10">
+            {FLOATING_CARDS.filter((c) => c.side === "right").map(
+              (card, i, arr) => {
+                const isMiddle = i === Math.floor(arr.length / 2);
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      transform: isMiddle ? "translateX(96px)" : "none",
+                    }}
+                  >
+                    <div
+                      className="animate-[fadeSlideIn_0.6s_ease_both]"
+                      style={{ animationDelay: `${0.55 + i * 0.15}s` }}
+                    >
+                      <FloatingCard
+                        card={card}
+                        large={isMiddle}
+                        widthClass={isMiddle ? "w-64" : "w-52"}
+                        extraClass={
+                          isMiddle
+                            ? "min-h-[210px] flex flex-col justify-center"
+                            : ""
+                        }
+                      />
+                    </div>
+                  </div>
+                );
+              },
+            )}
+          </div>
+
           {/* Center content */}
           <div className="relative z-20 flex flex-col items-center text-center px-6 max-w-[740px] lg:max-w-[900px] mx-auto">
-            {/* Floating analytics cards — top/bottom sit 5vw from the text, the
-                middle card sits 10vw out; overflow past the screen edge is clipped */}
-            <div className="hidden xl:flex flex-col gap-4 items-end absolute right-full top-1/2 -translate-y-1/2 mr-[5vw] text-left pointer-events-none z-10">
-              {FLOATING_CARDS.filter((c) => c.side === "left").map(
-                (card, i, arr) => {
-                  const isMiddle = i === Math.floor(arr.length / 2);
-                  return (
-                    <div
-                      key={i}
-                      style={{
-                        transform: isMiddle ? "translateX(-5vw)" : "none",
-                      }}
-                    >
-                      <div
-                        className="animate-[fadeSlideIn_0.6s_ease_both]"
-                        style={{ animationDelay: `${0.4 + i * 0.15}s` }}
-                      >
-                        <FloatingCard
-                          card={card}
-                          large={isMiddle}
-                          widthClass={isMiddle ? "w-64" : "w-52"}
-                          extraClass={
-                            isMiddle
-                              ? "min-h-[210px] flex flex-col justify-center"
-                              : ""
-                          }
-                        />
-                      </div>
-                    </div>
-                  );
-                },
-              )}
-            </div>
-
-            <div className="hidden xl:flex flex-col gap-4 items-start absolute left-full top-1/2 -translate-y-1/2 ml-[5vw] text-left pointer-events-none z-10">
-              {FLOATING_CARDS.filter((c) => c.side === "right").map(
-                (card, i, arr) => {
-                  const isMiddle = i === Math.floor(arr.length / 2);
-                  return (
-                    <div
-                      key={i}
-                      style={{
-                        transform: isMiddle ? "translateX(5vw)" : "none",
-                      }}
-                    >
-                      <div
-                        className="animate-[fadeSlideIn_0.6s_ease_both]"
-                        style={{ animationDelay: `${0.55 + i * 0.15}s` }}
-                      >
-                        <FloatingCard
-                          card={card}
-                          large={isMiddle}
-                          widthClass={isMiddle ? "w-64" : "w-52"}
-                          extraClass={
-                            isMiddle
-                              ? "min-h-[210px] flex flex-col justify-center"
-                              : ""
-                          }
-                        />
-                      </div>
-                    </div>
-                  );
-                },
-              )}
-            </div>
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 text-[11px] font-medium text-[#888] tracking-[0.06em] uppercase mb-7 px-3.5 py-[5px] border border-black/10 rounded-full bg-white/80 backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 shadow-[0_0_0_3px_rgba(34,197,94,0.2)] animate-pulse" />
