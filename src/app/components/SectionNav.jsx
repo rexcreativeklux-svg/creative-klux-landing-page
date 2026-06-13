@@ -1,48 +1,46 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import {
-  Sparkles,
-  LayoutGrid,
-  Layers,
-  Image,
-  Users,
-  Bot,
-  Tag,
-  Plug,
-  Images,
-  Quote,
-} from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { Megaphone, Share2, Palette, Wand2, Plug } from "lucide-react";
 
-// id must match the wrapper id rendered in page.js
+// id must match an element id rendered on the page (see CreativesSection / page.js)
 const TABS = [
-  { id: "creatives", label: "Creatives", Icon: Sparkles },
-  { id: "features", label: "Features", Icon: LayoutGrid },
-  { id: "platform", label: "Platform", Icon: Layers },
-  { id: "showcase", label: "Showcase", Icon: Image },
-  { id: "for-creators", label: "For Creators", Icon: Users },
-  { id: "ai-tools", label: "AI Tools", Icon: Bot },
-  { id: "pricing", label: "Pricing", Icon: Tag },
-  { id: "integrations", label: "Integrations", Icon: Plug },
-  { id: "gallery", label: "Gallery", Icon: Images },
-  { id: "testimonials", label: "Testimonials", Icon: Quote },
+  { id: "ad-creatives", label: "Ad Creation", Icon: Megaphone },
+  { id: "social-content", label: "Social Content Creation", Icon: Share2 },
+  { id: "brand-design", label: "Brand Design", Icon: Palette },
+  { id: "magic-studio", label: "Ai Tools", Icon: Wand2 },
+  { id: "integrations", label: "Integration", Icon: Plug },
 ];
 
 // Height of header (64) + this bar — sections scroll to just below both.
 const SCROLL_OFFSET = 130;
 
+// True document Y of an element via offsetTop (layout position). Unlike
+// getBoundingClientRect, this is NOT distorted when the element is a pinned
+// `position: sticky` card — which the creative feature cards are. Using the
+// clamped rect is what made clicking a tab feel "stuck".
+function getDocTop(el) {
+  let y = 0;
+  let node = el;
+  while (node) {
+    y += node.offsetTop;
+    node = node.offsetParent;
+  }
+  return y;
+}
+
 export default function SectionNav() {
   const [active, setActive] = useState(TABS[0].id);
+  const animRef = useRef(0);
 
   // Scroll-spy: the active tab is the last section whose top has passed the bars.
   useEffect(() => {
     const onScroll = () => {
+      const pos = window.scrollY + SCROLL_OFFSET + 1;
       let current = TABS[0].id;
       for (const { id } of TABS) {
         const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top - SCROLL_OFFSET <= 0) {
-          current = id;
-        }
+        if (el && getDocTop(el) <= pos) current = id;
       }
       setActive(current);
     };
@@ -51,9 +49,29 @@ export default function SectionNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Custom rAF scroll. Re-reads the target every frame so it survives the
+  // layout shifts / sticky re-pinning that were interrupting the native smooth
+  // scroll (the "have to click multiple times" bug), and drives the scroll
+  // itself so it always reaches the destination.
   const go = (id) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!el) return;
+    cancelAnimationFrame(animRef.current);
+    const start = window.scrollY;
+    const startTime = performance.now();
+    const duration = 500;
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+    const step = (now) => {
+      const target = getDocTop(el) - SCROLL_OFFSET; // recomputed each frame
+      const t = Math.min(1, (now - startTime) / duration);
+      window.scrollTo(0, start + (target - start) * easeOutCubic(t));
+      if (t < 1) {
+        animRef.current = requestAnimationFrame(step);
+      } else {
+        window.scrollTo(0, getDocTop(el) - SCROLL_OFFSET); // exact final snap
+      }
+    };
+    animRef.current = requestAnimationFrame(step);
   };
 
   return (

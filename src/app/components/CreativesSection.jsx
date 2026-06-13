@@ -7,6 +7,7 @@ import Image from "next/image";
 export default function CreativeSection() {
     const creatives = [
         {
+            id: 'ad-creatives',
             badge: '🚀 High-Converting Ads',
             badgeColor: 'bg-blue-200 text-blue-900',
             title: 'Ads Creatives',
@@ -20,6 +21,7 @@ export default function CreativeSection() {
             ]
         },
         {
+            id: 'social-content',
             badge: '📱 Viral Social Content',
             badgeColor: 'bg-orange-200 text-orange-900',
             title: 'Social Creatives',
@@ -33,6 +35,7 @@ export default function CreativeSection() {
             ]
         },
         {
+            id: 'brand-design',
             badge: '✨ Professional Design',
             badgeColor: 'bg-green-200 text-green-900',
             title: 'Designer Creatives',
@@ -46,6 +49,7 @@ export default function CreativeSection() {
             ]
         },
         {
+            id: 'magic-studio',
             badge: '🪄 AI-Powered Magic',
             badgeColor: 'bg-purple-200 text-purple-900',
             title: 'Magic Studio',
@@ -151,7 +155,8 @@ function FeatureItem({ feature, index, fadeInUp, staggerContainer }) {
     return (
         <div
             ref={ref}
-            className="sticky bg-white rounded-2xl transition-shadow duration-300"
+            id={feature.id}
+            className="sticky bg-white rounded-2xl transition-shadow duration-300 scroll-mt-32"
             style={{
                 top: `${topOffset}px`,
                 zIndex,
