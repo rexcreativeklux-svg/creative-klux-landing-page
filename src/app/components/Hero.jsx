@@ -498,15 +498,16 @@ export default function Hero() {
           {/* Floating analytics cards — pinned to the screen edges on laptops+.
               Top & bottom sit flush; only the middle card is pushed past the edge
               and clipped by the hero's overflow-hidden. */}
-          <div className="hidden xl:flex flex-col gap-4 items-start absolute left-6 top-1/2 -translate-y-1/2 text-left pointer-events-none z-10">
+          <div className="hidden xl:flex flex-col gap-4 items-start absolute left-10 top-1/2 -translate-y-1/2 text-left pointer-events-none z-10">
             {FLOATING_CARDS.filter((c) => c.side === "left").map(
               (card, i, arr) => {
                 const isMiddle = i === Math.floor(arr.length / 2);
                 return (
                   <div
                     key={i}
+                    className={isMiddle ? "my-6" : ""}
                     style={{
-                      transform: isMiddle ? "translateX(-96px)" : "none",
+                      transform: isMiddle ? "translateX(-48px)" : "none",
                     }}
                   >
                     <div
@@ -530,15 +531,16 @@ export default function Hero() {
             )}
           </div>
 
-          <div className="hidden xl:flex flex-col gap-4 items-end absolute right-6 top-1/2 -translate-y-1/2 text-left pointer-events-none z-10">
+          <div className="hidden xl:flex flex-col gap-4 items-end absolute right-10 top-1/2 -translate-y-1/2 text-left pointer-events-none z-10">
             {FLOATING_CARDS.filter((c) => c.side === "right").map(
               (card, i, arr) => {
                 const isMiddle = i === Math.floor(arr.length / 2);
                 return (
                   <div
                     key={i}
+                    className={isMiddle ? "my-6" : ""}
                     style={{
-                      transform: isMiddle ? "translateX(96px)" : "none",
+                      transform: isMiddle ? "translateX(48px)" : "none",
                     }}
                   >
                     <div

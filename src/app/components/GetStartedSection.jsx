@@ -29,8 +29,11 @@ const [isLoading, setIsLoading] = useState(false);
   const handleGetStarted = () => {
     setIsLoading(true);
     setTimeout(() => {
-      window.location.href = "../pages/pricing"; 
-    }, 500);
+      document
+        .getElementById("pricing")
+        ?.scrollIntoView({ behavior: "smooth" });
+      setIsLoading(false);
+    }, 300);
   };
 
   // Reusable Spinner

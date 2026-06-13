@@ -23,8 +23,11 @@ export default function CreativekluxHero() {
   const handleStartFree = () => {
     setLoadingButton("start-free");
     setTimeout(() => {
-      window.location.href = "../pages/pricing";
-    }, 500);
+      document
+        .getElementById("pricing")
+        ?.scrollIntoView({ behavior: "smooth" });
+      setLoadingButton(null);
+    }, 300);
   };
 
   const Loader = () => (
