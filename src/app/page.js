@@ -1,6 +1,6 @@
 // app/page.js
 import Image from "next/image";
-import Header from "./components/Header";
+import SiteHeader from "./components/SiteHeader";
 import Hero from "./components/Hero";
 import "./globals.css";
 import CarouselSlider from "./components/CarouselSlider";
@@ -25,7 +25,8 @@ export const metadata = {
 
   // Primary SEO
   title: {
-    default: "Creative Klux | AI-Powered Design, Templates & Content for Creators",
+    default:
+      "Creative Klux | AI-Powered Design, Templates & Content for Creators",
     template: "%s | Creative Klux",
   },
   description:
@@ -48,7 +49,8 @@ export const metadata = {
 
   // Open Graph
   openGraph: {
-    title: "Creative Klux | AI-Powered Design, Templates & Content for Creators",
+    title:
+      "Creative Klux | AI-Powered Design, Templates & Content for Creators",
     description:
       "Design, write, schedule, and monetize — all in one platform. AI templates, brand kits, client portals, and content tools built for creators and agencies.",
     url: "https://creative-klux-landing-page.vercel.app",
@@ -68,7 +70,8 @@ export const metadata = {
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title: "Creative Klux | AI-Powered Design, Templates & Content for Creators",
+    title:
+      "Creative Klux | AI-Powered Design, Templates & Content for Creators",
     description:
       "The ultimate platform for creators: AI design templates, content generation, client dashboards, and monetization tools — all in one.",
     images: ["https://creative-klux-landing-page.vercel.app/og-image.jpg"],
@@ -105,7 +108,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-linear-to-br from-blue-100 via-purple-100 to-pink-100">
-      {/* <Header /> */}
+      <SiteHeader />
       <Hero />
 
       <section id="creators">
@@ -113,7 +116,7 @@ export default function Home() {
         <CreativeSection />
       </section>
 
-       <AIFunnelSection />
+      <AIFunnelSection />
 
       <section id="managers">
         <MoreSection />
@@ -130,7 +133,6 @@ export default function Home() {
       </section>
 
       <CustomStack />
-     
 
       <ShowcaseCarouselSection />
       <TestimonialSection />
