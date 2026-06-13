@@ -208,10 +208,18 @@ function Spinner() {
 }
 
 // ─── Floating decorative cards ────────────────────────────────────────────────
-function FloatingCard({ card, widthClass = "w-64", extraClass = "" }) {
+function FloatingCard({
+  card,
+  widthClass = "w-64",
+  extraClass = "",
+  large = false,
+}) {
   const { content } = card;
 
-  const circumference = 2 * Math.PI * 26; // donut radius 26
+  const donutDim = large ? 124 : 70;
+  const donutC = donutDim / 2;
+  const donutR = large ? 46 : 26;
+  const circumference = 2 * Math.PI * donutR;
 
   return (
     <div
@@ -239,7 +247,11 @@ function FloatingCard({ card, widthClass = "w-64", extraClass = "" }) {
           >
             <defs>
               <linearGradient id="rev-fill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor={content.color} stopOpacity="0.25" />
+                <stop
+                  offset="0%"
+                  stopColor={content.color}
+                  stopOpacity="0.25"
+                />
                 <stop offset="100%" stopColor={content.color} stopOpacity="0" />
               </linearGradient>
             </defs>
@@ -261,54 +273,60 @@ function FloatingCard({ card, widthClass = "w-64", extraClass = "" }) {
 
       {/* Donut + legend */}
       {content.type === "donut" && (
-        <div className="flex items-center gap-3">
+        <div className={`flex items-center ${large ? "gap-5" : "gap-3"}`}>
           <svg
-            width="70"
-            height="70"
-            viewBox="0 0 70 70"
+            width={donutDim}
+            height={donutDim}
+            viewBox={`0 0 ${donutDim} ${donutDim}`}
             className="shrink-0"
           >
             <circle
-              cx="35"
-              cy="35"
-              r="26"
+              cx={donutC}
+              cy={donutC}
+              r={donutR}
               fill="none"
               stroke="#eef0f2"
-              strokeWidth="8"
+              strokeWidth={large ? 13 : 8}
             />
             <circle
-              cx="35"
-              cy="35"
-              r="26"
+              cx={donutC}
+              cy={donutC}
+              r={donutR}
               fill="none"
               stroke={content.color}
-              strokeWidth="8"
+              strokeWidth={large ? 13 : 8}
               strokeLinecap="round"
               strokeDasharray={`${(content.percent / 100) * circumference} ${circumference}`}
-              transform="rotate(-90 35 35)"
+              transform={`rotate(-90 ${donutC} ${donutC})`}
             />
             <text
-              x="35"
-              y="40"
+              x={donutC}
+              y={donutC + (large ? 9 : 5)}
               textAnchor="middle"
               className="fill-gray-900"
-              style={{ fontSize: "15px", fontWeight: 600 }}
+              style={{ fontSize: large ? "27px" : "15px", fontWeight: 600 }}
             >
               {content.percent}%
             </text>
           </svg>
           <div>
-            <div className="text-xs font-medium text-gray-700 mb-1.5">
+            <div
+              className={`font-medium text-gray-700 ${large ? "text-base mb-2.5" : "text-xs mb-1.5"}`}
+            >
               {content.label}
             </div>
-            <div className="space-y-1">
+            <div className={large ? "space-y-2" : "space-y-1"}>
               {content.legend.map((l, i) => (
                 <div key={i} className="flex items-center gap-1.5">
                   <span
-                    className="w-1.5 h-1.5 rounded-full shrink-0"
+                    className={`rounded-full shrink-0 ${large ? "w-2.5 h-2.5" : "w-1.5 h-1.5"}`}
                     style={{ background: l.color }}
                   />
-                  <span className="text-[10px] text-gray-500">{l.label}</span>
+                  <span
+                    className={`text-gray-500 ${large ? "text-sm" : "text-[10px]"}`}
+                  >
+                    {l.label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -355,7 +373,8 @@ function FloatingCard({ card, widthClass = "w-64", extraClass = "" }) {
                 className="flex-1 rounded-sm"
                 style={{
                   height: `${h}%`,
-                  background: i === content.highlight ? content.color : "#e5e7eb",
+                  background:
+                    i === content.highlight ? content.color : "#e5e7eb",
                 }}
               />
             ))}
@@ -369,17 +388,21 @@ function FloatingCard({ card, widthClass = "w-64", extraClass = "" }) {
       {/* KPI tile + sparkline */}
       {content.type === "kpis" && (
         <div>
-          <div className="text-xs text-gray-500 mb-1">{content.label}</div>
+          <div
+            className={`text-gray-500 ${large ? "text-base mb-3" : "text-xs mb-1"}`}
+          >
+            {content.label}
+          </div>
           <div className="flex items-end justify-between">
             <div
-              className="text-2xl font-semibold tracking-tight text-[#0f0f0f]"
+              className={`font-semibold tracking-tight text-[#0f0f0f] ${large ? "text-5xl" : "text-2xl"}`}
               style={{ fontFamily: "Instrument Serif, serif" }}
             >
               {content.value}
             </div>
             <svg
               viewBox="0 0 60 24"
-              className="w-20 h-8"
+              className={large ? "w-28 h-14" : "w-20 h-8"}
               preserveAspectRatio="none"
             >
               <path
@@ -392,13 +415,21 @@ function FloatingCard({ card, widthClass = "w-64", extraClass = "" }) {
               />
             </svg>
           </div>
-          <div className="flex items-center gap-3 mt-2 pt-2 border-t border-black/5">
+          <div
+            className={`flex items-center gap-4 border-t border-black/5 ${large ? "mt-5 pt-4" : "mt-2 pt-2"}`}
+          >
             {content.stats.map((s, i) => (
               <div key={i}>
-                <div className="text-[11px] font-semibold text-gray-800">
+                <div
+                  className={`font-semibold text-gray-800 ${large ? "text-lg" : "text-[11px]"}`}
+                >
                   {s.value}
                 </div>
-                <div className="text-[9px] text-gray-400">{s.label}</div>
+                <div
+                  className={`text-gray-400 ${large ? "text-xs" : "text-[9px]"}`}
+                >
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
@@ -453,7 +484,7 @@ export default function Hero() {
         }}
       >
         {/* ══ HERO BODY ════════════════════════════════════════════════ */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden min-h-screen flex items-center justify-center">
           {/* Subtle grid texture */}
           <div
             className="absolute inset-0 opacity-[0.025] pointer-events-none"
@@ -464,60 +495,73 @@ export default function Hero() {
             }}
           />
 
-          {/* Left floating cards — top & bottom fully in, middle peeks past the edge */}
-          <div className="hidden xl:flex flex-col gap-4 absolute left-4 top-0 bottom-0 justify-center pointer-events-none z-10">
-            {FLOATING_CARDS.filter((c) => c.side === "left").map((card, i, arr) => {
-              const isMiddle = i === Math.floor(arr.length / 2);
-              return (
-                <div
-                  key={i}
-                  style={{ transform: isMiddle ? "translateX(-72px)" : "none" }}
-                >
-                  <div
-                    className="animate-[fadeSlideIn_0.6s_ease_both]"
-                    style={{ animationDelay: `${0.4 + i * 0.15}s` }}
-                  >
-                    <FloatingCard
-                      card={card}
-                      widthClass={isMiddle ? "w-64" : "w-52"}
-                      extraClass={
-                        isMiddle ? "min-h-[210px] flex flex-col justify-center" : ""
-                      }
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Right floating cards — top & bottom fully in, middle peeks past the edge */}
-          <div className="hidden xl:flex flex-col gap-4 absolute right-4 top-0 bottom-0 justify-center pointer-events-none z-10">
-            {FLOATING_CARDS.filter((c) => c.side === "right").map((card, i, arr) => {
-              const isMiddle = i === Math.floor(arr.length / 2);
-              return (
-                <div
-                  key={i}
-                  style={{ transform: isMiddle ? "translateX(72px)" : "none" }}
-                >
-                  <div
-                    className="animate-[fadeSlideIn_0.6s_ease_both]"
-                    style={{ animationDelay: `${0.55 + i * 0.15}s` }}
-                  >
-                    <FloatingCard
-                      card={card}
-                      widthClass={isMiddle ? "w-64" : "w-52"}
-                      extraClass={
-                        isMiddle ? "min-h-[210px] flex flex-col justify-center" : ""
-                      }
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
           {/* Center content */}
-          <div className="flex flex-col items-center text-center px-6 pt-28 pb-24 max-w-[740px] lg:max-w-[900px] mx-auto">
+          <div className="relative z-20 flex flex-col items-center text-center px-6 max-w-[740px] lg:max-w-[900px] mx-auto">
+            {/* Floating analytics cards — top/bottom sit 5vw from the text, the
+                middle card sits 10vw out; overflow past the screen edge is clipped */}
+            <div className="hidden xl:flex flex-col gap-4 items-end absolute right-full top-1/2 -translate-y-1/2 mr-[5vw] text-left pointer-events-none z-10">
+              {FLOATING_CARDS.filter((c) => c.side === "left").map(
+                (card, i, arr) => {
+                  const isMiddle = i === Math.floor(arr.length / 2);
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        transform: isMiddle ? "translateX(-5vw)" : "none",
+                      }}
+                    >
+                      <div
+                        className="animate-[fadeSlideIn_0.6s_ease_both]"
+                        style={{ animationDelay: `${0.4 + i * 0.15}s` }}
+                      >
+                        <FloatingCard
+                          card={card}
+                          large={isMiddle}
+                          widthClass={isMiddle ? "w-64" : "w-52"}
+                          extraClass={
+                            isMiddle
+                              ? "min-h-[210px] flex flex-col justify-center"
+                              : ""
+                          }
+                        />
+                      </div>
+                    </div>
+                  );
+                },
+              )}
+            </div>
+
+            <div className="hidden xl:flex flex-col gap-4 items-start absolute left-full top-1/2 -translate-y-1/2 ml-[5vw] text-left pointer-events-none z-10">
+              {FLOATING_CARDS.filter((c) => c.side === "right").map(
+                (card, i, arr) => {
+                  const isMiddle = i === Math.floor(arr.length / 2);
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        transform: isMiddle ? "translateX(5vw)" : "none",
+                      }}
+                    >
+                      <div
+                        className="animate-[fadeSlideIn_0.6s_ease_both]"
+                        style={{ animationDelay: `${0.55 + i * 0.15}s` }}
+                      >
+                        <FloatingCard
+                          card={card}
+                          large={isMiddle}
+                          widthClass={isMiddle ? "w-64" : "w-52"}
+                          extraClass={
+                            isMiddle
+                              ? "min-h-[210px] flex flex-col justify-center"
+                              : ""
+                          }
+                        />
+                      </div>
+                    </div>
+                  );
+                },
+              )}
+            </div>
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 text-[11px] font-medium text-[#888] tracking-[0.06em] uppercase mb-7 px-3.5 py-[5px] border border-black/10 rounded-full bg-white/80 backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 shadow-[0_0_0_3px_rgba(34,197,94,0.2)] animate-pulse" />
@@ -535,10 +579,6 @@ export default function Hero() {
               <span className="block italic">Scale Your Ad Campaigns</span>
               <span className="block relative min-h-[1.06em]">
                 on <span className="text-[#1447e6]">Auto-Pilot</span>
-                <span
-                  className="inline-block w-[3px] h-[0.82em] bg-[#1447e6] rounded-sm ml-[3px] align-middle animate-[blink_1.05s_step-end_infinite]"
-                  aria-hidden="true"
-                />
               </span>
             </h1>
 
