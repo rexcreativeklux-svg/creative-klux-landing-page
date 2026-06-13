@@ -589,9 +589,9 @@ export default function Hero() {
             </p>
 
             {/* Join with Google and Get Started button */}
-            <div className="hidden lg:flex items-center gap-2.5">
+            <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto">
               <button
-                className="flex items-center gap-1.5 text-[13.5px] font-medium text-[#555] bg-[#f0f0ec] border border-[#e0e0da] rounded-lg px-4 py-[7px] cursor-pointer transition-all duration-150 hover:border-[#bbb] hover:text-[#111] hover:bg-[#e8e8e4] disabled:opacity-65"
+                className="w-full sm:w-auto justify-center flex items-center gap-1.5 text-[13.5px] font-medium text-[#555] bg-[#f0f0ec] border border-[#e0e0da] rounded-lg px-4 py-[7px] cursor-pointer transition-all duration-150 hover:border-[#bbb] hover:text-[#111] hover:bg-[#e8e8e4] disabled:opacity-65"
                 style={{ fontFamily: "Geist, sans-serif" }}
               >
                 {loadingBtn === "login" && <Spinner />}
@@ -600,7 +600,7 @@ export default function Hero() {
               <button
                 onClick={handleStartFree}
                 disabled={loadingBtn === "start-free"}
-                className="flex items-center gap-1.5 text-[13.5px] font-semibold text-white bg-[#1447e6] border-none rounded-lg px-[18px] py-[7px] cursor-pointer transition-all duration-150 hover:bg-[#0f3bbf] hover:-translate-y-px disabled:opacity-65"
+                className="w-full sm:w-auto justify-center flex items-center gap-1.5 text-[13.5px] font-semibold text-white bg-[#1447e6] border-none rounded-lg px-[18px] py-[7px] cursor-pointer transition-all duration-150 hover:bg-[#0f3bbf] hover:-translate-y-px disabled:opacity-65"
                 style={{ fontFamily: "Geist, sans-serif" }}
               >
                 {loadingBtn === "start-free" && <Spinner />}
