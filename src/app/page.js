@@ -1,6 +1,7 @@
 // app/page.js
 import Image from "next/image";
 import SiteHeader from "./components/SiteHeader";
+import SectionNav from "./components/SectionNav";
 import Hero from "./components/Hero";
 import "./globals.css";
 import CarouselSlider from "./components/CarouselSlider";
@@ -113,29 +114,52 @@ export default function Home() {
 
       <section id="creators">
         <CarouselSlider />
-        <CreativeSection />
       </section>
 
-      <AIFunnelSection />
+      {/* Section tab bar — sticky under the header for the rest of the page */}
+      <SectionNav />
+
+      <div id="creatives" className="scroll-mt-32">
+        <CreativeSection />
+      </div>
+
+      <div id="features" className="scroll-mt-32">
+        <AIFunnelSection />
+      </div>
 
       <section id="managers">
-        <MoreSection />
-        <ImageSection />
+        <div id="platform" className="scroll-mt-32">
+          <MoreSection />
+        </div>
+        <div id="showcase" className="scroll-mt-32">
+          <ImageSection />
+        </div>
       </section>
 
       <section id="brands">
-        <GetStartedSection />
-        <AiSection />
+        <div id="for-creators" className="scroll-mt-32">
+          <GetStartedSection />
+        </div>
+        <div id="ai-tools" className="scroll-mt-32">
+          <AiSection />
+        </div>
       </section>
 
-      <section id="pricing">
+      <section id="pricing" className="scroll-mt-32">
         <PricingSection />
       </section>
 
-      <CustomStack />
+      <div id="integrations" className="scroll-mt-32">
+        <CustomStack />
+      </div>
 
-      <ShowcaseCarouselSection />
-      <TestimonialSection />
+      <div id="gallery" className="scroll-mt-32">
+        <ShowcaseCarouselSection />
+      </div>
+
+      <div id="testimonials" className="scroll-mt-32">
+        <TestimonialSection />
+      </div>
       {/* <BlueSection /> */}
       <Footer />
     </div>
