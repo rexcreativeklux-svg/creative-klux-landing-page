@@ -507,7 +507,9 @@ export default function Hero() {
                     key={i}
                     className={isMiddle ? "my-6" : ""}
                     style={{
-                      transform: isMiddle ? "translateX(-48px)" : "none",
+                      transform: isMiddle
+                        ? "translateX(-48px)"
+                        : "translateX(48px)",
                     }}
                   >
                     <div
@@ -540,7 +542,9 @@ export default function Hero() {
                     key={i}
                     className={isMiddle ? "my-6" : ""}
                     style={{
-                      transform: isMiddle ? "translateX(48px)" : "none",
+                      transform: isMiddle
+                        ? "translateX(48px)"
+                        : "translateX(-48px)",
                     }}
                   >
                     <div
