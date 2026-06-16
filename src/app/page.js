@@ -22,18 +22,20 @@ import AIFunnelSection from "./components/AIFunnelSection";
    FULL METADATA – now lives in the page file (clean <head>)
 ----------------------------------------------------------------- */
 export const metadata = {
-  metadataBase: new URL("https://www.creativeklux.com/"),
+  metadataBase: new URL("https://creativeklux.com"),
 
   // Primary SEO
   title: {
     default:
-      "Creative Klux | AI-Powered Design, Templates & Content for Creators",
+      "Creative Klux - AI-Powered Creatives for Your Ads, Social, and Brand",
     template: "%s | Creative Klux",
   },
   description:
-    "Creative Klux is the all-in-one platform for creators, managers & brands. Get stunning templates, AI-generated content, design tools, client dashboards, and monetization — all in one place.",
+    "Create high-performing ad creatives, social media content, and brand assets in seconds with AI. Creative Klux helps business owners, marketers, agencies, and social media managers generate professional-quality creatives without designers, delays, or complicated tools.",
   keywords:
-    "creative platform, design templates, AI content generator, creator tools, brand kits, client dashboard, portfolio builder, content calendar, social media scheduler, digital assets, no-code design, monetization for creators",
+    "AI creatives, ad creatives, social media creatives, brand assets, AI design tool, advertising creatives, marketing creatives, social media graphics, creative automation, AI advertising, AI marketing, creative generator, design platform, business creatives, agency creatives",
+  authors: [{ name: "Creative Klux" }],
+  applicationName: "Creative Klux",
 
   // Robots
   robots: {
@@ -48,58 +50,79 @@ export const metadata = {
     },
   },
 
+  // Canonical
+  alternates: {
+    canonical: "https://creativeklux.com",
+  },
+
   // Open Graph
   openGraph: {
-    title:
-      "Creative Klux | AI-Powered Design, Templates & Content for Creators",
-    description:
-      "Design, write, schedule, and monetize — all in one platform. AI templates, brand kits, client portals, and content tools built for creators and agencies.",
-    url: "https://creative-klux-landing-page.vercel.app",
+    type: "website",
     siteName: "Creative Klux",
+    url: "https://creativeklux.com",
+    title: "AI-Powered Creatives for Your Ads, Social, and Brand",
+    description:
+      "One platform. Every creative you'll ever need. Generate professional ad creatives, social media content, and brand assets in seconds with AI.",
     images: [
       {
-        url: "https://creative-klux-landing-page.vercel.app/og-image.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Creative Klux – All-in-One Platform for Creators",
+        alt: "Creative Klux AI Creative Generator",
       },
     ],
     locale: "en_US",
-    type: "website",
   },
 
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title:
-      "Creative Klux | AI-Powered Design, Templates & Content for Creators",
+    title: "AI-Powered Creatives for Your Ads, Social, and Brand",
     description:
-      "The ultimate platform for creators: AI design templates, content generation, client dashboards, and monetization tools — all in one.",
-    images: ["https://creative-klux-landing-page.vercel.app/og-image.jpg"],
+      "Create ad creatives, social content, and brand assets in seconds with AI. Built for businesses, marketers, agencies, and creators.",
+    images: [{ url: "/og-image.jpg", alt: "Creative Klux AI Creative Generator" }],
     creator: "@creativeklux",
     site: "@creativeklux",
   },
 
   // App & icons
-  applicationName: "Creative Klux",
   appleWebApp: {
     title: "Creative Klux",
     statusBarStyle: "default",
   },
   icons: {
     icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    apple: "/apple-touch-icon.jpg",
   },
   manifest: "/site.webmanifest",
 
-  // Canonical
-  alternates: {
-    canonical: "https://creative-klux-landing-page.vercel.app",
+  // Legacy Windows tile color (kept on-brand)
+  other: {
+    "msapplication-TileColor": "#1447e6",
   },
+};
 
-  // Google verification (replace with your code)
-  verification: {
-    google: "your-google-verification-code-here",
+/* -----------------------------------------------------------------
+   STRUCTURED DATA (JSON-LD)
+----------------------------------------------------------------- */
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Creative Klux",
+  applicationCategory: "DesignApplication",
+  operatingSystem: "Web",
+  url: "https://creativeklux.com",
+  description:
+    "Create high-performing ad creatives, social media content, and brand assets in seconds with AI.",
+  slogan: "One platform. Every creative you'll ever need.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  creator: {
+    "@type": "Organization",
+    name: "Netsprin",
   },
 };
 
@@ -109,6 +132,10 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-linear-to-br from-blue-100 via-purple-100 to-pink-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
       <Hero />
 

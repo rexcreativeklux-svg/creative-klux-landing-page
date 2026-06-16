@@ -94,13 +94,6 @@ const AVATARS = [
   { bg: "#ef4444", letter: "D" },
 ];
 
-const STATS = [
-  { num: "50K+", label: "Active creators" },
-  { num: "10M", label: "Assets generated" },
-  { num: "4.2s", label: "Avg. generation time" },
-  { num: "$2.8M", label: "Creator revenue driven" },
-];
-
 // ─── Floating card data (decorative side cards) ───────────────────────────────
 const FLOATING_CARDS = [
   {
@@ -583,14 +576,13 @@ export default function Hero() {
               }}
             >
               <span className="block italic">AI-powered visuals for your</span>
-              <span className="block italic">ads, social,</span>
               <span className="block relative min-h-[1.06em]">
-                <span className="text-[#1447e6]">and brand Description</span>
+                ads, social, <span className="text-[#1447e6]">and brand</span>
               </span>
             </h1>
 
             {/* Sub */}
-            <p className="text-[17px] font-light text-[#777] leading-[1.65] max-w-[440px] lg:max-w-[560px] mt-5 mb-10">
+            <p className="text-[17px] font-light text-[#777] leading-[1.65] max-w-[440px] lg:max-w-[560px] mb-10">
               Creativeklux generates professional-quality creatives in seconds —
               from paid ad graphics to social content and brand visuals. Built
               for business owners, marketers, agencies, and social media
@@ -619,28 +611,6 @@ export default function Hero() {
               </button>
             </div>
           </div>
-        </div>
-
-        {/* ══ STATS BAND ═══════════════════════════════════════════════ */}
-        <div className="flex justify-center items-center gap-12 px-12 py-10 border-t border-b border-black/[0.07] bg-white/60 backdrop-blur-lg flex-wrap">
-          {STATS.map((s, i) => (
-            <React.Fragment key={s.label}>
-              <div className="text-center">
-                <div
-                  className="text-[32px] font-normal tracking-[-0.02em] text-[#111] leading-none mb-1"
-                  style={{ fontFamily: "Instrument Serif, serif" }}
-                >
-                  {s.num}
-                </div>
-                <div className="text-[12.5px] text-[#999] font-normal">
-                  {s.label}
-                </div>
-              </div>
-              {i < STATS.length - 1 && (
-                <div className="w-px h-9 bg-black/[0.08] hidden sm:block" />
-              )}
-            </React.Fragment>
-          ))}
         </div>
       </div>
 
