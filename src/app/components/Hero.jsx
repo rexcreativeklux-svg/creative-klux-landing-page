@@ -454,11 +454,9 @@ export default function Hero() {
     pauseAfterDelete: 380,
   });
 
-  const handleStartFree = () => {
-    setLoadingBtn("start-free");
-    setTimeout(() => {
-      window.location.href = "../pages/pricing";
-    }, 300);
+  const handleLogin = (key) => {
+    setLoadingBtn(key);
+    window.location.href = "https://app.creativeklux.com/";
   };
 
   const isEmpty = url.trim() === "";
@@ -573,46 +571,51 @@ export default function Hero() {
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 text-[11px] font-medium text-[#888] tracking-[0.06em] uppercase mb-7 px-3.5 py-[5px] border border-black/10 rounded-full bg-white/80 backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 shadow-[0_0_0_3px_rgba(34,197,94,0.2)] animate-pulse" />
-              AI-powered · URL to creative in seconds
+              One platform. Every creative you&apos;ll ever need.
             </div>
 
             {/* Headline */}
             <h1
-              className="text-[clamp(46px,7vw,74px)] font-normal leading-[1.06] tracking-[-0.02em] text-[#0f0f0f]"
+              className="text-[clamp(40px,5vw,60px)] font-normal leading-[1.08] tracking-[-0.02em] text-[#0f0f0f]"
               style={{
                 fontFamily: "Instrument Serif, serif",
                 minHeight: "3em",
               }}
             >
-              <span className="block italic">Scale Your Ad Campaigns</span>
+              <span className="block italic">AI-powered visuals for your</span>
+              <span className="block italic">ads, social,</span>
               <span className="block relative min-h-[1.06em]">
-                on <span className="text-[#1447e6]">Auto-Pilot</span>
+                <span className="text-[#1447e6]">and brand Description</span>
               </span>
             </h1>
 
             {/* Sub */}
-            <p className="text-[17px] font-light text-[#777] leading-[1.65] max-w-[440px] lg:max-w-[560px] mb-10">
-              Creative Klux runs your Facebook and Instagram ads for you. It
-              builds, tests, and scales winning creatives while you sleep.
+            <p className="text-[17px] font-light text-[#777] leading-[1.65] max-w-[440px] lg:max-w-[560px] mt-5 mb-10">
+              Creativeklux generates professional-quality creatives in seconds —
+              from paid ad graphics to social content and brand visuals. Built
+              for business owners, marketers, agencies, and social media
+              managers who want great design without the wait.
             </p>
 
             {/* Join with Google and Get Started button */}
             <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto">
               <button
+                onClick={() => handleLogin("login")}
+                disabled={loadingBtn === "login"}
                 className="w-full sm:w-auto justify-center flex items-center gap-1.5 text-[13.5px] font-medium text-[#555] bg-[#f0f0ec] border border-[#e0e0da] rounded-lg px-4 py-[7px] cursor-pointer transition-all duration-150 hover:border-[#bbb] hover:text-[#111] hover:bg-[#e8e8e4] disabled:opacity-65"
                 style={{ fontFamily: "Geist, sans-serif" }}
               >
                 {loadingBtn === "login" && <Spinner />}
-                Join with Google
+                Start Creating for Free
               </button>
               <button
-                onClick={handleStartFree}
-                disabled={loadingBtn === "start-free"}
+                onClick={() => handleLogin("see-action")}
+                disabled={loadingBtn === "see-action"}
                 className="w-full sm:w-auto justify-center flex items-center gap-1.5 text-[13.5px] font-semibold text-white bg-[#1447e6] border-none rounded-lg px-[18px] py-[7px] cursor-pointer transition-all duration-150 hover:bg-[#0f3bbf] hover:-translate-y-px disabled:opacity-65"
                 style={{ fontFamily: "Geist, sans-serif" }}
               >
-                {loadingBtn === "start-free" && <Spinner />}
-                Get Started for free
+                {loadingBtn === "see-action" && <Spinner />}
+                See it in action
               </button>
             </div>
           </div>
