@@ -468,11 +468,11 @@ export default function Hero() {
     <>
       {/* ── Background + full page wrapper ── */}
       <div
-        className="min-h-screen text-white"
+        className="min-h-screen text-white overflow-hidden rounded-none sm:rounded-[20px] m-0 sm:m-4 lg:m-5"
         style={{
           fontFamily: "Geist, sans-serif",
           background:
-            "radial-gradient(ellipse 75% 55% at 50% 120%, rgba(20,71,230,0.40) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 50% -10%, rgba(20,71,230,0.12) 0%, transparent 55%), #0a0b0f",
+            "linear-gradient(180deg, rgba(14,14,14,0.92) 0%, rgba(14,14,14,0.80) 100%), url('/images/bg-image.png') center bottom / cover no-repeat",
         }}
       >
         {/* ══ HERO BODY ════════════════════════════════════════════════ */}
@@ -547,7 +547,7 @@ export default function Hero() {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[40rem] h-[32rem] rounded-full bg-[#1447e6]/30 blur-[130px] pointer-events-none" />
 
             {/* Phone + flanking cards (cards positioned relative to the phone) */}
-            <div className="relative">
+            <div className="relative -mb-16 lg:-mb-32">
               <Image
                 src="/images/hero-image.png"
                 alt="Creative Klux app preview"
