@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const NAV_SECTIONS = ["creators", "managers", "brands", "pricing"];
 
@@ -76,15 +77,14 @@ export default function SiteHeader() {
           href="/"
           className="flex items-center gap-2 font-semibold text-[15px] text-[#111] no-underline tracking-[-0.2px]"
         >
-          <div className="w-[26px] h-[26px] bg-[#111] rounded-[7px] grid place-items-center shrink-0">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <circle cx="3.5" cy="3.5" r="2.5" fill="white" opacity="0.9" />
-              <circle cx="10.5" cy="3.5" r="2.5" fill="white" opacity="0.5" />
-              <circle cx="3.5" cy="10.5" r="2.5" fill="white" opacity="0.5" />
-              <circle cx="10.5" cy="10.5" r="2.5" fill="white" opacity="0.9" />
-            </svg>
-          </div>
-          Creative Klux
+          <Image
+            alt="Creative Klux logo"
+            src="/images/klux-logo.png"
+            width={500}
+            height={135}
+            priority
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Center nav */}

@@ -91,7 +91,7 @@ export const metadata = {
     statusBarStyle: "default",
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: "/images/klux-favicon.png",
     apple: "/apple-touch-icon.jpg",
   },
   manifest: "/site.webmanifest",

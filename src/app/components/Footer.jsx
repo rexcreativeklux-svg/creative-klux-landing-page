@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import NavigationLink from './NavigationLink';
 
 export default function Footer() {
@@ -69,13 +70,14 @@ export default function Footer() {
                 <div className="flex justify-between items-center mb-12 pb-8 border-b border-gray-800">
                     {/* Logo */}
                     <div className="flex items-center">
-                        <NavigationLink href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-                            <div className="relative w-10 h-10">
-                                <div className="absolute top-0 left-0 w-5 h-5 bg-white rounded-full"></div>
-                                <div className="absolute top-0 right-0 w-4 h-4 bg-white rounded-full"></div>
-                                <div className="absolute bottom-0 left-1 w-4 h-4 bg-white rounded-full"></div>
-                            </div>
-                            <span className="text-white text-2xl font-bold">Creative Klux</span>
+                        <NavigationLink href="/" className="flex items-center hover:opacity-80 transition-opacity">
+                            <Image
+                                alt="Creative Klux logo"
+                                src="/images/klux-logo.png"
+                                width={500}
+                                height={135}
+                                className="h-12 w-auto brightness-0 invert"
+                            />
                         </NavigationLink>
                     </div>
 
