@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import CreativeSelectionModal from "./CreativeSelectionModal";
 
 // ─── Fonts via next/font should be in layout.jsx. Add these there:
@@ -467,134 +468,62 @@ export default function Hero() {
     <>
       {/* ── Background + full page wrapper ── */}
       <div
-        className="min-h-screen text-[#111]"
+        className="min-h-screen text-white"
         style={{
           fontFamily: "Geist, sans-serif",
           background:
-            "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(99,102,241,0.10) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 60%, rgba(20,184,166,0.07) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 15% 70%, rgba(245,158,11,0.06) 0%, transparent 55%), #f7f7f5",
+            "radial-gradient(ellipse 75% 55% at 50% 120%, rgba(20,71,230,0.40) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 50% -10%, rgba(20,71,230,0.12) 0%, transparent 55%), #0a0b0f",
         }}
       >
         {/* ══ HERO BODY ════════════════════════════════════════════════ */}
-        <div className="relative overflow-hidden min-h-screen flex items-center justify-center">
+        <div
+          data-cursor-zone
+          className="relative overflow-hidden min-h-screen flex flex-col"
+        >
           {/* Subtle grid texture */}
           <div
-            className="absolute inset-0 opacity-[0.025] pointer-events-none"
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
             style={{
               backgroundImage:
-                "linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px)",
+                "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
               backgroundSize: "64px 64px",
             }}
           />
 
-          {/* Floating analytics cards — pinned to the screen edges on laptops+.
-              Top & bottom sit flush; only the middle card is pushed past the edge
-              and clipped by the hero's overflow-hidden. */}
-          <div className="hidden xl:flex flex-col gap-4 items-start absolute left-10 top-1/2 -translate-y-1/2 text-left pointer-events-none z-10">
-            {FLOATING_CARDS.filter((c) => c.side === "left").map(
-              (card, i, arr) => {
-                const isMiddle = i === Math.floor(arr.length / 2);
-                return (
-                  <div
-                    key={i}
-                    className={isMiddle ? "my-6" : ""}
-                    style={{
-                      transform: isMiddle
-                        ? "translateX(-48px)"
-                        : "translateX(48px)",
-                    }}
-                  >
-                    <div
-                      className="animate-[fadeSlideIn_0.6s_ease_both]"
-                      style={{ animationDelay: `${0.4 + i * 0.15}s` }}
-                    >
-                      <FloatingCard
-                        card={card}
-                        large={isMiddle}
-                        widthClass={isMiddle ? "w-64" : "w-52"}
-                        extraClass={
-                          isMiddle
-                            ? "min-h-[210px] flex flex-col justify-center"
-                            : ""
-                        }
-                      />
-                    </div>
-                  </div>
-                );
-              },
-            )}
-          </div>
-
-          <div className="hidden xl:flex flex-col gap-4 items-end absolute right-10 top-1/2 -translate-y-1/2 text-left pointer-events-none z-10">
-            {FLOATING_CARDS.filter((c) => c.side === "right").map(
-              (card, i, arr) => {
-                const isMiddle = i === Math.floor(arr.length / 2);
-                return (
-                  <div
-                    key={i}
-                    className={isMiddle ? "my-6" : ""}
-                    style={{
-                      transform: isMiddle
-                        ? "translateX(48px)"
-                        : "translateX(-48px)",
-                    }}
-                  >
-                    <div
-                      className="animate-[fadeSlideIn_0.6s_ease_both]"
-                      style={{ animationDelay: `${0.55 + i * 0.15}s` }}
-                    >
-                      <FloatingCard
-                        card={card}
-                        large={isMiddle}
-                        widthClass={isMiddle ? "w-64" : "w-52"}
-                        extraClass={
-                          isMiddle
-                            ? "min-h-[210px] flex flex-col justify-center"
-                            : ""
-                        }
-                      />
-                    </div>
-                  </div>
-                );
-              },
-            )}
-          </div>
-
-          {/* Center content */}
-          <div className="relative z-20 flex flex-col items-center text-center px-6 max-w-[740px] lg:max-w-[900px] mx-auto">
+          {/* Top — centered copy */}
+          <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-28 lg:pt-32 text-center flex flex-col items-center">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 text-[11px] font-medium text-[#888] tracking-[0.06em] uppercase mb-7 px-3.5 py-[5px] border border-black/10 rounded-full bg-white/80 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 shadow-[0_0_0_3px_rgba(34,197,94,0.2)] animate-pulse" />
+            <div className="inline-flex items-center gap-2 text-[11px] font-medium text-white/70 tracking-[0.06em] uppercase mb-7 px-3.5 py-[6px] border border-white/15 rounded-full bg-white/5 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1447e6] shadow-[0_0_0_3px_rgba(20,71,230,0.35)] animate-pulse" />
               One platform. Every creative you&apos;ll ever need.
             </div>
 
             {/* Headline */}
             <h1
-              className="text-[clamp(40px,5vw,60px)] font-normal leading-[1.08] tracking-[-0.02em] text-[#0f0f0f]"
-              style={{
-                fontFamily: "Instrument Serif, serif",
-                minHeight: "3em",
-              }}
+              data-cursor="title"
+              className="text-[clamp(46px,8vw,96px)] font-normal leading-[1.02] tracking-[-0.02em] text-white lg:cursor-none"
+              style={{ fontFamily: "Instrument Serif, serif" }}
             >
-              <span className="block italic">AI-powered visuals for your</span>
-              <span className="block relative min-h-[1.06em]">
-                ads, social, <span className="text-[#1447e6]">and brand</span>
+              <span className="italic">AI-powered visuals for your </span>
+              <span className="italic text-[#5b8cff]">
+                ads, social, and brand
               </span>
             </h1>
 
             {/* Sub */}
-            <p className="text-[17px] font-light text-[#777] leading-[1.65] max-w-[440px] lg:max-w-[560px] mb-10">
+            <p className="mt-6 text-[17px] font-light text-white/55 leading-[1.65] max-w-[620px]">
               Creativeklux generates professional-quality creatives in seconds —
               from paid ad graphics to social content and brand visuals. Built
-              for business owners, marketers, agencies, and social media
-              managers who want great design without the wait.
+              for business owners, marketers, agencies, and social media managers
+              who want great design without the wait.
             </p>
 
-            {/* Join with Google and Get Started button */}
-            <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full sm:w-auto">
+            {/* CTAs */}
+            <div className="mt-8 flex flex-col sm:flex-row items-center gap-3">
               <button
                 onClick={() => handleLogin("login")}
                 disabled={loadingBtn === "login"}
-                className="w-full sm:w-auto justify-center flex items-center gap-1.5 text-[13.5px] font-medium text-[#555] bg-[#f0f0ec] border border-[#e0e0da] rounded-lg px-4 py-[7px] cursor-pointer transition-all duration-150 hover:border-[#bbb] hover:text-[#111] hover:bg-[#e8e8e4] disabled:opacity-65"
+                className="w-full sm:w-auto justify-center flex items-center gap-2 text-[15px] font-semibold text-white bg-[#1447e6] border-none rounded-xl px-6 py-3.5 cursor-pointer transition-all duration-150 hover:bg-[#2a5cff] hover:-translate-y-px disabled:opacity-65"
                 style={{ fontFamily: "Geist, sans-serif" }}
               >
                 {loadingBtn === "login" && <Spinner />}
@@ -603,12 +532,182 @@ export default function Hero() {
               <button
                 onClick={() => handleLogin("see-action")}
                 disabled={loadingBtn === "see-action"}
-                className="w-full sm:w-auto justify-center flex items-center gap-1.5 text-[13.5px] font-semibold text-white bg-[#1447e6] border-none rounded-lg px-[18px] py-[7px] cursor-pointer transition-all duration-150 hover:bg-[#0f3bbf] hover:-translate-y-px disabled:opacity-65"
+                className="w-full sm:w-auto justify-center flex items-center gap-2 text-[15px] font-medium text-white/90 bg-white/5 border border-white/15 rounded-xl px-6 py-3.5 cursor-pointer transition-all duration-150 hover:bg-white/10 hover:border-white/25 disabled:opacity-65"
                 style={{ fontFamily: "Geist, sans-serif" }}
               >
                 {loadingBtn === "see-action" && <Spinner />}
                 See it in action
               </button>
+            </div>
+          </div>
+
+          {/* Bottom — phone centered, cards anchored to the phone (Appzen-style) */}
+          <div className="relative z-10 mt-16 lg:mt-20 w-full flex-1 flex items-end justify-center px-6">
+            {/* glow behind phone */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[40rem] h-[32rem] rounded-full bg-[#1447e6]/30 blur-[130px] pointer-events-none" />
+
+            {/* Phone + flanking cards (cards positioned relative to the phone) */}
+            <div className="relative">
+              <Image
+                src="/images/hero-image.png"
+                alt="Creative Klux app preview"
+                width={400}
+                height={718}
+                priority
+                className="relative z-10 w-[300px] sm:w-[380px] h-auto drop-shadow-2xl animate-[fadeSlideIn_0.7s_ease_both]"
+              />
+
+              {/* Left card — performance graph (top: 30px from phone top) */}
+              <div className="hidden xl:flex flex-col absolute top-[120px] right-full mr-12 w-[340px] rounded-2xl border border-white/[0.13] bg-white/[0.06] backdrop-blur-xl p-7 overflow-hidden animate-[fadeSlideIn_0.6s_ease_both]">
+                {/* tiny boxes texture */}
+                <div
+                  className="absolute inset-0 opacity-[0.07] pointer-events-none"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+                    backgroundSize: "22px 22px",
+                  }}
+                />
+                <div className="relative flex items-center justify-between mb-2">
+                  <span className="text-base font-medium text-white/85">
+                    Total reach
+                  </span>
+                  <span className="text-xs text-white/50 border border-white/10 rounded-md px-2.5 py-1">
+                    Monthly
+                  </span>
+                </div>
+                <div className="relative flex items-end gap-2">
+                  <span
+                    className="text-[42px] leading-none font-semibold text-white tracking-tight"
+                    style={{ fontFamily: "Instrument Serif, serif" }}
+                  >
+                    2.4M
+                  </span>
+                  <span className="mb-1.5 text-xs font-semibold text-emerald-400 bg-emerald-400/10 rounded-full px-2 py-0.5">
+                    +18%
+                  </span>
+                </div>
+                <svg
+                  viewBox="0 0 260 120"
+                  className="relative w-full h-40 mt-5"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <linearGradient id="reach-fill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#1447e6" stopOpacity="0.35" />
+                      <stop offset="100%" stopColor="#1447e6" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M0,95 C36,98 50,52 86,64 C120,76 132,32 168,36 C204,40 224,72 260,46 L260,120 L0,120 Z"
+                    fill="url(#reach-fill)"
+                  />
+                  <path
+                    d="M0,95 C36,98 50,52 86,64 C120,76 132,32 168,36 C204,40 224,72 260,46"
+                    fill="none"
+                    stroke="#5b8cff"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="168" cy="36" r="4.5" fill="#fff" />
+                </svg>
+                <div className="relative flex justify-between text-[11px] text-white/35 mt-3">
+                  <span>Jan</span>
+                  <span>Mar</span>
+                  <span>May</span>
+                  <span>Jul</span>
+                  <span>Sep</span>
+                </div>
+              </div>
+
+              {/* Right card — feature + ring + rating (top: 30px from phone top) */}
+              <div className="hidden xl:flex flex-col absolute top-[120px] left-full ml-12 w-[340px] rounded-2xl border border-white/[0.13] bg-white/[0.06] backdrop-blur-xl p-7 overflow-hidden animate-[fadeSlideIn_0.6s_ease_both]">
+                {/* tiny boxes texture */}
+                <div
+                  className="absolute inset-0 opacity-[0.07] pointer-events-none"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+                    backgroundSize: "22px 22px",
+                  }}
+                />
+                <div className="relative flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#1447e6]/25 grid place-items-center shrink-0">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#5b8cff"
+                      strokeWidth="2"
+                    >
+                      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                      <polyline points="2 17 12 22 22 17" />
+                      <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-xl font-semibold text-white leading-snug">
+                      Intuitive design
+                    </div>
+                    <div className="text-sm text-white/55 leading-relaxed mt-1.5">
+                      A clean, easy-to-use studio built for everyone.
+                    </div>
+                  </div>
+                  <div className="relative w-20 h-20 shrink-0">
+                    <svg viewBox="0 0 80 80" className="w-20 h-20">
+                      <circle
+                        cx="40"
+                        cy="40"
+                        r="34"
+                        fill="none"
+                        stroke="rgba(255,255,255,0.12)"
+                        strokeWidth="6"
+                      />
+                      <circle
+                        cx="40"
+                        cy="40"
+                        r="34"
+                        fill="none"
+                        stroke="#1447e6"
+                        strokeWidth="6"
+                        strokeLinecap="round"
+                        strokeDasharray={`${0.8 * 2 * Math.PI * 34} ${2 * Math.PI * 34}`}
+                        transform="rotate(-90 40 40)"
+                      />
+                    </svg>
+                    <span className="absolute inset-0 grid place-items-center text-sm font-semibold text-white">
+                      80%
+                    </span>
+                  </div>
+                </div>
+                <div className="relative flex items-center gap-2.5 mt-6 pt-6 border-t border-white/10">
+                  <svg width="26" height="26" viewBox="0 0 24 24">
+                    <path
+                      fill="#4285F4"
+                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"
+                    />
+                  </svg>
+                  <span className="text-amber-400 text-lg tracking-tight">
+                    ★★★★★
+                  </span>
+                  <span className="text-xl font-semibold text-white ml-auto">
+                    4.8
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

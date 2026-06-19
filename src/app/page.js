@@ -2,6 +2,7 @@
 import Image from "next/image";
 import SiteHeader from "./components/SiteHeader";
 import SectionNav from "./components/SectionNav";
+import CursorFollower from "./components/CursorFollower";
 import Hero from "./components/Hero";
 import "./globals.css";
 import CarouselSlider from "./components/CarouselSlider";
@@ -136,6 +137,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <CursorFollower />
       <SiteHeader />
       <Hero />
 

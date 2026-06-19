@@ -75,7 +75,7 @@ export default function SectionNav() {
   };
 
   return (
-    <nav className="sticky top-16 z-40 bg-[#0b1437]/95 backdrop-blur-md border-y border-white/10">
+    <nav className="sticky top-[84px] z-40 bg-[#0b1437]/95 backdrop-blur-md border-y border-white/10">
       <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         <ul className="flex items-center gap-1 px-4 w-max mx-auto">
         {TABS.map(({ id, label, Icon }) => {
