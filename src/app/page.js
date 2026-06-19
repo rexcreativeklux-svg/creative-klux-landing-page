@@ -132,7 +132,7 @@ const jsonLd = {
 ----------------------------------------------------------------- */
 export default function Home() {
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-100 via-purple-100 to-pink-100">
+    <div className="min-h-screen bg-[#f9fafb]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -60,19 +60,21 @@ export default function SiteHeader() {
   return (
     <header
       data-cursor-zone
-      className="fixed inset-x-0 top-0 z-50 px-3 sm:px-5 pt-3 sm:pt-4"
+      className="fixed inset-x-0 top-0 z-50 px-3 sm:px-6 lg:px-9 pt-5 lg:pt-12"
       style={{ fontFamily: "Geist, sans-serif" }}
     >
       <nav
-        className={`relative mx-auto max-w-7xl flex items-center justify-between gap-4 px-5 sm:px-6 h-16 rounded-2xl border border-white/10 bg-[#14151a]/90 backdrop-blur-xl transition-shadow duration-200 ${
-          isScrolled ? "shadow-[0_10px_34px_rgba(0,0,0,0.30)]" : ""
+        className={`relative mx-auto max-w-[1500px] flex items-center justify-between gap-4 px-5 sm:px-6 h-16 rounded-2xl border border-white/10 backdrop-blur-2xl transition-colors duration-300 ${
+          isScrolled
+            ? "bg-[#0E0E0E]/95 shadow-[0_10px_34px_rgba(0,0,0,0.35)]"
+            : "bg-white/10"
         }`}
       >
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           <Image
             alt="Creative Klux logo"
-            src="/images/klux-logo.png"
+            src="/images/logo-klux.png"
             width={500}
             height={135}
             priority

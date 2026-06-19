@@ -76,7 +76,7 @@ export default function Footer() {
             >
               <Image
                 alt="Creative Klux logo"
-                src="/images/klux-logo.png"
+                src="/images/logo-klux.png"
                 width={500}
                 height={135}
                 className="h-12 w-auto"
