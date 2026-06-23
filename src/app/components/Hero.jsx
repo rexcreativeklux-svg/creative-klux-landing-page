@@ -1,43 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
+import { Play, ArrowUpRight } from "lucide-react";
 
 // ─── Fonts via next/font should be in layout.jsx. Add these there:
 // import { Instrument_Serif, Geist } from 'next/font/google'
 // For now we load via a global stylesheet that should be added to globals.css:
 // @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap');
 
-// ─── Spinner ──────────────────────────────────────────────────────────────────
-function Spinner() {
-  return (
-    <svg className="animate-spin" width="14" height="14" viewBox="0 0 24 24">
-      <circle
-        cx="12"
-        cy="12"
-        r="10"
-        stroke="currentColor"
-        strokeWidth="3"
-        fill="none"
-        opacity="0.25"
-      />
-      <path
-        fill="currentColor"
-        opacity="0.8"
-        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-      />
-    </svg>
-  );
+// Smooth-scroll to an in-page section, accounting for the fixed header + nav bar.
+function scrollToId(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.pageYOffset - 120;
+  window.scrollTo({ top, behavior: "smooth" });
 }
 
 // ─── Main Hero ────────────────────────────────────────────────────────────────
 export default function Hero() {
-  const [loadingBtn, setLoadingBtn] = useState(null);
-
-  const handleLogin = (key) => {
-    setLoadingBtn(key);
-    window.location.href = "https://app.creativeklux.com/";
-  };
 
   return (
     <>
@@ -96,22 +77,27 @@ export default function Hero() {
             {/* CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-3">
               <button
-                onClick={() => handleLogin("login")}
-                disabled={loadingBtn === "login"}
-                className="w-full sm:w-auto justify-center flex items-center gap-2 text-[15px] font-semibold text-white bg-[#1447e6] border-none rounded-xl px-6 py-3.5 cursor-pointer transition-all duration-150 hover:bg-[#2a5cff] hover:-translate-y-px disabled:opacity-65"
+                onClick={() => scrollToId("pricing")}
+                className="group w-full sm:w-auto justify-center flex items-center gap-2 text-[15px] font-semibold text-white bg-[#1447e6] border-none rounded-xl px-6 py-3.5 cursor-pointer transition-all duration-150 hover:bg-[#2a5cff] hover:-translate-y-px"
                 style={{ fontFamily: "Geist, sans-serif" }}
               >
-                {loadingBtn === "login" && <Spinner />}
                 Start Creating for Free
+                <ArrowUpRight
+                  size={18}
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
               </button>
               <button
-                onClick={() => handleLogin("see-action")}
-                disabled={loadingBtn === "see-action"}
-                className="w-full sm:w-auto justify-center flex items-center gap-2 text-[15px] font-medium text-white/90 bg-white/5 border border-white/15 rounded-xl px-6 py-3.5 cursor-pointer transition-all duration-150 hover:bg-white/10 hover:border-white/25 disabled:opacity-65"
+                onClick={() => scrollToId("see-in-action")}
+                className="group flex items-center gap-3 bg-transparent border-none cursor-pointer"
                 style={{ fontFamily: "Geist, sans-serif" }}
               >
-                {loadingBtn === "see-action" && <Spinner />}
-                See it in action
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1447e6] text-white transition-transform duration-150 group-hover:scale-105">
+                  <Play size={18} fill="currentColor" className="ml-0.5" />
+                </span>
+                <span className="text-[15px] font-medium text-white">
+                  See it in action
+                </span>
               </button>
             </div>
           </div>
