@@ -3,29 +3,10 @@ import Image from "next/image";
 import NavigationLink from "./NavigationLink";
 
 export default function Footer() {
-  const learnMoreLinks = [
-    { name: "Beacons for Managers", href: "#" },
-    { name: "Top Creator Agencies 2024", href: "#" },
-    { name: "Creator Agencies", href: "#" },
-    { name: "Pricing", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Referral Program", href: "#" },
-    { name: "Shopping", href: "#" },
-    { name: "Resources", href: "#" },
-  ];
-
   const legalLinks = [
     { name: "Terms and Conditions", href: "/pages/terms" },
     { name: "Privacy Policy", href: "/pages/privacy" },
     { name: "Refund Policy", href: "/pages/refund" },
-    { name: "Cookie Notice", href: "#" },
-    { name: "Report Violation", href: "#" },
-    { name: "Community Standards", href: "#" },
-  ];
-
-  const beaconsLinks = [
-    { name: "About us", href: "#" },
-    { name: "Careers", href: "#" },
   ];
 
   const socialLinks = [
@@ -67,7 +48,7 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Top Section - Logo and Social Icons */}
-        <div className="flex justify-between items-center mb-12 pb-8 border-b border-gray-800">
+        <div className="flex justify-between items-center mb-12 pb-8">
           {/* Logo */}
           <div className="flex items-center">
             <NavigationLink
@@ -99,78 +80,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Links Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Learn More Column */}
-          <div>
-            <h3 className="text-gray-400 text-sm font-semibold mb-4">
-              Learn more
-            </h3>
-            <ul className="space-y-3">
-              {learnMoreLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal Column */}
-          <div>
-            <h3 className="text-gray-400 text-sm font-semibold mb-4">Legal</h3>
-            <ul className="space-y-3">
-              {legalLinks.map((link) => (
-                <li key={link.name}>
-                  <NavigationLink
-                    href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </NavigationLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Beacons Column */}
-          <div>
-            <h3 className="text-gray-400 text-sm font-semibold mb-4">
-              Creative Klux
-            </h3>
-            <ul className="space-y-3 mb-8">
-              {beaconsLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="text-gray-400 text-sm font-semibold mb-4">
-              Help & Support
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
-                >
-                  Help Center
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
         {/* Support Section */}
         <div className="bg-gray-800 rounded-xl p-6 text-center mb-8">
           <p className="text-white text-lg">
@@ -184,47 +93,64 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* App Store Badges */}
-        <div className="flex justify-center items-center space-x-4 mb-8">
-          <a href="#" className="inline-block">
-            <div className="bg-black border border-gray-700 rounded-lg px-4 py-2 flex items-center space-x-2 hover:bg-gray-800 transition-colors">
-              <svg
-                className="w-7 h-7 text-white"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-              </svg>
-              <div className="text-left">
-                <div className="text-xs text-gray-300">Download on the</div>
-                <div className="text-lg font-semibold text-white">
-                  App Store
+        {/* Bottom - App badges + copyright (left) · Legal links (right) */}
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 pt-8">
+          {/* Left: App badges + copyright */}
+          <div>
+            <div className="flex items-center space-x-4 mb-6">
+              <a href="#" className="inline-block">
+                <div className="bg-black border border-gray-700 rounded-lg px-4 py-2 flex items-center space-x-2 hover:bg-gray-800 transition-colors">
+                  <svg
+                    className="w-7 h-7 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-xs text-gray-300">Download on the</div>
+                    <div className="text-lg font-semibold text-white">
+                      App Store
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </a>
-          <a href="#" className="inline-block">
-            <div className="bg-black rounded-lg border border-gray-700 px-4 py-2 flex items-center space-x-2 hover:bg-gray-800 transition-colors">
-              <svg
-                className="w-7 h-7 text-white"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M3.609 1.814L13.792 12 3.61 22.186a1.978 1.978 0 01-.61-1.433V3.247c0-.573.247-1.085.609-1.433zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626c.766.444.766 1.174 0 1.618l-2.808 1.626-2.563-2.563 2.564-2.307zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
-              </svg>
-              <div className="text-left">
-                <div className="text-xs text-gray-300">GET IT ON</div>
-                <div className="text-lg font-semibold text-white">
-                  Google Play
+              </a>
+              <a href="#" className="inline-block">
+                <div className="bg-black rounded-lg border border-gray-700 px-4 py-2 flex items-center space-x-2 hover:bg-gray-800 transition-colors">
+                  <svg
+                    className="w-7 h-7 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186a1.978 1.978 0 01-.61-1.433V3.247c0-.573.247-1.085.609-1.433zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626c.766.444.766 1.174 0 1.618l-2.808 1.626-2.563-2.563 2.564-2.307zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-xs text-gray-300">GET IT ON</div>
+                    <div className="text-lg font-semibold text-white">
+                      Google Play
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-          </a>
-        </div>
+            <p className="text-sm text-gray-500">
+              Creative Klux® is a registered trademark of Netsprin ©2025
+            </p>
+          </div>
 
-        {/* Copyright */}
-        <div className="text-center text-sm text-gray-500">
-          <p>Creative Klux® is a registered trademark of Netsprin ©2025</p>
+          {/* Right: Legal links */}
+          <ul className="flex flex-col gap-3 md:items-end md:text-right">
+            {legalLinks.map((link) => (
+              <li key={link.name}>
+                <NavigationLink
+                  href={link.href}
+                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                >
+                  {link.name}
+                </NavigationLink>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>
