@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Activity, Search, Shield, Star, Columns2 } from "lucide-react";
+import { Activity, Search, Shield, Star, Columns2, Wand2 } from "lucide-react";
 
 export default function CreativeSection() {
     const creatives = [
@@ -63,7 +63,8 @@ export default function CreativeSection() {
                 { Icon: Search, iconBg: '#f5f3ff', iconColor: '#7c3aed', title: 'Market Spy', description: "See what competitors are running and what's working" },
                 { Icon: Shield, iconBg: '#fffbeb', iconColor: '#b45309', title: 'Ad Guard AI', description: 'Catch policy violations before Meta or Google does' },
                 { Icon: Star, iconBg: '#eff6ff', iconColor: '#1264ff', title: 'Ad Scorer AI', description: 'One score that predicts performance across 4 dimensions' },
-                { Icon: Columns2, iconBg: '#f0fdf4', iconColor: '#15803d', full: true, title: 'Creative Comparison', description: 'Put two creatives head-to-head and let AI pick the winner — before you spend on media.' },
+                { Icon: Columns2, iconBg: '#f0fdf4', iconColor: '#15803d', title: 'Creative Comparison', description: 'Put two creatives head-to-head and let AI pick the winner — before you spend on media.' },
+                { Icon: Wand2, iconBg: '#f5f3ff', iconColor: '#7c3aed', title: 'Magic Studio', description: 'Turn simple prompts into images, videos, and on-brand variations.' },
             ]
         }
     ];

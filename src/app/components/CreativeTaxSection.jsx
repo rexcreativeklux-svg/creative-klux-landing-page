@@ -19,7 +19,7 @@ const PAIN_CARDS = [
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
-        style={{ color: "#ff7070" }}
+        style={{ color: "#5b8cff" }}
       >
         <circle cx="12" cy="12" r="10" />
         <path d="M12 6v6l4 2" />
@@ -41,7 +41,7 @@ const PAIN_CARDS = [
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
-        style={{ color: "#ff7070" }}
+        style={{ color: "#5b8cff" }}
       >
         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
       </svg>
@@ -61,7 +61,7 @@ const PAIN_CARDS = [
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
-        style={{ color: "#ff7070" }}
+        style={{ color: "#5b8cff" }}
       >
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
@@ -82,7 +82,7 @@ const PAIN_CARDS = [
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
-        style={{ color: "#ff7070" }}
+        style={{ color: "#5b8cff" }}
       >
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
       </svg>
@@ -103,7 +103,7 @@ const PAIN_CARDS = [
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
-        style={{ color: "#ff7070" }}
+        style={{ color: "#5b8cff" }}
       >
         <rect x="2" y="3" width="20" height="14" rx="2" />
         <path d="M8 21h8M12 17v4" />
@@ -124,7 +124,7 @@ const PAIN_CARDS = [
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
-        style={{ color: "#ff7070" }}
+        style={{ color: "#5b8cff" }}
       >
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
       </svg>
@@ -224,25 +224,25 @@ export default function CreativeTaxSection() {
   return (
     <section
       ref={rootRef}
-      className="bg-[#0b0b14] text-white"
+      className="text-[#0b0b14]"
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <div className="max-w-[1100px] mx-auto px-6 pt-[100px] pb-[120px]">
         {/* Eyebrow */}
-        <p className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.14em] uppercase text-[#ff7070] mb-6">
-          <span className="ctax-dot w-1.5 h-1.5 rounded-full bg-[#ff4040]" />
+        <p className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.14em] uppercase text-[#1447e6] mb-6">
+          <span className="ctax-dot w-1.5 h-1.5 rounded-full bg-[#1447e6]" />
           The hidden cost of bad creatives
         </p>
 
         {/* Headline */}
         <h2
-          className="text-[clamp(36px,6vw,68px)] font-extrabold leading-[1.05] tracking-[-0.03em] text-white mb-5"
+          className="text-[clamp(36px,6vw,68px)] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#0b0b14] mb-5"
           style={{ fontFamily: "Syne, sans-serif" }}
         >
           You&apos;re losing deals before
           <br />
           anyone reads your{" "}
-          <span className="relative not-italic text-[#ff7070] after:content-[''] after:absolute after:bottom-1 after:inset-x-0 after:h-[3px] after:bg-[#ff4040] after:opacity-50 after:rounded-[2px]">
+          <span className="relative not-italic text-[#1447e6] after:content-[''] after:absolute after:bottom-1 after:inset-x-0 after:h-[3px] after:bg-[#1447e6] after:opacity-50 after:rounded-[2px]">
             copy
           </span>
           .
@@ -262,9 +262,9 @@ export default function CreativeTaxSection() {
               className="ctax-card group relative overflow-hidden bg-[#1a1a2e] p-[36px_32px] hover:bg-[#1e1e36]"
             >
               {/* left accent bar on hover */}
-              <span className="absolute top-0 left-0 w-[3px] h-full bg-[#ff4040] opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+              <span className="absolute top-0 left-0 w-[3px] h-full bg-[#1447e6] opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
 
-              <div className="w-11 h-11 rounded-xl bg-[#ff4040]/10 flex items-center justify-center mb-5">
+              <div className="w-11 h-11 rounded-xl bg-[#1447e6]/10 flex items-center justify-center mb-5">
                 {card.icon}
               </div>
 
@@ -281,7 +281,7 @@ export default function CreativeTaxSection() {
 
               <div className="flex items-baseline gap-1.5">
                 <span
-                  className="ctax-stat text-[28px] font-extrabold text-[#ff7070]"
+                  className="ctax-stat text-[28px] font-extrabold text-[#5b8cff]"
                   data-target={card.target}
                   data-prefix={card.prefix}
                   style={{ fontFamily: "Syne, sans-serif" }}
@@ -312,7 +312,7 @@ export default function CreativeTaxSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-[3px] rounded-[20px] overflow-hidden bg-white/[0.07]">
           {/* Without */}
           <div className="bg-[#130e0e] p-[40px_36px]">
-            <span className="inline-block text-[11px] font-semibold tracking-[0.12em] uppercase px-3 py-1 rounded-full mb-7 bg-[#ff4040]/[0.12] text-[#ff7070]">
+            <span className="inline-block text-[11px] font-semibold tracking-[0.12em] uppercase px-3 py-1 rounded-full mb-7 bg-[#1447e6]/12 text-[#5b8cff]">
               Without Creativeklux
             </span>
             <ul className="flex flex-col gap-3.5 list-none">
@@ -321,7 +321,7 @@ export default function CreativeTaxSection() {
                   key={item}
                   className="flex items-start gap-3 text-[15px] text-[#c2c2d8] leading-[1.5]"
                 >
-                  <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[11px] mt-0.5 bg-[#ff4040]/[0.15] text-[#ff4040]">
+                  <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[11px] mt-0.5 bg-[#1447e6]/15 text-[#1447e6]">
                     ✕
                   </span>
                   {item}
@@ -354,7 +354,7 @@ export default function CreativeTaxSection() {
         {/* CTA */}
         <div className="text-center pt-20">
           <h2
-            className="text-[clamp(28px,4vw,46px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-white mb-4"
+            className="text-[clamp(28px,4vw,46px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#0b0b14] mb-4"
             style={{ fontFamily: "Syne, sans-serif" }}
           >
             Stop paying the creative tax.
@@ -365,7 +365,7 @@ export default function CreativeTaxSection() {
           <div className="flex gap-3.5 justify-center flex-wrap">
             <button
               onClick={() => scrollToId("pricing")}
-              className="group inline-flex cursor-pointer items-center gap-2 text-[15px] font-semibold text-white bg-[#7c3aed] rounded-xl px-8 py-3.5 transition-all duration-200 hover:bg-[#6d28d9] hover:-translate-y-px"
+              className="group inline-flex cursor-pointer items-center gap-2 text-[15px] font-semibold text-white bg-[#1447e6] rounded-xl px-8 py-3.5 transition-all duration-200 hover:bg-[#2a5cff] hover:-translate-y-px"
             >
               Start free today
               <ArrowUpRight
@@ -377,10 +377,10 @@ export default function CreativeTaxSection() {
               onClick={() => scrollToId("see-in-action")}
               className="group inline-flex cursor-pointer items-center gap-3 bg-transparent border-none"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#7c3aed] text-white transition-transform duration-200 group-hover:scale-105">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1447e6] text-white transition-transform duration-200 group-hover:scale-105">
                 <Play size={18} fill="currentColor" className="ml-0.5" />
               </span>
-              <span className="text-[15px] font-medium text-white">
+              <span className="text-[15px] font-medium text-[#0b0b14]">
                 See it in action
               </span>
             </button>
