@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Megaphone, Share2, Palette, Wand2, Plug } from "lucide-react";
+import { Megaphone, Share2, Palette, Wand2 } from "lucide-react";
 
 // id must match an element id rendered on the page (see CreativesSection / page.js)
 const TABS = [
@@ -9,7 +9,6 @@ const TABS = [
   { id: "social-content", label: "Social Content Creation", Icon: Share2 },
   { id: "brand-design", label: "Brand Design", Icon: Palette },
   { id: "magic-studio", label: "Ai Tools", Icon: Wand2 },
-  { id: "integrations", label: "Integration", Icon: Plug },
 ];
 
 // Height of header (64) + this bar — sections scroll to just below both.

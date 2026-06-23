@@ -36,13 +36,13 @@ export default function AIFeaturesSection() {
                             {/* Orbital dot */}
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-blue-400 rounded-full shadow-lg shadow-blue-400/50"></div>
                         </div>
-                        
+
                         {/* Inner ring */}
                         <div className="absolute inset-4 rounded-full border-2 border-blue-500/70">
                             {/* Orbital dot */}
                             <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-blue-400 rounded-full shadow-lg shadow-blue-400/50"></div>
                         </div>
-                        
+
                         {/* Center star */}
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="relative w-12 h-12">
@@ -85,7 +85,7 @@ export default function AIFeaturesSection() {
                         transform: rotate(360deg);
                     }
                 }
-                
+
                 @keyframes grid-move {
                     from {
                         background-position: 0 0;
@@ -94,11 +94,11 @@ export default function AIFeaturesSection() {
                         background-position: 0 -80px;
                     }
                 }
-                
+
                 .animate-spin-slow {
                     animation: spin-slow 10s linear infinite;
                 }
-                
+
                 .grid-animation {
                     animation: grid-move 2s linear infinite;
                 }
@@ -111,7 +111,7 @@ function FeaturePill({ feature, index }) {
     return (
         <div
             className="bg-black text-white border border-white/80 hover:border-white px-6 sm:px-3 py-3 sm:py-2 rounded-full text-sm sm:text-base font-semibold whitespace-nowrap transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/20"
-        
+
         >
             {feature}
         </div>

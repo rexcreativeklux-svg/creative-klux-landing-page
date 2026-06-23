@@ -53,7 +53,15 @@ export default function SiteHeader() {
   };
 
   const handleStartFree = () => {
-    setLoadingBtn("start-free");
+    setMobileOpen(false);
+    const el = document.getElementById("pricing");
+    if (el) {
+      const offset = el.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: offset, behavior: "smooth" });
+    }
+  };
+
+  const handleLogin = () => {
     window.location.href = "https://app.creativeklux.com/";
   };
 
@@ -100,14 +108,19 @@ export default function SiteHeader() {
         </ul>
 
         {/* Right CTA */}
-        <div className="hidden lg:flex items-center">
+        <div className="hidden lg:flex items-center gap-4">
           <button
-            onClick={handleStartFree}
-            disabled={loadingBtn === "start-free"}
-            className="group flex items-center gap-2 text-[14px] font-semibold text-white bg-[#1447e6] rounded-full pl-5 pr-4 py-2.5 cursor-pointer transition-all duration-150 hover:bg-[#2a5cff] hover:-translate-y-px disabled:opacity-65"
+            onClick={handleLogin}
+            className="text-sm font-medium text-white/75 bg-transparent border-none cursor-pointer transition-colors duration-150 hover:text-white"
             style={{ fontFamily: "Geist, sans-serif" }}
           >
-            {loadingBtn === "start-free" && <Spinner />}
+            Login
+          </button>
+          <button
+            onClick={handleStartFree}
+            className="group flex items-center gap-2 text-[14px] font-semibold text-white bg-[#1447e6] rounded-full pl-5 pr-4 py-2.5 cursor-pointer transition-all duration-150 hover:bg-[#2a5cff] hover:-translate-y-px"
+            style={{ fontFamily: "Geist, sans-serif" }}
+          >
             Start for Free
             <ArrowUpRight
               size={17}
@@ -142,11 +155,17 @@ export default function SiteHeader() {
             </button>
           ))}
           <button
-            onClick={handleStartFree}
-            className="mt-3 w-full justify-center flex items-center gap-2 text-[14px] font-semibold text-white bg-[#1447e6] rounded-full px-4 py-3 cursor-pointer transition-all hover:bg-[#2a5cff]"
+            onClick={handleLogin}
+            className="mt-3 w-full justify-center flex items-center gap-2 text-[15px] font-medium text-white/80 bg-transparent border border-white/15 rounded-full px-4 py-3 cursor-pointer transition-colors hover:text-white hover:border-white/30"
             style={{ fontFamily: "Geist, sans-serif" }}
           >
-            {loadingBtn === "start-free" && <Spinner />}
+            Login
+          </button>
+          <button
+            onClick={handleStartFree}
+            className="mt-2 w-full justify-center flex items-center gap-2 text-[14px] font-semibold text-white bg-[#1447e6] rounded-full px-4 py-3 cursor-pointer transition-all hover:bg-[#2a5cff]"
+            style={{ fontFamily: "Geist, sans-serif" }}
+          >
             Start for Free
             <ArrowUpRight size={17} />
           </button>

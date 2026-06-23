@@ -6,6 +6,7 @@ import CursorFollower from "./components/CursorFollower";
 import Hero from "./components/Hero";
 import "./globals.css";
 import CarouselSlider from "./components/CarouselSlider";
+import CreativeTaxSection from "./components/CreativeTaxSection";
 import CreativeSection from "./components/CreativesSection";
 import MoreSection from "./components/MoreSection";
 import GetStartedSection from "./components/GetStartedSection";
@@ -144,6 +145,8 @@ export default function Home() {
       <section id="creators">
         <CarouselSlider />
       </section>
+
+      <CreativeTaxSection />
 
       {/* Section tab bar — sticky under the header for the rest of the page */}
       <SectionNav />

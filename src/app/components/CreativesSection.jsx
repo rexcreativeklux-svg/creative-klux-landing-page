@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Activity, Search, Shield, Star, Columns2 } from "lucide-react";
 
 export default function CreativeSection() {
     const creatives = [
@@ -27,6 +28,7 @@ export default function CreativeSection() {
             title: 'Social Creatives',
             description: 'Dominate the feed with content designed to stop the scroll. Create platform-perfect posts, stories, and reels that your audience can\'t help but share.',
             image: '/images/social-creatives-image.png',
+            bg: 'bg-gray-50',
             features: [
                 { icon: '📷', title: 'Posts', description: 'Perfectly sized posts with captions and hashtags that get discovered' },
                 { icon: '🎞️', title: 'Stories/Reels/Shorts', description: 'Vertical videos formatted for maximum watch time and shares' },
@@ -50,16 +52,18 @@ export default function CreativeSection() {
         },
         {
             id: 'magic-studio',
-            badge: '🪄 AI-Powered Magic',
-            badgeColor: 'bg-purple-200 text-purple-900',
-            title: 'Magic Studio',
-            description: 'Unleash the power of AI to create impossibly good content. Transform text into stunning visuals, generate variations instantly, and produce pro-quality videos—all with simple prompts.',
+            badge: '✨ AI Tools',
+            badgeColor: 'bg-green-200 text-green-900',
+            title: 'AI Tools That Work While You Create',
+            description: 'Score your ads, spy on competitors, guard against policy bans, and pick the winning creative — all before you spend a single dollar on media.',
             image: '/images/magic-studio-image.png',
+            bg: 'bg-gray-50',
             features: [
-                { icon: '✨', title: 'Text to Image', description: 'Type what you imagine, get photorealistic images in seconds' },
-                { icon: '🎥', title: 'Text to Video', description: 'Turn scripts into full videos with AI-generated scenes and motion' },
-                { icon: '🔄', title: 'Image to Variations', description: 'Generate endless versions to A/B test what works best' },
-                { icon: '🎙️', title: 'Script to Voiceover to Video', description: 'Complete narrated videos from just a text script—no recording needed' },
+                { Icon: Activity, iconBg: '#eff6ff', iconColor: '#1264ff', title: 'Ad Performance', description: 'Diagnose why your ads win or lose before launch' },
+                { Icon: Search, iconBg: '#f5f3ff', iconColor: '#7c3aed', title: 'Market Spy', description: "See what competitors are running and what's working" },
+                { Icon: Shield, iconBg: '#fffbeb', iconColor: '#b45309', title: 'Ad Guard AI', description: 'Catch policy violations before Meta or Google does' },
+                { Icon: Star, iconBg: '#eff6ff', iconColor: '#1264ff', title: 'Ad Scorer AI', description: 'One score that predicts performance across 4 dimensions' },
+                { Icon: Columns2, iconBg: '#f0fdf4', iconColor: '#15803d', full: true, title: 'Creative Comparison', description: 'Put two creatives head-to-head and let AI pick the winner — before you spend on media.' },
             ]
         }
     ];
@@ -156,7 +160,7 @@ function FeatureItem({ feature, index, fadeInUp, staggerContainer }) {
         <div
             ref={ref}
             id={feature.id}
-            className="sticky bg-white rounded-2xl transition-shadow duration-300 scroll-mt-32"
+            className={`sticky ${feature.bg || 'bg-white'} rounded-2xl transition-shadow duration-300 scroll-mt-32`}
             style={{
                 top: `${topOffset}px`,
                 zIndex,
@@ -254,7 +258,7 @@ function FeatureItem({ feature, index, fadeInUp, staggerContainer }) {
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                 >
-                    <div className={`relative sm:rounded-xl bg-linear-to-br ${feature.gradient} p-4 sm:p-6 md:p-8 lg:p-10 h-[600px] overflow-hidden`}>
+                    <div className={`relative sm:rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 h-[600px] overflow-hidden`}>
                         <div className="relative w-full h-full">
                             <Image
                                 src={feature.image}
@@ -273,16 +277,28 @@ function FeatureItem({ feature, index, fadeInUp, staggerContainer }) {
 }
 
 function FeatureCard({ feature, fadeInUp }) {
+    const { Icon } = feature;
+
+    // Icon: lucide component (with tinted tile) when provided, otherwise emoji.
+    const iconEl = Icon ? (
+        <div
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px]"
+            style={{ background: feature.iconBg }}
+        >
+            <Icon size={20} strokeWidth={1.8} style={{ color: feature.iconColor }} />
+        </div>
+    ) : (
+        <div className="text-2xl shrink-0">{feature.icon}</div>
+    );
+
     return (
         <motion.div
-            className="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-4 cursor-pointer hover:scale-95 transition duration-200"
+            className={`bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-4 cursor-pointer hover:scale-95 transition duration-200 ${feature.full ? 'sm:col-span-2' : ''}`}
             variants={fadeInUp}
             transition={{ duration: 0.4 }}
         >
-            <div className="flex flex-col items-start">
-                <div className="text-2xl shrink-0">
-                    {feature.icon}
-                </div>
+            <div className={`flex ${feature.full ? 'flex-row items-center gap-3' : 'flex-col items-start'}`}>
+                {iconEl}
                 <div>
                     <h4 className="font-semibold text-gray-900 text-sm mb-1">
                         {feature.title}

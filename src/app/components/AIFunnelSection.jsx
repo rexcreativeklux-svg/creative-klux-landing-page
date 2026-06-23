@@ -240,7 +240,7 @@ export default function CreativekluxHero() {
           </motion.div>
 
           {/* Video Demo */}
-          <motion.div className="relative max-w-6xl mx-auto">
+          <motion.div id="see-in-action" className="relative max-w-6xl mx-auto scroll-mt-32">
             <div className="rounded-3xl overflow-hidden shadow-2xl ring-6 ring-blue-600 ring-offset-transparent">
               <div className="aspect-video relative bg-black">
                 <video
