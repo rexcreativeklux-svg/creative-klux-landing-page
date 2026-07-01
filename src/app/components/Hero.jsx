@@ -19,7 +19,6 @@ function scrollToId(id) {
 
 // ─── Main Hero ────────────────────────────────────────────────────────────────
 export default function Hero() {
-
   return (
     <>
       {/* ── Background + full page wrapper ── */}
@@ -60,18 +59,16 @@ export default function Hero() {
               className="text-[clamp(46px,8vw,96px)] font-normal leading-[1.02] tracking-[-0.02em] text-white lg:cursor-none"
               style={{ fontFamily: "Instrument Serif, serif" }}
             >
-              <span className="italic">AI-powered visuals for your </span>
-              <span className="italic text-[#5b8cff]">
-                ads, social, and brand
-              </span>
+              <span className="">AI-powered visuals for your </span>
+              <span className="text-[#5b8cff]">ads, social, and brand</span>
             </h1>
 
             {/* Sub */}
             <p className="mt-6 text-[17px] font-light text-white/55 leading-[1.65] max-w-[620px]">
               Creativeklux generates professional-quality creatives in seconds —
               from paid ad graphics to social content and brand visuals. Built
-              for business owners, marketers, agencies, and social media managers
-              who want great design without the wait.
+              for business owners, marketers, agencies, and social media
+              managers who want great design without the wait.
             </p>
 
             {/* CTAs */}
@@ -155,7 +152,11 @@ export default function Hero() {
                 >
                   <defs>
                     <linearGradient id="reach-fill" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#1447e6" stopOpacity="0.35" />
+                      <stop
+                        offset="0%"
+                        stopColor="#1447e6"
+                        stopOpacity="0.35"
+                      />
                       <stop offset="100%" stopColor="#1447e6" stopOpacity="0" />
                     </linearGradient>
                   </defs>
