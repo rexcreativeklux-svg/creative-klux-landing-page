@@ -1,18 +1,15 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Megaphone, Share2, Palette, Wand2 } from "lucide-react";
+import { Rocket, Camera, Sparkles, Brain } from "lucide-react";
 
 // id must match an element id rendered on the page (see CreativesSection / page.js)
 const TABS = [
-  { id: "ad-creatives", label: "Ad Creation", Icon: Megaphone },
-  { id: "social-content", label: "Social Content Creation", Icon: Share2 },
-  { id: "brand-design", label: "Brand Design", Icon: Palette },
-  { id: "magic-studio", label: "Ai Tools", Icon: Wand2 },
+  { id: "creative-studio", label: "Creative Studio", Icon: Rocket },
+  { id: "product-studio", label: "Product Studio", Icon: Camera },
+  { id: "magic-studio", label: "Magic Studio", Icon: Sparkles },
+  { id: "ad-intelligence", label: "Ad Intelligence", Icon: Brain },
 ];
-
-// Height of header (64) + this bar — sections scroll to just below both.
-const SCROLL_OFFSET = 130;
 
 // True document Y of an element via offsetTop (layout position). Unlike
 // getBoundingClientRect, this is NOT distorted when the element is a pinned
@@ -31,11 +28,21 @@ function getDocTop(el) {
 export default function SectionNav() {
   const [active, setActive] = useState(TABS[0].id);
   const animRef = useRef(0);
+  const navRef = useRef(null);
+
+  // Distance from the top of the viewport that a section should land at, i.e.
+  // the bottom of the fixed header + this sticky bar. Measured live so it stays
+  // correct across breakpoints (the bar sits at top-92 on mobile, top-120 on lg).
+  const getOffset = () => {
+    const stickyTop = window.innerWidth >= 1024 ? 120 : 92;
+    const navH = navRef.current ? navRef.current.offsetHeight : 56;
+    return stickyTop + navH + 12;
+  };
 
   // Scroll-spy: the active tab is the last section whose top has passed the bars.
   useEffect(() => {
     const onScroll = () => {
-      const pos = window.scrollY + SCROLL_OFFSET + 1;
+      const pos = window.scrollY + getOffset() + 1;
       let current = TABS[0].id;
       for (const { id } of TABS) {
         const el = document.getElementById(id);
@@ -57,51 +64,56 @@ export default function SectionNav() {
     if (!el) return;
     cancelAnimationFrame(animRef.current);
     const start = window.scrollY;
-    const startTime = performance.now();
+    const offset = getOffset();
     const duration = 500;
     const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+    let startTime = null; // seeded from the first rAF timestamp
     const step = (now) => {
-      const target = getDocTop(el) - SCROLL_OFFSET; // recomputed each frame
+      if (startTime === null) startTime = now;
+      const target = getDocTop(el) - offset; // recomputed each frame
       const t = Math.min(1, (now - startTime) / duration);
       window.scrollTo(0, start + (target - start) * easeOutCubic(t));
       if (t < 1) {
         animRef.current = requestAnimationFrame(step);
       } else {
-        window.scrollTo(0, getDocTop(el) - SCROLL_OFFSET); // exact final snap
+        window.scrollTo(0, getDocTop(el) - offset); // exact final snap
       }
     };
     animRef.current = requestAnimationFrame(step);
   };
 
   return (
-    <nav className="sticky top-[92px] lg:top-[120px] z-40 bg-[#0b1437]/95 backdrop-blur-md border-y border-white/10">
+    <nav
+      ref={navRef}
+      className="sticky top-[92px] lg:top-[120px] z-40 bg-[#0b1437]/95 backdrop-blur-md border-y border-white/10"
+    >
       <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         <ul className="flex items-center gap-1 px-4 w-max mx-auto">
-        {TABS.map(({ id, label, Icon }) => {
-          const isActive = active === id;
-          return (
-            <li key={id} className="shrink-0">
-              <button
-                onClick={() => go(id)}
-                className={`relative flex items-center gap-2 px-4 py-4 text-sm whitespace-nowrap transition-colors duration-150 ${
-                  isActive
-                    ? "text-white"
-                    : "text-white/55 hover:text-white/90"
-                }`}
-                style={{ fontFamily: "Geist, sans-serif" }}
-              >
-                <Icon
-                  size={16}
-                  className={isActive ? "text-blue-400" : "text-white/45"}
-                />
-                {label}
-                {isActive && (
-                  <span className="absolute left-3 right-3 bottom-0 h-0.5 rounded-full bg-blue-500" />
-                )}
-              </button>
-            </li>
-          );
-        })}
+          {TABS.map(({ id, label, Icon }) => {
+            const isActive = active === id;
+            return (
+              <li key={id} className="shrink-0">
+                <button
+                  onClick={() => go(id)}
+                  className={`relative flex items-center gap-2 px-4 py-4 text-sm whitespace-nowrap transition-colors duration-150 ${
+                    isActive
+                      ? "text-white"
+                      : "text-white/55 hover:text-white/90"
+                  }`}
+                  style={{ fontFamily: "Geist, sans-serif" }}
+                >
+                  <Icon
+                    size={16}
+                    className={isActive ? "text-blue-400" : "text-white/45"}
+                  />
+                  {label}
+                  {isActive && (
+                    <span className="absolute left-3 right-3 bottom-0 h-0.5 rounded-full bg-blue-500" />
+                  )}
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>
