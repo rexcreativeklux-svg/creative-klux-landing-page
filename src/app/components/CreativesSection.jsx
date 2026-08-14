@@ -72,7 +72,7 @@ export default function CreativeSection() {
       title: "Product Studio",
       description:
         "Turn a single product photo into a full catalog shoot. Swap backgrounds, drop products onto AI models, or generate ghost mannequin shots—no camera, studio, or model required.",
-      image: "/images/social-creatives-image.png",
+      image: "/images/product-studio-image.webp",
       bg: "bg-gray-50",
       features: [
         {
@@ -159,7 +159,7 @@ export default function CreativeSection() {
       title: "Ad Intelligence",
       description:
         "Score your ads, spy on competitors, and guard against policy bans—all before you spend a single dollar on media.",
-      image: "/images/magic-studio-image.png",
+      image: "/images/ad-intelligence-image.webp",
       bg: "bg-gray-50",
       features: [
         {
