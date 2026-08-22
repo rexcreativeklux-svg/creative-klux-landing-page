@@ -5,7 +5,6 @@ import SectionNav from "./components/SectionNav";
 import CursorFollower from "./components/CursorFollower";
 import Hero from "./components/Hero";
 import "./globals.css";
-import CarouselSlider from "./components/CarouselSlider";
 import CreativeTaxSection from "./components/CreativeTaxSection";
 import CreativeSection from "./components/CreativesSection";
 import MoreSection from "./components/MoreSection";
@@ -142,11 +141,11 @@ export default function Home() {
       <SiteHeader />
       <Hero />
 
-      <section id="creators">
-        <CarouselSlider />
+      {/* The creator strip that used to sit here folded into the hero carousel;
+          the nav's "For Creators" anchor moves onto the section that follows. */}
+      <section id="creators" className="scroll-mt-32">
+        <CreativeTaxSection />
       </section>
-
-      <CreativeTaxSection />
 
       {/* Section tab bar — sticky under the header for the rest of the page */}
       <SectionNav />

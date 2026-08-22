@@ -22,17 +22,44 @@ function scrollToId(id) {
 // the clipping box while the artwork inside is counter-scaled by 1/sy, so the two
 // cancel to a plain uniform ZOOM: a shorter card CROPS the picture rather than
 // squashing it, and the artwork holds a constant on-screen size throughout.
+//
+// A card is a still by default; add `type: "video"` to play a clip in the same
+// slot. Video cards take the identical crop/counter-scale treatment — the only
+// difference is the element inside the box. Give each one a `poster` (a still
+// frame at the same aspect) so the card shows artwork rather than a black
+// rectangle while the clip loads, and keep clips SHORT, muted and portrait:
+// every copy of the strip mounts its own <video>, so each entry here costs
+// COPIES simultaneous decodes.
 const STRIP = [
   { src: "/images/nine.png", alt: "Eyewear launch creative" },
   { src: "/images/imagefive.png", alt: "Beauty product ad creative" },
+  { src: "/images/bluefriday.png", alt: "Black Friday sneaker sale creative" },
   { src: "/images/imagethree.png", alt: "Fashion restock social creative" },
+  { src: "/images/perfume.png", alt: "Men's fragrance ad creative" },
+  {
+    type: "video",
+    src: "/videos/creativekluxvideo.mp4",
+    alt: "Animated Creative Klux ad in motion",
+  },
   { src: "/images/imageone.png", alt: "Bakery promo creative" },
+  { src: "/images/deals.png", alt: "Limited-time deals promo creative" },
   { src: "/images/imageseven.png", alt: "Skincare testimonial creative" },
+  { src: "/images/neck.png", alt: "Fine jewellery sale creative" },
   { src: "/images/fifteen.png", alt: "Beverage campaign creative" },
+  { src: "/images/next.png", alt: "Holiday savings campaign creative" },
   { src: "/images/seven.png", alt: "Handbag sale creative" },
+  { src: "/images/blackfriday.png", alt: "Black Friday discount creative" },
+  {
+    type: "video",
+    src: "/videos/testvideo.mp4",
+    alt: "Animated product ad in motion",
+  },
   { src: "/images/five.png", alt: "Perfume launch creative" },
+  { src: "/images/second.png", alt: "Holiday clearance eyewear creative" },
   { src: "/images/twelve.png", alt: "Consumer electronics creative" },
+  { src: "/images/lauren.png", alt: "Lifestyle brand social creative" },
   { src: "/images/imagetwo.png", alt: "Snack bar campaign creative" },
+  { src: "/images/last.png", alt: "Fashion campaign creative" },
 ];
 
 const COPIES = 3; // enough duplicates that the loop never shows a gap
@@ -127,6 +154,19 @@ function CreativeCarousel() {
     const ro = new ResizeObserver(sync);
     ro.observe(wrap);
 
+    // Reduced motion already freezes the strip; a looping clip inside it would
+    // undo that, so hold every video on its first frame. The pause hangs off
+    // 'play' rather than firing once here because autoplay can kick in well
+    // after this effect runs.
+    const videos = reduceMotion
+      ? Array.from(wrap.querySelectorAll("video"))
+      : [];
+    const holdStill = (e) => e.currentTarget.pause();
+    for (const v of videos) {
+      v.addEventListener("play", holdStill);
+      v.pause();
+    }
+
     let offset = 0;
     let last = performance.now();
     let raf = 0;
@@ -172,6 +212,7 @@ function CreativeCarousel() {
     return () => {
       cancelAnimationFrame(raf);
       ro.disconnect();
+      for (const v of videos) v.removeEventListener("play", holdStill);
     };
   }, []);
 
@@ -204,17 +245,36 @@ function CreativeCarousel() {
                 style={{ transform: `skewX(${-SKEW}deg)` }}
               >
                 <div
-                  className="relative h-full w-full"
+                  className="relative h-full w-full bg-[#EFE7DA]"
                   style={{ transform: `skewX(${SKEW}deg) scale(${ZOOM})` }}
                 >
-                  <Image
-                    src={card.src}
-                    alt={copy === 0 ? card.alt : ""}
-                    fill
-                    sizes="150px"
-                    priority={copy === 0 && i < 6}
-                    className="object-cover"
-                  />
+                  {card.type === "video" ? (
+                    // muted + playsInline are what make autoplay legal on iOS;
+                    // preload="metadata" keeps the clip off the critical path so
+                    // it never competes with the hero's own paint.
+                    <video
+                      src={card.src}
+                      poster={card.poster}
+                      aria-label={copy === 0 ? card.alt : undefined}
+                      aria-hidden={copy > 0 || undefined}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      tabIndex={-1}
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  ) : (
+                    <Image
+                      src={card.src}
+                      alt={copy === 0 ? card.alt : ""}
+                      fill
+                      sizes="150px"
+                      priority={copy === 0 && i < 6}
+                      className="object-cover"
+                    />
+                  )}
                 </div>
               </div>
             );
@@ -307,18 +367,11 @@ function FreeNote() {
 export default function Hero() {
   return (
     <>
-      {/* Gradient frame — warm amber falling into fresh green */}
-      <section
-        className="p-[10.5px] sm:p-[18.5px] lg:p-[22.5px]"
-        style={{
-          background:
-            "linear-gradient(172deg, #EFBE74 0%, #EDC97F 14%, #DCDD8B 34%, #B6E795 56%, #96EA84 82%, #8AE97C 100%)",
-        }}
-      >
-        {/* Cream canvas */}
+      <section>
+        {/* Cream canvas — full-bleed, no surrounding frame */}
         <div
           data-cursor-zone
-          className="relative flex min-h-[calc(100vh-21px)] flex-col overflow-hidden rounded-[20px] bg-[#FAF6EE] sm:min-h-[calc(100vh-37px)] sm:rounded-[28px] lg:min-h-[calc(100vh-45px)] lg:rounded-[34px]"
+          className="relative flex min-h-screen w-full flex-col overflow-hidden bg-[#FAF6EE]"
           style={{ fontFamily: "var(--font-poppins), sans-serif" }}
         >
           {/* Soft warm bloom behind the copy */}
