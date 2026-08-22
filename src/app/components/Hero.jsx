@@ -30,39 +30,85 @@ function scrollToId(id) {
 // rectangle while the clip loads, and keep clips SHORT, muted and portrait:
 // every copy of the strip mounts its own <video>, so each entry here costs
 // COPIES simultaneous decodes.
+// The feature stills from the "Everything you need to create" grid are folded in
+// here too, interleaved with the ad creatives rather than appended, so the loop
+// doesn't run as two visibly distinct halves. Three of them animate:
+// stories-reels.gif, interactive-ads.gif, and video-ads.png — which is an
+// animated GIF that happens to carry a .png extension. Next's optimizer detects
+// animation from the file's magic bytes, not its name, and passes all three
+// through untouched, so they keep moving inside an <Image>.
 const STRIP = [
   { src: "/images/nine.png", alt: "Eyewear launch creative" },
+  { src: "/images/image-ads.png", alt: "Image ads creative" },
   { src: "/images/imagefive.png", alt: "Beauty product ad creative" },
+  { src: "/images/video-ads.png", alt: "Animated video ads creative" },
   { src: "/images/bluefriday.png", alt: "Black Friday sneaker sale creative" },
+  { src: "/images/posters.png", alt: "Poster design creative" },
   { src: "/images/imagethree.png", alt: "Fashion restock social creative" },
+  { src: "/images/social-posts.png", alt: "Social post creative" },
   { src: "/images/perfume.png", alt: "Men's fragrance ad creative" },
   {
     type: "video",
     src: "/videos/creativekluxvideo.mp4",
     alt: "Animated Creative Klux ad in motion",
   },
+  { src: "/images/thumbnails.png", alt: "Video thumbnail creative" },
   { src: "/images/imageone.png", alt: "Bakery promo creative" },
+  { src: "/images/stories-reels.gif", alt: "Animated stories and reels creative" },
   { src: "/images/deals.png", alt: "Limited-time deals promo creative" },
+  { src: "/images/memes-trends.png", alt: "Meme and trend creative" },
   { src: "/images/imageseven.png", alt: "Skincare testimonial creative" },
+  { src: "/images/text-to-image.png", alt: "Text-to-image generation creative" },
   { src: "/images/neck.png", alt: "Fine jewellery sale creative" },
+  { src: "/images/flyers.png", alt: "Event flyer creative" },
   { src: "/images/fifteen.png", alt: "Beverage campaign creative" },
+  { src: "/images/playable-ads.png", alt: "Playable ad creative" },
   { src: "/images/next.png", alt: "Holiday savings campaign creative" },
+  { src: "/images/logos-brand.png", alt: "Logo and brand identity creative" },
   { src: "/images/seven.png", alt: "Handbag sale creative" },
+  {
+    src: "/images/interactive-ads.gif",
+    alt: "Animated interactive ad creative",
+  },
   { src: "/images/blackfriday.png", alt: "Black Friday discount creative" },
+  { src: "/images/packaging-mockups.png", alt: "Packaging mockup creative" },
   {
     type: "video",
     src: "/videos/testvideo.mp4",
     alt: "Animated product ad in motion",
   },
+  { src: "/images/brochures.png", alt: "Brochure design creative" },
   { src: "/images/five.png", alt: "Perfume launch creative" },
+  { src: "/images/text-to-video.png", alt: "Text-to-video generation creative" },
   { src: "/images/second.png", alt: "Holiday clearance eyewear creative" },
+  { src: "/images/infographics.png", alt: "Infographic creative" },
   { src: "/images/twelve.png", alt: "Consumer electronics creative" },
+  {
+    src: "/images/image-to-variation.png",
+    alt: "Image variations creative",
+  },
   { src: "/images/lauren.png", alt: "Lifestyle brand social creative" },
+  {
+    src: "/images/presentation-deck.png",
+    alt: "Presentation deck creative",
+  },
   { src: "/images/imagetwo.png", alt: "Snack bar campaign creative" },
+  { src: "/images/script-to-video.png", alt: "Script-to-video creative" },
   { src: "/images/last.png", alt: "Fashion campaign creative" },
+  { src: "/images/business-cards.png", alt: "Business card creative" },
+  { src: "/images/persona-generator.png", alt: "Persona-based generator creative" },
+  { src: "/images/text-to-audio.png", alt: "Text-to-audio creative" },
+  { src: "/images/audio-to-text.png", alt: "Audio-to-text creative" },
+  { src: "/images/banners-covers.png", alt: "Banner and cover creative" },
 ];
 
-const COPIES = 3; // enough duplicates that the loop never shows a gap
+// Enough duplicates that the loop never shows a gap. The track scrolls by one
+// full set before repeating, so it has to stay at least a set PLUS a viewport
+// wide: (COPIES - 1) * setWidth >= viewport. A set is roughly STRIP.length x the
+// ~210px card pitch, so once the strip itself out-measures any real display one
+// spare copy covers it — and mounting a third would only add cards that are
+// never on screen. Short strips still need three.
+const COPIES = STRIP.length * 210 >= 4000 ? 2 : 3;
 const SPEED = 42; // px per second
 const HEIGHT_CENTER = 0.52; // shortest card, dead centre — the depth of the curve
 const HEIGHT_EDGE = 1; // full height at either edge of the strip
@@ -183,7 +229,13 @@ function CreativeCarousel() {
       const half = wrapWidth / 2 || 1;
       for (const card of cards) {
         // -1 at the left edge of the strip, 0 dead centre, 1 at the right edge.
-        const t = Math.max(-1, Math.min(1, (card.center - offset - half) / half));
+        const raw = (card.center - offset - half) / half;
+        // Anything past the edge is clipped away by the wrapper, and its transform
+        // is pinned at the clamp anyway — restyling it every frame buys nothing.
+        // The 1.5 margin is half a viewport of slack, comfortably more than a card
+        // width, so a card is always restyled well before it scrolls back into view.
+        if (raw < -1.5 || raw > 1.5) continue;
+        const t = Math.max(-1, Math.min(1, raw));
         // 0 dead centre → 1 at the edge, straight-line in between: every card is a
         // visibly different height from its neighbours, right out to the first one.
         const bow = Math.min(1, Math.abs(t) / reach) ** CURVE_EASE;
@@ -367,11 +419,16 @@ function FreeNote() {
 export default function Hero() {
   return (
     <>
-      <section>
-        {/* Cream canvas — full-bleed, no surrounding frame */}
+      {/* Frame — the page's own background (#f9fafb, set on the root in page.js)
+          rather than a colour of its own, so the margin around the hero reads as
+          the page showing through and the cream canvas sits on it as a card. The
+          section that follows the hero has no background of its own, so the two
+          meet on the same tone with no seam. */}
+      <section className="bg-[#F9FAFB] p-[10.5px] sm:p-[18.5px] lg:p-[22.5px]">
+        {/* Cream canvas */}
         <div
           data-cursor-zone
-          className="relative flex min-h-screen w-full flex-col overflow-hidden bg-[#FAF6EE]"
+          className="relative flex min-h-[calc(100vh-21px)] flex-col overflow-hidden rounded-[20px] bg-[#FAF6EE] sm:min-h-[calc(100vh-37px)] sm:rounded-[28px] lg:min-h-[calc(100vh-45px)] lg:rounded-[34px]"
           style={{ fontFamily: "var(--font-poppins), sans-serif" }}
         >
           {/* Soft warm bloom behind the copy */}
