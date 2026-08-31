@@ -297,7 +297,7 @@ function CreativeCarousel() {
                 style={{ transform: `skewX(${-SKEW}deg)` }}
               >
                 <div
-                  className="relative h-full w-full bg-[#EFE7DA]"
+                  className="relative h-full w-full bg-[#F1F1F4]"
                   style={{ transform: `skewX(${SKEW}deg) scale(${ZOOM})` }}
                 >
                   {card.type === "video" ? (
@@ -419,24 +419,64 @@ function FreeNote() {
 export default function Hero() {
   return (
     <>
-      {/* Frame — the page's own background (#f9fafb, set on the root in page.js)
-          rather than a colour of its own, so the margin around the hero reads as
-          the page showing through and the cream canvas sits on it as a card. The
-          section that follows the hero has no background of its own, so the two
-          meet on the same tone with no seam. */}
-      <section className="bg-[#F9FAFB] p-[10.5px] sm:p-[18.5px] lg:p-[22.5px]">
-        {/* Cream canvas */}
+      {/* Frame — traced off cr.png, which stacks four layers between the page edge
+          and the card rather than one flat margin. Reading a pixel column down
+          through its top edge: a flat field, a soft dark halo, a ~6px band of the
+          SAME hue but deeper, a ~3px near-white hairline, then the card. That's what
+          the three nested boxes below rebuild, in Klux colours.
+            FIELD  soft tints of the palette — the airy outer wash
+            RING   the same gradient at full strength, ~6px
+            HAIR   a white ring that lifts the ring off the card
+          FIELD and RING share the same angle and stops, so the ring is blue where
+          the field is blue and amber where it's amber — a solid ring (or a
+          box-shadow spread, which cannot take a gradient) would break that.
+          The mix is Klux's own: brand blue #1447E6 leads and holds the top half
+          (it is the identity colour — 37 uses across the site against 3 for coral),
+          bridging through violet into the coral and amber accents. Reversed against
+          cr.png's warm-to-cool run on purpose, so the wash reads as the brand rather
+          than as the reference.
+          Widths per side: 18+4+2=24px, sm 32+5+3=40px, lg 44+6+3=53px — the numbers
+          the canvas min-height and the header inset are both derived from. */}
+      <section
+        className="p-[18px] sm:p-8 lg:p-11"
+        style={{
+          background:
+            "linear-gradient(150deg, #BFD3FF 0%, #93B0FB 22%, #6E90F6 44%, #A88FE8 62%, #EE9E92 80%, #F3C98A 100%)",
+        }}
+      >
+        {/* Saturated ring */}
         <div
-          data-cursor-zone
-          className="relative flex min-h-[calc(100vh-21px)] flex-col overflow-hidden rounded-[20px] bg-[#FAF6EE] sm:min-h-[calc(100vh-37px)] sm:rounded-[28px] lg:min-h-[calc(100vh-45px)] lg:rounded-[34px]"
-          style={{ fontFamily: "var(--font-poppins), sans-serif" }}
+          className="rounded-[24px] p-1 sm:rounded-[32px] sm:p-[5px] lg:rounded-[41px] lg:p-1.5"
+          style={{
+            background:
+              "linear-gradient(150deg, #4A7BF2 0%, #2A5FEC 22%, #1447E6 44%, #7B5FE0 62%, #EF6D57 80%, #F2C77E 100%)",
+            // The halo in the reference: the ring casts a short shadow OUTWARD onto
+            // the field on ALL four sides, which is what stops the two hues reading
+            // as one flat band. Zero-offset + negative spread keeps it to the edges;
+            // the second, dropped shadow gives the card its weight.
+            boxShadow:
+              "0 0 16px -3px rgba(23,23,27,0.20), 0 12px 34px -14px rgba(23,23,27,0.30)",
+          }}
         >
-          {/* Soft warm bloom behind the copy */}
+          {/* Hairline. Translucent white rather than solid: against a WHITE canvas a
+              solid-white ring is invisible, so it lets the ring's gradient through at
+              ~30% and lands as a pale tint of whatever hue is behind it — cream at the
+              top, powder blue at the bottom. cr.png gets this for free because its
+              canvas is cream; ours has to earn it. */}
+          <div className="rounded-[20px] bg-white/70 p-0.5 sm:rounded-[27px] sm:p-[3px] lg:rounded-[35px] lg:p-[3px]">
+            {/* White canvas */}
+            <div
+              data-cursor-zone
+              className="relative flex min-h-[calc(100vh-48px)] flex-col overflow-hidden rounded-[18px] bg-white sm:min-h-[calc(100vh-80px)] sm:rounded-[24px] lg:min-h-[calc(100vh-106px)] lg:rounded-[32px]"
+              style={{ fontFamily: "var(--font-poppins), sans-serif" }}
+            >
+          {/* Barely-there brand bloom behind the copy — enough to keep the canvas
+              from reading as flat paper, faint enough that it still reads white. */}
           <div
             className="pointer-events-none absolute inset-x-0 top-0 h-[70%]"
             style={{
               background:
-                "radial-gradient(ellipse 60% 70% at 50% 0%, rgba(240,196,120,0.16) 0%, transparent 65%)",
+                "radial-gradient(ellipse 60% 70% at 50% 0%, rgba(242,199,126,0.10) 0%, transparent 65%)",
             }}
           />
 
@@ -465,7 +505,9 @@ export default function Hero() {
             </div>
 
             {/* Sub */}
-            <p className="mt-5 max-w-[560px] animate-[fadeRise_0.6s_ease_0.12s_both] text-[14.5px] font-normal leading-[1.68] text-[#6E6A63] sm:text-[15.5px]">
+            {/* Neutral grey, not the old warm one — a beige-tinted grey goes muddy
+                on white. #55555F clears 7:1 against the canvas. */}
+            <p className="mt-5 max-w-[560px] animate-[fadeRise_0.6s_ease_0.12s_both] text-[14.5px] font-normal leading-[1.68] text-[#55555F] sm:text-[15.5px]">
               Generate professional-quality creatives in seconds — ad graphics,
               social content, and brand visuals, without the designer wait.
             </p>
@@ -501,9 +543,11 @@ export default function Hero() {
 
                 <button
                   onClick={() => scrollToId("see-in-action")}
-                  className="group inline-flex cursor-pointer items-center gap-2.5 bg-transparent text-[14px] font-medium text-[#4B4842] transition-colors hover:text-[#17171B]"
+                  className="group inline-flex cursor-pointer items-center gap-2.5 bg-transparent text-[14px] font-medium text-[#3F3F46] transition-colors hover:text-[#17171B]"
                 >
-                  <span className="grid h-9 w-9 place-items-center rounded-full border border-[#17171B]/15 bg-white transition-transform duration-150 group-hover:scale-105">
+                  {/* Tinted fill, not white — a white disc on a white canvas is
+                      just its own hairline border. */}
+                  <span className="grid h-9 w-9 place-items-center rounded-full border border-[#17171B]/12 bg-[#F4F4F7] transition-transform duration-150 group-hover:scale-105">
                     <Play size={13} fill="currentColor" className="ml-0.5" />
                   </span>
                   See it in action
@@ -528,6 +572,8 @@ export default function Hero() {
               </svg>
 
               <FreeNote />
+            </div>
+          </div>
             </div>
           </div>
         </div>

@@ -72,16 +72,28 @@ export default function SiteHeader() {
   };
 
   return (
+    // Sides are inset to exactly the hero frame's thickness (24 / 40 / 53px — field
+    // + ring + hairline, see Hero.jsx), so the bar starts flush with the white
+    // canvas's inner edge and stays hugging it however thick the frame gets; the
+    // nav's own 4px below is all that holds the logo and Login off that edge.
+    // The TOP carries an extra ~10-15px beyond the frame so the bar is not jammed
+    // against the canvas's top edge — the one direction that wants air, not less.
+    // Still no bottom padding: the header is a fixed overlay and height there eats
+    // clicks beneath it.
     <header
       data-cursor-zone
-      className="fixed inset-x-0 top-0 z-50 w-screen max-w-full px-4 pt-5 sm:px-8 sm:pt-7 lg:px-12 lg:pt-9"
+      className="fixed inset-x-0 top-0 z-50 w-screen max-w-full px-6 pt-8 sm:px-10 sm:pt-[52px] lg:px-[53px] lg:pt-[68px]"
       style={{ fontFamily: "var(--font-poppins), sans-serif" }}
     >
+      {/* Padding is asymmetric by state on purpose. Unscrolled the bar is invisible,
+          so its padding only pushes the logo and Login away from the canvas edge —
+          4px keeps them tight to it. Scrolled it becomes a solid pill, which needs
+          real room inside its own border, so it widens back out. */}
       <nav
-        className={`relative mx-auto flex h-14 max-w-[1400px] items-center justify-between gap-4 rounded-2xl px-4 sm:px-5 transition-colors duration-300 ${
+        className={`relative mx-auto flex h-14 max-w-[1400px] items-center justify-between gap-4 rounded-2xl transition-all duration-300 ${
           isScrolled
-            ? "border border-white/10 bg-[#0E0E0E]/95 backdrop-blur-2xl shadow-[0_10px_34px_rgba(0,0,0,0.35)]"
-            : "border border-transparent bg-transparent"
+            ? "border border-white/10 bg-[#0E0E0E]/95 px-4 shadow-[0_10px_34px_rgba(0,0,0,0.35)] backdrop-blur-2xl sm:px-5"
+            : "border border-transparent bg-transparent px-1"
         }`}
       >
         {/* Logo — dark wordmark on cream, white wordmark on the dark pill */}
@@ -106,7 +118,7 @@ export default function SiteHeader() {
                 className={`flex cursor-pointer items-center gap-1.5 border-none bg-transparent text-[14px] font-medium transition-colors duration-150 disabled:opacity-60 ${
                   isScrolled
                     ? "text-white/65 hover:text-white"
-                    : "text-[#3E3B36] hover:text-[#17171B]"
+                    : "text-[#3F3F46] hover:text-[#17171B]"
                 }`}
               >
                 {loadingBtn === s && <Spinner />}
@@ -123,7 +135,9 @@ export default function SiteHeader() {
             className={`cursor-pointer rounded-full px-6 py-2.5 text-[14px] font-medium transition-all duration-150 ${
               isScrolled
                 ? "border border-white/15 bg-transparent text-white/80 hover:text-white hover:border-white/30"
-                : "border border-[#17171B]/8 bg-white text-[#17171B] shadow-[0_2px_10px_-4px_rgba(28,20,10,0.28)] hover:-translate-y-px"
+                : // Tinted fill + a real border: the old white pill vanished once
+                  // the canvas under it went white.
+                  "border border-[#17171B]/12 bg-[#F4F4F7] text-[#17171B] hover:border-[#17171B]/25 hover:-translate-y-px"
             }`}
           >
             Login
@@ -160,7 +174,7 @@ export default function SiteHeader() {
           className={`mx-auto mt-2 flex max-w-[1400px] flex-col gap-1 rounded-2xl px-5 pt-3 pb-4 backdrop-blur-xl lg:hidden ${
             isScrolled
               ? "border border-white/10 bg-[#14151a]/95"
-              : "border border-[#17171B]/8 bg-white/95 shadow-[0_16px_40px_-20px_rgba(28,20,10,0.4)]"
+              : "border border-[#17171B]/12 bg-white/95 shadow-[0_16px_40px_-16px_rgba(20,20,27,0.28)]"
           }`}
         >
           {NAV_SECTIONS.map((s) => (
@@ -171,7 +185,7 @@ export default function SiteHeader() {
               className={`flex cursor-pointer items-center gap-2 border-b bg-transparent py-2.5 text-left text-[15px] font-medium transition-colors last:border-0 ${
                 isScrolled
                   ? "border-white/5 text-white/75 hover:text-white"
-                  : "border-[#17171B]/6 text-[#3E3B36] hover:text-[#17171B]"
+                  : "border-[#17171B]/8 text-[#3F3F46] hover:text-[#17171B]"
               }`}
             >
               {loadingBtn === s && <Spinner />}
@@ -183,7 +197,7 @@ export default function SiteHeader() {
             className={`mt-3 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full px-4 py-3 text-[15px] font-medium transition-colors ${
               isScrolled
                 ? "border border-white/15 bg-transparent text-white/80 hover:text-white hover:border-white/30"
-                : "border border-[#17171B]/12 bg-white text-[#17171B]"
+                : "border border-[#17171B]/12 bg-[#F4F4F7] text-[#17171B]"
             }`}
           >
             Login
