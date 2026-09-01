@@ -25,81 +25,228 @@ function scrollToId(id) {
 //
 // A card is a still by default; add `type: "video"` to play a clip in the same
 // slot. Video cards take the identical crop/counter-scale treatment — the only
-// difference is the element inside the box. Give each one a `poster` (a still
-// frame at the same aspect) so the card shows artwork rather than a black
-// rectangle while the clip loads, and keep clips SHORT, muted and portrait:
-// every copy of the strip mounts its own <video>, so each entry here costs
-// COPIES simultaneous decodes.
-// The feature stills from the "Everything you need to create" grid are folded in
-// here too, interleaved with the ad creatives rather than appended, so the loop
-// doesn't run as two visibly distinct halves. Three of them animate:
-// stories-reels.gif, interactive-ads.gif, and video-ads.png — which is an
-// animated GIF that happens to carry a .png extension. Next's optimizer detects
-// animation from the file's magic bytes, not its name, and passes all three
-// through untouched, so they keep moving inside an <Image>.
+// difference is the element inside the box.
+//
+// The 47 cards are served from the Klux gallery CDN, so assets.scraive.com has to
+// stay in next.config.mjs `images.remotePatterns` or every <Image> here 400s.
+//
+// Videos are NOT autoplayed and carry preload="none". Every copy of the strip
+// mounts its own <video>, so the 19 clips below cost COPIES x 19 = 38 elements;
+// letting those all autoplay would mean 38 concurrent downloads and decodes for
+// the three or four clips actually on screen. Instead the rAF loop plays a clip
+// when its card enters the viewport and pauses it on the way out — see the
+// `onScreen` block in frame(). That also means the source list's ordering matters:
+// the clips are spread evenly through the stills (no two are ever adjacent), so
+// the visible window holds at most two or three at a time rather than a solid
+// block of video.
 const STRIP = [
-  { src: "/images/nine.png", alt: "Eyewear launch creative" },
-  { src: "/images/image-ads.png", alt: "Image ads creative" },
-  { src: "/images/imagefive.png", alt: "Beauty product ad creative" },
-  { src: "/images/video-ads.png", alt: "Animated video ads creative" },
-  { src: "/images/bluefriday.png", alt: "Black Friday sneaker sale creative" },
-  { src: "/images/posters.png", alt: "Poster design creative" },
-  { src: "/images/imagethree.png", alt: "Fashion restock social creative" },
-  { src: "/images/social-posts.png", alt: "Social post creative" },
-  { src: "/images/perfume.png", alt: "Men's fragrance ad creative" },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/9dfc83bf-9ebc-4549-9d00-4773d1df26fa.webp",
+    alt: "Brewy cold brew coffee can with ice and a coffee splash",
+  },
   {
     type: "video",
-    src: "/videos/creativekluxvideo.mp4",
-    alt: "Animated Creative Klux ad in motion",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/7640f5b8-bf19-4f25-969c-1c39183152b2.mp4",
+    alt: "Orange soda can and orange slices on pink",
   },
-  { src: "/images/thumbnails.png", alt: "Video thumbnail creative" },
-  { src: "/images/imageone.png", alt: "Bakery promo creative" },
-  { src: "/images/stories-reels.gif", alt: "Animated stories and reels creative" },
-  { src: "/images/deals.png", alt: "Limited-time deals promo creative" },
-  { src: "/images/memes-trends.png", alt: "Meme and trend creative" },
-  { src: "/images/imageseven.png", alt: "Skincare testimonial creative" },
-  { src: "/images/text-to-image.png", alt: "Text-to-image generation creative" },
-  { src: "/images/neck.png", alt: "Fine jewellery sale creative" },
-  { src: "/images/flyers.png", alt: "Event flyer creative" },
-  { src: "/images/fifteen.png", alt: "Beverage campaign creative" },
-  { src: "/images/playable-ads.png", alt: "Playable ad creative" },
-  { src: "/images/next.png", alt: "Holiday savings campaign creative" },
-  { src: "/images/logos-brand.png", alt: "Logo and brand identity creative" },
-  { src: "/images/seven.png", alt: "Handbag sale creative" },
   {
-    src: "/images/interactive-ads.gif",
-    alt: "Animated interactive ad creative",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/49536051-6bb4-4d61-9316-5d069586f197.webp",
+    alt: "Zestivo Orange Delight juice bottle with fresh oranges",
   },
-  { src: "/images/blackfriday.png", alt: "Black Friday discount creative" },
-  { src: "/images/packaging-mockups.png", alt: "Packaging mockup creative" },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/c0a864d2-7f62-4fc5-9f97-9dc7156ebbc0.webp",
+    alt: "Frutiva Berry Blast bottle bursting out of mixed berries",
+  },
   {
     type: "video",
-    src: "/videos/testvideo.mp4",
-    alt: "Animated product ad in motion",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/b4cd40a5-beb9-4ba0-b384-9b3593a55e5c.mp4",
+    alt: "Pale citrus soda can on a yellow set",
   },
-  { src: "/images/brochures.png", alt: "Brochure design creative" },
-  { src: "/images/five.png", alt: "Perfume launch creative" },
-  { src: "/images/text-to-video.png", alt: "Text-to-video generation creative" },
-  { src: "/images/second.png", alt: "Holiday clearance eyewear creative" },
-  { src: "/images/infographics.png", alt: "Infographic creative" },
-  { src: "/images/twelve.png", alt: "Consumer electronics creative" },
   {
-    src: "/images/image-to-variation.png",
-    alt: "Image variations creative",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/7652dcb7-a601-46fc-9208-4b1b0518d388.webp",
+    alt: "Zevina tropical pineapple juice bottle with pineapple and ice",
   },
-  { src: "/images/lauren.png", alt: "Lifestyle brand social creative" },
   {
-    src: "/images/presentation-deck.png",
-    alt: "Presentation deck creative",
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/755c0967-7d17-49d2-adf0-96e7b210fb02.mp4",
+    alt: "Orange soda can in swirling ice water",
   },
-  { src: "/images/imagetwo.png", alt: "Snack bar campaign creative" },
-  { src: "/images/script-to-video.png", alt: "Script-to-video creative" },
-  { src: "/images/last.png", alt: "Fashion campaign creative" },
-  { src: "/images/business-cards.png", alt: "Business card creative" },
-  { src: "/images/persona-generator.png", alt: "Persona-based generator creative" },
-  { src: "/images/text-to-audio.png", alt: "Text-to-audio creative" },
-  { src: "/images/audio-to-text.png", alt: "Audio-to-text creative" },
-  { src: "/images/banners-covers.png", alt: "Banner and cover creative" },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/80bd0935-dff6-40e3-9294-c23eeb49780e.webp",
+    alt: "Nuvora mixed berry juice bottle on magenta",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/ca347dca-2fde-4289-8ac2-0c0add9c91e6.webp",
+    alt: "Mazza mango milkshake can with mango cubes",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/a9895403-5ec4-44c2-b6bf-5057dd5fc786.mp4",
+    alt: "Perfume bottle amid a watermelon and kiwi splash",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/952e7ad1-5b77-42c8-8a9e-ab104c98e342.webp",
+    alt: "Tropic Burst mango lime can in a citrus splash",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/58f9a6a2-e989-4d4d-a4e3-fe3f8114c33b.mp4",
+    alt: "Fresh Juice mango can among mangoes and oranges",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/3aae24b3-c96b-4fde-bc0e-e561b681851b.webp",
+    alt: "Mango energy drink can on a split red and yellow backdrop",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/a4c25789-b22c-4159-9b10-590b213dd7b7.webp",
+    alt: "Origin Juice lemon drink can with limes and mint",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/fe3b60e9-463a-4819-b8b6-08cd2304123d.mp4",
+    alt: "Orange slices in close-up on white",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/c8ca42de-4c04-48ff-9287-2fb203a0bb9c.webp",
+    alt: "Popping Boba strawberry drink can with berries",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/3ba89507-b172-43c4-8e06-dead1f8753fa.mp4",
+    alt: "Green soda can with a nutrition facts panel",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/92050f04-3fcd-456f-b209-ce613d7e1298.webp",
+    alt: "Mango juice bottle against an Energy backdrop",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/29ab3d60-a5db-420c-bf89-143787c32172.webp",
+    alt: "Sesla orange soda can with ice and orange slices",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/d6c277f2-2b3d-439d-acec-6a043f9330e0.mp4",
+    alt: "Crystal perfume bottle under falling water",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/54a5e06f-d2b7-4957-a8da-0caab1782677.webp",
+    alt: "Cranberry fruit drink can in a Fresh Drinks layout",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/db223cf5-eaf8-466a-850d-029903eae3cb.mp4",
+    alt: "Amber perfume bottle with peach halves",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/529f885d-c766-449c-b190-c03704c3bc58.webp",
+    alt: "Sweet Splash guava juice can with fresh guava",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/35a5581b-baa7-414b-9ee8-7cfe12fa9726.webp",
+    alt: "Cold coffee can on a neutral studio set",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/252742e8-d04f-4845-9b84-fb8014263ed5.mp4",
+    alt: "Hand reaching for a Pricklee cactus water can",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/cbdd1816-0fab-4073-ad3c-5cdde54c4cac.webp",
+    alt: "Verdant niacinamide serum bottle with guava",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/b3b91a62-d985-4b9b-b643-3dbd2309b01d.mp4",
+    alt: "Dark perfume bottle lit red on wet black",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/28cd4751-f284-4fd4-b401-be7e55d63b9d.webp",
+    alt: "Aquine serum bottle on blue with a water splash",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/359fc047-4cbb-48ae-b0fc-b305713d2814.mp4",
+    alt: "Light moving across a deep red backdrop",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/3b45ac8e-28f1-4440-bb7c-d692b6c2d2cc.webp",
+    alt: "Mango Bliss protein smoothie glass",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/76efb58b-71d4-4585-abfe-0019dd0b6027.webp",
+    alt: "Cica facial serum dropper bottle with limes and mint",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/4999570b-ac06-4b69-ac11-1f6e0aadff3a.mp4",
+    alt: "Green olives tumbling on a pale set",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/ca236c16-d322-4d7a-9c43-42d0407e0182.webp",
+    alt: "Flying Embers Mango Tango hard kombucha can",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/0e221970-80ef-4684-a424-3be6a5afd46c.mp4",
+    alt: "Watermelon-flavoured can with cut-out graphics",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/1e47888d-843e-4da1-8864-885677862d7e.webp",
+    alt: "Kinzo can poolside with sunglasses and citrus",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/a8b1bc24-f70b-481d-afda-750aa7f2f46d.webp",
+    alt: "Lemon Spritz bottle poolside",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/df7eca10-b666-45ce-81dd-3d45d77ea860.mp4",
+    alt: "Minty can on dark green",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/a7c13b1b-e3be-4949-bcc7-ab3824fdb564.webp",
+    alt: "Dark berry drink splashing in a glass with strawberries",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/bbdf679e-892d-445e-812f-a8df6dfbaa20.mp4",
+    alt: "Frosted can floating on a pale ground",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/ecd48208-91cb-47a1-8121-d5382bf34c7e.webp",
+    alt: "Mojo cola can in a strawberry splash",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/22e74033-27e9-474d-86ce-479bbb4bb474.webp",
+    alt: "Strawberry soda can with fresh strawberries",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/7d5af05d-7bb3-4e1a-b8d6-15943d441923.mp4",
+    alt: "Tropix tropical fruit can",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/30a82ba1-5757-4fc4-a794-128b7d3f7df3.webp",
+    alt: "Orange juice can with orange slices on green",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/4ba4938f-8df1-4b8e-ae6b-39b644f29c85.mp4",
+    alt: "Close-up of a teal can top",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/45041494-23e5-4cc3-a51d-cf82c1ea3ad9.webp",
+    alt: "Grafique can in a swirl of yellow and orange",
+  },
+  {
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/4fa6dcc8-31dc-417a-8be2-2db99dd1924f.webp",
+    alt: "Classy Glasses sunglasses campaign",
+  },
+  {
+    type: "video",
+    src: "https://assets.scraive.com/scraive/workspaces/36/gallery/videos/44b5f997-67a0-4926-a325-a3e432b88f75.mp4",
+    alt: "Hand reaching for a Pricklee cactus water can on yellow",
+  },
 ];
 
 // Enough duplicates that the loop never shows a gap. The track scrolls by one
@@ -183,6 +330,8 @@ function CreativeCarousel() {
         el,
         inner: el.firstElementChild,
         center: el.offsetLeft + el.offsetWidth / 2,
+        video: el.querySelector("video"),
+        playing: false,
       }));
       setWidth = STRIP.length * pitch;
     };
@@ -200,17 +349,15 @@ function CreativeCarousel() {
     const ro = new ResizeObserver(sync);
     ro.observe(wrap);
 
-    // Reduced motion already freezes the strip; a looping clip inside it would
-    // undo that, so hold every video on its first frame. The pause hangs off
-    // 'play' rather than firing once here because autoplay can kick in well
-    // after this effect runs.
-    const videos = reduceMotion
-      ? Array.from(wrap.querySelectorAll("video"))
-      : [];
-    const holdStill = (e) => e.currentTarget.pause();
-    for (const v of videos) {
-      v.addEventListener("play", holdStill);
-      v.pause();
+    // Reduced motion freezes the strip, so nothing ever scrolls into view and the
+    // play-on-enter path below never fires — which would leave every clip a blank
+    // grey box. Pull one frame of each instead and stop there: the cards show
+    // artwork, and nothing moves.
+    if (reduceMotion) {
+      for (const v of wrap.querySelectorAll("video")) {
+        v.preload = "metadata";
+        v.load();
+      }
     }
 
     let offset = 0;
@@ -230,6 +377,21 @@ function CreativeCarousel() {
       for (const card of cards) {
         // -1 at the left edge of the strip, 0 dead centre, 1 at the right edge.
         const raw = (card.center - offset - half) / half;
+
+        // Clips load and run only while their card is on screen. This has to sit
+        // ABOVE the cull below, or a card that scrolls out never gets the pause and
+        // every clip the strip has ever shown keeps decoding forever. Toggling on a
+        // stored flag keeps it to one boolean compare per card per frame; play()
+        // rejects if the element is torn down mid-promise, hence the empty catch.
+        if (card.video && !reduceMotion) {
+          const onScreen = raw > -1.1 && raw < 1.1;
+          if (onScreen !== card.playing) {
+            card.playing = onScreen;
+            if (onScreen) card.video.play().catch(() => {});
+            else card.video.pause();
+          }
+        }
+
         // Anything past the edge is clipped away by the wrapper, and its transform
         // is pinned at the clamp anyway — restyling it every frame buys nothing.
         // The 1.5 margin is half a viewport of slack, comfortably more than a card
@@ -264,7 +426,9 @@ function CreativeCarousel() {
     return () => {
       cancelAnimationFrame(raf);
       ro.disconnect();
-      for (const v of videos) v.removeEventListener("play", holdStill);
+      // The loop is what pauses clips, so on unmount it stops running before the
+      // on-screen ones ever get their pause. Left alone they keep downloading.
+      for (const card of cards) card.video?.pause();
     };
   }, []);
 
@@ -301,19 +465,19 @@ function CreativeCarousel() {
                   style={{ transform: `skewX(${SKEW}deg) scale(${ZOOM})` }}
                 >
                   {card.type === "video" ? (
-                    // muted + playsInline are what make autoplay legal on iOS;
-                    // preload="metadata" keeps the clip off the critical path so
-                    // it never competes with the hero's own paint.
+                    // muted + playsInline are what keep programmatic play() legal on
+                    // iOS. No autoPlay and preload="none" on purpose: the rAF loop
+                    // starts each clip as its card scrolls in, so of the 38 <video>
+                    // elements the strip mounts only the two or three on screen ever
+                    // touch the network. Autoplay here would fetch all 38 at once.
                     <video
                       src={card.src}
-                      poster={card.poster}
                       aria-label={copy === 0 ? card.alt : undefined}
                       aria-hidden={copy > 0 || undefined}
-                      autoPlay
                       muted
                       loop
                       playsInline
-                      preload="metadata"
+                      preload="none"
                       tabIndex={-1}
                       className="absolute inset-0 h-full w-full object-cover"
                     />
