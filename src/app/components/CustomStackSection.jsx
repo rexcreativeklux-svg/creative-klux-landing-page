@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function CustomStack() {
   const integrations = [
     // Left side - Social Media Platforms
@@ -144,14 +146,15 @@ export default function CustomStack() {
             {/* Central box with logo */}
             <div className="relative z-20 w-40 h-40 bg-linear-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center shadow-2xl border border-blue-400/30"
                  style={{ boxShadow: '0 0 80px rgba(59, 130, 246, 0.4)' }}>
-              {/* ConvertFlow Logo placeholder */}
-              <div className="flex flex-col items-center">
-                <div className="flex items-center gap-1 mb-1">
-                  <div className="w-3 h-8 bg-white rounded-sm transform -rotate-12" />
-                  <div className="w-3 h-8 bg-white rounded-sm" />
-                  <div className="w-3 h-8 bg-white rounded-sm transform rotate-12" />
-                </div>
-              </div>
+              {/* CreativeKlux Logo */}
+              <Image
+                src="/images/klux-mark-white.png"
+                alt="CreativeKlux"
+                width={108}
+                height={113}
+                priority
+                className="w-20 h-auto object-contain"
+              />
             </div>
 
             {/* Connection lines visualization */}
