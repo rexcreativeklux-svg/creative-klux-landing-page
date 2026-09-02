@@ -591,47 +591,31 @@ export default function Hero() {
             FIELD  soft tints of the palette — the airy outer wash
             RING   the same gradient at full strength, ~6px
             HAIR   a white ring that lifts the ring off the card
-          FIELD and RING share the same angle and stops, so the ring is blue where
-          the field is blue and amber where it's amber — a solid ring (or a
-          box-shadow spread, which cannot take a gradient) would break that.
-          The mix is Klux's own: brand blue #1447E6 leads and holds the top half
-          (it is the identity colour — 37 uses across the site against 3 for coral),
-          bridging through violet into the coral and amber accents. Reversed against
-          cr.png's warm-to-cool run on purpose, so the wash reads as the brand rather
-          than as the reference.
-          Widths per side: 18+4+2=24px, sm 32+5+3=40px, lg 44+6+3=53px — the numbers
-          the canvas min-height and the header inset are both derived from. */}
+          The stops trace the live site's own frame, sampled off "klux like this":
+          deep brand blue at the top-left (#1340D3/#1447E6 — the identity colour),
+          lightening across the top, then violet → mauve → pink → orange → peach down
+          the right-hand side. One SATURATED band, not the pale-field-plus-ring
+          arrangement cr.png uses: at this width there is no room for two tones, and
+          the sampled pixels show a single strength throughout.
+          Widths per side, band + 3px hairline: 9/13px, sm 12/18px — sides thinner
+          than top and bottom, exactly as measured (11 vs 17-19). The canvas
+          min-height is derived from the vertical pair. */}
       <section
-        className="p-[18px] sm:p-8 lg:p-11"
+        className="px-[7px] py-[11px] sm:px-[9px] sm:py-[15px]"
         style={{
           background:
-            "linear-gradient(150deg, #BFD3FF 0%, #93B0FB 22%, #6E90F6 44%, #A88FE8 62%, #EE9E92 80%, #F3C98A 100%)",
+            "linear-gradient(135deg, #1340D3 0%, #1A4CE8 12%, #4F7DF2 26%, #7D73D4 42%, #B27DAB 58%, #CE8090 68%, #E59272 82%, #E6B594 100%)",
         }}
       >
-        {/* Saturated ring */}
-        <div
-          className="rounded-[24px] p-1 sm:rounded-[32px] sm:p-[5px] lg:rounded-[41px] lg:p-1.5"
-          style={{
-            background:
-              "linear-gradient(150deg, #4A7BF2 0%, #2A5FEC 22%, #1447E6 44%, #7B5FE0 62%, #EF6D57 80%, #F2C77E 100%)",
-            // The halo in the reference: the ring casts a short shadow OUTWARD onto
-            // the field on ALL four sides, which is what stops the two hues reading
-            // as one flat band. Zero-offset + negative spread keeps it to the edges;
-            // the second, dropped shadow gives the card its weight.
-            boxShadow:
-              "0 0 16px -3px rgba(23,23,27,0.20), 0 12px 34px -14px rgba(23,23,27,0.30)",
-          }}
-        >
           {/* Hairline. Translucent white rather than solid: against a WHITE canvas a
-              solid-white ring is invisible, so it lets the ring's gradient through at
-              ~30% and lands as a pale tint of whatever hue is behind it — cream at the
-              top, powder blue at the bottom. cr.png gets this for free because its
-              canvas is cream; ours has to earn it. */}
-          <div className="rounded-[20px] bg-white/70 p-0.5 sm:rounded-[27px] sm:p-[3px] lg:rounded-[35px] lg:p-[3px]">
+              solid-white ring is invisible, so it lets the band's gradient through at
+              ~30% and lands as a pale tint of whatever hue is behind it — the same
+              ~3px light edge the reference has between band and card. */}
+          <div className="rounded-[15px] bg-white/70 p-0.5 sm:rounded-[19px] sm:p-[3px]">
             {/* White canvas */}
             <div
               data-cursor-zone
-              className="relative flex min-h-[calc(100vh-48px)] flex-col overflow-hidden rounded-[18px] bg-white sm:min-h-[calc(100vh-80px)] sm:rounded-[24px] lg:min-h-[calc(100vh-106px)] lg:rounded-[32px]"
+              className="relative flex min-h-[calc(100vh-26px)] flex-col overflow-hidden rounded-[13px] bg-white sm:min-h-[calc(100vh-36px)] sm:rounded-2xl"
               style={{ fontFamily: "var(--font-poppins), sans-serif" }}
             >
           {/* Barely-there brand bloom behind the copy — enough to keep the canvas
@@ -645,7 +629,9 @@ export default function Hero() {
           />
 
           {/* ── Copy block ── */}
-          <div className="relative z-10 flex flex-col items-center px-5 pt-[104px] text-center sm:px-8 sm:pt-[110px] lg:pt-[116px]">
+          {/* 108px puts the amber pill exactly where the reference has it — measured
+              at 108px below the canvas's top edge, clearing the nav by ~15px. */}
+          <div className="relative z-10 flex flex-col items-center px-5 pt-[96px] text-center sm:px-8 sm:pt-[104px] lg:pt-[108px]">
             {/* Amber pill */}
             <div className="inline-flex max-w-full animate-[fadeRise_0.6s_ease_both] items-center gap-2 rounded-full bg-[#F2C77E] px-3.5 py-[7px] text-[11.5px] font-medium text-[#3B2A11] sm:px-4 sm:text-[13px]">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#3B2A11]/60" />
@@ -740,7 +726,6 @@ export default function Hero() {
           </div>
             </div>
           </div>
-        </div>
       </section>
 
       <style>{`

@@ -72,25 +72,27 @@ export default function SiteHeader() {
   };
 
   return (
-    // Sides are inset to exactly the hero frame's thickness (24 / 40 / 53px — field
-    // + ring + hairline, see Hero.jsx), so the bar starts flush with the white
-    // canvas's inner edge and stays hugging it however thick the frame gets; the
-    // nav's own 4px below is all that holds the logo and Login off that edge.
-    // The TOP carries an extra ~10-15px beyond the frame so the bar is not jammed
-    // against the canvas's top edge — the one direction that wants air, not less.
-    // Still no bottom padding: the header is a fixed overlay and height there eats
-    // clicks beneath it.
+    // Measured off "klux like this": on a 1600px page the nav's content sits at
+    // x 156..1453 — 1297px wide with even ~150px margins. That is a CENTRED
+    // max-w-7xl (1280px) bar, not a bar hugging the canvas edge, so the side
+    // padding here only has to cover narrow screens; mx-auto on the nav does the
+    // rest. pt-16 puts the bar's centre ~72px below the canvas's top edge, which
+    // is where the reference has it. No bottom padding: the header is a fixed
+    // overlay and height there eats clicks beneath it.
     <header
       data-cursor-zone
-      className="fixed inset-x-0 top-0 z-50 w-screen max-w-full px-6 pt-8 sm:px-10 sm:pt-[52px] lg:px-[53px] lg:pt-[68px]"
+      className="fixed inset-x-0 top-0 z-50 w-screen max-w-full px-5 pt-7 sm:px-6 sm:pt-12 lg:pt-[61px]"
       style={{ fontFamily: "var(--font-poppins), sans-serif" }}
     >
-      {/* Padding is asymmetric by state on purpose. Unscrolled the bar is invisible,
-          so its padding only pushes the logo and Login away from the canvas edge —
-          4px keeps them tight to it. Scrolled it becomes a solid pill, which needs
-          real room inside its own border, so it widens back out. */}
+      {/* 1320px, centred — sized so the "Start for Free" pill lands 146px off the
+          right edge of a 1600px page, which is where the reference has it. That
+          button is the anchor to measure against rather than the logo: it is solid
+          black in both shots, where the logo's blue mark reads differently under the
+          reference's JPEG compression. Padding stays asymmetric by state: unscrolled
+          the bar is invisible so it needs none, scrolled it becomes a solid pill that
+          needs room inside its border. */}
       <nav
-        className={`relative mx-auto flex h-14 max-w-[1400px] items-center justify-between gap-4 rounded-2xl transition-all duration-300 ${
+        className={`relative mx-auto flex h-14 max-w-[1320px] items-center justify-between gap-4 rounded-2xl transition-all duration-300 ${
           isScrolled
             ? "border border-white/10 bg-[#0E0E0E]/95 px-4 shadow-[0_10px_34px_rgba(0,0,0,0.35)] backdrop-blur-2xl sm:px-5"
             : "border border-transparent bg-transparent px-1"
