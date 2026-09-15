@@ -147,11 +147,15 @@ export default function Home() {
         <CreativeTaxSection />
       </section>
 
-      {/* Section tab bar — sticky under the header for the rest of the page */}
-      <SectionNav />
+      {/* Section tab bar — sticky under the header only while inside the
+          creatives sections. A sticky element can't leave its parent, so this
+          wrapper makes the bar scroll away once Ad Intelligence ends. */}
+      <div>
+        <SectionNav />
 
-      <div id="creatives" className="scroll-mt-32">
-        <CreativeSection />
+        <div id="creatives" className="scroll-mt-32">
+          <CreativeSection />
+        </div>
       </div>
 
       <div id="features" className="scroll-mt-32">
