@@ -30,9 +30,10 @@ function Spinner() {
 }
 
 // ─── Site header ──────────────────────────────────────────────────────────────
-// At the top of the page it sits bare on the hero's cream canvas (dark ink, light
-// pills). Once scrolled past the hero it collapses back into the dark floating
-// pill so it stays legible over the rest of the page.
+// At the top of the page it sits bare on the hero's dark canvas; once scrolled it
+// collapses into the dark floating pill. Both states are therefore light-on-dark
+// and differ only in the pill behind them — the light-canvas treatment the
+// unscrolled state used to carry went unreadable when the hero went to #1a1a2e.
 // The bar is pinned with w-screen (not just inset-x-0) so it stays viewport-width
 // even when a downstream section makes the document scroll horizontally.
 export default function SiteHeader() {
@@ -98,11 +99,12 @@ export default function SiteHeader() {
             : "border border-transparent bg-transparent px-1"
         }`}
       >
-        {/* Logo — dark wordmark on cream, white wordmark on the dark pill */}
+        {/* Logo — the white wordmark in both states; the canvas under it is dark
+            either way now, so the dark wordmark has nowhere left to sit. */}
         <Link href="/" className="flex shrink-0 items-center">
           <Image
             alt="Creative Klux logo"
-            src={isScrolled ? "/images/logo-klux.png" : "/images/klux-logo-dark.png"}
+            src="/images/logo-klux.png"
             width={500}
             height={135}
             priority
@@ -120,7 +122,7 @@ export default function SiteHeader() {
                 className={`flex cursor-pointer items-center gap-1.5 border-none bg-transparent text-[14px] font-medium transition-colors duration-150 disabled:opacity-60 ${
                   isScrolled
                     ? "text-white/65 hover:text-white"
-                    : "text-[#3F3F46] hover:text-[#17171B]"
+                    : "text-white/75 hover:text-white"
                 }`}
               >
                 {loadingBtn === s && <Spinner />}
@@ -137,9 +139,9 @@ export default function SiteHeader() {
             className={`cursor-pointer rounded-full px-6 py-2.5 text-[14px] font-medium transition-all duration-150 ${
               isScrolled
                 ? "border border-white/15 bg-transparent text-white/80 hover:text-white hover:border-white/30"
-                : // Tinted fill + a real border: the old white pill vanished once
-                  // the canvas under it went white.
-                  "border border-[#17171B]/12 bg-[#F4F4F7] text-[#17171B] hover:border-[#17171B]/25 hover:-translate-y-px"
+                : // A lifted tint of the canvas rather than transparent: over the
+                  // hero's carousel the pill needs its own ground to sit on.
+                  "border border-white/20 bg-white/8 text-white/85 hover:text-white hover:border-white/35 hover:-translate-y-px"
             }`}
           >
             Login
@@ -149,7 +151,7 @@ export default function SiteHeader() {
             className={`cursor-pointer rounded-full px-6 py-2.5 text-[14px] font-semibold transition-all duration-150 hover:-translate-y-px ${
               isScrolled
                 ? "bg-white text-[#17171B] hover:bg-white/90"
-                : "bg-[#17171B] text-white shadow-[0_6px_18px_-8px_rgba(23,23,27,0.8)] hover:bg-[#2A2A30]"
+                : "bg-white text-[#17171B] shadow-[0_6px_18px_-8px_rgba(0,0,0,0.6)] hover:bg-white/90"
             }`}
           >
             Start for Free
@@ -158,11 +160,7 @@ export default function SiteHeader() {
 
         {/* Mobile toggle */}
         <button
-          className={`cursor-pointer rounded-lg border-none bg-transparent p-1.5 transition-colors lg:hidden ${
-            isScrolled
-              ? "text-white hover:bg-white/10"
-              : "text-[#17171B] hover:bg-[#17171B]/8"
-          }`}
+          className="cursor-pointer rounded-lg border-none bg-transparent p-1.5 text-white transition-colors hover:bg-white/10 lg:hidden"
           onClick={() => setMobileOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -176,7 +174,7 @@ export default function SiteHeader() {
           className={`mx-auto mt-2 flex max-w-[1400px] flex-col gap-1 rounded-2xl px-5 pt-3 pb-4 backdrop-blur-xl lg:hidden ${
             isScrolled
               ? "border border-white/10 bg-[#14151a]/95"
-              : "border border-[#17171B]/12 bg-white/95 shadow-[0_16px_40px_-16px_rgba(20,20,27,0.28)]"
+              : "border border-white/12 bg-[#1a1a2e]/95 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.55)]"
           }`}
         >
           {NAV_SECTIONS.map((s) => (
@@ -187,7 +185,7 @@ export default function SiteHeader() {
               className={`flex cursor-pointer items-center gap-2 border-b bg-transparent py-2.5 text-left text-[15px] font-medium transition-colors last:border-0 ${
                 isScrolled
                   ? "border-white/5 text-white/75 hover:text-white"
-                  : "border-[#17171B]/8 text-[#3F3F46] hover:text-[#17171B]"
+                  : "border-white/8 text-white/75 hover:text-white"
               }`}
             >
               {loadingBtn === s && <Spinner />}
@@ -199,18 +197,14 @@ export default function SiteHeader() {
             className={`mt-3 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full px-4 py-3 text-[15px] font-medium transition-colors ${
               isScrolled
                 ? "border border-white/15 bg-transparent text-white/80 hover:text-white hover:border-white/30"
-                : "border border-[#17171B]/12 bg-[#F4F4F7] text-[#17171B]"
+                : "border border-white/20 bg-white/8 text-white/85 hover:text-white"
             }`}
           >
             Login
           </button>
           <button
             onClick={handleStartFree}
-            className={`mt-2 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full px-4 py-3 text-[14px] font-semibold transition-colors ${
-              isScrolled
-                ? "bg-white text-[#17171B] hover:bg-white/90"
-                : "bg-[#17171B] text-white hover:bg-[#2A2A30]"
-            }`}
+            className="mt-2 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-[14px] font-semibold text-[#17171B] transition-colors hover:bg-white/90"
           >
             Start for Free
           </button>

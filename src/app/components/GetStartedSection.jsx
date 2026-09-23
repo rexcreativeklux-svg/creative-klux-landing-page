@@ -100,7 +100,10 @@ export default function GetStartedSection() {
 function CreatorCard({ creator }) {
   return (
     <div className="group">
-      <div className="relative rounded-2xl cursor-pointer overflow-hidden mb-6 w-[400px] h-[300px] bg-gray-100">
+      {/* Fills its grid track and holds the old 400x300 as an aspect ratio. The
+          hard width used to push the whole document wider than the viewport at
+          every breakpoint below xl — the card, not the grid, was the overflow. */}
+      <div className="relative mb-6 aspect-4/3 w-full cursor-pointer overflow-hidden rounded-2xl bg-gray-100">
         <img
           src={creator.image}
           alt={creator.title}

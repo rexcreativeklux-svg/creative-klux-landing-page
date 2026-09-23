@@ -87,7 +87,15 @@ export default function SectionNav() {
       ref={navRef}
       className="sticky top-[92px] lg:top-[120px] z-40 bg-[#0b1437]/95 backdrop-blur-md border-y border-white/10"
     >
-      <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+      {/* The bar scrolls sideways on narrow screens and its scrollbar is hidden,
+          which leaves nothing to say so. The right-edge fade is that cue; it turns
+          off at lg, where every tab fits and a fade would just dim the last one. */}
+      <div className="relative">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-linear-to-l from-[#0b1437] to-transparent lg:hidden"
+        />
+        <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         <ul className="flex items-center gap-1 px-4 w-max mx-auto">
           {TABS.map(({ id, label, Icon }) => {
             const isActive = active === id;
@@ -114,7 +122,8 @@ export default function SectionNav() {
               </li>
             );
           })}
-        </ul>
+          </ul>
+        </div>
       </div>
     </nav>
   );

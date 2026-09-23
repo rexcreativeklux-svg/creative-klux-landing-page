@@ -90,32 +90,20 @@ export default function ShowcaseCarouselSection() {
                 <CarouselRow designs={row3Designs} direction="left" size="small" />
             </div>
 
-            {/* Animation Styles */}
-            <style jsx>{`
-                @keyframes scroll-left {
-                    from {
-                        transform: translateX(0);
-                    }
-                    to {
-                        transform: translateX(-50%);
-                    }
+            {/* Animation Styles.
+                A plain <style>, not styled-jsx: CarouselRow starts these keyframes
+                from an inline `animation` by name, and styled-jsx both scopes the
+                name and scopes the rule to THIS component's elements — so the rows,
+                which are a separate component, never matched and never moved. The
+                names are prefixed instead, since a plain <style> is global. */}
+            <style>{`
+                @keyframes klux-scroll-left {
+                    from { transform: translateX(0); }
+                    to   { transform: translateX(-50%); }
                 }
-                
-                @keyframes scroll-right {
-                    from {
-                        transform: translateX(-50%);
-                    }
-                    to {
-                        transform: translateX(0);
-                    }
-                }
-                
-                .animate-scroll-left {
-                    animation: scroll-left 40s linear infinite;
-                }
-                
-                .animate-scroll-right {
-                    animation: scroll-right 40s linear infinite;
+                @keyframes klux-scroll-right {
+                    from { transform: translateX(-50%); }
+                    to   { transform: translateX(0); }
                 }
             `}</style>
         </section>
@@ -126,16 +114,18 @@ function CarouselRow({ designs, direction, size }) {
     // Duplicate designs for infinite scroll
     const duplicatedDesigns = [...designs, ...designs, ...designs];
     
+    // Cards step down on small screens so a phone shows a card and a bit of the
+    // next rather than one card wider than the screen.
     const sizeClasses = {
-        large: 'h-[450px] w-[280px]',
-        medium: 'h-[300px] w-[400px]',
-        small: 'h-[450px] w-[280px]'
+        large: 'h-[300px] w-[190px] sm:h-[380px] sm:w-[240px] lg:h-[450px] lg:w-[280px]',
+        medium: 'h-[200px] w-[270px] sm:h-[260px] sm:w-[350px] lg:h-[300px] lg:w-[400px]',
+        small: 'h-[300px] w-[190px] sm:h-[380px] sm:w-[240px] lg:h-[450px] lg:w-[280px]'
     };
 
     return (
         <div className="relative w-full">
-            <div className="flex gap-6 w-max" style={{
-                animation: direction === 'left' ? 'scroll-left 40s linear infinite' : 'scroll-right 40s linear infinite'
+            <div className="flex gap-4 sm:gap-6 w-max" style={{
+                animation: direction === 'left' ? 'klux-scroll-left 40s linear infinite' : 'klux-scroll-right 40s linear infinite'
             }}>
                 {duplicatedDesigns.map((design, index) => (
                     <DesignCard 

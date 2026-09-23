@@ -69,8 +69,10 @@ export default function TestimonialSection() {
         </div>
       </div>
 
-      <div className="relative w-full">
-        <div className="flex gap-6 animate-scroll-left">
+      {/* Marquee from sm up; a swipeable snap list on a phone — see the media
+          query below for why. */}
+      <div className="relative w-full snap-x snap-mandatory overflow-x-auto sm:snap-none sm:overflow-x-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-6 px-4 sm:px-0 animate-scroll-left">
           {duplicatedTestimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}
@@ -93,6 +95,15 @@ export default function TestimonialSection() {
         .animate-scroll-left:hover {
           animation-play-state: paused;
         }
+        /* A card is about as wide as a phone, so the moving row parks a whole one
+           on screen only ~1/6 of the time — the rest of the time every quote is
+           cut off mid-line by the viewport edge. Below sm the row stops and the
+           reader swipes it instead, one card snapping to centre at a time. */
+        @media (max-width: 639px) {
+          .animate-scroll-left {
+            animation: none;
+          }
+        }
       `}</style>
     </section>
   );
@@ -100,10 +111,14 @@ export default function TestimonialSection() {
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className="bg-white flex flex-col justify-between rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 w-96 shrink-0">
+    // 85vw on a phone, so a whole card fits on screen with the next one just
+    // showing at the edge. At a flat w-96 the card is as wide as the viewport, and
+    // since the marquee is always mid-scroll every card sat half off-screen with
+    // its quote cut down the middle.
+    <div className="bg-white flex flex-col justify-between rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300 w-[85vw] max-w-96 sm:w-96 shrink-0 snap-center">
       <div className="flex flex-col">
         <div className="mb-6">
-          <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-gray-100">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-4 border-gray-100">
             <img
               src={testimonial.image}
               alt={testimonial.name}

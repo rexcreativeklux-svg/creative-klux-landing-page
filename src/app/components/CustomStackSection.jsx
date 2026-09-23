@@ -138,24 +138,16 @@ export default function CustomStack() {
           Run personalized campaigns across every channel. Sync leads, trigger messages, and track conversions — all from one place.
         </p>
 
-        {/* Integration Hub Visualization */}
-        <div className="relative max-w-5xl mx-auto h-[500px] mb-12">
+        {/* Integration hub — one set of logos, two layouts.
+            The orbit below is a diagram measured for a wide canvas: its tiles sit
+            at percentages of a 1024px box (one of them at right-[-3%]), so under
+            lg they pile onto each other and onto the centre. Narrow screens get
+            the same tiles as a plain wrapped grid instead, with the connector
+            lines dropped — at that size they have nothing left to connect. */}
+        <div className="relative mx-auto mb-12 hidden h-[500px] max-w-5xl lg:block">
           {/* Central Hub with Glow */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            
-            {/* Central box with logo */}
-            <div className="relative z-20 w-40 h-40 bg-linear-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center shadow-2xl border border-blue-400/30"
-                 style={{ boxShadow: '0 0 80px rgba(59, 130, 246, 0.4)' }}>
-              {/* CreativeKlux Logo */}
-              <Image
-                src="/images/klux-mark-white.png"
-                alt="CreativeKlux"
-                width={108}
-                height={113}
-                priority
-                className="w-20 h-auto object-contain"
-              />
-            </div>
+            <CentralHub />
 
             {/* Connection lines visualization */}
             <svg className="absolute inset-0 w-[800px] h-[600px] -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 pointer-events-none" style={{ filter: 'drop-shadow(0 0 2px rgba(59, 130, 246, 0.3))' }}>
@@ -218,21 +210,29 @@ export default function CustomStack() {
             <div
               key={index}
               className={`absolute ${integration.position} transform -translate-x-1/2 -translate-y-1/2`}
-              style={{
-                animation: `fadeInScale 0.8s ease-out forwards`,
-                animationDelay: `${index * 0.1}s`,
-                opacity: 0
-              }}
             >
-              <div className="group cursor-pointer">
-                <div
-                  className={`w-20 h-20 rounded-2xl ${integration.color} flex items-center justify-center shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110 hover:-translate-y-1 border border-gray-100`}
-                >
-                  {integration.logo}
-                </div>
-              </div>
+              <LogoTile
+                integration={integration}
+                index={index}
+                className="h-20 w-20"
+              />
             </div>
           ))}
+        </div>
+
+        {/* Stacked hub — everything below lg. */}
+        <div className="mb-12 flex flex-col items-center gap-9 lg:hidden">
+          <CentralHub />
+          <div className="flex max-w-md flex-wrap items-center justify-center gap-3 sm:gap-4">
+            {integrations.map((integration, index) => (
+              <LogoTile
+                key={index}
+                integration={integration}
+                index={index}
+                className="h-16 w-16 sm:h-20 sm:w-20"
+              />
+            ))}
+          </div>
         </div>
 
         {/* Footer Text */}
@@ -241,29 +241,54 @@ export default function CustomStack() {
         </p>
       </div>
 
-      <style jsx>{`
-        @keyframes fadeInScale {
-          from {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.8);
-          }
-          to {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-          }
-        }
-        @keyframes pulse-slow {
-          0%, 100% {
-            opacity: 0.05;
-          }
-          50% {
-            opacity: 0.1;
-          }
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 4s ease-in-out infinite;
+      {/* A plain <style>, not styled-jsx. styled-jsx rewrites a keyframe's NAME to
+          a scoped one, so the inline `animation: fadeInScale ...` these tiles used
+          to carry pointed at a name that no longer existed — the animation never
+          ran, and with opacity pinned at 0 waiting for it the whole logo set was
+          invisible at every width. */}
+      <style>{`
+        @keyframes klux-pop {
+          from { opacity: 0; transform: scale(0.85); }
+          to   { opacity: 1; transform: scale(1); }
         }
       `}</style>
+    </div>
+  );
+}
+
+// The blue Klux box at the centre of the hub, shared by both layouts.
+function CentralHub() {
+  return (
+    <div
+      className="relative z-20 flex h-32 w-32 items-center justify-center rounded-2xl border border-blue-400/30 bg-linear-to-br from-blue-600 to-blue-700 shadow-2xl sm:h-40 sm:w-40"
+      style={{ boxShadow: "0 0 80px rgba(59, 130, 246, 0.4)" }}
+    >
+      <Image
+        src="/images/klux-mark-white.png"
+        alt="CreativeKlux"
+        width={108}
+        height={113}
+        priority
+        className="h-auto w-16 object-contain sm:w-20"
+      />
+    </div>
+  );
+}
+
+// One integration tile. The pop-in animates the TILE rather than the positioned
+// wrapper around it, because the orbit's wrapper carries its own -translate-x/y-1/2
+// centring and a keyframe writing `transform` would overwrite it. `both` rather
+// than `forwards` for the fill: the tile then takes the keyframe's opacity during
+// the stagger delay instead of an inline opacity:0, so a missing keyframe leaves
+// it VISIBLE rather than invisible.
+function LogoTile({ integration, index, className = "" }) {
+  return (
+    <div
+      title={integration.name}
+      style={{ animation: `klux-pop 0.8s ease-out ${index * 0.08}s both` }}
+      className={`group flex cursor-pointer items-center justify-center rounded-2xl border border-gray-100 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-2xl ${integration.color} ${className}`}
+    >
+      {integration.logo}
     </div>
   );
 }

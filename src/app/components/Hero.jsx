@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, CircleCheck, Play } from "lucide-react";
 
 // Smooth-scroll to an in-page section, accounting for the fixed header + nav bar.
 function scrollToId(id) {
@@ -461,7 +461,7 @@ function CreativeCarousel() {
                 style={{ transform: `skewX(${-SKEW}deg)` }}
               >
                 <div
-                  className="relative h-full w-full bg-[#F1F1F4]"
+                  className="relative h-full w-full bg-[#23233A]"
                   style={{ transform: `skewX(${SKEW}deg) scale(${ZOOM})` }}
                 >
                   {card.type === "video" ? (
@@ -503,7 +503,9 @@ function CreativeCarousel() {
 
 // ─── Hand-drawn annotations ───────────────────────────────────────────────────
 const ink = {
-  stroke: "#26262A",
+  // Chalk on the dark canvas, not pen on paper — the old #26262A ink disappeared
+  // once the canvas went to #1a1a2e.
+  stroke: "#DCDCEA",
   strokeWidth: 1.9,
   strokeLinecap: "round",
   strokeLinejoin: "round",
@@ -516,7 +518,7 @@ const ink = {
 // anchoring to the strip is what actually lets the tip land on a card.
 function ElevateNote() {
   return (
-    <div className="pointer-events-none absolute bottom-full right-[3%] hidden w-[210px] translate-y-[6px] text-left text-[#26262A] lg:block xl:right-[5%]">
+    <div className="pointer-events-none absolute bottom-full right-[3%] hidden w-[210px] translate-y-[6px] text-left text-[#E8E8F2] lg:block xl:right-[5%]">
       {/* Slanted to match the arrow's run beneath it (~11 deg down to the right),
           so the words read as resting on the line rather than crossing it. */}
       <p
@@ -548,7 +550,7 @@ function HeadlineTick() {
     <svg
       viewBox="0 0 40 40"
       aria-hidden
-      className="pointer-events-none absolute right-full top-[62%] mr-3 hidden h-9 w-[38px] -translate-y-1/2 text-[#26262A] lg:block xl:mr-6"
+      className="pointer-events-none absolute right-full top-[62%] mr-3 hidden h-9 w-[38px] -translate-y-1/2 text-[#E8E8F2] lg:block xl:mr-6"
     >
       {/* Bare arrowhead — two strokes converging up-right, no shaft. The reference
           uses this as a glance-mark next to the headline, not a drawn arrow. */}
@@ -558,9 +560,13 @@ function HeadlineTick() {
   );
 }
 
+// Hung off the LEFT EDGE of the primary CTA (right-full on a wrapper that hugs
+// the button), not off a fixed offset from the CTA cluster's centre. That centre
+// moves with the second button and with the row/column switch at sm, which is how
+// the arrow ended up striking through "Get Started" at tablet widths.
 function FreeNote() {
   return (
-    <div className="pointer-events-none absolute bottom-0.5 left-1/2 hidden w-[150px] -translate-x-[236px] text-left text-[#26262A] sm:block lg:-translate-x-[282px]">
+    <div className="pointer-events-none absolute -bottom-3 right-full hidden w-[114px] translate-x-[10px] text-left text-[#E8E8F2] sm:block">
       {/* A soft L: drops down, sweeps through a wide rounded bend, then arrives
           flat at the button's left edge. The control points sit directly below the
           start and directly left of the tip, which is what keeps the turn a smooth
@@ -575,6 +581,127 @@ function FreeNote() {
       >
         It&apos;s free
       </p>
+    </div>
+  );
+}
+
+// ─── "Create for" platform row ────────────────────────────────────────────────
+// The surfaces Klux exports to, sat under the CTA. Each glyph keeps its own brand
+// colour where that colour is what the mark actually is (YouTube red, Instagram
+// magenta, Facebook blue) and goes white where the real mark IS white (TikTok,
+// Threads, X). Flat brand colour rather than the full gradient lockups: six
+// gradients here would out-shout the coral CTA sitting directly above them.
+// `href` is deliberately empty for now. An <a> with no href still matches the
+// `a` selector CursorFollower tests against, so the trailing dot merges away over
+// a tile exactly as it does over the CTAs — filling these in later changes
+// nothing else about the row.
+const PLATFORMS = [
+  {
+    name: "YouTube",
+    href: "",
+    tint: "#FF0000",
+    glyph: (
+      <>
+        <path
+          fill="currentColor"
+          d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"
+        />
+        <path fill="#fff" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+      </>
+    ),
+  },
+  {
+    name: "TikTok",
+    href: "",
+    tint: "#FFFFFF",
+    glyph: (
+      <path
+        fill="currentColor"
+        d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+      />
+    ),
+  },
+  {
+    name: "Instagram",
+    href: "",
+    tint: "#E1306C",
+    glyph: (
+      <path
+        fill="currentColor"
+        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+      />
+    ),
+  },
+  {
+    name: "Facebook",
+    href: "",
+    tint: "#1877F2",
+    glyph: (
+      // The mark's "f" is a knockout in the path, so it takes whatever is painted
+      // UNDER it. On this tile that would be near-black; the white disc behind
+      // gives the letter back its own colour.
+      <>
+        <circle cx="12" cy="12" r="11.5" fill="#fff" />
+        <path
+          fill="currentColor"
+          d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+        />
+      </>
+    ),
+  },
+  {
+    name: "Threads",
+    href: "",
+    tint: "#FFFFFF",
+    glyph: (
+      <path
+        fill="currentColor"
+        d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.36-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.242 7.828c.98-1.454 2.568-2.256 4.474-2.256h.043c3.187.02 5.084 1.973 5.273 5.376.108.046.216.094.32.143 1.474.693 2.552 1.744 3.118 3.04.79 1.808.863 4.755-1.535 7.103-1.836 1.794-4.06 2.604-7.11 2.626h-.011zm1.844-11.51c-.284 0-.57.007-.862.023-1.835.104-2.98.946-2.914 2.15.069 1.26 1.459 1.845 2.795 1.774 1.228-.067 2.83-.545 3.098-3.722a10.913 10.913 0 0 0-2.117-.224z"
+      />
+    ),
+  },
+  {
+    name: "X",
+    href: "",
+    tint: "#FFFFFF",
+    glyph: (
+      <path
+        fill="currentColor"
+        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+      />
+    ),
+  },
+];
+
+function CreateForRow() {
+  return (
+    <div className="mt-7 flex animate-[fadeRise_0.6s_ease_0.22s_both] flex-wrap items-center justify-center gap-x-3.5 gap-y-3 sm:mt-8">
+      <p className="inline-flex items-center gap-2 text-[13px] font-medium text-[#A8A8C0]">
+        <CircleCheck size={17} className="shrink-0 text-[#22C55E]" />
+        Create for
+      </p>
+      <ul className="flex list-none items-center gap-2">
+        {PLATFORMS.map((p) => (
+          <li key={p.name}>
+            {/* `--tint` carries the brand colour into the hover border and glow;
+                writing those as Tailwind classes off `p.tint` would mean building
+                class names at runtime, which the compiler never sees. */}
+            <a
+              href={p.href || undefined}
+              target={p.href ? "_blank" : undefined}
+              rel={p.href ? "noopener noreferrer" : undefined}
+              title={p.name}
+              aria-label={`Create for ${p.name}`}
+              style={{ color: p.tint, "--tint": p.tint }}
+              className="grid h-10 w-10 cursor-pointer place-items-center rounded-[11px] border border-white/10 bg-white/6 transition-all duration-150 hover:-translate-y-0.5 hover:border-[color-mix(in_srgb,var(--tint)_55%,transparent)] hover:bg-white/10 hover:shadow-[0_10px_20px_-12px_var(--tint)]"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden className="h-5 w-5">
+                {p.glyph}
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -607,24 +734,27 @@ export default function Hero() {
             "linear-gradient(135deg, #1340D3 0%, #1A4CE8 12%, #4F7DF2 26%, #7D73D4 42%, #B27DAB 58%, #CE8090 68%, #E59272 82%, #E6B594 100%)",
         }}
       >
-          {/* Hairline. Translucent white rather than solid: against a WHITE canvas a
-              solid-white ring is invisible, so it lets the band's gradient through at
-              ~30% and lands as a pale tint of whatever hue is behind it — the same
-              ~3px light edge the reference has between band and card. */}
+          {/* Hairline. Translucent white rather than solid: it lets the band's
+              gradient through at ~30% and lands as a pale tint of whatever hue is
+              behind it — the same ~3px light edge the reference has between band
+              and card, and against the dark canvas it reads as a clean separator. */}
           <div className="rounded-[15px] bg-white/70 p-0.5 sm:rounded-[19px] sm:p-[3px]">
-            {/* White canvas */}
+            {/* Canvas — the same ink as the pain cards in CreativeTaxSection, so the
+                hero and the section below it read as one surface. */}
             <div
               data-cursor-zone
-              className="relative flex min-h-[calc(100vh-26px)] flex-col overflow-hidden rounded-[13px] bg-white sm:min-h-[calc(100vh-36px)] sm:rounded-2xl"
+              className="relative flex min-h-[calc(100vh-26px)] flex-col overflow-hidden rounded-[13px] bg-[#1a1a2e] sm:min-h-[calc(100vh-36px)] sm:rounded-2xl"
               style={{ fontFamily: "var(--font-poppins), sans-serif" }}
             >
           {/* Barely-there brand bloom behind the copy — enough to keep the canvas
-              from reading as flat paper, faint enough that it still reads white. */}
+              from reading as a flat block, faint enough that it still reads as the
+              card ink. Brand blue rather than amber: a warm wash on this navy goes
+              muddy, where the blue just lifts the top of the canvas. */}
           <div
             className="pointer-events-none absolute inset-x-0 top-0 h-[70%]"
             style={{
               background:
-                "radial-gradient(ellipse 60% 70% at 50% 0%, rgba(242,199,126,0.10) 0%, transparent 65%)",
+                "radial-gradient(ellipse 60% 70% at 50% 0%, rgba(91,140,255,0.14) 0%, transparent 65%)",
             }}
           />
 
@@ -642,7 +772,7 @@ export default function Hero() {
                 h1, giving the tick a real left edge to hang off. */}
             <div className="relative mt-6">
               <h1
-                className="animate-[fadeRise_0.6s_ease_0.05s_both] text-[clamp(31px,5vw,80px)] font-bold leading-[1.05] tracking-[-0.035em] text-[#17171B]"
+                className="animate-[fadeRise_0.6s_ease_0.05s_both] text-[clamp(31px,5vw,80px)] font-bold leading-[1.05] tracking-[-0.035em] text-[#F7F7FB]"
                 style={{ fontFamily: "var(--font-poppins), sans-serif" }}
               >
                 AI-Powered Visuals for
@@ -655,9 +785,10 @@ export default function Hero() {
             </div>
 
             {/* Sub */}
-            {/* Neutral grey, not the old warm one — a beige-tinted grey goes muddy
-                on white. #55555F clears 7:1 against the canvas. */}
-            <p className="mt-5 max-w-[560px] animate-[fadeRise_0.6s_ease_0.12s_both] text-[14.5px] font-normal leading-[1.68] text-[#55555F] sm:text-[15.5px]">
+            {/* #C2C2D8 — the same body grey the pain cards use, and 9.7:1 against
+                the #1a1a2e canvas. The card section's dimmer #6b6b8a only clears
+                3.5:1 here, which is why the sub does not borrow that one. */}
+            <p className="mt-5 max-w-[560px] animate-[fadeRise_0.6s_ease_0.12s_both] text-[14.5px] font-normal leading-[1.68] text-[#C2C2D8] sm:text-[15.5px]">
               Generate professional-quality creatives in seconds — ad graphics,
               social content, and brand visuals, without the designer wait.
             </p>
@@ -678,50 +809,63 @@ export default function Hero() {
               of it — leaving the button adrift below the strip. Anchoring to the top
               keeps it a fixed gap under the cards and lets the slack fall below. */}
           <div className="relative z-10 flex flex-1 items-start justify-center px-5 pb-6 pt-5 sm:pt-6 lg:pt-6">
-            <div className="relative flex flex-col items-center">
-              <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
-                <button
-                  onClick={() => scrollToId("pricing")}
-                  className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#EF6D57] px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_12px_26px_-12px_rgba(239,109,87,0.9)] transition-all duration-150 hover:-translate-y-0.5 hover:bg-[#E85E46]"
-                >
-                  Get Started
-                  <ArrowRight
-                    size={17}
-                    className="transition-transform group-hover:translate-x-0.5"
-                  />
-                </button>
+            <div className="flex flex-col items-center">
+              {/* The buttons and their two annotations are their own relative box:
+                  FreeNote hangs off the BOTTOM of whatever contains it, so with the
+                  platform row inside as well its arrow would drop past the buttons
+                  it is pointing at. */}
+              <div className="relative flex flex-col items-center">
+                <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
+                  {/* Wrapper exists so FreeNote has the button's own edges to hang
+                      off, rather than the cluster's shifting centre. */}
+                  <div className="relative">
+                    <button
+                      onClick={() => scrollToId("pricing")}
+                      className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#EF6D57] px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_12px_26px_-12px_rgba(239,109,87,0.9)] transition-all duration-150 hover:-translate-y-0.5 hover:bg-[#E85E46]"
+                    >
+                      Get Started
+                      <ArrowRight
+                        size={17}
+                        className="transition-transform group-hover:translate-x-0.5"
+                      />
+                    </button>
+                    <FreeNote />
+                  </div>
 
-                <button
-                  onClick={() => scrollToId("see-in-action")}
-                  className="group inline-flex cursor-pointer items-center gap-2.5 bg-transparent text-[14px] font-medium text-[#3F3F46] transition-colors hover:text-[#17171B]"
+                  <button
+                    onClick={() => scrollToId("see-in-action")}
+                    className="group inline-flex cursor-pointer items-center gap-2.5 bg-transparent text-[14px] font-medium text-[#C2C2D8] transition-colors hover:text-white"
+                  >
+                    {/* A lifted tint of the canvas rather than a solid fill — enough
+                        to read as a disc without stamping a bright dot next to the
+                        coral CTA. The glyph rides on currentColor, so it tracks the
+                        label's 9.7:1. */}
+                    <span className="grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-white/8 transition-transform duration-150 group-hover:scale-105">
+                      <Play size={13} fill="currentColor" className="ml-0.5" />
+                    </span>
+                    See it in action
+                  </button>
+                </div>
+
+                {/* dashed hand-drawn underline beneath the primary CTA */}
+                <svg
+                  viewBox="0 0 200 8"
+                  preserveAspectRatio="none"
+                  className="pointer-events-none mt-2 hidden h-[7px] w-[164px] sm:block sm:self-start"
                 >
-                  {/* Tinted fill, not white — a white disc on a white canvas is
-                      just its own hairline border. */}
-                  <span className="grid h-9 w-9 place-items-center rounded-full border border-[#17171B]/12 bg-[#F4F4F7] transition-transform duration-150 group-hover:scale-105">
-                    <Play size={13} fill="currentColor" className="ml-0.5" />
-                  </span>
-                  See it in action
-                </button>
+                  <path
+                    d="M2 5C34 1 70 7 104 3C138 -1 170 6 198 3"
+                    fill="none"
+                    stroke="#EF6D57"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeDasharray="7 7"
+                    opacity="0.75"
+                  />
+                </svg>
               </div>
 
-              {/* dashed hand-drawn underline beneath the primary CTA */}
-              <svg
-                viewBox="0 0 200 8"
-                preserveAspectRatio="none"
-                className="pointer-events-none mt-2 hidden h-[7px] w-[164px] sm:block sm:self-start"
-              >
-                <path
-                  d="M2 5C34 1 70 7 104 3C138 -1 170 6 198 3"
-                  fill="none"
-                  stroke="#EF6D57"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeDasharray="7 7"
-                  opacity="0.75"
-                />
-              </svg>
-
-              <FreeNote />
+              <CreateForRow />
             </div>
           </div>
             </div>
