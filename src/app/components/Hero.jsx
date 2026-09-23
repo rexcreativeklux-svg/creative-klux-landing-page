@@ -760,8 +760,12 @@ export default function Hero() {
 
           {/* ── Copy block ── */}
           {/* 108px puts the amber pill exactly where the reference has it — measured
-              at 108px below the canvas's top edge, clearing the nav by ~15px. */}
-          <div className="relative z-10 flex flex-col items-center px-5 pt-[96px] text-center sm:px-8 sm:pt-[104px] lg:pt-[108px]">
+              at 108px below the canvas's top edge, clearing the nav by ~15px.
+              The phone value is 84 rather than a scaled-down 96: narrow viewports
+              wrap the headline to a fourth line, and that padding is the slack
+              that keeps the platform row from dropping further below the fold.
+              It still clears the mobile nav, which is the only thing above it. */}
+          <div className="relative z-10 flex flex-col items-center px-5 pt-[84px] text-center sm:px-8 sm:pt-[104px] lg:pt-[108px]">
             {/* Amber pill */}
             <div className="inline-flex max-w-full animate-[fadeRise_0.6s_ease_both] items-center gap-2 rounded-full bg-[#F2C77E] px-3.5 py-[7px] text-[11.5px] font-medium text-[#3B2A11] sm:px-4 sm:text-[13px]">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#3B2A11]/60" />
@@ -769,16 +773,24 @@ export default function Hero() {
             </div>
 
             {/* Headline — locked to two lines from sm up. The wrapper hugs the
-                h1, giving the tick a real left edge to hang off. */}
+                h1, giving the tick a real left edge to hang off.
+                The clamp tops out lower than a short headline could carry: this
+                one runs ~35 characters on its longest line, so 80px would push
+                past the canvas at anything under a very wide display. The 26px
+                FLOOR is the other end of the same problem: the phone layout has
+                no <br /> to lean on, and anything larger wraps this sentence to
+                four lines, which pushes the platform row a further 30px below
+                the fold. 26px is the size at which "social posts on autopilot"
+                still fits one line inside the 336px phone canvas. */}
             <div className="relative mt-6">
               <h1
-                className="animate-[fadeRise_0.6s_ease_0.05s_both] text-[clamp(31px,5vw,80px)] font-bold leading-[1.05] tracking-[-0.035em] text-[#F7F7FB]"
+                className="animate-[fadeRise_0.6s_ease_0.05s_both] text-[clamp(26px,4vw,62px)] font-bold leading-[1.08] tracking-[-0.035em] text-[#F7F7FB]"
                 style={{ fontFamily: "var(--font-poppins), sans-serif" }}
               >
-                AI-Powered Visuals for
+                Create, publish and manage your ads
                 <br className="hidden sm:block" />{" "}
                 <span className="sm:whitespace-nowrap">
-                  Ads, Social &amp; Brand
+                  and social posts on autopilot
                 </span>
               </h1>
               <HeadlineTick />
@@ -788,9 +800,9 @@ export default function Hero() {
             {/* #C2C2D8 — the same body grey the pain cards use, and 9.7:1 against
                 the #1a1a2e canvas. The card section's dimmer #6b6b8a only clears
                 3.5:1 here, which is why the sub does not borrow that one. */}
-            <p className="mt-5 max-w-[560px] animate-[fadeRise_0.6s_ease_0.12s_both] text-[14.5px] font-normal leading-[1.68] text-[#C2C2D8] sm:text-[15.5px]">
-              Generate professional-quality creatives in seconds — ad graphics,
-              social content, and brand visuals, without the designer wait.
+            <p className="mt-5 max-w-[600px] animate-[fadeRise_0.6s_ease_0.12s_both] text-[14.5px] font-normal leading-[1.68] text-[#C2C2D8] sm:text-[15.5px]">
+              Brand-aware AI designs, writes and publishes across every channel
+              you connect — brief to live post in minutes, no designer needed.
             </p>
 
           </div>
