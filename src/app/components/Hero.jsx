@@ -294,7 +294,7 @@ function CreativeCarousel() {
     if (!wrap || !track) return;
 
     const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     let wrapWidth = 0;
@@ -315,7 +315,10 @@ function CreativeCarousel() {
       // leaves on one side exactly as its twin arrives on the other, and a sliver
       // of background at one edge is matched by an identical one at the other.
       const cardW = els[0].offsetWidth;
-      const steps = Math.max(1, Math.round(wrapWidth / (cardW * (1 + GAP_RATIO))));
+      const steps = Math.max(
+        1,
+        Math.round(wrapWidth / (cardW * (1 + GAP_RATIO))),
+      );
       const pitch = wrapWidth / steps;
       track.style.columnGap = `${(pitch - cardW).toFixed(3)}px`;
 
@@ -414,8 +417,7 @@ function CreativeCarousel() {
           `perspective(${CARD_DEPTH}px) rotateY(${turn.toFixed(2)}deg) ` +
           `scaleY(${sy.toFixed(4)}) skewX(${-SKEW}deg)`;
         if (card.inner) {
-          card.inner.style.transform =
-            `skewX(${SKEW}deg) scaleY(${(1 / sy).toFixed(4)}) scale(${ZOOM})`;
+          card.inner.style.transform = `skewX(${SKEW}deg) scaleY(${(1 / sy).toFixed(4)}) scale(${ZOOM})`;
         }
       }
 
@@ -494,7 +496,7 @@ function CreativeCarousel() {
                 </div>
               </div>
             );
-          })
+          }),
         )}
       </div>
     </div>
@@ -734,45 +736,45 @@ export default function Hero() {
             "linear-gradient(135deg, #1340D3 0%, #1A4CE8 12%, #4F7DF2 26%, #7D73D4 42%, #B27DAB 58%, #CE8090 68%, #E59272 82%, #E6B594 100%)",
         }}
       >
-          {/* Hairline. Translucent white rather than solid: it lets the band's
+        {/* Hairline. Translucent white rather than solid: it lets the band's
               gradient through at ~30% and lands as a pale tint of whatever hue is
               behind it — the same ~3px light edge the reference has between band
               and card, and against the dark canvas it reads as a clean separator. */}
-          <div className="rounded-[15px] bg-white/70 p-0.5 sm:rounded-[19px] sm:p-[3px]">
-            {/* Canvas — the same ink as the pain cards in CreativeTaxSection, so the
+        <div className="rounded-[15px] bg-white/70 p-0.5 sm:rounded-[19px] sm:p-[3px]">
+          {/* Canvas — the same ink as the pain cards in CreativeTaxSection, so the
                 hero and the section below it read as one surface. */}
-            <div
-              data-cursor-zone
-              className="relative flex min-h-[calc(100vh-26px)] flex-col overflow-hidden rounded-[13px] bg-[#1a1a2e] sm:min-h-[calc(100vh-36px)] sm:rounded-2xl"
-              style={{ fontFamily: "var(--font-poppins), sans-serif" }}
-            >
-          {/* Barely-there brand bloom behind the copy — enough to keep the canvas
+          <div
+            data-cursor-zone
+            className="relative flex min-h-[calc(100vh-26px)] flex-col overflow-hidden rounded-[13px] bg-[#1a1a2e] sm:min-h-[calc(100vh-36px)] sm:rounded-2xl"
+            style={{ fontFamily: "var(--font-poppins), sans-serif" }}
+          >
+            {/* Barely-there brand bloom behind the copy — enough to keep the canvas
               from reading as a flat block, faint enough that it still reads as the
               card ink. Brand blue rather than amber: a warm wash on this navy goes
               muddy, where the blue just lifts the top of the canvas. */}
-          <div
-            className="pointer-events-none absolute inset-x-0 top-0 h-[70%]"
-            style={{
-              background:
-                "radial-gradient(ellipse 60% 70% at 50% 0%, rgba(91,140,255,0.14) 0%, transparent 65%)",
-            }}
-          />
+            <div
+              className="pointer-events-none absolute inset-x-0 top-0 h-[70%]"
+              style={{
+                background:
+                  "radial-gradient(ellipse 60% 70% at 50% 0%, rgba(91,140,255,0.14) 0%, transparent 65%)",
+              }}
+            />
 
-          {/* ── Copy block ── */}
-          {/* 108px puts the amber pill exactly where the reference has it — measured
+            {/* ── Copy block ── */}
+            {/* 108px puts the amber pill exactly where the reference has it — measured
               at 108px below the canvas's top edge, clearing the nav by ~15px.
               The phone value is 84 rather than a scaled-down 96: narrow viewports
               wrap the headline to a fourth line, and that padding is the slack
               that keeps the platform row from dropping further below the fold.
               It still clears the mobile nav, which is the only thing above it. */}
-          <div className="relative z-10 flex flex-col items-center px-5 pt-[84px] text-center sm:px-8 sm:pt-[104px] lg:pt-[108px]">
-            {/* Amber pill */}
-            <div className="inline-flex max-w-full animate-[fadeRise_0.6s_ease_both] items-center gap-2 rounded-full bg-[#F2C77E] px-3.5 py-[7px] text-[11.5px] font-medium text-[#3B2A11] sm:px-4 sm:text-[13px]">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#3B2A11]/60" />
-              One platform. Every creative you&apos;ll ever need.
-            </div>
+            <div className="relative z-10 flex flex-col items-center px-5 pt-[84px] text-center sm:px-8 sm:pt-[104px] lg:pt-[108px]">
+              {/* Amber pill */}
+              <div className="inline-flex max-w-full animate-[fadeRise_0.6s_ease_both] items-center gap-2 rounded-full bg-[#F2C77E] px-3.5 py-[7px] text-[11.5px] font-medium text-[#3B2A11] sm:px-4 sm:text-[13px]">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#3B2A11]/60" />
+                One platform. Every creative you&apos;ll ever need.
+              </div>
 
-            {/* Headline — locked to two lines from sm up. The wrapper hugs the
+              {/* Headline — locked to two lines from sm up. The wrapper hugs the
                 h1, giving the tick a real left edge to hang off.
                 The clamp tops out lower than a short headline could carry: this
                 one runs ~35 characters on its longest line, so 80px would push
@@ -782,106 +784,110 @@ export default function Hero() {
                 four lines, which pushes the platform row a further 30px below
                 the fold. 26px is the size at which "social posts on autopilot"
                 still fits one line inside the 336px phone canvas. */}
-            <div className="relative mt-6">
-              <h1
-                className="animate-[fadeRise_0.6s_ease_0.05s_both] text-[clamp(26px,4vw,62px)] font-bold leading-[1.08] tracking-[-0.035em] text-[#F7F7FB]"
-                style={{ fontFamily: "var(--font-poppins), sans-serif" }}
-              >
-                Create, publish and manage your ads
-                <br className="hidden sm:block" />{" "}
-                <span className="sm:whitespace-nowrap">
-                  and social posts on autopilot
-                </span>
-              </h1>
-              <HeadlineTick />
-            </div>
+              <div className="relative mt-6">
+                <h1
+                  className="animate-[fadeRise_0.6s_ease_0.05s_both] text-[clamp(26px,4vw,62px)] font-bold leading-[1.08] tracking-[-0.035em] text-[#F7F7FB]"
+                  style={{ fontFamily: "var(--font-poppins), sans-serif" }}
+                >
+                  Create, publish and manage your ads
+                  <br className="hidden sm:block" />{" "}
+                  <span className="sm:whitespace-nowrap">
+                    and social designs on autopilot
+                  </span>
+                </h1>
+                <HeadlineTick />
+              </div>
 
-            {/* Sub */}
-            {/* #C2C2D8 — the same body grey the pain cards use, and 9.7:1 against
+              {/* Sub */}
+              {/* #C2C2D8 — the same body grey the pain cards use, and 9.7:1 against
                 the #1a1a2e canvas. The card section's dimmer #6b6b8a only clears
                 3.5:1 here, which is why the sub does not borrow that one. */}
-            <p className="mt-5 max-w-[600px] animate-[fadeRise_0.6s_ease_0.12s_both] text-[14.5px] font-normal leading-[1.68] text-[#C2C2D8] sm:text-[15.5px]">
-              Brand-aware AI designs, writes and publishes across every channel
-              you connect — brief to live post in minutes, no designer needed.
-            </p>
+              <p className="mt-5 max-w-[600px] animate-[fadeRise_0.6s_ease_0.12s_both] text-[14.5px] font-normal leading-[1.68] text-[#C2C2D8] sm:text-[15.5px]">
+                Brand-aware AI designs, writes and publishes across every
+                channel you connect — brief to live post in minutes, no designer
+                needed.
+              </p>
+            </div>
 
-          </div>
-
-          {/* ── Creative carousel ── */}
-          {/* z-20 so the note, which hangs above this box, clears the copy block;
+            {/* ── Creative carousel ── */}
+            {/* z-20 so the note, which hangs above this box, clears the copy block;
               it renders after the strip so its arrow paints over the cards. */}
-          <div className="relative z-20 mt-2 sm:mt-3 lg:mt-4">
-            <CreativeCarousel />
-            <ElevateNote />
-          </div>
+            <div className="relative z-20 mt-2 sm:mt-3 lg:mt-4">
+              <CreativeCarousel />
+              <ElevateNote />
+            </div>
 
-          {/* ── CTA ── */}
-          {/* items-start, not items-center: this block soaks up whatever slack the
+            {/* ── CTA ── */}
+            {/* items-start, not items-center: this block soaks up whatever slack the
               min-h-screen canvas has left, and centring parks the CTA in the middle
               of it — leaving the button adrift below the strip. Anchoring to the top
               keeps it a fixed gap under the cards and lets the slack fall below. */}
-          <div className="relative z-10 flex flex-1 items-start justify-center px-5 pb-6 pt-5 sm:pt-6 lg:pt-6">
-            <div className="flex flex-col items-center">
-              {/* The buttons and their two annotations are their own relative box:
+            <div className="relative z-10 flex flex-1 items-start justify-center px-5 pb-6 pt-5 sm:pt-6 lg:pt-6">
+              <div className="flex flex-col items-center">
+                {/* The buttons and their two annotations are their own relative box:
                   FreeNote hangs off the BOTTOM of whatever contains it, so with the
                   platform row inside as well its arrow would drop past the buttons
                   it is pointing at. */}
-              <div className="relative flex flex-col items-center">
-                <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
-                  {/* Wrapper exists so FreeNote has the button's own edges to hang
+                <div className="relative flex flex-col items-center">
+                  <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
+                    {/* Wrapper exists so FreeNote has the button's own edges to hang
                       off, rather than the cluster's shifting centre. */}
-                  <div className="relative">
-                    <button
-                      onClick={() => scrollToId("pricing")}
-                      className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#EF6D57] px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_12px_26px_-12px_rgba(239,109,87,0.9)] transition-all duration-150 hover:-translate-y-0.5 hover:bg-[#E85E46]"
-                    >
-                      Get Started
-                      <ArrowRight
-                        size={17}
-                        className="transition-transform group-hover:translate-x-0.5"
-                      />
-                    </button>
-                    <FreeNote />
-                  </div>
+                    <div className="relative">
+                      <button
+                        onClick={() => scrollToId("pricing")}
+                        className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#EF6D57] px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_12px_26px_-12px_rgba(239,109,87,0.9)] transition-all duration-150 hover:-translate-y-0.5 hover:bg-[#E85E46]"
+                      >
+                        Get Started
+                        <ArrowRight
+                          size={17}
+                          className="transition-transform group-hover:translate-x-0.5"
+                        />
+                      </button>
+                      <FreeNote />
+                    </div>
 
-                  <button
-                    onClick={() => scrollToId("see-in-action")}
-                    className="group inline-flex cursor-pointer items-center gap-2.5 bg-transparent text-[14px] font-medium text-[#C2C2D8] transition-colors hover:text-white"
-                  >
-                    {/* A lifted tint of the canvas rather than a solid fill — enough
+                    <button
+                      onClick={() => scrollToId("see-in-action")}
+                      className="group inline-flex cursor-pointer items-center gap-2.5 bg-transparent text-[14px] font-medium text-[#C2C2D8] transition-colors hover:text-white"
+                    >
+                      {/* A lifted tint of the canvas rather than a solid fill — enough
                         to read as a disc without stamping a bright dot next to the
                         coral CTA. The glyph rides on currentColor, so it tracks the
                         label's 9.7:1. */}
-                    <span className="grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-white/8 transition-transform duration-150 group-hover:scale-105">
-                      <Play size={13} fill="currentColor" className="ml-0.5" />
-                    </span>
-                    See it in action
-                  </button>
+                      <span className="grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-white/8 transition-transform duration-150 group-hover:scale-105">
+                        <Play
+                          size={13}
+                          fill="currentColor"
+                          className="ml-0.5"
+                        />
+                      </span>
+                      See it in action
+                    </button>
+                  </div>
+
+                  {/* dashed hand-drawn underline beneath the primary CTA */}
+                  <svg
+                    viewBox="0 0 200 8"
+                    preserveAspectRatio="none"
+                    className="pointer-events-none mt-2 hidden h-[7px] w-[164px] sm:block sm:self-start"
+                  >
+                    <path
+                      d="M2 5C34 1 70 7 104 3C138 -1 170 6 198 3"
+                      fill="none"
+                      stroke="#EF6D57"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeDasharray="7 7"
+                      opacity="0.75"
+                    />
+                  </svg>
                 </div>
 
-                {/* dashed hand-drawn underline beneath the primary CTA */}
-                <svg
-                  viewBox="0 0 200 8"
-                  preserveAspectRatio="none"
-                  className="pointer-events-none mt-2 hidden h-[7px] w-[164px] sm:block sm:self-start"
-                >
-                  <path
-                    d="M2 5C34 1 70 7 104 3C138 -1 170 6 198 3"
-                    fill="none"
-                    stroke="#EF6D57"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeDasharray="7 7"
-                    opacity="0.75"
-                  />
-                </svg>
+                <CreateForRow />
               </div>
-
-              <CreateForRow />
             </div>
           </div>
-            </div>
-          </div>
+        </div>
       </section>
 
       <style>{`
