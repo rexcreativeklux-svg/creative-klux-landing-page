@@ -128,10 +128,10 @@ export default function CustomStack() {
         </div>
 
         {/* Heading */}
-       <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+       <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
           <span className="text-gray-900">Connect your</span>{' '}
           <span className="text-blue-600">Social & Ad platforms</span>
-        </h1>
+        </h2>
 
         {/* Description */}
        <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-20 leading-relaxed">

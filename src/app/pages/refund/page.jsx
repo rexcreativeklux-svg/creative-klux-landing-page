@@ -1,6 +1,15 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import Link from "next/link";
+import { sharedOpenGraph } from "@/app/site";
+
+export const metadata = {
+  title: "Refund Policy",
+  description:
+    "Creative Klux refund and cancellation policy for subscriptions and plans.",
+  alternates: { canonical: "/pages/refund" },
+  openGraph: { ...sharedOpenGraph, url: "/pages/refund", title: "Refund Policy | Creative Klux" },
+};
 
 export default function RefundPolicy() {
   return (

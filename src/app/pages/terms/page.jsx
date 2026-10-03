@@ -1,6 +1,15 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import Link from "next/link";
+import { sharedOpenGraph } from "@/app/site";
+
+export const metadata = {
+  title: "Terms and Conditions",
+  description:
+    "The terms that govern your use of Creative Klux, the AI platform for ad creatives and social media designs.",
+  alternates: { canonical: "/pages/terms" },
+  openGraph: { ...sharedOpenGraph, url: "/pages/terms", title: "Terms and Conditions | Creative Klux" },
+};
 
 export default function TermsAndConditions() {
   return (

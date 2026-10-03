@@ -1,6 +1,15 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import Link from "next/link";
+import { sharedOpenGraph } from "@/app/site";
+
+export const metadata = {
+  title: "Privacy Policy",
+  description:
+    "How Creative Klux collects, uses and protects your personal data when you use our AI creative platform.",
+  alternates: { canonical: "/pages/privacy" },
+  openGraph: { ...sharedOpenGraph, url: "/pages/privacy", title: "Privacy Policy | Creative Klux" },
+};
 
 export default function PrivacyPolicy() {
   return (
