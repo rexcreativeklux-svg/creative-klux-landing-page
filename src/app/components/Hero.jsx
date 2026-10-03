@@ -27,8 +27,10 @@ function scrollToId(id) {
 // slot. Video cards take the identical crop/counter-scale treatment — the only
 // difference is the element inside the box.
 //
-// The 47 cards are served from the Klux gallery CDN, so assets.scraive.com has to
-// stay in next.config.mjs `images.remotePatterns` or every <Image> here 400s.
+// The 47 GALLERY cards are served from the Klux gallery CDN, so assets.scraive.com
+// has to stay in next.config.mjs `images.remotePatterns` or every <Image> here
+// 400s. The SHOWCASE stills are the local templates from the "Powered by Creative
+// Klux" section, woven through the gallery rather than appended as a block.
 //
 // Videos are NOT autoplayed and carry preload="none". Every copy of the strip
 // mounts its own <video>, so the 19 clips below cost COPIES x 19 = 38 elements;
@@ -39,7 +41,7 @@ function scrollToId(id) {
 // the clips are spread evenly through the stills (no two are ever adjacent), so
 // the visible window holds at most two or three at a time rather than a solid
 // block of video.
-const STRIP = [
+const GALLERY = [
   {
     src: "https://assets.scraive.com/scraive/workspaces/36/gallery/images/9dfc83bf-9ebc-4549-9d00-4773d1df26fa.webp",
     alt: "Brewy cold brew coffee can with ice and a coffee splash",
@@ -248,6 +250,35 @@ const STRIP = [
     alt: "Hand reaching for a Pricklee cactus water can on yellow",
   },
 ];
+
+const SHOWCASE = [
+  { src: "/images/email.png", alt: "Vivaia Black Friday boots promotion" },
+  { src: "/images/two.png", alt: "Dialect fragrances Mother's Day offer" },
+  { src: "/images/three.png", alt: "Dialect Mother's Day buy one get one" },
+  { src: "/images/four.png", alt: "Parfum perfume bottle advert" },
+  { src: "/images/five.png", alt: "Pancharatna real estate lifestyle ad" },
+  { src: "/images/six.png", alt: "Vivaia Black Friday boots sale" },
+  { src: "/images/seven.png", alt: "Template design 7" },
+  { src: "/images/eight.png", alt: "Template design 8" },
+  { src: "/images/nine.png", alt: "Template design 9" },
+  { src: "/images/ten.png", alt: "Template design 10" },
+  { src: "/images/eleven.png", alt: "Template design 11" },
+  { src: "/images/twelve.png", alt: "Pet care advert with a cat" },
+  { src: "/images/thirteen.png", alt: "Fruit smoothie advert" },
+  { src: "/images/fourteen.png", alt: "Luxury furniture advert" },
+  { src: "/images/fifteen.png", alt: "Pet food advert with a dog" },
+  { src: "/images/sixteen.png", alt: "Template design 16" },
+  { src: "/images/seventeen.png", alt: "Template design 17" },
+  { src: "/images/eighteen.png", alt: "Template design 18" },
+];
+
+// One showcase still after every few gallery cards, spaced so both lists run out
+// together. Only stills are inserted, so clips only ever end up further apart.
+const STRIP = GALLERY.flatMap((card, i) => {
+  const from = Math.floor((i * SHOWCASE.length) / GALLERY.length);
+  const to = Math.floor(((i + 1) * SHOWCASE.length) / GALLERY.length);
+  return [card, ...SHOWCASE.slice(from, to)];
+});
 
 // Enough duplicates that the loop never shows a gap. The track scrolls by one
 // full set before repeating, so it has to stay at least a set PLUS a viewport
