@@ -15,7 +15,7 @@ export const sharedOpenGraph = {
       width: 1200,
       height: 630,
       type: "image/jpeg",
-      alt: "Creative Klux: create, publish and manage your ads and social designs on autopilot with AI.",
+      alt: "Creative Klux homepage: create, publish and manage your ads and social designs on autopilot, with AI-generated ad creatives shown below the headline.",
     },
   ],
 };
