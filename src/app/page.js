@@ -18,6 +18,7 @@ import Footer from "./components/Footer";
 import ImageSection from "./components/ImageSection";
 import CustomStack from "./components/CustomStackSection";
 import AIFunnelSection from "./components/AIFunnelSection";
+import CopilotSection from "./components/CopilotSection";
 import { SITE_URL } from "./site";
 
 /* -----------------------------------------------------------------
@@ -110,6 +111,9 @@ export default function Home() {
       <section id="brands">
         <div id="for-creators" className="scroll-mt-32">
           <GetStartedSection />
+        </div>
+        <div id="copilot" className="scroll-mt-32">
+          <CopilotSection />
         </div>
         <div id="ai-tools" className="scroll-mt-32">
           <AiSection />
