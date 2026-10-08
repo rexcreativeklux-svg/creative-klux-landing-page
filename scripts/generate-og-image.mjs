@@ -2,7 +2,8 @@
 // Slack...) to src/app/opengraph-image.jpg and twitter-image.jpg. Next picks
 // those files up and emits og:image with the correct type, width and height.
 //
-// Source is the hero screenshot at public/image.png. Run after replacing it:
+// Source is the designed card at public/creativeklux-seo-image.jpeg. Run after
+// replacing it:
 //   node scripts/generate-og-image.mjs
 //
 // JPEG on purpose: WhatsApp's scraper is fussy about WebP, PNG and large
@@ -12,28 +13,14 @@ import { copyFile, stat } from "node:fs/promises";
 
 const W = 1200;
 const H = 630;
-const SOURCE = "public/image.png";
+const SOURCE = "public/creativeklux-seo-image.jpeg";
 const OUT = "src/app/opengraph-image.jpg";
 
-// The screenshot is wider than 1.91:1, so fit it to the width and pad the
-// leftover height by repeating the edge rows (the gradient frame), rather
-// than cropping off the sides of the page.
-const fitted = await sharp(SOURCE)
-  .flatten({ background: "#1a1a2e" })
-  .resize({ width: W, height: H, fit: "inside" })
-  .toBuffer({ resolveWithObject: true });
-
-const padY = H - fitted.info.height;
-const padX = W - fitted.info.width;
-
-await sharp(fitted.data)
-  .extend({
-    top: Math.floor(padY / 2),
-    bottom: Math.ceil(padY / 2),
-    left: Math.floor(padX / 2),
-    right: Math.ceil(padX / 2),
-    extendWith: "copy",
-  })
+// The source is already ~1.91:1, so cover-fit loses only a few pixels at the
+// sides rather than padding the card with bars.
+await sharp(SOURCE)
+  .flatten({ background: "#1d4ed8" })
+  .resize({ width: W, height: H, fit: "cover" })
   // Baseline (not progressive): some WhatsApp clients fail on progressive JPEGs.
   .jpeg({ quality: 85, progressive: false, chromaSubsampling: "4:2:0" })
   .toFile(OUT);

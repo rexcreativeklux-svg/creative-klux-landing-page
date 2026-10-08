@@ -15,7 +15,7 @@ export const sharedOpenGraph = {
       width: 1200,
       height: 630,
       type: "image/jpeg",
-      alt: "Creative Klux homepage: create, publish and manage your ads and social designs on autopilot, with AI-generated ad creatives shown below the headline.",
+      alt: "Creative Klux: your design team now lives in WhatsApp. A phone chat shows Instagram ad creatives generated and scheduled from a message.",
     },
   ],
 };
