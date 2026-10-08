@@ -107,7 +107,7 @@ export default function Header() {
                 className="relative text-gray-900 cursor-pointer hover:underline hover:underline-offset-2 hover:text-blue-700 font-medium text-[15px] transition duration-200 whitespace-nowrap flex items-center gap-2"
                 disabled={loadingButton === section}
               >
-                For {section.charAt(0).toUpperCase() + section.slice(1)}
+                {section === "pricing" ? "Pricing" : `For ${section.charAt(0).toUpperCase() + section.slice(1)}`}
               </button>
             ))}
           </nav>
@@ -158,7 +158,7 @@ export default function Header() {
                   className="text-left text-gray-900 hover:text-gray-600 font-medium text-[15px] py-2 flex items-center gap-2"
                 >
                   {loadingButton === section && <Loader />}
-                  For {section.charAt(0).toUpperCase() + section.slice(1)}
+                  {section === "pricing" ? "Pricing" : `For ${section.charAt(0).toUpperCase() + section.slice(1)}`}
                 </button>
               ))}
               <div className="pt-4 border-t border-gray-100 space-y-3">

@@ -7,6 +7,10 @@ import Image from "next/image";
 
 const NAV_SECTIONS = ["creators", "managers", "brands", "pricing"];
 
+// Audience links read "For Creators"; pricing isn't an audience, so it's bare.
+const navLabel = (s) =>
+  s === "pricing" ? "Pricing" : `For ${s.charAt(0).toUpperCase() + s.slice(1)}`;
+
 // ─── Spinner ──────────────────────────────────────────────────────────────────
 function Spinner() {
   return (
@@ -126,7 +130,7 @@ export default function SiteHeader() {
                 }`}
               >
                 {loadingBtn === s && <Spinner />}
-                For {s.charAt(0).toUpperCase() + s.slice(1)}
+                {navLabel(s)}
               </button>
             </li>
           ))}
@@ -189,7 +193,7 @@ export default function SiteHeader() {
               }`}
             >
               {loadingBtn === s && <Spinner />}
-              For {s.charAt(0).toUpperCase() + s.slice(1)}
+              {navLabel(s)}
             </button>
           ))}
           <button
