@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Play,
-  Pause,
   Sparkles,
   Zap,
   Rocket,
@@ -32,20 +31,14 @@ const Loader = () => (
   </svg>
 );
 
+// Demo video: https://www.youtube.com/watch?v=uk7Dq7j-jX0
+const YOUTUBE_ID = "uk7Dq7j-jX0";
+const YOUTUBE_TITLE =
+  "Create & Publish Ads and Social designs From WhatsApp — No Designer, No Dashboard";
+
 export default function CreativekluxHero() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
   const [loadingButton, setLoadingButton] = useState(null);
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
 
   const handleStartFree = () => {
     setLoadingButton("start-free");
@@ -255,54 +248,45 @@ export default function CreativekluxHero() {
           <div className="relative rounded-[28px] bg-gradient-to-br from-[#1447e6] to-[#7c6bff] p-1.5 shadow-2xl shadow-blue-600/20">
             <div className="overflow-hidden rounded-[22px]">
               <div className="relative aspect-video bg-black">
-                <video
-                  ref={videoRef}
-                  className="h-full w-full object-cover"
-                  poster="/og-image.jpg"
-                  playsInline
-                  preload="metadata"
-                  muted
-                  loop
-                >
-                  <source
-                    src="/videos/creativekluxvideo.mp4"
-                    type="video/mp4"
+                {/* Facade: the YouTube player (and its scripts) only loads once
+                    the visitor clicks play, so the page stays light. */}
+                {isPlaying ? (
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+                    title={YOUTUBE_TITLE}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
                   />
-                </video>
-
-                {!isPlaying && (
-                  <div
-                    onClick={togglePlay}
-                    className="group absolute inset-0 flex cursor-pointer items-center justify-center bg-black/55 backdrop-blur-[2px]"
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setIsPlaying(true)}
+                    aria-label={`Play video: ${YOUTUBE_TITLE}`}
+                    className="group absolute inset-0 block h-full w-full cursor-pointer"
                   >
-                    <div className="text-center">
-                      <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white/95 shadow-2xl transition-transform group-hover:scale-105">
-                        <Play
-                          className="ml-1 h-11 w-11 text-[#1447e6]"
-                          fill="currentColor"
-                        />
-                      </div>
-                      <p className="mt-6 text-xl font-bold text-white drop-shadow-2xl">
-                        See Creativeklux in Action
-                      </p>
-                    </div>
-                  </div>
-                )}
-
-                {isPlaying && (
-                  <div
-                    onClick={togglePlay}
-                    className="absolute inset-0 cursor-pointer opacity-0 transition-opacity duration-300 hover:opacity-100"
-                  >
-                    <div className="flex h-full items-center justify-center">
-                      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 shadow-2xl backdrop-blur">
-                        <Pause
-                          className="h-10 w-10 text-gray-900"
-                          fill="currentColor"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`https://i.ytimg.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`}
+                      alt=""
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                    <span className="absolute inset-0 flex items-center justify-center bg-black/45">
+                      <span className="text-center">
+                        <span className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white/95 shadow-2xl transition-transform group-hover:scale-105">
+                          <Play
+                            className="ml-1 h-11 w-11 text-[#1447e6]"
+                            fill="currentColor"
+                          />
+                        </span>
+                        <span className="mt-6 block text-xl font-bold text-white drop-shadow-2xl">
+                          See Creativeklux in Action
+                        </span>
+                      </span>
+                    </span>
+                  </button>
                 )}
               </div>
             </div>
