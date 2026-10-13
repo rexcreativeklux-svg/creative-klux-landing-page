@@ -1,20 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
+import { BILLING_CYCLES, TIERS } from "@/app/pricing";
 
 export default function CheckoutFlow() {
   const [step, setStep] = useState(1);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  const [selectedPlan, setSelectedPlan] = useState({
-    name: "Pro",
-    price: 149,
-    badge: "MOST POPULAR",
-    badgeColor: "bg-gradient-to-r from-pink-500 to-red-500 text-white"
-  });
-
-  const [billingCycle] = useState("monthly");
+  // The pricing page passes the selection along (?plan=growth&billing=annual).
+  const searchParams = useSearchParams();
+  const selectedPlan = TIERS.find((t) => t.id === searchParams.get("plan")) ?? TIERS.find((t) => t.popular);
+  const cycle = BILLING_CYCLES.find((c) => c.id === searchParams.get("billing")) ?? BILLING_CYCLES[0];
+  const billingCycle = cycle.id;
+  const currentPrice = selectedPlan.packages[billingCycle].price;
 
   const [formData, setFormData] = useState({
     email: "",
@@ -25,12 +25,6 @@ export default function CheckoutFlow() {
     country: "",
     zipCode: ""
   });
-
-  const plans = [
-    { name: "Starter", price: 49, yearlyPrice: 470, badge: "FOR BEGINNERS", badgeColor: "bg-black text-white" },
-    { name: "Pro", price: 149, yearlyPrice: 1430, popular: true, badge: "MOST POPULAR", badgeColor: "bg-gradient-to-r from-pink-500 to-red-500 text-white" },
-    { name: "Agency", price: 399, yearlyPrice: 3830, badge: "FOR TEAMS", badgeColor: "bg-black text-white" }
-  ];
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -50,10 +44,6 @@ export default function CheckoutFlow() {
       }, 4000);
     }
   };
-
-  const currentPrice = billingCycle === "monthly"
-    ? selectedPlan.price
-    : Math.floor(plans.find(p => p.name === selectedPlan.name)?.yearlyPrice / 12) || selectedPlan.price;
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 sm:py-12 px-4">
@@ -361,9 +351,9 @@ export default function CheckoutFlow() {
                 <div className="flex justify-between items-start">
                   <div>
                     <p className="font-semibold text-gray-900">{selectedPlan.name} Plan</p>
-                    <p className="text-sm text-gray-500">Billed monthly</p>
+                    <p className="text-sm text-gray-500">{cycle.billed}</p>
                   </div>
-                  <p className="font-bold text-gray-900">${currentPrice}<span className="text-sm text-gray-500">/mo</span></p>
+                  <p className="font-bold text-gray-900">${currentPrice}<span className="text-sm text-gray-500">{cycle.shortPeriod}</span></p>
                 </div>
               </div>
 

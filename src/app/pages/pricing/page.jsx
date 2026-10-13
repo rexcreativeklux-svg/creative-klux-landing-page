@@ -1,76 +1,22 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { Check, Sparkles, StopCircle } from "lucide-react";
-
-const plans = [
-  {
-    name: "Starter",
-    price: "$49",
-    period: "/month",
-    description: "Perfect for freelancers & creators just getting started",
-    badge: "FOR BEGINNERS",
-    badgeColor: "bg-black text-white",
-    popular: false,
-    features: [
-      "100 AI generations/month",
-      "All creative types",
-      "Basic brand kit",
-      "1080p export",
-      "Commercial license",
-      "Email support",
-    ],
-    cta: "Start Free Trial",
-    planId: "starter",
-    rotation: -2,
-  },
-  {
-    name: "Pro",
-    price: "$149",
-    period: "/month",
-    description: "For growing teams and serious marketers",
-    badge: "MOST POPULAR",
-    badgeColor: "bg-gradient-to-r from-pink-500 to-red-500 text-white",
-    popular: true,
-    features: [
-      "Unlimited AI generations",
-      "Priority rendering",
-      "Unlimited brand kits",
-      "4K export",
-      "AI voiceovers",
-      "A/B testing",
-      "Priority support",
-      "API access",
-    ],
-    cta: "Start Free Trial",
-    planId: "pro",
-    rotation: 0,
-  },
-  {
-    name: "Agency",
-    price: "$399",
-    period: "/month",
-    iption: "For agencies & brands running high-volume campaigns",
-    badge: "FOR TEAMS",
-    badgeColor: "bg-black text-white",
-    popular: false,
-    features: [
-      "Everything in Pro",
-      "Client workspaces",
-      "White-label",
-      "Account manager",
-      "Custom AI training",
-      "Bulk generation",
-      "99.9% uptime SLA",
-      "Early access",
-    ],
-    cta: "Start Free Trial",
-    planId: "agency",
-    rotation: 2,
-  },
-];
+import { BILLING_CYCLES, TIERS, getFeatures } from "@/app/pricing";
 
 export default function PricingPage() {
+  const [cycleId, setCycleId] = useState("monthly");
+  const cycle = BILLING_CYCLES.find((c) => c.id === cycleId);
+
+  const plans = TIERS.map((tier) => ({
+    ...tier,
+    price: `$${tier.packages[cycleId].price}`,
+    period: cycle.period,
+    features: getFeatures(tier, cycleId),
+    cta: "Start Free Trial",
+    planId: tier.id,
+  }));
+
   return (
     <div className="min-h-screen bg-gray-50 py-12 sm:py-16 lg:py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -84,6 +30,35 @@ export default function PricingPage() {
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto">
             Replace 6+ tools with one AI studio. 
           </p>
+
+          {/* Billing cycle toggle */}
+          <div className="mt-8 inline-flex flex-wrap justify-center gap-1 rounded-xl border-2 border-gray-200 bg-white p-1">
+            {BILLING_CYCLES.map((c) => (
+              <button
+                key={c.id}
+                onClick={() => setCycleId(c.id)}
+                aria-pressed={c.id === cycleId}
+                className={`${
+                  c.id === cycleId
+                    ? "bg-black text-white"
+                    : "text-gray-600 hover:text-gray-900"
+                } cursor-pointer rounded-lg px-4 sm:px-6 py-2 text-sm sm:text-base font-bold transition-colors`}
+              >
+                {c.label}
+                {c.note && (
+                  <span className={`ml-2 text-xs font-semibold ${c.id === cycleId ? "text-pink-300" : "text-pink-600"}`}>
+                    {c.note}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
+
+          {cycleId === "lifetime" && (
+            <p className="mt-4 text-sm sm:text-base text-gray-500">
+              Pay once, keep access for life. Tokens and creatives refresh every month.
+            </p>
+          )}
         </div>
 
         {/* Pricing Cards */}
@@ -158,7 +133,7 @@ export default function PricingPage() {
 
                 {/* CHANGED: Now uses Link with planId */} 
                 <Link
-                  href={`../pages/checkout?plan=${plan.planId}`}
+                  href={`../pages/checkout?plan=${plan.planId}&billing=${cycleId}`}
                   className={`${
                     plan.popular
                       ? "bg-gradient-to-r from-orange-500 via-pink-500 to-pink-600 text-white hover:from-orange-600 hover:via-pink-600 hover:to-pink-700"

@@ -56,7 +56,7 @@ const jsonLd = {
       publisher: { "@id": `${SITE_URL}/#organization` },
       offers: {
         "@type": "AggregateOffer",
-        lowPrice: "49",
+        lowPrice: "15",
         priceCurrency: "USD",
         url: `${SITE_URL}/pages/pricing`,
       },
