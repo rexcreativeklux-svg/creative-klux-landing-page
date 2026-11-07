@@ -1,13 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Sparkles,
   Wand2,
   ShieldCheck,
   Eye,
-  ArrowUp,
-  Check,
   CalendarClock,
   Smartphone,
   UserCheck,
@@ -92,65 +91,14 @@ function ChatMock() {
 
       <div className="relative rounded-[28px] bg-gradient-to-br from-[#1447e6] to-[#7c6bff] p-1.5 shadow-2xl shadow-blue-600/20">
         <div className="overflow-hidden rounded-[22px] bg-white">
-          {/* Window header */}
-          <div className="flex items-center gap-3 border-b border-gray-100 px-5 py-4">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#1447e6] to-[#5b8cff] text-white">
-              <Sparkles className="h-4 w-4" />
-            </div>
-            <div className="min-w-0">
-              <p className="truncate text-sm font-bold text-gray-900">
-                Brand assistant
-              </p>
-              <p className="flex items-center gap-1.5 text-xs text-gray-500">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                Copilot
-              </p>
-            </div>
-          </div>
-
-          {/* Messages */}
-          <div className="space-y-4 bg-gray-50/60 px-5 py-6">
-            <div className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-[#1447e6] px-4 py-3 text-sm leading-relaxed text-white">
-              Make a week of Instagram posts for our summer launch.
-            </div>
-
-            <div className="max-w-[92%] rounded-2xl rounded-bl-md border border-gray-200 bg-white px-4 py-3 text-sm leading-relaxed text-gray-700">
-              On it — here are 7 drafts in your brand&apos;s colors and fonts,
-              sized for feed and stories.
-              <div className="mt-3 grid grid-cols-3 gap-2">
-                <div className="aspect-square rounded-lg bg-gradient-to-br from-[#1447e6] to-[#7c6bff]" />
-                <div className="aspect-square rounded-lg bg-gradient-to-br from-amber-300 to-rose-400" />
-                <div className="aspect-square rounded-lg bg-gradient-to-br from-emerald-300 to-sky-400" />
-              </div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
-                  <Check className="h-3 w-3" /> Brand kit
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
-                  <Check className="h-3 w-3" /> Brand voice
-                </span>
-              </div>
-              <p className="mt-3 text-gray-500">
-                Review them and I&apos;ll load the approved ones into your
-                calendar.
-              </p>
-            </div>
-          </div>
-
-          {/* Composer */}
-          <div className="border-t border-gray-100 px-4 py-4">
-            <div className="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2.5">
-              <span className="rounded-md bg-blue-50 px-2 py-0.5 font-mono text-xs font-semibold text-[#1447e6]">
-                /ad-variants
-              </span>
-              <span className="flex-1 truncate text-sm text-gray-400">
-                Tell Brand assistant what you want to do
-              </span>
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#1447e6] text-white">
-                <ArrowUp className="h-4 w-4" />
-              </span>
-            </div>
-          </div>
+          <Image
+            src="/images/copilot-image.jpeg"
+            alt="Creative Klux Copilot"
+            width={1356}
+            height={634}
+            className="w-full h-auto object-cover"
+            priority
+          />
         </div>
       </div>
     </div>
