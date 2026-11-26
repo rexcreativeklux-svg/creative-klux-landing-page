@@ -1,5 +1,5 @@
 // app/layout.js
-import { Geist, Geist_Mono, Poppins, Caveat } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Caveat, Inter, Inter_Tight, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import NavigationProgress from "./components/NavigationProgress";
 import { Suspense } from "react";
@@ -20,6 +20,28 @@ const caveat = Caveat({
   variable: "--font-caveat",
   subsets: ["latin"],
   weight: ["600", "700"],
+  display: "swap",
+});
+
+// Landing page: Inter for body copy, Inter Tight for headings (.font-display)
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
+});
+// Italic accent words in landing headings (.font-accent)
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: "italic",
   display: "swap",
 });
 
@@ -120,7 +142,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${caveat.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${caveat.variable} ${inter.variable} ${interTight.variable} ${instrumentSerif.variable} antialiased`}
       >
         <Suspense fallback={null}>
           <NavigationProgress />

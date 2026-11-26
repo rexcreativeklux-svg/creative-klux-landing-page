@@ -43,3 +43,113 @@
   animation: wave 1.8s ease-in-out infinite;
   transform-origin: bottom;
 }
+
+/* -----------------------------------------------------------------
+   LANDING PAGE — type, motion and scroll effects
+----------------------------------------------------------------- */
+html { scroll-behavior: smooth; }
+
+/* In the base layer so Tailwind utilities (e.g. tracking-*) can override them */
+@layer base {
+  .font-landing { font-family: var(--font-inter), system-ui, sans-serif; }
+  .font-display {
+    font-family: var(--font-inter-tight), var(--font-inter), system-ui, sans-serif;
+    letter-spacing: -0.035em;
+  }
+  .font-accent {
+    font-family: var(--font-instrument-serif), Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Infinite marquee: the track holds its items twice, so -50% loops seamlessly */
+.lp-marquee { display: flex; width: max-content; animation: lp-marquee 60s linear infinite; }
+.lp-marquee.lp-reverse { animation-direction: reverse; }
+.lp-marquee:hover { animation-play-state: paused; }
+@keyframes lp-marquee { to { transform: translateX(-50%); } }
+
+.lp-float { animation: lp-float 6s ease-in-out infinite; }
+@keyframes lp-float { 50% { transform: translateY(-16px); } }
+
+.lp-rise { animation: lp-rise 1.4s cubic-bezier(.2,.7,.2,1) both .2s; }
+@keyframes lp-rise { from { opacity: 0; transform: perspective(1600px) rotateX(22deg) translateY(90px) scale(.94); } }
+
+.lp-in { animation: lp-in .9s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes lp-in { from { opacity: 0; transform: translateY(26px); } }
+
+/* Small overlay cards: pop in once when scrolled into view (PopIn.jsx) */
+.lp-pop {
+  scale: 0;
+  opacity: 0;
+  transition: scale .7s cubic-bezier(.34,1.56,.64,1), opacity .35s ease-out;
+}
+.lp-pop[data-in] { scale: 1; opacity: 1; }
+
+/* ...then keep gliding diagonally ±15px, 4.2s each way */
+.lp-drift { animation: lp-drift 4.2s ease-in-out infinite alternate; }
+@keyframes lp-drift { from { translate: 15px 15px; } to { translate: -15px -15px; } }
+
+/* Hero headline: letters fade in one after another (delays set inline) */
+.lp-letter { animation: lp-fade .35s ease-out both; }
+
+/* Opacity only, for SVG shapes positioned with the transform attribute */
+.lp-fade { animation: lp-fade .6s ease-out both; }
+@keyframes lp-fade { from { opacity: 0; } }
+
+.lp-ring { animation: lp-ring 3s ease-out infinite; }
+@keyframes lp-ring { from { transform: scale(.6); opacity: .7; } to { transform: scale(1.6); opacity: 0; } }
+
+.lp-dash { stroke-dasharray: 6 8; animation: lp-dash 1.6s linear infinite; }
+@keyframes lp-dash { to { stroke-dashoffset: -28; } }
+
+.lp-lift { transition: transform .35s, box-shadow .35s; }
+.lp-lift:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(11,18,32,.16); }
+
+.lp-shine {
+  background: linear-gradient(100deg, #1447e6 30%, #6b8dff 50%, #1447e6 70%) 0 0 / 200% 100%;
+  animation: lp-shine 3s linear infinite;
+}
+@keyframes lp-shine { to { background-position: -200% 0; } }
+
+.lp-bob { animation: lp-bob 4s ease-in-out infinite; }
+@keyframes lp-bob { 50% { transform: translateY(-10px); } }
+
+.lp-grow { animation: lp-grow 1.6s cubic-bezier(.2,.7,.2,1) both; transform-origin: left; }
+@keyframes lp-grow { from { transform: scaleX(0); } }
+
+.lp-bar { animation: lp-bar 1.4s cubic-bezier(.2,.7,.2,1) both; transform-origin: bottom; }
+@keyframes lp-bar { from { transform: scaleY(.1); } }
+
+.lp-orb { animation: lp-orb 4s linear infinite; }
+@keyframes lp-orb { to { transform: rotate(360deg); } }
+
+.lp-draw { stroke-dasharray: 400; animation: lp-draw 2.4s ease-out both; }
+@keyframes lp-draw { from { stroke-dashoffset: 400; } }
+
+/* Scroll-driven reveal + text fill, where the browser supports it */
+@supports (animation-timeline: view()) {
+  .lp-reveal {
+    animation: lp-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+  .lp-fill {
+    background: linear-gradient(90deg, #0b1220 50%, #c5cde0 50%) 0 0 / 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    animation: lp-fill linear both;
+    animation-timeline: view();
+    animation-range: cover 15% cover 55%;
+  }
+}
+@keyframes lp-up { from { opacity: 0; transform: translateY(60px); } }
+@keyframes lp-fill { from { background-position: 100% 0; } to { background-position: 0 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-marquee, .lp-float, .lp-rise, .lp-in, .lp-fade, .lp-letter, .lp-drift, .lp-ring, .lp-dash, .lp-shine, .lp-bob,
+  .lp-grow, .lp-bar, .lp-orb, .lp-draw, .lp-reveal { animation: none !important; }
+  .lp-pop { scale: 1; opacity: 1; transition: none; }
+}
