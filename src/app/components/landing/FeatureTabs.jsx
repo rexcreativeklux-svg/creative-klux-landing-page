@@ -5,57 +5,59 @@ import Image from "next/image";
 import { RollButton, WarmPill } from "./ui";
 import { CheckIcon } from "./icons";
 
+// Tab headers follow Promora Home V1 (Campaigns / Insights / Optimization /
+// Intelligence); the copy describes what the Creativeklux app actually does.
 const TABS = [
   {
-    label: "Create",
-    blurb: "On-brand creatives from one prompt",
-    title: "Creates ad creatives in seconds",
-    body: "Tell Creative Studio what you need, or paste your website. You get Envato-quality ads, posts, stories and thumbnails in your brand's colors and photos, each with its own caption, hashtags and copy.",
+    label: "Campaigns",
+    blurb: "Launch ad campaigns in minutes with AI",
+    title: "Launches campaigns on every network at once",
+    body: "Build one campaign for Facebook, Instagram and Google. Pick locations, ages, interests and keywords, set a daily or lifetime budget, and drop in creatives made in Creative Studio. New campaigns wait, paused, until you say go.",
     points: [
-      "Studio Designs you can edit by hand or with AI",
-      "Magic Designs made fully by AI",
-      "Every size: posts, stories, banners, thumbnails",
+      "Facebook, Instagram Feed & Stories and Google",
+      "Daily or lifetime budgets with bid caps",
+      "Starts paused until you confirm",
     ],
-    image: { src: "/images/landing/creative-studio.jpg", w: 2000, h: 1118, alt: "Creative Studio chat with 21 generated designs" },
+    image: { src: "/images/landing/creative-studio.jpg", w: 2000, h: 1118, alt: "Creative Studio generating ad creatives for a campaign" },
     bg: "linear-gradient(135deg,#cfdcff,#eef2ff 55%,#f3e4ff)",
   },
   {
-    label: "Publish",
-    blurb: "A week of posts, planned for you",
-    title: "Plans and posts your week on autopilot",
-    body: "Your copilot picks the days and times, designs each post and puts it in Waiting for approval. Approve in one tap, or let it post on its own.",
+    label: "Insights",
+    blurb: "Track every view, click and conversion",
+    title: "Shows what every post and ad really did",
+    body: "Spend, reach, clicks, CTR, CPC and conversions for every campaign, compared with the previous 7, 30 or 90 days. Views, likes, comments, shares and link clicks for every post, with the best time to post worked out from your own results.",
     points: [
-      "Facebook, Instagram, TikTok, LinkedIn, X, YouTube, Pinterest",
-      "Approve-first or fully automatic",
-      "Followers, reach and engagement on one dashboard",
+      "Every campaign against the previous period",
+      "Post results per network",
+      "Best time to post, from your own data",
     ],
-    image: { src: "/images/landing/dashboard-home.jpg", w: 2200, h: 1543, alt: "Home dashboard with Waiting for approval and campaigns" },
+    image: { src: "/images/landing/dashboard-home.jpg", w: 2200, h: 1543, alt: "Home dashboard with engagement, followers and campaign results" },
     bg: "linear-gradient(135deg,#fff0b8,#fff8e0 55%,#ffd6ec)",
   },
   {
-    label: "Reply",
-    blurb: "Every DM and comment, answered",
-    title: "Answers every DM and comment",
-    body: "Smart Inbox pulls Facebook and Instagram messages and comments into one place. Your trained copilot replies in seconds, in your voice, and hands anything about money or complaints to you.",
+    label: "Optimization",
+    blurb: "Fix weak ads before they cost you",
+    title: "Scores your ads before you spend more",
+    body: "Ad Intelligence gives every creative an Ad Score, checks ads against Meta, Google, LinkedIn, TikTok and X ad policies before they go out, and flags live campaigns that aren't getting impressions, so budget goes to what can work.",
     points: [
-      "All, Needs you, DM and Comment tabs",
-      "One copilot in charge, one voice",
-      "Customer notes, tags and value on every chat",
+      "An Ad Score for every creative",
+      "Policy checks before you publish",
+      "Alerts for campaigns that stall",
     ],
-    image: { src: "/images/landing/smart-inbox.jpg", w: 2000, h: 1250, alt: "Smart Inbox with AI replies" },
+    image: { src: "/images/ad-intelligence-image.webp", w: 1300, h: 1360, alt: "Ad creatives with Ad Scores, engagement rate and key insights" },
     bg: "linear-gradient(135deg,#c9f2de,#ecfbf3 55%,#dbe6ff)",
   },
   {
-    label: "Convert",
-    blurb: "Turn followers into customers",
-    title: "Sends followers where you get paid",
-    body: "SmartLinks give you a link-in-bio page, QR code and button links in a minute. See which button brings customers and how much they are worth.",
+    label: "Intelligence",
+    blurb: "Know the customer behind every DM",
+    title: "Turns every conversation into a customer profile",
+    body: "Smart Inbox builds a profile for everyone who messages you: what they want, their likely value, where they came from and an AI summary. Tag them, add notes, move them from New to Hot customer to Customer, and see which SmartLinks bring buyers.",
     points: [
-      "Bio, flyer and QR code links",
-      "Booking, shop and message buttons",
-      "Visits, clicks and customers per link",
+      "Wants, likely value and source for every contact",
+      "Stages from New to Customer",
+      "Customers and value per SmartLink",
     ],
-    image: { src: "/images/landing/smartlinks.jpg", w: 2000, h: 1250, alt: "SmartLinks pages with visits, clicks and customers" },
+    image: { src: "/images/landing/smart-inbox.jpg", w: 2000, h: 1250, alt: "Smart Inbox conversation with the customer profile panel" },
     bg: "linear-gradient(135deg,#ffd6ec,#fff0f7 55%,#fff0b8)",
   },
 ];
@@ -75,10 +77,10 @@ export default function FeatureTabs() {
         <div className="lp-reveal mx-auto flex max-w-[680px] flex-col items-center gap-6 text-center">
           <WarmPill>Benefits</WarmPill>
           <h2 className="font-display text-[clamp(38px,4.6vw,60px)] leading-[1.2] font-semibold">
-            One app runs your social media and ads
+            AI-powered campaigns that grow with you
           </h2>
           <p className="max-w-[552px] text-[18px] leading-[1.7] text-[#576470]">
-            No designer, no scheduler, no inbox tool. Pick a job and watch Creativeklux do it.
+            Launch campaigns in minutes, see what every post and ad really did, and know the customer behind every message.
           </p>
         </div>
 
@@ -95,7 +97,7 @@ export default function FeatureTabs() {
                 role="tab"
                 aria-selected={i === active}
                 onClick={() => setActive(i)}
-                className="flex cursor-pointer flex-col items-start justify-start rounded-t-3xl px-8 pt-10 pb-[60px] text-left transition-colors duration-300 max-lg:rounded-3xl max-lg:p-6 max-sm:shrink-0 max-sm:rounded-full max-sm:px-5 max-sm:py-2.5"
+                className="flex cursor-pointer flex-col items-start justify-start rounded-t-3xl px-8 pt-8 pb-6 text-left transition-colors duration-300 max-lg:rounded-3xl max-lg:p-6 max-sm:shrink-0 max-sm:rounded-full max-sm:px-5 max-sm:py-2.5"
                 style={{ background: i === active ? PANEL : "transparent" }}
               >
                 <div className="font-display text-[20px] font-medium tracking-[-.02em] max-sm:text-[16px]">{t.label}</div>
@@ -106,7 +108,7 @@ export default function FeatureTabs() {
 
           <div
             role="tabpanel"
-            className={`flex flex-wrap items-center justify-between gap-10 rounded-3xl p-[60px] max-lg:mt-2 max-sm:p-6 ${
+            className={`flex flex-wrap items-center justify-between gap-10 rounded-3xl px-[60px] pt-10 pb-[60px] max-lg:mt-2 max-sm:p-6 ${
               active === 0 ? "lg:rounded-tl-none" : active === last ? "lg:rounded-tr-none" : ""
             }`}
             style={{ background: PANEL }}

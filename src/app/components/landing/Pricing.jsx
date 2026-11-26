@@ -55,8 +55,8 @@ function Plan({ tier, cycleId, className = "" }) {
   );
 }
 
-export default function Pricing() {
-  const [cycleId, setCycleId] = useState("lifetime");
+export default function Pricing({ initialCycle = "lifetime" }) {
+  const [cycleId, setCycleId] = useState(initialCycle);
   const [first, ...rest] = TIERS;
 
   return (
@@ -113,11 +113,11 @@ export default function Pricing() {
       <div className="lp-reveal mx-auto mt-4 flex max-w-[1376px] flex-wrap items-center justify-between gap-4 rounded-[22px] bg-[#f7f3ee] px-6 py-5">
         <div className="flex items-center gap-3.5">
           <span className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[#0b1220] text-[15px] font-extrabold text-[#ffd23f]">
-            60
+            30
           </span>
           <div>
-            <div className="font-display text-[18px] font-bold">60-day money-back guarantee</div>
-            <div className="text-[14px] text-[#475569]">Try everything. Not for you? Get a full refund within 60 days.</div>
+            <div className="font-display text-[18px] font-bold">30-day money-back guarantee</div>
+            <div className="text-[14px] text-[#475569]">Try everything. Not for you? Get a full refund within 30 days.</div>
           </div>
         </div>
         <ButtonLink href="/pages/refund" className="px-[22px] py-[13px] text-[14.5px] font-bold">

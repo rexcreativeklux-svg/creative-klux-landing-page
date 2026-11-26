@@ -10,12 +10,13 @@ export const DEMO_YOUTUBE_ID = "uk7Dq7j-jX0";
 // Lifetime deal end date for the top bar. Leave null and the bar omits it.
 export const DEAL_ENDS = null; // e.g. "December 31, 2026"
 
+// Root-relative so the same links work from the subpages (/pages/...) too
 export const NAV_LINKS = [
-  { label: "Features", href: "#features" },
-  { label: "Creatives", href: "#creatives" },
-  { label: "Integrations", href: "#integrations" },
-  { label: "Pricing", href: "#deal" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Features", href: "/#features" },
+  { label: "Creatives", href: "/#creatives" },
+  { label: "Integrations", href: "/#integrations" },
+  { label: "Pricing", href: "/#deal" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export const PLATFORMS = [

@@ -98,7 +98,7 @@ export default function Hero() {
             </div>
             <div className="mt-[18px] flex flex-wrap justify-center gap-[22px] text-[14px] font-medium text-[#475569]">
               <span>✓ One-time payment</span>
-              <span>✓ 60-day money-back guarantee</span>
+              <span>✓ 30-day money-back guarantee</span>
               <span>✓ All future Pro updates</span>
             </div>
           </div>
