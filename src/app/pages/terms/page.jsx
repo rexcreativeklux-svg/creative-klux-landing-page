@@ -6,9 +6,9 @@ import { sharedOpenGraph } from "@/app/site";
 export const metadata = {
   title: "Terms and Conditions",
   description:
-    "The terms that govern your use of Creative Klux, the AI platform for ad creatives and social media designs.",
+    "The terms that govern your use of Creativeklux, the AI that runs your social media and ads.",
   alternates: { canonical: "/pages/terms" },
-  openGraph: { ...sharedOpenGraph, url: "/pages/terms", title: "Terms and Conditions | Creative Klux" },
+  openGraph: { ...sharedOpenGraph, url: "/pages/terms", title: "Terms and Conditions | Creativeklux" },
 };
 
 export default function TermsAndConditions() {

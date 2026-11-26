@@ -1,24 +1,21 @@
 // app/page.js
-import Image from "next/image";
-import SiteHeader from "./components/SiteHeader";
-import SectionNav from "./components/SectionNav";
-import CursorFollower from "./components/CursorFollower";
-import Hero from "./components/Hero";
 import "./globals.css";
-import CreativeTaxSection from "./components/CreativeTaxSection";
-import CreativeSection from "./components/CreativesSection";
-import MoreSection from "./components/MoreSection";
-import GetStartedSection from "./components/GetStartedSection";
-import PricingSection from "./components/PricingSection";
-import AiSection from "./components/AiSection";
-import ShowcaseCarouselSection from "./components/ShowcaseCarouselSection";
-import TestimonialSection from "./components/TestimonialSection";
-import BlueSection from "./components/BlueSection";
-import Footer from "./components/Footer";
-import ImageSection from "./components/ImageSection";
-import CustomStack from "./components/CustomStackSection";
-import AIFunnelSection from "./components/AIFunnelSection";
-import CopilotSection from "./components/CopilotSection";
+import Hero from "./components/landing/Hero";
+import { PlatformMarquee, AboutStatement } from "./components/landing/Platforms";
+import FeatureTabs from "./components/landing/FeatureTabs";
+import { OneDashboard, FeatureStack } from "./components/landing/Showcase";
+import { RealResults, FloatingStatement } from "./components/landing/Advantages";
+import CreativesMarquee from "./components/landing/CreativesMarquee";
+import UseCases from "./components/landing/UseCases";
+import Integrations from "./components/landing/Integrations";
+import { ResultsBento, CoreValues, Analytics } from "./components/landing/Results";
+import Testimonials from "./components/landing/Testimonials";
+import HowItWorks from "./components/landing/HowItWorks";
+import Pricing from "./components/landing/Pricing";
+import Faq from "./components/landing/Faq";
+import FinalCta from "./components/landing/FinalCta";
+import LandingFooter from "./components/landing/LandingFooter";
+import { TIERS } from "./pricing";
 import { SITE_URL } from "./site";
 
 /* -----------------------------------------------------------------
@@ -31,7 +28,8 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "Creative Klux",
+      name: "Creativeklux",
+      alternateName: "Creative Klux",
       url: SITE_URL,
       logo: `${SITE_URL}/images/klux-logo-dark.png`,
       email: "support@creativeklux.com",
@@ -40,25 +38,25 @@ const jsonLd = {
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
-      name: "Creative Klux",
+      name: "Creativeklux",
       url: SITE_URL,
       publisher: { "@id": `${SITE_URL}/#organization` },
     },
     {
       "@type": "SoftwareApplication",
-      name: "Creative Klux",
-      applicationCategory: "DesignApplication",
+      name: "Creativeklux",
+      applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       url: SITE_URL,
       description:
-        "Create, publish and manage your ads and social designs on autopilot. Generate ad creatives, social media posts and brand assets in seconds with AI.",
-      slogan: "One platform. Every creative you'll ever need.",
+        "The AI that runs your social media and ads. Klux designs your posts, ads, product photos and videos, publishes on every platform, answers every DM and comment, and puts your ad budget behind what works.",
+      slogan: "The AI that runs your social media & ads for you.",
       publisher: { "@id": `${SITE_URL}/#organization` },
       offers: {
         "@type": "AggregateOffer",
-        lowPrice: "15",
+        lowPrice: String(Math.min(...TIERS.map((t) => t.packages.lifetime.price))),
         priceCurrency: "USD",
-        url: `${SITE_URL}/pages/pricing`,
+        url: `${SITE_URL}/#deal`,
       },
     },
   ],
@@ -69,74 +67,33 @@ const jsonLd = {
 ----------------------------------------------------------------- */
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#f9fafb]">
+    <div className="font-landing overflow-x-clip bg-white leading-[normal] text-[#0b1220]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <CursorFollower />
-      <SiteHeader />
       <Hero />
-
-      {/* The creator strip that used to sit here folded into the hero carousel;
-          the nav's "For Creators" anchor moves onto the section that follows. */}
-      <section id="creators" className="scroll-mt-32">
-        <CreativeTaxSection />
-      </section>
-
-      {/* Section tab bar — sticky under the header only while inside the
-          creatives sections. A sticky element can't leave its parent, so this
-          wrapper makes the bar scroll away once Ad Intelligence ends. */}
-      <div>
-        <SectionNav />
-
-        <div id="creatives" className="scroll-mt-32">
-          <CreativeSection />
-        </div>
-      </div>
-
-      <div id="features" className="scroll-mt-32">
-        <AIFunnelSection />
-      </div>
-
-      <section id="managers">
-        <div id="platform" className="scroll-mt-32">
-          <MoreSection />
-        </div>
-        <div id="showcase" className="scroll-mt-32">
-          <ImageSection />
-        </div>
-      </section>
-
-      <section id="brands">
-        <div id="for-creators" className="scroll-mt-32">
-          <GetStartedSection />
-        </div>
-        <div id="copilot" className="scroll-mt-32">
-          <CopilotSection />
-        </div>
-        <div id="ai-tools" className="scroll-mt-32">
-          <AiSection />
-        </div>
-      </section>
-
-      <section id="pricing" className="scroll-mt-32">
-        <PricingSection />
-      </section>
-
-      <div id="integrations" className="scroll-mt-32">
-        <CustomStack />
-      </div>
-
-      <div id="gallery" className="scroll-mt-32">
-        <ShowcaseCarouselSection />
-      </div>
-
-      <div id="testimonials" className="scroll-mt-32">
-        <TestimonialSection />
-      </div>
-      {/* <BlueSection /> */}
-      <Footer />
+      <main>
+        <PlatformMarquee />
+        <AboutStatement />
+        <FeatureTabs />
+        <OneDashboard />
+        <FeatureStack />
+        <RealResults />
+        <FloatingStatement />
+        <CreativesMarquee />
+        <UseCases />
+        <Integrations />
+        <ResultsBento />
+        <CoreValues />
+        <Analytics />
+        <Testimonials />
+        <HowItWorks />
+        <Pricing />
+        <Faq />
+        <FinalCta />
+      </main>
+      <LandingFooter />
     </div>
   );
 }

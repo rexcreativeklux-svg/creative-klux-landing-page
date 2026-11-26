@@ -7,7 +7,7 @@ export const SITE_URL = "https://www.creativeklux.com";
 // drops the opengraph-image.jpg card. Subpages spread this back in.
 export const sharedOpenGraph = {
   type: "website",
-  siteName: "Creative Klux",
+  siteName: "Creativeklux",
   locale: "en_US",
   images: [
     {
@@ -15,7 +15,7 @@ export const sharedOpenGraph = {
       width: 1200,
       height: 630,
       type: "image/jpeg",
-      alt: "Creative Klux: your design team now lives in WhatsApp. A phone chat shows Instagram ad creatives generated and scheduled from a message.",
+      alt: "Creativeklux: the AI that runs your social media and ads. The Creativeklux dashboard with ad creatives for handbags, Black Friday boots and a protein smoothie.",
     },
   ],
 };

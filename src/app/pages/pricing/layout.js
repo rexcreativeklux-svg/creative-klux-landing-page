@@ -4,9 +4,9 @@ import { sharedOpenGraph } from "@/app/site";
 export const metadata = {
   title: "Pricing",
   description:
-    "Simple plans for AI ad creatives and social media designs. Start a free trial of Creative Klux and generate creatives for every channel in seconds.",
+    "Monthly, annual and lifetime plans for Creativeklux, the AI that designs your creatives, posts everywhere, answers every DM and comment, and runs your ads.",
   alternates: { canonical: "/pages/pricing" },
-  openGraph: { ...sharedOpenGraph, url: "/pages/pricing", title: "Creative Klux Pricing" },
+  openGraph: { ...sharedOpenGraph, url: "/pages/pricing", title: "Creativeklux Pricing" },
 };
 
 export default function PricingLayout({ children }) {
