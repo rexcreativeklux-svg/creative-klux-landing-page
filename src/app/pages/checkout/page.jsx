@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Check, Lock, ArrowLeft, CreditCard, Sparkles, Shield } from "lucide-react";
 import { BILLING_CYCLES, TIERS } from "@/app/pricing";
+import SiteShell from "@/app/components/landing/SiteShell";
+import { WarmPill } from "@/app/components/landing/ui";
 
 export default function CheckoutFlow() {
   const [step, setStep] = useState(1);
@@ -46,15 +48,17 @@ export default function CheckoutFlow() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 sm:py-12 px-4">
+    <SiteShell>
+    <div className="px-[30px] pt-6 pb-[120px] max-sm:px-4">
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+        <div className="mb-10 flex flex-col items-center gap-5 text-center sm:mb-14">
+          <WarmPill>Checkout</WarmPill>
+          <h1 className="font-display text-[clamp(36px,4.6vw,56px)] leading-[1.15] font-semibold">
             Complete Your Order
           </h1>
-          <p className="text-gray-600 text-sm sm:text-base">
+          <p className="text-[16px] text-[#576470] sm:text-[18px]">
             14-day free trial • No credit card required until trial ends
           </p>
         </div>
@@ -68,7 +72,7 @@ export default function CheckoutFlow() {
                 disabled={s > step || step === 3}
                 className={`flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full font-bold text-sm sm:text-base transition-all ${
                   step >= s 
-                    ? "bg-[#155dfc] text-white scale-110" 
+                    ? "bg-[#1447e6] text-white scale-110" 
                     : "bg-gray-200 text-gray-500"
                 } ${s <= step && step !== 3 ? "cursor-pointer hover:scale-125" : "cursor-not-allowed"}`}
               >
@@ -76,7 +80,7 @@ export default function CheckoutFlow() {
               </button>
               {s < 3 && (
                 <div className={`w-24 sm:w-32 lg:w-40 h-1 mx-1 sm:mx-2 transition-all ${
-                  step > s ? "bg-[#155dfc]" : "bg-gray-200"
+                  step > s ? "bg-[#1447e6]" : "bg-gray-200"
                 }`} />
               )}
             </div>
@@ -87,12 +91,12 @@ export default function CheckoutFlow() {
           
           {/* Main Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white border-2 border-gray-200 rounded-xl shadow-lg p-6 sm:p-8">
+            <div className="bg-white border border-[#ededed] rounded-3xl shadow-[0_24px_60px_rgba(20,40,90,.08)] p-6 sm:p-8">
               
               {/* Back to Pricing Button - Always visible */}
               <button
                 onClick={() => setStep(1)}
-                className="inline-flex cursor-pointer hover:underline items-center gap-2 text-[#155dfc] hover:text-[#0d44b3] mb-6 text-sm font-medium transition-colors"
+                className="inline-flex cursor-pointer hover:underline items-center gap-2 text-[#1447e6] hover:text-[#0d34b0] mb-6 text-sm font-medium transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back
@@ -102,23 +106,23 @@ export default function CheckoutFlow() {
               {step === 1 && (
                 <div className="space-y-6 mt-8">
                   <div>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                    <h2 className="font-display text-[28px] sm:text-[32px] font-semibold tracking-[-.02em] text-[#0b1220] mb-2">
                       Create Your Account
                     </h2>
-                    <p className="text-gray-600 text-sm sm:text-base">
-                      We'll use this to set up your workspace
+                    <p className="text-[16px] text-[#576470] sm:text-[18px]">
+                      We&apos;ll use this to set up your workspace
                     </p>
                   </div>
 
                   <div className="space-y-4">
-                    <input type="email" name="email" onChange={handleInputChange} placeholder="you@company.com" className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#155dfc] focus:outline-none transition-colors" required />
-                    <input type="text" name="fullName" onChange={handleInputChange} placeholder="John Doe" className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#155dfc] focus:outline-none transition-colors" required />
-                    <input type="password" name="password" placeholder="Create a strong password" className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#155dfc] focus:outline-none transition-colors" required />
+                    <input type="email" name="email" onChange={handleInputChange} placeholder="you@company.com" className="w-full px-4 py-3 border border-[#e3e8f2] rounded-xl bg-[#fbfaf8] focus:border-[#1447e6] focus:outline-none transition-colors" required />
+                    <input type="text" name="fullName" onChange={handleInputChange} placeholder="John Doe" className="w-full px-4 py-3 border border-[#e3e8f2] rounded-xl bg-[#fbfaf8] focus:border-[#1447e6] focus:outline-none transition-colors" required />
+                    <input type="password" name="password" placeholder="Create a strong password" className="w-full px-4 py-3 border border-[#e3e8f2] rounded-xl bg-[#fbfaf8] focus:border-[#1447e6] focus:outline-none transition-colors" required />
                   </div>
 
                   <button
                     onClick={handleSubmit}
-                    className="w-full bg-[#155dfc] cursor-pointer text-white font-bold py-3 rounded-lg hover:bg-[#0d44b3] transition-all hover:scale-[1.02] hover:shadow-lg"
+                    className="w-full bg-[#0b1220] cursor-pointer text-white font-medium text-[16px] py-4 rounded-full hover:bg-[#1c2538] transition-colors"
                   >
                     Continue to Payment
                   </button>
@@ -129,26 +133,26 @@ export default function CheckoutFlow() {
               {step === 2 && (
                 <div className="space-y-6 mt-8">
                   <div>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                    <h2 className="font-display text-[28px] sm:text-[32px] font-semibold tracking-[-.02em] text-[#0b1220] mb-2">
                       Payment Details
                     </h2>
-                    <p className="text-gray-600 text-sm sm:text-base">
-                      Your trial starts today. We'll charge you after 14 days.
+                    <p className="text-[16px] text-[#576470] sm:text-[18px]">
+                      Your trial starts today. We&apos;ll charge you after 14 days.
                     </p>
                   </div>
 
                   <div className="space-y-4">
                     <div className="relative">
-                      <input type="text" name="cardNumber" onChange={handleInputChange} placeholder="4242 4242 4242 4242" maxLength={19} className="w-full px-4 py-3 pl-12 border-2 border-gray-200 rounded-lg focus:border-[#155dfc] focus:outline-none transition-colors" />
+                      <input type="text" name="cardNumber" onChange={handleInputChange} placeholder="4242 4242 4242 4242" maxLength={19} className="w-full px-4 py-3 pl-12 border border-[#e3e8f2] rounded-xl bg-[#fbfaf8] focus:border-[#1447e6] focus:outline-none transition-colors" />
                       <CreditCard className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
-                      <input type="text" name="expiry" onChange={handleInputChange} placeholder="MM/YY" maxLength={5} className="px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#155dfc] focus:outline-none transition-colors" />
-                      <input type="text" name="cvv" onChange={handleInputChange} placeholder="123" maxLength={4} className="px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#155dfc] focus:outline-none transition-colors" />
+                      <input type="text" name="expiry" onChange={handleInputChange} placeholder="MM/YY" maxLength={5} className="px-4 py-3 border border-[#e3e8f2] rounded-xl bg-[#fbfaf8] focus:border-[#1447e6] focus:outline-none transition-colors" />
+                      <input type="text" name="cvv" onChange={handleInputChange} placeholder="123" maxLength={4} className="px-4 py-3 border border-[#e3e8f2] rounded-xl bg-[#fbfaf8] focus:border-[#1447e6] focus:outline-none transition-colors" />
                     </div>
 
-                    <select name="country" onChange={handleInputChange} className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#155dfc] focus:outline-none transition-colors">
+                    <select name="country" onChange={handleInputChange} className="w-full px-4 py-3 border border-[#e3e8f2] rounded-xl bg-[#fbfaf8] focus:border-[#1447e6] focus:outline-none transition-colors">
                       <option>Select Country</option>
                       <option>United States</option>
                       <option>United Kingdom</option>
@@ -156,13 +160,13 @@ export default function CheckoutFlow() {
                       <option>Australia</option>
                     </select>
 
-                    <input type="text" name="zipCode" onChange={handleInputChange} placeholder="10001" className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#155dfc] focus:outline-none transition-colors" />
+                    <input type="text" name="zipCode" onChange={handleInputChange} placeholder="10001" className="w-full px-4 py-3 border border-[#e3e8f2] rounded-xl bg-[#fbfaf8] focus:border-[#1447e6] focus:outline-none transition-colors" />
                   </div>
 
                   <button
                     onClick={handleSubmit}
                     disabled={isProcessing}
-                    className="w-full bg-[#155dfc] cursor-pointer text-white font-bold py-3 rounded-lg hover:bg-[#0d44b3] transition-all hover:scale-[1.02] hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
+                    className="w-full bg-[#0b1220] cursor-pointer text-white font-medium text-[16px] py-4 rounded-full hover:bg-[#1c2538] transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
                   >
                     <Lock className="w-5 h-5" />
                     {isProcessing ? "Processing..." : "Start Free Trial"}
@@ -182,33 +186,33 @@ export default function CheckoutFlow() {
                     <div className="mb-8 relative">
                       <div className="w-32 h-32 mx-auto relative">
                         {/* Outer rotating ring */}
-                        <div className="absolute inset-0 border-4 border-[#155dfc]/20 rounded-full animate-spin-slow"></div>
+                        <div className="absolute inset-0 border-4 border-[#1447e6]/20 rounded-full animate-spin-slow"></div>
                         
                         {/* Middle pulsing ring */}
-                        <div className="absolute inset-2 bg-[#155dfc]/10 rounded-full animate-pulse-scale"></div>
+                        <div className="absolute inset-2 bg-[#1447e6]/10 rounded-full animate-pulse-scale"></div>
                         
                         {/* Inner icon container */}
-                        {/* <div className="absolute inset-4 bg-gradient-to-br from-[#155dfc] to-[#0d44b3] rounded-full flex items-center justify-center shadow-2xl animate-float">
+                        {/* <div className="absolute inset-4 bg-gradient-to-br from-[#1447e6] to-[#0d34b0] rounded-full flex items-center justify-center shadow-2xl animate-float">
                           <Sparkles className="w-12 h-12 text-white animate-sparkle" />
                         </div> */}
                         
                         {/* Floating particles */}
-                        <div className="absolute -top-2 -right-2 w-3 h-3 bg-[#155dfc] rounded-full animate-particle-1"></div>
+                        <div className="absolute -top-2 -right-2 w-3 h-3 bg-[#1447e6] rounded-full animate-particle-1"></div>
                         <div className="absolute -bottom-2 -left-2 w-2 h-2 bg-pink-500 rounded-full animate-particle-2"></div>
                         <div className="absolute top-1/2 -right-4 w-2 h-2 bg-purple-500 rounded-full animate-particle-3"></div>
                       </div>
                     </div>
 
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                    <h2 className="font-display text-[28px] sm:text-[32px] font-semibold tracking-[-.02em] text-[#0b1220] mb-4">
                       Processing Your Order...
                     </h2>
-                    <p className="text-gray-600 mb-8">
+                    <p className="text-[#576470] mb-8">
                       Setting up your workspace and starting your free trial
                     </p>
 
                     {/* Modern Progress Bar */}
                     <div className="relative w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#155dfc] to-purple-300  animate-progress-bar"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#1447e6] to-purple-300  animate-progress-bar"></div>
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-shimmer"></div>
                     </div>
 
@@ -216,15 +220,15 @@ export default function CheckoutFlow() {
                     <div className="mt-8 space-y-3 text-left">
                       <div className="flex items-center gap-3 opacity-100 animate-fade-in">
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm text-gray-600">Creating your account...</span>
+                        <span className="text-sm text-[#576470]">Creating your account...</span>
                       </div>
                       <div className="flex items-center gap-3 opacity-100 animate-fade-in-delay-1">
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm text-gray-600">Setting up workspace...</span>
+                        <span className="text-sm text-[#576470]">Setting up workspace...</span>
                       </div>
                       <div className="flex items-center gap-3 opacity-100 animate-fade-in-delay-2">
                         <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm text-gray-600">Activating your trial...</span>
+                        <span className="text-sm text-[#576470]">Activating your trial...</span>
                       </div>
                     </div>
 
@@ -338,48 +342,48 @@ export default function CheckoutFlow() {
 
           {/* Order Summary - Always visible */}
           <div className="lg:col-span-1">
-            <div className="bg-white border-2 border-gray-200 rounded-xl shadow-lg p-6 sticky top-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Order Summary</h3>
+            <div className="bg-white border border-[#ededed] rounded-3xl shadow-[0_24px_60px_rgba(20,40,90,.08)] p-7 sticky top-28">
+              <h3 className="font-display mb-6 text-[22px] font-semibold tracking-[-.02em]">Order Summary</h3>
               
               <div className="space-y-4 mb-6">
                 <div className="flex justify-center mb-4">
-                  <span className={`${selectedPlan.badgeColor} px-3 py-1 rounded-md text-xs font-bold tracking-wide`}>
+                  <span className="rounded-full bg-[linear-gradient(90deg,#fed3f1,#ffe9cc_22%,#fff2bd_50%,#f4f8b5_69%,#f7fe8e)] px-3 py-1 text-[12px] font-semibold tracking-wide text-[#0b1220]">
                     {selectedPlan.badge}
                   </span>
                 </div>
 
                 <div className="flex justify-between items-start">
                   <div>
-                    <p className="font-semibold text-gray-900">{selectedPlan.name} Plan</p>
+                    <p className="font-semibold text-[#0b1220]">{selectedPlan.name} Plan</p>
                     <p className="text-sm text-gray-500">{cycle.billed}</p>
                   </div>
-                  <p className="font-bold text-gray-900">${currentPrice}<span className="text-sm text-gray-500">{cycle.shortPeriod}</span></p>
+                  <p className="font-bold text-[#0b1220]">${currentPrice}<span className="text-sm text-gray-500">{cycle.shortPeriod}</span></p>
                 </div>
               </div>
 
               <div className="border-t border-gray-200 pt-4 mb-6">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-600">Due today</span>
+                  <span className="text-[#576470]">Due today</span>
                   <span className="font-bold text-green-600">$0.00</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Due after trial</span>
-                  <span className="font-bold text-gray-900 text-xl">${currentPrice}</span>
+                  <span className="text-[#576470]">Due after trial</span>
+                  <span className="font-bold text-[#0b1220] text-xl">${currentPrice}</span>
                 </div>
               </div>
 
               <div className="space-y-3 mb-6">
                 <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-gray-900 mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-gray-600">14-day free trial starts today</p>
+                  <Check className="w-5 h-5 text-[#0b1220] mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-[#576470]">14-day free trial starts today</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Shield className="w-5 h-5 text-gray-900 mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-gray-600">Cancel anytime</p>
+                  <Shield className="w-5 h-5 text-[#0b1220] mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-[#576470]">Cancel anytime</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Lock className="w-5 h-5 text-gray-900 mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-gray-600">Secure 256-bit SSL</p>
+                  <Lock className="w-5 h-5 text-[#0b1220] mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-[#576470]">Secure 256-bit SSL</p>
                 </div>
               </div>
             </div>
@@ -403,5 +407,6 @@ export default function CheckoutFlow() {
         </div>
       </div>
     </div>
+    </SiteShell>
   );
 }

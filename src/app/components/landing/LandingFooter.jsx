@@ -11,9 +11,9 @@ const COLUMNS = [
   {
     title: "Product",
     links: [
-      { label: "Features", href: "#features" },
-      { label: "Creatives", href: "#creatives" },
-      { label: "Integrations", href: "#integrations" },
+      { label: "Features", href: "/#features" },
+      { label: "Creatives", href: "/#creatives" },
+      { label: "Integrations", href: "/#integrations" },
       { label: "Pricing", href: "/pages/pricing" },
     ],
   },
@@ -22,7 +22,7 @@ const COLUMNS = [
     links: [
       { label: "Contact", href: `mailto:${SUPPORT_EMAIL}` },
       { label: "Log in", href: LOGIN_URL },
-      { label: "FAQ", href: "#faq" },
+      { label: "FAQ", href: "/#faq" },
     ],
   },
   {
@@ -80,10 +80,10 @@ export default function LandingFooter() {
       <div className="mx-auto max-w-[1280px]">
         <div className="flex flex-wrap justify-between gap-x-16 gap-y-12">
           <div className="flex max-w-[300px] flex-col">
-            <a href="#" className="flex items-center gap-2.5 text-[#0b1220] hover:text-[#0b1220]">
+            <Link href="/" className="flex items-center gap-2.5 text-[#0b1220] hover:text-[#0b1220]">
               <LogoMark size={36} radius="50%" />
               <span className="font-display text-[30px] font-semibold">Creativeklux</span>
-            </a>
+            </Link>
             <p className="mt-6 text-[16px] leading-[1.7] text-[#576470]">
               The AI social media and ads manager that designs, posts, replies and runs ads for your brand.
             </p>

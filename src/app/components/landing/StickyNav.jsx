@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { ButtonLink, LogoMark } from "./ui";
 import { LOGIN_URL, NAV_LINKS } from "./content";
@@ -8,8 +9,9 @@ import { LOGIN_URL, NAV_LINKS } from "./content";
 // Sticky header. A zero-height sticky layer, so it takes no space: at the top
 // of the page the nav sits exactly where it did inside the hero card; once the
 // page scrolls it becomes a frosted white pill pinned to the top of the screen.
-// Below 860px the links fold into a menu button.
-export default function StickyNav() {
+// Below 860px the links fold into a menu button. `solid` keeps the pill form
+// from the start, for pages with no hero underneath.
+export default function StickyNav({ solid: alwaysSolid = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -27,7 +29,7 @@ export default function StickyNav() {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const solid = scrolled || open;
+  const solid = alwaysSolid || scrolled || open;
 
   return (
     <div className="sticky top-0 z-50 h-0 px-3">
@@ -39,10 +41,10 @@ export default function StickyNav() {
         }`}
       >
         <nav aria-label="Main" className="relative z-[5] mx-auto flex max-w-[1180px] items-center justify-between gap-3 py-2">
-          <a href="#" className="flex min-w-0 items-center gap-2.5 text-[#0b1220] hover:text-[#0b1220]">
+          <Link href="/" className="flex min-w-0 items-center gap-2.5 text-[#0b1220] hover:text-[#0b1220]">
             <LogoMark className="shadow-[0_6px_16px_rgba(20,71,230,.35)] max-sm:!h-[34px] max-sm:!w-[34px]" />
             <span className="font-display truncate text-[21px] font-bold max-[420px]:text-[18px] max-[340px]:hidden">Creativeklux</span>
-          </a>
+          </Link>
           <div className="flex gap-8 text-[15px] font-medium max-[860px]:hidden">
             {NAV_LINKS.map((l) => (
               <a key={l.href} href={l.href} className="text-[#0b1220] hover:text-[#1447e6]">
@@ -57,7 +59,7 @@ export default function StickyNav() {
             >
               Log in
             </a>
-            <ButtonLink href="#deal" className="px-[22px] py-3 text-[15px] whitespace-nowrap max-sm:px-3.5 max-sm:py-2.5 max-sm:text-[14px]">
+            <ButtonLink href="/#deal" className="px-[22px] py-3 text-[15px] whitespace-nowrap max-sm:px-3.5 max-sm:py-2.5 max-sm:text-[14px]">
               <span className="max-sm:hidden">Get lifetime deal</span>
               <span className="sm:hidden">Get deal</span>
             </ButtonLink>

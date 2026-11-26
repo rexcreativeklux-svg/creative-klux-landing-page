@@ -1,5 +1,4 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
+import SiteShell, { LegalPage } from "@/app/components/landing/SiteShell";
 import Link from "next/link";
 import { sharedOpenGraph } from "@/app/site";
 
@@ -13,20 +12,8 @@ export const metadata = {
 
 export default function TermsAndConditions() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Terms and Conditions
-          </h1>
-          <p className="text-gray-600">Last updated: June 23, 2025</p>
-        </div>
-
-        {/* Content */}
-        <div className="bg-white rounded-2xl shadow-sm p-8 sm:p-12 space-y-8">
+    <SiteShell>
+      <LegalPage title="Terms and Conditions" updated="June 23, 2025">
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               1. Agreement to Terms
@@ -389,10 +376,7 @@ export default function TermsAndConditions() {
               </a>
             </p>
           </section>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
+      </LegalPage>
+    </SiteShell>
   );
 }

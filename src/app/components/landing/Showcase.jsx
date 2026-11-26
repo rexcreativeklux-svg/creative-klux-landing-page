@@ -175,6 +175,145 @@ function BrandKitCard() {
   );
 }
 
+// Smart Inbox mock-up: the real app's tabs, channels and status labels
+const INBOX_ROWS = [
+  { name: "Amara O.", channel: "instagram", kind: "DM", text: "Is the yellow set still in stock in M?", status: "AI replied", tone: "#16a34a", bg: "#dcfce7" },
+  { name: "Daniel R.", channel: "facebook", kind: "Comment", text: "How do I get a refund for my order?", status: "Needs you", tone: "#c2410c", bg: "#ffedd5" },
+  { name: "Sophie L.", channel: "whatsapp", kind: "DM", text: "Can I book a facial for Saturday?", status: "AI replied", tone: "#16a34a", bg: "#dcfce7" },
+  { name: "Leo M.", channel: "instagram", kind: "Comment", text: "Love this! What's the price?", status: "You replied", tone: "#1447e6", bg: "#e0e7ff" },
+];
+
+function SmartInboxMock() {
+  return (
+    <div className="rounded-2xl bg-white p-5 shadow-[0_24px_50px_rgba(60,40,140,.12)] max-sm:p-4">
+      <div className="flex items-baseline justify-between">
+        <span className="font-display text-[20px] font-semibold tracking-[-.02em]">Smart Inbox</span>
+        <span className="text-[12px] text-[#576470]">Maya replies</span>
+      </div>
+      <div className="mt-4 flex gap-1.5 overflow-hidden text-[12.5px] font-medium">
+        {[["All", 24, true], ["Needs you", 3], ["DM", 15], ["Comment", 9]].map(([label, count, on]) => (
+          <span key={label} className={`shrink-0 rounded-full px-3 py-1.5 ${on ? "bg-[#0b1220] text-white" : "bg-[#f3f4f6] text-[#0b1220]"}`}>
+            {label} <span className={on ? "text-white/60" : "text-[#576470]"}>{count}</span>
+          </span>
+        ))}
+      </div>
+      <div className="mt-4 flex flex-col divide-y divide-[#f1f3f5]">
+        {INBOX_ROWS.map((r) => (
+          <div key={r.name} className="flex items-center gap-3 py-3">
+            <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#eef1f7] text-[13px] font-semibold">
+              {r.name.split(" ").map((w) => w[0]).join("")}
+              <span className="absolute -right-0.5 -bottom-0.5 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-white">
+                <BrandIcon name={r.channel} size={12} />
+              </span>
+            </span>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2 text-[14px] font-semibold">
+                {r.name}
+                <span className="text-[11px] font-normal text-[#94a3b8]">{r.kind}</span>
+              </div>
+              <div className="truncate text-[13px] text-[#576470]">{r.text}</div>
+            </div>
+            <span className="shrink-0 rounded-full px-2 py-1 text-[11px] font-semibold" style={{ color: r.tone, background: r.bg }}>
+              {r.status}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Lavender card overlay: the customer profile Smart Inbox builds
+function CustomerProfileCard() {
+  return (
+    <div className={`${smallCard} w-[250px] p-4`}>
+      <div className="flex items-center justify-between">
+        <span className="text-[14px] font-semibold">Amara O.</span>
+        <span className="rounded-full bg-[#ffedd5] px-2 py-0.5 text-[11px] font-semibold text-[#c2410c]">Hot customer</span>
+      </div>
+      <div className="mt-3 flex flex-col gap-1.5 text-[11.5px]">
+        <div className="flex justify-between"><span className="text-[#576470]">Wants</span><span className="font-medium">Yellow set, size M</span></div>
+        <div className="flex justify-between"><span className="text-[#576470]">Likely value</span><span className="font-medium">$120</span></div>
+        <div className="flex justify-between"><span className="text-[#576470]">Came from</span><span className="font-medium">Instagram ad</span></div>
+      </div>
+      <div className="mt-3 flex gap-1.5 text-[10.5px] font-medium">
+        <span className="rounded-full bg-[#0b1220] px-2.5 py-1.5 text-white">Send price list</span>
+        <span className="rounded-full border border-[#e3e8f2] px-2.5 py-1.5">Send booking link</span>
+      </div>
+    </div>
+  );
+}
+
+// SmartLinks mock-up: a link-in-bio page built from the app's blocks
+function SmartLinkMock() {
+  const buttons = [
+    { label: "Book a facial", note: "$45", dark: true },
+    { label: "Chat on WhatsApp", icon: "whatsapp" },
+    { label: "Shop the summer set" },
+    { label: "Join the list for 10% off" },
+  ];
+  return (
+    <div className="mx-auto w-full max-w-[300px] rounded-[34px] border-[6px] border-white bg-[#eef3ff] p-5 shadow-[0_24px_50px_rgba(20,60,140,.16)]">
+      <div className="flex flex-col items-center text-center">
+        <span className="font-display flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#1447e6] to-[#7c5cff] text-[20px] font-semibold text-white">G</span>
+        <div className="mt-2 text-[16px] font-semibold">Glow Studio</div>
+        <div className="text-[12px] text-[#576470]">Skin care &amp; facials · Lagos</div>
+      </div>
+      <div className="mt-4 flex flex-col gap-2">
+        {buttons.map((b) => (
+          <span
+            key={b.label}
+            className={`flex items-center justify-center gap-2 rounded-full px-4 py-2.5 text-[13px] font-semibold ${b.dark ? "bg-[#1447e6] text-white" : "bg-white text-[#0b1220]"}`}
+          >
+            {b.icon && <BrandIcon name={b.icon} size={14} />}
+            {b.label}
+            {b.note && <span className="text-white/70">{b.note}</span>}
+          </span>
+        ))}
+      </div>
+      <div className="mt-4 flex justify-center gap-3">
+        {["instagram", "tiktok", "facebook"].map((n) => (
+          <BrandIcon key={n} name={n} size={16} color="#0b1220" />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Sky card overlay: which button brings customers
+function LinkClicksCard() {
+  const rows = [
+    ["Book a facial", "312", "41", "94%"],
+    ["WhatsApp", "188", "22", "56%"],
+    ["Summer set", "96", "9", "28%"],
+  ];
+  return (
+    <div className={`${smallCard} w-[260px] p-4`}>
+      <div className="flex items-baseline justify-between">
+        <span className="text-[14px] font-semibold">What people click</span>
+        <span className="text-[11px] text-[#576470]">14 days</span>
+      </div>
+      <div className="mt-2 grid grid-cols-[1fr_auto_auto] gap-x-3 gap-y-2 text-[11.5px]">
+        <span className="text-[#94a3b8]">Button</span>
+        <span className="text-right text-[#94a3b8]">Clicks</span>
+        <span className="text-right text-[#94a3b8]">Customers</span>
+        {rows.map(([label, clicks, customers, w]) => (
+          <div key={label} className="contents">
+            <span className="flex flex-col gap-1 font-medium">
+              {label}
+              <span className="h-1.5 rounded-full bg-[#eef1f7]">
+                <span className="block h-1.5 rounded-full bg-[#1447e6]" style={{ width: w }} />
+              </span>
+            </span>
+            <span className="text-right">{clicks}</span>
+            <span className="text-right font-semibold text-[#16a34a]">{customers}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // Mint card overlay: the campaign the copilot just launched
 function CampaignLiveCard() {
   return (
@@ -341,6 +480,38 @@ export function FeatureStack() {
               </div>
             </div>
           </div>
+          </StackVisual>
+        </StackCard>
+
+        <StackCard bg="#e4dcff">
+          <StackVisual overlay={<CustomerProfileCard />} overlayClassName="-bottom-8">
+            <SmartInboxMock />
+          </StackVisual>
+          <StackText
+            icon={
+              <svg {...featureIcon}>
+                <path d="M4 5h16v11H8l-4 4z" />
+                <path d="M8 10h8M8 13h5" />
+              </svg>
+            }
+            title="Every DM and comment in one Smart Inbox"
+            body="Instagram, Facebook and WhatsApp messages and comments land in one place. Your copilot answers in your Brand Kit tone, and anything about money or a complaint is marked Needs you, so you step in only when it counts."
+          />
+        </StackCard>
+
+        <StackCard bg="#d6e6ff">
+          <StackText
+            icon={
+              <svg {...featureIcon}>
+                <path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1" />
+                <path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1" />
+              </svg>
+            }
+            title="SmartLinks that turn followers into customers"
+            body="One link for every bio, flyer and QR code. Add booking, shop, WhatsApp and sign-up buttons in minutes, then see which button brings customers and what they're worth."
+          />
+          <StackVisual overlay={<LinkClicksCard />} overlayClassName="-bottom-6">
+            <SmartLinkMock />
           </StackVisual>
         </StackCard>
         </div>
