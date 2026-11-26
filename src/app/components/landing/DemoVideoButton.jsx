@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { DEMO_YOUTUBE_ID } from "./content";
 
@@ -26,7 +27,9 @@ export default function DemoVideoButton({ className = "", children }) {
         {children}
       </button>
 
-      {open && (
+      {/* Portalled to <body> so the hero's stacking context (and the tiles
+          floating around the dashboard) can't paint over the player */}
+      {open && createPortal(
         <div
           role="dialog"
           aria-modal="true"
@@ -53,7 +56,8 @@ export default function DemoVideoButton({ className = "", children }) {
               />
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
