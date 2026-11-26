@@ -9,7 +9,7 @@ const ICON_SIZES = { tiktok: 26, x: 24, youtube: 30, meta: 30 };
 export function PlatformMarquee() {
   return (
     <section className="pt-11 pb-9">
-      <p className="mb-[26px] text-center text-[15px] font-medium text-[#475569]">
+      <p className="mb-[26px] px-6 text-center text-[15px] font-medium text-[#475569]">
         Creates, posts and replies on the accounts you already use
       </p>
       <div className="overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_12%,#000_88%,transparent)]">

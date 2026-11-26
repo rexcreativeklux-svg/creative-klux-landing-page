@@ -83,7 +83,11 @@ export default function FeatureTabs() {
         </div>
 
         <div className="mx-auto mt-20 max-w-[1280px] max-lg:mt-12">
-          <div role="tablist" className="grid grid-cols-4 max-lg:grid-cols-2">
+          {/* Phones: a swipeable row of pills (titles only) */}
+          <div
+            role="tablist"
+            className="grid grid-cols-4 max-lg:grid-cols-2 max-sm:-mx-4 max-sm:flex max-sm:gap-2 max-sm:overflow-x-auto max-sm:px-4 max-sm:pb-1 max-sm:[scrollbar-width:none]"
+          >
             {TABS.map((t, i) => (
               <button
                 key={t.label}
@@ -91,11 +95,11 @@ export default function FeatureTabs() {
                 role="tab"
                 aria-selected={i === active}
                 onClick={() => setActive(i)}
-                className="flex cursor-pointer flex-col items-start justify-start rounded-t-3xl px-8 pt-10 pb-[60px] text-left transition-colors duration-300 max-lg:rounded-3xl max-lg:p-6"
+                className="flex cursor-pointer flex-col items-start justify-start rounded-t-3xl px-8 pt-10 pb-[60px] text-left transition-colors duration-300 max-lg:rounded-3xl max-lg:p-6 max-sm:shrink-0 max-sm:rounded-full max-sm:px-5 max-sm:py-2.5"
                 style={{ background: i === active ? PANEL : "transparent" }}
               >
-                <div className="font-display text-[20px] font-medium tracking-[-.02em]">{t.label}</div>
-                <div className="mt-2 text-[16px] leading-[1.7] text-[#576470]">{t.blurb}</div>
+                <div className="font-display text-[20px] font-medium tracking-[-.02em] max-sm:text-[16px]">{t.label}</div>
+                <div className="mt-2 text-[16px] leading-[1.7] text-[#576470] max-sm:hidden">{t.blurb}</div>
               </button>
             ))}
           </div>

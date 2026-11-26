@@ -46,7 +46,11 @@ const instrumentSerif = Instrument_Serif({
 });
 
 const description =
-  "Create, publish and manage your ads and social designs on autopilot. Creative Klux uses AI to generate high-performing ad creatives, social media posts and brand assets in seconds, with no designers, delays or complicated tools.";
+  "Creativeklux is the AI that runs your social media and ads. Klux designs your posts, ads, product photos and videos, publishes on every platform, answers every DM and comment, and puts your ad budget behind what works.";
+
+const shareTitle = "Creativeklux · The AI that runs your social media & ads";
+const shareDescription =
+  "Designs your creatives, posts everywhere, answers every DM and comment, and runs your ads. Pay once, keep it for life.";
 
 /* -----------------------------------------------------------------
    SITE-WIDE METADATA — every route inherits this and overrides what
@@ -57,27 +61,31 @@ export const metadata = {
   metadataBase: new URL(SITE_URL),
 
   title: {
-    default: "Creative Klux · AI Ad Creatives & Social Media Designs on Autopilot",
-    template: "%s | Creative Klux",
+    default: "Creativeklux · The AI That Runs Your Social Media & Ads",
+    template: "%s | Creativeklux",
   },
   description,
   keywords: [
+    "AI social media manager",
+    "AI ads manager",
+    "social media automation",
     "AI ad creatives",
     "AI ad generator",
-    "social media design tool",
-    "social media post generator",
-    "AI graphic design",
-    "ad creative automation",
-    "marketing creatives",
-    "brand assets",
-    "AI video ads",
+    "auto post to social media",
+    "AI social media inbox",
+    "AI DM and comment replies",
+    "social media scheduler",
+    "Meta ads automation",
+    "link in bio",
     "AI marketing tool",
-    "creatives for agencies",
+    "lifetime deal",
+    "Creativeklux",
+    "Creative Klux",
   ],
-  authors: [{ name: "Creative Klux" }],
-  creator: "Creative Klux",
+  authors: [{ name: "Creativeklux" }],
+  creator: "Creativeklux",
   publisher: "Netsprin",
-  applicationName: "Creative Klux",
+  applicationName: "Creativeklux",
   category: "technology",
 
   robots: {
@@ -98,25 +106,23 @@ export const metadata = {
 
   openGraph: {
     type: "website",
-    siteName: "Creative Klux",
+    siteName: "Creativeklux",
     url: "/",
-    title: "Creative Klux · AI ads & social designs on autopilot",
-    description:
-      "One platform. Every creative you'll ever need. Generate ad creatives, social posts and brand assets in seconds with AI.",
+    title: shareTitle,
+    description: shareDescription,
     locale: "en_US",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Creative Klux · AI ads & social designs on autopilot",
-    description:
-      "Generate ad creatives, social posts and brand assets in seconds with AI. Built for businesses, marketers, agencies and creators.",
+    title: shareTitle,
+    description: shareDescription,
     creator: "@creativeklux",
     site: "@creativeklux",
   },
 
   appleWebApp: {
-    title: "Creative Klux",
+    title: "Creativeklux",
     statusBarStyle: "default",
   },
   icons: {

@@ -22,7 +22,7 @@ export function OneDashboard() {
           />
 
           {/* Stacked cards bobbing slightly out of phase */}
-          <div className="absolute top-1/2 left-1/2 w-[430px] max-w-[82%] -translate-x-1/2 -translate-y-[30%]">
+          <div className="absolute top-1/2 left-1/2 w-[430px] max-w-[82%] -translate-x-1/2 -translate-y-[30%] max-sm:max-w-[90%]">
             <div
               className="lp-bob absolute -top-[54px] right-[44px] left-[44px] h-[160px] rounded-[20px] border border-[#ecebf5] bg-white shadow-[0_-2px_10px_rgba(40,20,120,.06)]"
               style={{ animationDelay: ".4s" }}
@@ -33,17 +33,18 @@ export function OneDashboard() {
             />
             <div className="lp-bob relative rounded-[22px] border-4 border-white/60 bg-clip-padding">
               <div className="rounded-[18px] bg-white px-6 pt-6 pb-7 max-sm:px-4 max-sm:pt-4 max-sm:pb-5">
-                <div className="flex justify-between text-[16px] font-medium">
+                <div className="flex justify-between gap-2 text-[16px] font-medium whitespace-nowrap max-sm:text-[13px]">
                   <span>Ad spend this month</span>
-                  <span className="text-[14px] font-semibold text-[#1447e6]">Limit on</span>
+                  <span className="text-[14px] font-semibold text-[#1447e6] max-sm:text-[12px]">Limit on</span>
                 </div>
-                <div className="mt-7 flex items-end justify-between gap-3 max-sm:mt-4">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="font-display text-[36px] leading-none font-medium tracking-[-.03em] max-sm:text-[28px]">$310</span>
-                    <span className="text-[14px] font-medium">of $500</span>
+                <div className="mt-7 flex items-end justify-between gap-3 max-sm:mt-3">
+                  <div className="flex items-baseline gap-1.5 whitespace-nowrap">
+                    <span className="font-display text-[36px] leading-none font-medium tracking-[-.03em] max-sm:text-[26px]">$310</span>
+                    <span className="text-[14px] font-medium max-sm:text-[12px]">of $500</span>
                   </div>
-                  <div className="text-right text-[13px] leading-[1.5] text-[#576470]">
-                    Return on ad spend
+                  <div className="text-right text-[13px] leading-[1.5] whitespace-nowrap text-[#576470] max-sm:text-[11px]">
+                    <span className="max-sm:hidden">Return on ad spend</span>
+                    <span className="sm:hidden">ROAS</span>
                     <div className="font-semibold text-[#16a34a]">3.4x</div>
                   </div>
                 </div>
@@ -110,10 +111,12 @@ function StackText({ icon, title, body }) {
 // in when scrolled into view, then glides diagonally back and forth.
 function StackVisual({ overlay, overlayClassName = "", children }) {
   return (
-    <div className="relative flex min-h-[474px] min-w-0 max-w-[588px] flex-[1_1_440px] items-center max-sm:min-h-0 max-sm:pb-16">
+    <div className="relative flex min-h-[474px] min-w-0 max-w-[588px] flex-[1_1_440px] items-center max-sm:min-h-0 max-sm:flex-col max-sm:items-stretch">
       <div className="w-full max-w-[506px]">{children}</div>
+      {/* Phones: the small card drops below the mock-up (overlapping its
+          bottom edge) instead of covering it */}
       {overlay && (
-        <PopIn className={`absolute right-0 z-[1] max-sm:right-2 ${overlayClassName}`}>
+        <PopIn className={`absolute right-0 z-[1] max-sm:static max-sm:-mt-7 max-sm:mr-1 max-sm:self-end ${overlayClassName}`}>
           <div className="lp-drift">{overlay}</div>
         </PopIn>
       )}
@@ -225,7 +228,7 @@ export function FeatureStack() {
             title="Puts your ad budget where it performs"
             body="Push creatives to Meta, Google and TikTok, read results back creative by creative, and move spend to the winners, always inside the limit you set."
           />
-          <StackVisual overlay={<BudgetChartCard />} overlayClassName="-bottom-8 max-sm:bottom-0">
+          <StackVisual overlay={<BudgetChartCard />} overlayClassName="-bottom-8">
           <div className="rounded-2xl bg-white p-5 pb-7 shadow-[0_24px_50px_rgba(120,20,70,.12)] max-sm:p-4">
             <WindowDots size={10} />
             <div className="mt-1 mb-5 flex items-baseline justify-between px-1">
@@ -257,7 +260,7 @@ export function FeatureStack() {
         </StackCard>
 
         <StackCard bg="#f7fe8e">
-          <StackVisual overlay={<BrandKitCard />} overlayClassName="top-1/2 -translate-y-[40%] max-sm:top-auto max-sm:bottom-0 max-sm:translate-y-0">
+          <StackVisual overlay={<BrandKitCard />} overlayClassName="top-1/2 -translate-y-[40%] max-sm:translate-y-0">
           <div className="rounded-2xl bg-white p-4 shadow-[0_24px_50px_rgba(110,90,0,.12)]">
             <WindowDots size={10} />
             <div className="grid grid-cols-3 gap-2.5">
@@ -304,7 +307,7 @@ export function FeatureStack() {
             title="A copilot you brief in plain language"
             body="Tell it what you want, in the app, on WhatsApp or on Telegram. It knows your offers, prices and tone, and it hands money questions and complaints back to you."
           />
-          <StackVisual overlay={<CampaignLiveCard />} overlayClassName="-bottom-6 max-sm:bottom-0">
+          <StackVisual overlay={<CampaignLiveCard />} overlayClassName="-bottom-6">
           <div className="rounded-2xl bg-white p-6 shadow-[0_24px_50px_rgba(20,90,50,.12)] max-sm:p-4">
             <div className="flex items-center gap-3.5">
               <Image

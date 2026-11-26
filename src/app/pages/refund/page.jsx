@@ -6,9 +6,9 @@ import { sharedOpenGraph } from "@/app/site";
 export const metadata = {
   title: "Refund Policy",
   description:
-    "Creative Klux refund and cancellation policy for subscriptions and plans.",
+    "Creativeklux refund and cancellation policy for subscriptions, plans and lifetime deals.",
   alternates: { canonical: "/pages/refund" },
-  openGraph: { ...sharedOpenGraph, url: "/pages/refund", title: "Refund Policy | Creative Klux" },
+  openGraph: { ...sharedOpenGraph, url: "/pages/refund", title: "Refund Policy | Creativeklux" },
 };
 
 export default function RefundPolicy() {

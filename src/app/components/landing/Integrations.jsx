@@ -17,6 +17,17 @@ const NODES = [
   { icon: "telegram", left: 72, top: 88, bg: "#26a5e4", size: 34, delay: -4.5 },
 ];
 
+function NodeIcon({ n, small }) {
+  if (n.icon === "linkedin") {
+    return (
+      <span className="font-extrabold text-white" style={{ fontFamily: "Arial, sans-serif", fontSize: small ? 24 : 34 }}>
+        in
+      </span>
+    );
+  }
+  return <BrandIcon name={n.icon} size={small ? Math.round(n.size * 0.7) : n.size} color={n.brand ? undefined : "#fff"} />;
+}
+
 const LINES = ["160 56", "310 35", "240 175", "160 252", "310 308", "840 56", "690 35", "760 175", "840 252", "690 308"];
 
 export default function Integrations() {
@@ -35,7 +46,7 @@ export default function Integrations() {
         </p>
       </div>
 
-      <div className="relative mx-auto mt-4 h-[290px] max-w-[1000px]">
+      <div className="relative mx-auto mt-4 h-[290px] max-w-[1000px] max-sm:hidden">
         <svg
           aria-hidden="true"
           width="100%"
@@ -70,13 +81,28 @@ export default function Integrations() {
               animationDelay: n.delay ? `${n.delay}s` : undefined,
             }}
           >
-            {n.icon === "linkedin" ? (
-              <span className="text-[34px] font-extrabold text-white" style={{ fontFamily: "Arial, sans-serif" }}>in</span>
-            ) : (
-              <BrandIcon name={n.icon} size={n.size} color={n.brand ? undefined : "#fff"} />
-            )}
+            <NodeIcon n={n} />
           </span>
         ))}
+      </div>
+
+      {/* Phones: the orbit has no room, so the hub sits above a tidy grid */}
+      <div className="mt-10 flex flex-col items-center gap-8 sm:hidden">
+        <span className="relative flex h-[110px] w-[110px] items-center justify-center rounded-[28px] bg-gradient-to-br from-[#2c63ff] to-[#1447e6] shadow-[0_24px_50px_rgba(20,71,230,.4)]">
+          <span className="lp-ring absolute -inset-[20px] rounded-full border-2 border-[#9db4ff]" />
+          <Image src="/images/landing/klux-mark.png" alt="Creativeklux" width={158} height={166} className="h-auto w-[54px]" />
+        </span>
+        <div className="grid grid-cols-5 gap-3">
+          {NODES.map((n) => (
+            <span
+              key={n.icon}
+              className="flex h-14 w-14 items-center justify-center rounded-2xl shadow-[0_10px_24px_rgba(0,0,0,.12)] max-[360px]:h-12 max-[360px]:w-12"
+              style={{ background: n.bg }}
+            >
+              <NodeIcon n={n} small />
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

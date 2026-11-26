@@ -4,7 +4,6 @@ import { useState } from "react";
 import { BILLING_CYCLES, TIERS, getFeatures } from "@/app/pricing";
 import { ButtonLink, RollButton, WarmPill } from "./ui";
 import { CheckIcon } from "./icons";
-import { APPSUMO_URL } from "./content";
 
 const TAGLINES = {
   starter: "For one brand doing it all.",
@@ -17,7 +16,7 @@ const PERIOD_LABEL = { monthly: "/month", annual: "/year", lifetime: "one-time" 
 function Plan({ tier, cycleId, className = "" }) {
   const pkg = tier.packages[cycleId];
   const isLifetime = cycleId === "lifetime";
-  const href = isLifetime && APPSUMO_URL ? APPSUMO_URL : `/pages/checkout?plan=${tier.id}&billing=${cycleId}`;
+  const href = `/pages/checkout?plan=${tier.id}&billing=${cycleId}`;
 
   return (
     <div className={`flex min-w-0 flex-col px-[30px] max-sm:px-0 ${className}`}>
@@ -63,7 +62,7 @@ export default function Pricing() {
   return (
     <section id="deal" className="scroll-mt-6 px-6 py-[50px] max-sm:px-3">
       <div className="lp-reveal mx-auto flex max-w-[600px] flex-col items-center gap-8 text-center">
-        <WarmPill>{APPSUMO_URL ? "AppSumo lifetime deal" : "Lifetime deal"}</WarmPill>
+        <WarmPill>Lifetime deal</WarmPill>
         <div>
           <h2 className="font-display text-[clamp(36px,4.6vw,60px)] leading-[1.2] font-semibold">
             Choose the right plan for your journey

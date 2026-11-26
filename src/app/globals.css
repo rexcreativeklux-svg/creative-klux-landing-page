@@ -47,7 +47,8 @@
 /* -----------------------------------------------------------------
    LANDING PAGE — type, motion and scroll effects
 ----------------------------------------------------------------- */
-html { scroll-behavior: smooth; }
+/* Anchor jumps stop below the sticky nav */
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 
 /* In the base layer so Tailwind utilities (e.g. tracking-*) can override them */
 @layer base {

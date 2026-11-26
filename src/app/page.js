@@ -28,7 +28,8 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "Creative Klux",
+      name: "Creativeklux",
+      alternateName: "Creative Klux",
       url: SITE_URL,
       logo: `${SITE_URL}/images/klux-logo-dark.png`,
       email: "support@creativeklux.com",
@@ -37,13 +38,13 @@ const jsonLd = {
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
-      name: "Creative Klux",
+      name: "Creativeklux",
       url: SITE_URL,
       publisher: { "@id": `${SITE_URL}/#organization` },
     },
     {
       "@type": "SoftwareApplication",
-      name: "Creative Klux",
+      name: "Creativeklux",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       url: SITE_URL,

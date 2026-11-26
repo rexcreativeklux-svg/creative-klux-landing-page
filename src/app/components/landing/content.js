@@ -7,9 +7,7 @@ export const SUPPORT_EMAIL = "support@creativeklux.com";
 // Demo video (also used by the old AIFunnelSection)
 export const DEMO_YOUTUBE_ID = "uk7Dq7j-jX0";
 
-// AppSumo deal. Set me: with no URL the buy buttons go to our own lifetime
-// checkout, and with no end date the top bar simply leaves the date out.
-export const APPSUMO_URL = null;
+// Lifetime deal end date for the top bar. Leave null and the bar omits it.
 export const DEAL_ENDS = null; // e.g. "December 31, 2026"
 
 export const NAV_LINKS = [

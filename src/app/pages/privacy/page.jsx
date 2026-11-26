@@ -6,9 +6,9 @@ import { sharedOpenGraph } from "@/app/site";
 export const metadata = {
   title: "Privacy Policy",
   description:
-    "How Creative Klux collects, uses and protects your personal data when you use our AI creative platform.",
+    "How Creativeklux collects, uses and protects your personal data when you use our AI social media and ads platform.",
   alternates: { canonical: "/pages/privacy" },
-  openGraph: { ...sharedOpenGraph, url: "/pages/privacy", title: "Privacy Policy | Creative Klux" },
+  openGraph: { ...sharedOpenGraph, url: "/pages/privacy", title: "Privacy Policy | Creativeklux" },
 };
 
 export default function PrivacyPolicy() {

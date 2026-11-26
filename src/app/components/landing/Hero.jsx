@@ -1,8 +1,9 @@
 import { ArrowRightIcon, PlayIcon } from "./icons";
-import { ButtonLink, LogoMark } from "./ui";
+import { ButtonLink } from "./ui";
 import DemoVideoButton from "./DemoVideoButton";
 import HeroDashboard from "./HeroDashboard";
-import { DEAL_ENDS, LOGIN_URL, NAV_LINKS } from "./content";
+import StickyNav from "./StickyNav";
+import { DEAL_ENDS } from "./content";
 
 // Headline, split into letters that fade in one after another (35ms apart).
 // Each word is an unbreakable inline-block so lines still wrap between words.
@@ -38,49 +39,15 @@ function DealBar() {
   return (
     <a
       href="#deal"
-      className="flex flex-wrap items-center justify-center gap-3 bg-[#0b1220] px-4 py-[11px] text-[14px] font-medium text-white hover:text-white"
+      className="flex flex-wrap items-center justify-center gap-3 bg-[#0b1220] px-4 py-[11px] text-[14px] font-medium text-white hover:text-white max-sm:gap-2 max-sm:px-3 max-sm:text-[13px]"
     >
-      <span className="rounded-md bg-[#ffd23f] px-2 py-[3px] text-[12px] font-extrabold tracking-[.02em] text-[#0b1220]">
-        AppSumo
-      </span>
-      <span>
+      <span className="max-sm:hidden">
         Lifetime deal is live: pay once, get Creativeklux forever.
         {DEAL_ENDS && ` Deal ends ${DEAL_ENDS}.`}
       </span>
-      <span className="font-bold text-[#9db4ff]">Grab the deal →</span>
+      <span className="sm:hidden">Lifetime deal is live</span>
+      <span className="font-bold whitespace-nowrap text-[#9db4ff]">Grab the deal →</span>
     </a>
-  );
-}
-
-function Nav() {
-  return (
-    <nav
-      aria-label="Main"
-      className="relative z-[5] mx-auto flex max-w-[1180px] items-center justify-between gap-4 py-2"
-    >
-      <a href="#" className="flex items-center gap-2.5 text-[#0b1220] hover:text-[#0b1220]">
-        <LogoMark className="shadow-[0_6px_16px_rgba(20,71,230,.35)]" />
-        <span className="font-display text-[21px] font-bold">Creativeklux</span>
-      </a>
-      <div className="flex gap-8 text-[15px] font-medium max-[860px]:hidden">
-        {NAV_LINKS.map((l) => (
-          <a key={l.href} href={l.href} className="text-[#0b1220] hover:text-[#1447e6]">
-            {l.label}
-          </a>
-        ))}
-      </div>
-      <div className="flex items-center gap-2.5">
-        <a
-          href={LOGIN_URL}
-          className="px-3 py-2.5 text-[15px] font-semibold text-[#0b1220] hover:text-[#1447e6] max-[860px]:hidden"
-        >
-          Log in
-        </a>
-        <ButtonLink href="#deal" className="px-[22px] py-3 text-[15px]">
-          Get lifetime deal
-        </ButtonLink>
-      </div>
-    </nav>
   );
 }
 
@@ -88,6 +55,7 @@ export default function Hero() {
   return (
     <>
       <DealBar />
+      <StickyNav />
       <header className="px-3 pt-3">
         <div
           className="relative overflow-hidden rounded-[30px] px-6 pt-4"
@@ -96,7 +64,8 @@ export default function Hero() {
               "radial-gradient(55% 60% at 0% 0%,#cfdcff 0%,rgba(207,220,255,0) 70%),radial-gradient(50% 60% at 100% 10%,#f1dcff 0%,rgba(241,220,255,0) 70%),radial-gradient(60% 50% at 50% 100%,#dbe6ff 0%,rgba(219,230,255,0) 70%),#f6f8ff",
           }}
         >
-          <Nav />
+          {/* Room for the sticky nav, which floats over this spot (see StickyNav) */}
+          <div aria-hidden="true" className="h-[58px] max-sm:h-[54px]" />
 
           <div className="relative z-[2] mx-auto max-w-[900px] py-10 text-center">
             <span className="inline-flex items-center gap-2.5 rounded-full bg-white py-1.5 pr-4 pl-1.5 text-[14px] font-semibold shadow-[0_6px_20px_rgba(20,71,230,.12)]">

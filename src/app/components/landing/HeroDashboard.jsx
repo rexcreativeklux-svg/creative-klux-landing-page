@@ -34,8 +34,10 @@ export default function HeroDashboard() {
       return;
     }
 
-    const target = () => MIN_SCALE + (1 - MIN_SCALE) * Math.min(1, Math.max(0, window.scrollY / SCROLL_RANGE));
-    let current = MIN_SCALE * 0.88; // starts a touch smaller and settles in on load
+    // Phones have no room to spare, so the dashboard starts nearly full size there
+    const min = () => (window.innerWidth < 640 ? 0.92 : MIN_SCALE);
+    const target = () => min() + (1 - min()) * Math.min(1, Math.max(0, window.scrollY / SCROLL_RANGE));
+    let current = min() * 0.88; // starts a touch smaller and settles in on load
     let frame = null;
 
     const tick = () => {
@@ -51,8 +53,10 @@ export default function HeroDashboard() {
 
     kick();
     window.addEventListener("scroll", kick, { passive: true });
+    window.addEventListener("resize", kick);
     return () => {
       window.removeEventListener("scroll", kick);
+      window.removeEventListener("resize", kick);
       if (frame !== null) cancelAnimationFrame(frame);
     };
   }, []);
